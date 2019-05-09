@@ -5,8 +5,6 @@
 import numpy as np
 cimport numpy as np
 
-import itertools
-
 DTYPE = np.uint8
 ctypedef np.uint8_t DTYPE_t
 
@@ -42,14 +40,12 @@ def c_onestep_greedy_d(np.ndarray[DTYPE_t, ndim=2] A):
             if A[i, j] == 0:
                 continue
 
-            for k in range(n):
+            for k in range(j+1, n):  # only consider j < k
 
                 if A[i, k] == 0:
                     continue
                 
-                e += A[j,k]
-
-        s[i] = e
+                s[i] += A[j,k]
 
     s_min = np.min(s)
     p = (s == s_min)
