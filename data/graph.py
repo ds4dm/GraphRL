@@ -2,6 +2,8 @@ import itertools
 import numpy as np
 import random
 
+from c_graph import c_onestep_greedy_d
+
 class Graph:
     """
     Undirected graphs.
@@ -262,6 +264,9 @@ class Graph:
         p = (p / np.sum(p))  # normalize to get probability distribution
 
         return p
+
+    def onestep_greedy_d_fast(self):
+        return c_onestep_greedy_d(self.M)
 
     def onestep_d(self):
         """
