@@ -175,7 +175,7 @@ class Graph:
         d_min = np.min(d)  # minimum degree
         indices = np.array(np.nonzero(d == d_min))  # identify nodes with minimum degree
         node_chosen = np.random.choice(indices.reshape(-1))
-        return node_chosen,d_min
+        return node_chosen, d_min
 
     def onestep_greedy(self):
         """
@@ -184,25 +184,13 @@ class Graph:
         # Arguments
 
         # Returns
-        - `p`: Array of Float
-            Uniform probability distribution over the nodes to be eliminated.
+        - `node`: int
+            Node to eliminate.
         """
-        s = np.zeros(self.n, dtype=int)
-        r = np.arange(self.n)
+        p = self.onestep_greedy_d()
+        node = np.random.choice(self.n, 1, p)
 
-        for i in range(self.n):
-            e = 0  # number of edges to add
-            neighbours = r[self.M[:, i] == 1]  # neighbours of node i
-            for (j, k) in itertools.combinations(neighbours, 2):
-                e += (1-self.M[j, k])
-            s[i] = e
-
-        s_min = np.min(s)
-        # identify nodes with best reward
-        indices = np.array(np.nonzero(s == s_min))
-        node_chosen = np.random.choice(indices.reshape(-1))
-
-        return node_chosen, s_min
+        return node[0]
 
 # the following part is for testing the distribution of min degree
 
