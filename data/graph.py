@@ -196,7 +196,7 @@ class Graph:
 
     def min_degree_d(self):
         """
-        Identify nodes with minimum degree and compute the distribution over min digree nodes
+        Compute the distribution over min digree nodes
 
         # Arguments
         # Returns
