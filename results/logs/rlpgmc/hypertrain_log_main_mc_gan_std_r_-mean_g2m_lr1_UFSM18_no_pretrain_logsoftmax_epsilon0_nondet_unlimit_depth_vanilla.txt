@@ -8,7 +8,7 @@ heuristic: min_degree actor learning rate: 0.001 epochs: 500 DataSet: UFSMDatase
 | Xavier Initialization
 Use Critic:
 False
-/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:162: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:199: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.t())
 parameter name actor.gc1.weight parameter value tensor(1.00000e-02 *
        [[-1.3048]], device='cuda:0')
@@ -26,5 +26,4 @@ parameter name actor.gc2.bias parameter value tensor(1.00000e-02 *
   _val_ave_gcn = np.sum(val_gcn_greedy) / len(val_gcn_greedy)
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/train_a2c_mc.py:546: RuntimeWarning: invalid value encountered in double_scalars
   _val_ave_mind = np.sum(val_mind) / len(val_mind)
-Training finished
-Training time: 6003.0166
+epochs 0 loss -779.4283447265625 train min_degreeperformance 9050.0 train gcn performance 224329.0 val min_degreeperformance nan val gcn performance nan
