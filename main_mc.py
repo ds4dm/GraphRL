@@ -168,18 +168,18 @@ for i in range(len(lr)):
     #                                      dropout=args.dropout,
     #                                      )  # alpha=args.alpha
 
-    actor = GCN_Sparse_Policy_5(nin=args.dinput,
-                                         nhidden=args.dhidden,
-                                         nout=args.doutput,
-                                         dropout=args.dropout,
-                                         )  # alpha=args.alpha
+    # actor = GCN_Sparse_Policy_5(nin=args.dinput,
+    #                                      nhidden=args.dhidden,
+    #                                      nout=args.doutput,
+    #                                      dropout=args.dropout,
+    #                                      )  # alpha=args.alpha
 
-    # actor = GNN_GAN(nin=args.dinput,
-    #             nhidden=args.dhidden,
-    #             nout=args.doutput,
-    #             dropout=args.dropout,
-    #             alpha=args.alpha
-    #             )  # alpha=args.alpha
+    actor = GAN(nin=args.dinput,
+                nhidden=args.dhidden,
+                nout=args.doutput,
+                dropout=args.dropout,
+                alpha=args.alpha
+                )  # alpha=args.alpha
 
     if dataset_name == 'UFSMDataset':
         test_dataset = dataset(start=24, end=26)
