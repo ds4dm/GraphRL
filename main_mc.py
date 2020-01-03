@@ -31,7 +31,7 @@ parser.add_argument('--pretrain_epochs', type=int, default=3, help='Training epo
 parser.add_argument('--lr_actor', type=float, default= 0.001, help='Learning rate of actor')
 parser.add_argument('--lr_critic', type=float, default= 0.001, help='Learning rate of critic')
 parser.add_argument('--wd', type=float, default=5e-4, help='Weight decay')
-parser.add_argument('--dhidden', type=int, default=1, help='Dimension of hidden features')
+parser.add_argument('--dhidden', type=int, default=5, help='Dimension of hidden features')
 parser.add_argument('--dinput', type=int, default=1, help='Dimension of input features')
 parser.add_argument('--doutput', type=int, default=1, help='Dimension of output features')
 parser.add_argument('--dropout', type=float, default=0.1, help='Dropout Rate')
@@ -168,18 +168,18 @@ for i in range(len(lr)):
     #                                      dropout=args.dropout,
     #                                      )  # alpha=args.alpha
 
-    # actor = GCN_Sparse_Policy_5(nin=args.dinput,
-    #                                      nhidden=args.dhidden,
-    #                                      nout=args.doutput,
-    #                                      dropout=args.dropout,
-    #                                      )  # alpha=args.alpha
+    actor = GCN_Sparse_Policy_5(nin=args.dinput,
+                                         nhidden=args.dhidden,
+                                         nout=args.doutput,
+                                         dropout=args.dropout,
+                                         )  # alpha=args.alpha
 
-    actor = GAN(nin=args.dinput,
-                nhidden=args.dhidden,
-                nout=args.doutput,
-                dropout=args.dropout,
-                alpha=args.alpha
-                )  # alpha=args.alpha
+    # actor = GAN(nin=args.dinput,
+    #             nhidden=args.dhidden,
+    #             nout=args.doutput,
+    #             dropout=args.dropout,
+    #             alpha=args.alpha
+    #             )  # alpha=args.alpha
 
     if dataset_name == 'UFSMDataset':
         test_dataset = dataset(start=24, end=26)
