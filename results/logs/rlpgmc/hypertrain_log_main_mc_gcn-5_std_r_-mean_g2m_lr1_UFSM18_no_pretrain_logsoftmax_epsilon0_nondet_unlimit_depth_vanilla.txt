@@ -54,3 +54,27 @@ parameter name actor.gc5.bias parameter value tensor(1.00000e-02 *
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/train_a2c_mc.py:546: RuntimeWarning: invalid value encountered in double_scalars
   _val_ave_mind = np.sum(val_mind) / len(val_mind)
 epochs 0 loss -274.6954040527344 train min_degreeperformance 9436.0 train gcn performance 609161.0 val min_degreeperformance nan val gcn performance nan
+epochs 1 loss -242.14169311523438 train min_degreeperformance 9436.0 train gcn performance 626379.0 val min_degreeperformance nan val gcn performance nan
+epochs 2 loss 1865.00341796875 train min_degreeperformance 9436.0 train gcn performance 775477.0 val min_degreeperformance nan val gcn performance nan
+epochs 3 loss -334.1449890136719 train min_degreeperformance 9436.0 train gcn performance 642096.0 val min_degreeperformance nan val gcn performance nan
+epochs 4 loss 1883.4090576171875 train min_degreeperformance 9436.0 train gcn performance 775589.0 val min_degreeperformance nan val gcn performance nan
+epochs 5 loss 1024.384033203125 train min_degreeperformance 9436.0 train gcn performance 11105.0 val min_degreeperformance nan val gcn performance nan
+epochs 6 loss 682.0796508789062 train min_degreeperformance 9436.0 train gcn performance 11784.0 val min_degreeperformance nan val gcn performance nan
+epochs 7 loss 465.5357360839844 train min_degreeperformance 9436.0 train gcn performance 11783.0 val min_degreeperformance nan val gcn performance nan
+epochs 8 loss 378.52667236328125 train min_degreeperformance 9436.0 train gcn performance 11785.0 val min_degreeperformance nan val gcn performance nan
+epochs 9 loss 344.27813720703125 train min_degreeperformance 9436.0 train gcn performance 11783.0 val min_degreeperformance nan val gcn performance nan
+epochs 10 loss 322.84442138671875 train min_degreeperformance 9436.0 train gcn performance 11783.0 val min_degreeperformance nan val gcn performance nan
+epochs 11 loss 311.9728698730469 train min_degreeperformance 9436.0 train gcn performance 11783.0 val min_degreeperformance nan val gcn performance nan
+epochs 12 loss 317.8380432128906 train min_degreeperformance 9436.0 train gcn performance 11785.0 val min_degreeperformance nan val gcn performance nan
+epochs 13 loss 322.5128173828125 train min_degreeperformance 9436.0 train gcn performance 11783.0 val min_degreeperformance nan val gcn performance nan
+epochs 14 loss 314.16302490234375 train min_degreeperformance 9436.0 train gcn performance 11785.0 val min_degreeperformance nan val gcn performance nan
+epochs 15 loss 308.2674255371094 train min_degreeperformance 9436.0 train gcn performance 11783.0 val min_degreeperformance nan val gcn performance nan
+epochs 16 loss 321.6396789550781 train min_degreeperformance 9436.0 train gcn performance 11770.0 val min_degreeperformance nan val gcn performance nan
+epochs 17 loss 309.006591796875 train min_degreeperformance 9436.0 train gcn performance 11785.0 val min_degreeperformance nan val gcn performance nan
+epochs 18 loss 326.70794677734375 train min_degreeperformance 9436.0 train gcn performance 11785.0 val min_degreeperformance nan val gcn performance nan
+epochs 19 loss 336.673583984375 train min_degreeperformance 9436.0 train gcn performance 11785.0 val min_degreeperformance nan val gcn performance nan
+epochs 20 loss 329.2590637207031 train min_degreeperformance 9436.0 train gcn performance 11785.0 val min_degreeperformance nan val gcn performance nan
+epochs 21 loss 347.0995788574219 train min_degreeperformance 9436.0 train gcn performance 11783.0 val min_degreeperformance nan val gcn performance nan
+epochs 22 loss 372.1076354980469 train min_degreeperformance 9436.0 train gcn performance 11785.0 val min_degreeperformance nan val gcn performance nan
+epochs 23 loss 372.6539611816406 train min_degreeperformance 9436.0 train gcn performance 11785.0 val min_degreeperformance nan val gcn performance nan
+epochs 24 loss 368.2176818847656 train min_degreeperformance 9436.0 train gcn performance 11783.0 val min_degreeperformance nan val gcn performance nan
