@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
-from gcn.layers_gcn import GraphConvolutionLayer, GraphConvolutionLayer_Sparse, GraphConvolutionLayer_Sparse_Memory, GraphAttentionConvLayer
+from gcn.layers_gcn import GraphConvolutionLayer, GraphConvolutionLayer_Sparse, GraphConvolutionLayer_Sparse_Memory, GraphAttentionConvLayer, GraphAttentionConvLayerMemory
 
 
 class GCN_Policy_SelectNode(nn.Module):
@@ -244,6 +244,34 @@ class GAN_5(nn.Module):
         self.gc3= GraphAttentionConvLayer(nhidden, nhidden, dropout, alpha)
         self.gc4 = GraphAttentionConvLayer(nhidden, nhidden, dropout, alpha)
         self.gc5 = GraphAttentionConvLayer(nhidden, nout, dropout, alpha)
+        self.dropout = dropout
+
+    def forward(self, features, adj_matrix):
+        # features = F.dropout(features, self.dropout, training=self.training)
+        features = self.gc1(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc2(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc3(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc4(features, adj_matrix)
+        features = F.relu(features)
+        # features = F.dropout(features, self.dropout, training=self.training)
+        features = self.gc5(features, adj_matrix)
+        features = F.log_softmax(features.t())
+        features = features.t()
+        return features
+
+
+class GAN_Memory_5(nn.Module):
+    def __init__(self, nin, nhidden, nout, dropout, alpha):
+        super(GAN_Memory_5, self).__init__()
+
+        self.gc1 = GraphAttentionConvLayerMemory(nin, nhidden, dropout, alpha)
+        self.gc2 = GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc3=  GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc4 = GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc5 = GraphAttentionConvLayerMemory(nhidden, nout, dropout, alpha)
         self.dropout = dropout
 
     def forward(self, features, adj_matrix):
