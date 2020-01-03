@@ -40,3 +40,17 @@ parameter name actor.gc5.bias parameter value tensor([ 0.], device='cuda:0')
   _val_ave_mind = np.sum(val_mind) / len(val_mind)
 epochs 0 loss -742.5447387695312 train min_degreeperformance 8902.0 train gcn performance 231160.0 val min_degreeperformance nan val gcn performance nan
 epochs 1 loss -734.3758544921875 train min_degreeperformance 8902.0 train gcn performance 245519.0 val min_degreeperformance nan val gcn performance nan
+epochs 2 loss -863.2025146484375 train min_degreeperformance 8902.0 train gcn performance 251498.0 val min_degreeperformance nan val gcn performance nan
+epochs 3 loss -712.8838500976562 train min_degreeperformance 8902.0 train gcn performance 248391.0 val min_degreeperformance nan val gcn performance nan
+epochs 4 loss -707.4400634765625 train min_degreeperformance 8902.0 train gcn performance 226062.0 val min_degreeperformance nan val gcn performance nan
+epochs 5 loss -741.1320190429688 train min_degreeperformance 8902.0 train gcn performance 334051.0 val min_degreeperformance nan val gcn performance nan
+epochs 6 loss -777.2989501953125 train min_degreeperformance 8902.0 train gcn performance 222532.0 val min_degreeperformance nan val gcn performance nan
+epochs 7 loss -838.3094482421875 train min_degreeperformance 8902.0 train gcn performance 232492.0 val min_degreeperformance nan val gcn performance nan
+epochs 8 loss -848.310302734375 train min_degreeperformance 8902.0 train gcn performance 261890.0 val min_degreeperformance nan val gcn performance nan
+epochs 9 loss -683.8272094726562 train min_degreeperformance 8902.0 train gcn performance 402714.0 val min_degreeperformance nan val gcn performance nan
+epochs 10 loss -714.7898559570312 train min_degreeperformance 8902.0 train gcn performance 444210.0 val min_degreeperformance nan val gcn performance nan
+epochs 11 loss -643.1668701171875 train min_degreeperformance 8902.0 train gcn performance 412985.0 val min_degreeperformance nan val gcn performance nan
+epochs 12 loss -833.1434326171875 train min_degreeperformance 8902.0 train gcn performance 264496.0 val min_degreeperformance nan val gcn performance nan
+epochs 13 loss -588.0139770507812 train min_degreeperformance 8902.0 train gcn performance 327336.0 val min_degreeperformance nan val gcn performance nan
+epochs 14 loss -809.2509765625 train min_degreeperformance 8902.0 train gcn performance 291429.0 val min_degreeperformance nan val gcn performance nan
+epochs 15 loss -720.435302734375 train min_degreeperformance 8902.0 train gcn performance 247776.0 val min_degreeperformance nan val gcn performance nan
