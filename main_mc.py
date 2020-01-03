@@ -174,11 +174,11 @@ for i in range(len(lr)):
     #                                      dropout=args.dropout,
     #                                      )  # alpha=args.alpha
 
-    actor = GCN_Sparse_Memory_Policy_SelectNode_5(nin=args.dinput,
-                                         nhidden=args.dhidden,
-                                         nout=args.doutput,
-                                         dropout=args.dropout,
-                                         )  # alpha=args.alpha
+    # actor = GCN_Sparse_Memory_Policy_SelectNode_5(nin=args.dinput,
+    #                                      nhidden=args.dhidden,
+    #                                      nout=args.doutput,
+    #                                      dropout=args.dropout,
+    #                                      )  # alpha=args.alpha
 
 
     # actor = GAN(nin=args.dinput,
@@ -195,12 +195,12 @@ for i in range(len(lr)):
     #             alpha=args.alpha
     #             )  # alpha=args.alpha
 
-    # actor = GAN_Memory_5(nin=args.dinput,
-    #                      nhidden=args.dhidden,
-    #                      nout=args.doutput,
-    #                      dropout=args.dropout,
-    #                      alpha=args.alpha
-    #                      )  # alpha=args.alpha
+    actor = GAN_Memory_5(nin=args.dinput,
+                         nhidden=args.dhidden,
+                         nout=args.doutput,
+                         dropout=args.dropout,
+                         alpha=args.alpha
+                         )  # alpha=args.alpha
 
     if dataset_name == 'UFSMDataset':
         test_dataset = dataset(start=24, end=26)
