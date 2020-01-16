@@ -4,11 +4,12 @@ from data.SSMCDataset import SSMCDataset
 from data.UFSMDataset import UFSMDataset
 from data.UFSMDataset_Demo import UFSMDataset_Demo
 from data.graph import Graph
+from utils.utils import open_dataset, varname
 
 from rl.model_a2c import Model_A2C_Sparse
 from rl.train_a2c_td import TrainModel_TD
 from rl.train_a2c_mc import TrainModel_MC
-from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GAN_Memory_5
+from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GCN_Sparse_Memory_Policy_SelectNode_10, GAN_Memory_5, GAN_Memory_10
 from gcn.models_gcn import GCN_Value, GCN_Sparse_Value
 from supervised.train_supervised_learning import Train_SupervisedLearning
 
@@ -17,6 +18,7 @@ import time
 import argparse
 import torch
 import numpy as np
+import pickle as pkl
 import matplotlib.pyplot as plt
 
 
@@ -140,7 +142,8 @@ heuristic = 'min_degree' # 'min_degree' 'one_step_greedy'
 
 # load data and pre-process
 dataset = UFSMDataset_Demo
-dataset_name = dataset.__name__[0:11]
+# dataset_name = dataset.__name__[0:11]
+dataset_name = 'UFSM_small'
 
 
 # train RL-model
@@ -174,7 +177,7 @@ for i in range(len(lr)):
     #                                      dropout=args.dropout,
     #                                      )  # alpha=args.alpha
 
-    # actor = GCN_Sparse_Memory_Policy_SelectNode_5(nin=args.dinput,
+    # actor = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
     #                                      nhidden=args.dhidden,
     #                                      nout=args.doutput,
     #                                      dropout=args.dropout,
@@ -195,7 +198,7 @@ for i in range(len(lr)):
     #             alpha=args.alpha
     #             )  # alpha=args.alpha
 
-    actor = GAN_Memory_5(nin=args.dinput,
+    actor = GAN_Memory_10(nin=args.dinput,
                          nhidden=args.dhidden,
                          nout=args.doutput,
                          dropout=args.dropout,
@@ -211,6 +214,15 @@ for i in range(len(lr)):
         train_dataset = dataset(args.nnode, args.ngraph, args.p)
         val_dataset = dataset(args.nnode, args.ngraph, args.p)
         test_dataset = dataset(args.nnode_test, args.ngraph_test, args.p)
+    else:
+        with open('./data/UFSM/ss_small/ss_small.pkl', "rb") as f:
+            train_dataset = pkl.load(f)
+
+        # with open('./data/UFSM/ss_large/ss_large.pkl', "rb") as f:
+        #     val_ss_large = pkl.load(f)
+        # train_dataset = open_dataset('./data/UFSM/ss_small/ss_small.pkl')
+        val_dataset = dataset(start=19, end=19)
+
 
     if args.cuda:
         # actor.load_state_dict(

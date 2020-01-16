@@ -387,11 +387,11 @@ class GraphAttentionConvLayerMemory(Module):
 
     def forward(self, features, adj_sparse):
 
+        features_hat = torch.mm(features, self.weight)  # features * weight
         features = torch.mm(features, self.weight) # features parameterized by weight
         if self.bias is not None:
             features += self.bias
 
-        features_hat = torch.mm(features, self.weight)  # features * weight
 
         # build attention sparse matrix
         adj_idx = adj_sparse._indices() # get index set of adj

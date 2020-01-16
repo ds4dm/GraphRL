@@ -90,6 +90,9 @@ class Graph:
         - `m`: Integer
             The number of edges that were addded to the graph.
         """
+        if (k<0 or k>= self.n):
+            print(k)
+
         assert (0 <= k < self.n)  # node must exist in graph
         m = 0
 

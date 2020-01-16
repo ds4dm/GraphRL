@@ -164,64 +164,65 @@ class TrainModel_MC:
                         # returns = returns + 1
                         # returns = -returns.log()
 
-                        # standard return
-                        returns = -returns
+                        if len(returns):
 
+                            # standard return
+                            returns = -returns
 
-                        returns = (returns - self.model.epsilon / 530000) / (1 - self.model.epsilon)
-                        # returns = returns / (returns.std() + self.eps)
+                            # returns = (returns - self.model.epsilon / 530000) / (1 - self.model.epsilon)
+                            # returns = returns / (returns.std() + self.eps)
 
-                        returns = (returns - returns.mean()) / (returns.std() + self.eps)
-                        saved_actions = self.model.saved_actions
-                        # compute cummulated loss of actor and critic of one graph
-                        gamma_t = 1
-                        for (log_prob, value_current), R in zip(saved_actions, returns):
-                            if use_critic:
-                                advantage = R - value_current
-                                critic_losses.append(-value_current * advantage)
-                                # critic_losses.append(self.critic_loss_criterion(value_current, torch.Tensor([R.detach()])))
-                            else:
-                                advantage = R - baseline
-                            if self.use_cuda:
-                                advantage = advantage.cuda()
-                            actor_losses.append(
-                                -gamma_t * log_prob * advantage.detach())  # the return here is discounted nb of added edges,
-                                                                           # hence, if it actually represents loss
-                            # gamma_t = gamma_t * gamma
+                            returns = (returns - returns.mean()) / (returns.std() + self.eps)
+                            saved_actions = self.model.saved_actions
+                            # compute cummulated loss of actor and critic of one graph
+                            gamma_t = 1
+                            for (log_prob, value_current), R in zip(saved_actions, returns):
+                                if use_critic:
+                                    advantage = R - value_current
+                                    critic_losses.append(-value_current * advantage)
+                                    # critic_losses.append(self.critic_loss_criterion(value_current, torch.Tensor([R.detach()])))
+                                else:
+                                    advantage = R - baseline
+                                if self.use_cuda:
+                                    advantage = advantage.cuda()
+                                actor_losses.append(
+                                    -gamma_t * log_prob * advantage.detach())  # the return here is discounted nb of added edges,
+                                                                               # hence, if it actually represents loss
+                                # gamma_t = gamma_t * gamma
 
-                        # step update of actor
-                        actor_loss = torch.stack(actor_losses).sum()
-                        total_loss_train_1graph = actor_loss.item()
-                        # self.actor_optim.zero_grad()
-                        # actor_loss.backward(retain_graph=True)
-                        # self.actor_optim.step()
-                        # print('epochs {}'.format(epoch), 'loss {}'.format(actor_loss))
+                            # step update of actor
+                            actor_loss = torch.stack(actor_losses).sum()
+                            total_loss_train_1graph = actor_loss.item()
+                            # self.actor_optim.zero_grad()
+                            # actor_loss.backward(retain_graph=True)
+                            # self.actor_optim.step()
+                            # print('epochs {}'.format(epoch), 'loss {}'.format(actor_loss))
 
-                        # step update of critic
-                        # if use_critic:
-                        #     self.critic_optim.zero_grad()
-                        #     critic_closs = torch.stack(critic_losses).sum()
-                        #     critic_closs.backward()
-                        #     self.critic_optim.step()
-                        # else:
-                        #     baseline = baseline.detach()
+                            # step update of critic
+                            # if use_critic:
+                            #     self.critic_optim.zero_grad()
+                            #     critic_closs = torch.stack(critic_losses).sum()
+                            #     critic_closs.backward()
+                            #     self.critic_optim.step()
+                            # else:
+                            #     baseline = baseline.detach()
 
-                        train_gcn_greedy.append(sum(self.model.rewards))
-                        if epoch == 0:
-                            train_mind.append(train_rewards_mindegree)
-                        #
-                        # _ratio_gcn2mind = rewards_gcn_sto / rewards_mindegree
-                        # # _ratio_gcn2rand = rewards_gcn / rewards_random
-                        # gcn_greedy.append(rewards_gcn_greedy)
-                        # gcn_sto.append(rewards_gcn_sto)
-                        # mind.append(rewards_mindegree)
-                        # # rand.append(rewards_random)
-                        # ratio_gcn2mind.append(_ratio_gcn2mind)
-                        # # ratio_gcn2rand.append(_ratio_gcn2rand)
+                            train_gcn_greedy.append(sum(self.model.rewards))
+                            if epoch == 0:
+                                train_mind.append(train_rewards_mindegree)
+                            #
+                            # _ratio_gcn2mind = rewards_gcn_sto / rewards_mindegree
+                            # # _ratio_gcn2rand = rewards_gcn / rewards_random
+                            # gcn_greedy.append(rewards_gcn_greedy)
+                            # gcn_sto.append(rewards_gcn_sto)
+                            # mind.append(rewards_mindegree)
+                            # # rand.append(rewards_random)
+                            # ratio_gcn2mind.append(_ratio_gcn2mind)
+                            # # ratio_gcn2rand.append(_ratio_gcn2rand)
 
-                        del self.model.rewards[:]
-                        del self.model.actions[:]
-                        del self.model.saved_actions[:]
+                            del self.model.rewards[:]
+                            del self.model.actions[:]
+                            del self.model.saved_actions[:]
 
                     av_loss_train += total_loss_train_1graph
 
@@ -593,7 +594,7 @@ class TrainModel_MC:
             # plt.draw()
             plt.savefig(
                 './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
-                    lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_curve_g2m_number_gan-5-memo_logsoftmax_no_pretrain_train_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
+                    lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_curve_g2m_number_gan-10-h1-memo_logsoftmax_no_pretrain_train_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
                     self.use_cuda) + '_return_-mean.png')
             plt.clf()
 
@@ -607,7 +608,7 @@ class TrainModel_MC:
             # plt.draw()
             plt.savefig(
                 './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
-                    lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy())  + '_' + self.heuristic + '_curve_g2m_number_gan-5-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
+                    lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy())  + '_' + self.heuristic + '_curve_g2m_number_gan-10-h1-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
                     self.use_cuda) + '_return_-mean.png')
             plt.clf()
 
@@ -621,7 +622,7 @@ class TrainModel_MC:
             # plt.draw()
             plt.savefig(
                 './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
-                    lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_loss_curve_g2m_number_gan-5-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_umlim_depth_prune_cuda' + str(
+                    lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_loss_curve_g2m_number_gan-10-h1-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_umlim_depth_prune_cuda' + str(
                     self.use_cuda) + '_return_-mean.png')
             plt.clf()
 

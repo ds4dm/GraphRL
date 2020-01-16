@@ -185,6 +185,57 @@ class GCN_Sparse_Memory_Policy_SelectNode_5(nn.Module):
         return features
 
 
+class GCN_Sparse_Memory_Policy_SelectNode_10(nn.Module):
+    """
+    GCN model for node selection policy
+    """
+    def __init__(self, nin, nhidden, nout, dropout):
+        super(GCN_Sparse_Memory_Policy_SelectNode_10, self).__init__()
+
+        self.gc1 = GraphConvolutionLayer_Sparse_Memory(nin, nhidden) # first graph conv layer
+        self.gc2 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc3 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc4 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc5 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc6 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc7 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc8 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc9 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc10 = GraphConvolutionLayer_Sparse_Memory(nhidden, nout) # second graph conv layer
+        self.dropout = dropout
+
+
+    def forward(self, features, adj_matrix):
+        # first layer with relu
+        # features = F.dropout(features, self.dropout, training=self.training)
+        features = self.gc1(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc2(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc3(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc4(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc5(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc6(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc7(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc8(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc9(features, adj_matrix)
+        features = F.relu(features)
+
+        # second layer with softmax
+        features = self.gc10(features, adj_matrix)
+        features = F.softmax(features.t())
+        features = features.t()
+
+        return features
+
+
+
 class GCN_Sparse_Value(nn.Module):
     """
     GCN model for value function, the negative number of edges added
@@ -289,6 +340,49 @@ class GAN_Memory_5(nn.Module):
         features = F.log_softmax(features.t())
         features = features.t()
         return features
+
+class GAN_Memory_10(nn.Module):
+    def __init__(self, nin, nhidden, nout, dropout, alpha):
+        super(GAN_Memory_10, self).__init__()
+
+        self.gc1 = GraphAttentionConvLayerMemory(nin, nhidden, dropout, alpha)
+        self.gc2 = GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc3=  GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc4 = GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc5 = GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc6 = GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc7 = GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc8 = GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc9 = GraphAttentionConvLayerMemory(nhidden, nhidden, dropout, alpha)
+        self.gc10 = GraphAttentionConvLayerMemory(nhidden, nout, dropout, alpha)
+        self.dropout = dropout
+
+    def forward(self, features, adj_matrix):
+        # features = F.dropout(features, self.dropout, training=self.training)
+        features = self.gc1(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc2(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc3(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc4(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc5(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc6(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc7(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc8(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc9(features, adj_matrix)
+        features = F.relu(features)
+        # features = F.dropout(features, self.dropout, training=self.training)
+        features = self.gc10(features, adj_matrix)
+        features = F.log_softmax(features.t())
+        features = features.t()
+        return features
+
 
 
 class GAN_Value(nn.Module):

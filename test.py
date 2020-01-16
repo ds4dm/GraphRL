@@ -1,15 +1,16 @@
 import numpy as np
 import argparse
 import torch
+from torch.distributions import Categorical
 
-# for i in range(18, 19):
-#     print(i)
-#     print(i+1)
+w = []
 
-a = torch.tensor([[1,2],[3,4]])
-b = torch.tensor([[1,1]])
-print(a.size)
-print(b.size)
-print(a+b)
+w = torch.tensor(w)
+
+if len(w):
+    print(1)
+else:
+    print(0)
+
 
 
