@@ -33,8 +33,8 @@ parser.add_argument('--pretrain_epochs', type=int, default=3, help='Training epo
 parser.add_argument('--lr_actor', type=float, default= 0.001, help='Learning rate of actor')
 parser.add_argument('--lr_critic', type=float, default= 0.001, help='Learning rate of critic')
 parser.add_argument('--wd', type=float, default=5e-4, help='Weight decay')
-parser.add_argument('--dhidden', type=int, default=10, help='Dimension of hidden features')
-parser.add_argument('--dinput', type=int, default=1, help='Dimension of input features')
+parser.add_argument('--dhidden', type=int, default=3, help='Dimension of hidden features')
+parser.add_argument('--dinput', type=int, default=3, help='Dimension of input features')
 parser.add_argument('--doutput', type=int, default=1, help='Dimension of output features')
 parser.add_argument('--dropout', type=float, default=0.1, help='Dropout Rate')
 parser.add_argument('--alpha', type=float, default=0.2, help='Aplha')
@@ -145,7 +145,7 @@ heuristic = 'min_degree' # 'min_degree' 'one_step_greedy'
 # dataset_name = dataset.__name__
 # dataset_name = dataset.__name__[0:11]
 
-dataset = UFSMDataset
+dataset = UFSMDataset_Demo
 dataset_name = dataset.__name__
 
 
@@ -197,7 +197,7 @@ for i in range(len(lr)):
     #             alpha=args.alpha
     #             )  # alpha=args.alpha
 
-    actor = GAN_Memory_10(nin=args.dinput,
+    actor = GAN_Memory_5(nin=args.dinput,
                          nhidden=args.dhidden,
                          nout=args.doutput,
                          dropout=args.dropout,

@@ -51,9 +51,13 @@ class Model_A2C(nn.Module):
 
         """
 
-        features = np.ones([inputs.n, 1], dtype=np.float32)  # initialize the feature matrix
-        features = torch.FloatTensor(features)
-        adj_M = torch.FloatTensor(inputs.M) # adj matrix of input graph
+        adj_M = torch.FloatTensor(inputs.M)  # adj matrix of input graph
+
+        features = torch.zeros([inputs.n, 3], dtype=torch.float32)
+        features[:,0] = torch.ones([inputs.n, 1], dtype=np.float32)  # initialize the feature matrix
+        features[:, 1] = torch.mm(adj_M, features[:,0])
+        features[:, 2] = inputs.n - features[:,1]
+
 
 
         if self.use_cuda:
