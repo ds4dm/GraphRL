@@ -33,7 +33,7 @@ parser.add_argument('--pretrain_epochs', type=int, default=3, help='Training epo
 parser.add_argument('--lr_actor', type=float, default= 0.001, help='Learning rate of actor')
 parser.add_argument('--lr_critic', type=float, default= 0.001, help='Learning rate of critic')
 parser.add_argument('--wd', type=float, default=5e-4, help='Weight decay')
-parser.add_argument('--dhidden', type=int, default=1, help='Dimension of hidden features')
+parser.add_argument('--dhidden', type=int, default=10, help='Dimension of hidden features')
 parser.add_argument('--dinput', type=int, default=1, help='Dimension of input features')
 parser.add_argument('--doutput', type=int, default=1, help='Dimension of output features')
 parser.add_argument('--dropout', type=float, default=0.1, help='Dropout Rate')
@@ -141,18 +141,17 @@ if args.use_critic:
 heuristic = 'min_degree' # 'min_degree' 'one_step_greedy'
 
 # load data and pre-process
-dataset = UFSMDataset_Demo
+# dataset = UFSMDataset_Demo
+# dataset_name = dataset.__name__
 # dataset_name = dataset.__name__[0:11]
-dataset_name = 'UFSM_small'
+
+dataset = UFSMDataset
+dataset_name = dataset.__name__
 
 
 # train RL-model
 
-print('Supervised Training started')
-print('heuristic: '+heuristic,
-      'actor learning rate: {}'.format(args.lr_actor),
-      'epochs: {}'.format(args.epochs),
-      'DataSet: '+dataset.__name__+'\n')
+
 eps = [0, 0.001, 0.01 ,0.02, 0.05, 0.1, 0.2, 0.5 ]
 
 # lr = [0.00001, 0.0001, 0.001, 0.01, 0.1]
@@ -205,7 +204,7 @@ for i in range(len(lr)):
                          alpha=args.alpha
                          )  # alpha=args.alpha
 
-    if dataset_name == 'UFSMDataset':
+    if dataset_name == 'UFSMDataset_Demo':
         test_dataset = dataset(start=24, end=26)
         train_dataset = dataset(start=18, end=19)
         # val_dataset = dataset(args.nnode_test, args.ngraph_test, args.p)
@@ -221,7 +220,7 @@ for i in range(len(lr)):
         # with open('./data/UFSM/ss_large/ss_large.pkl', "rb") as f:
         #     val_ss_large = pkl.load(f)
         # train_dataset = open_dataset('./data/UFSM/ss_small/ss_small.pkl')
-        val_dataset = dataset(start=19, end=19)
+        val_dataset = UFSMDataset_Demo(start=19, end=19)
 
 
     if args.cuda:
@@ -238,6 +237,12 @@ for i in range(len(lr)):
                                  critic=critic)
     if args.cuda:
         model_a2c.cuda()
+
+    print('Supervised Training started')
+    print('heuristic: ' + heuristic,
+          'actor learning rate: {}'.format(lr),
+          'epochs: {}'.format(args.epochs),
+          'Train DataSet: ' + train_dataset.__class__.__name__ + '\n')
 
     train_a2c = TrainModel_MC(model_a2c,
                               heuristic=heuristic,
