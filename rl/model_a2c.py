@@ -53,8 +53,8 @@ class Model_A2C(nn.Module):
 
         adj_M = torch.FloatTensor(inputs.M)  # adj matrix of input graph
 
-        features = torch.zeros([inputs.n, 3], dtype=torch.float32)
-        features[:,0] = torch.ones([inputs.n, 1], dtype=np.float32)  # initialize the feature matrix
+        features = torch.zeros([inputs.n, 3], dtype=torch.float32) # initialize the feature matrix
+        features[:,0] = torch.ones([inputs.n, 1], dtype=torch.float32)
         features[:, 1] = torch.mm(adj_M, features[:,0])
         features[:, 2] = inputs.n - features[:,1]
 
@@ -77,9 +77,12 @@ class Model_A2C(nn.Module):
 
         r = inputs.eliminate_node(node_selected, reduce=True) # reduce the graph and return the nb of edges added
 
-        features = np.ones([inputs.n, 1], dtype=np.float32)  # initialize the feature matrix
-        features = torch.FloatTensor(features)
         adj_M = torch.FloatTensor(inputs.M)  # adj matrix of reduced graph
+
+        features = torch.zeros([inputs.n, 3], dtype=torch.float32) # initialize the feature matrix
+        features[:, 0] = torch.ones([inputs.n, 1], dtype=torch.float32)
+        features[:, 1] = torch.mm(adj_M, features[:, 0])
+        features[:, 2] = inputs.n - features[:, 1]
         
         if self.use_cuda:
             adj_M = adj_M.cuda()
@@ -137,10 +140,13 @@ class Model_A2C_Sparse(nn.Module):
 
         """
 
-        features = np.ones([inputs.n, 1], dtype=np.float32)  # initialize the feature matrix
-        features = torch.FloatTensor(features)
         adj_M = torch.FloatTensor(inputs.M)  # adj matrix of input graph
-        adj_M = utils.to_sparse(adj_M) # convert to coo sparse tensor
+        adj_M = utils.to_sparse(adj_M)  # convert to coo sparse tensor
+
+        features = torch.zeros([inputs.n, 3], dtype=torch.float32)  # initialize the feature matrix
+        features[:, 0] = torch.ones([inputs.n, 1], dtype=torch.float32)
+        features[:, 1] = torch.mm(adj_M, features[:, 0])
+        features[:, 2] = inputs.n - features[:, 1]
 
         random_choice = torch.ones(inputs.n)
         epsilon = self.epsilon
@@ -179,10 +185,15 @@ class Model_A2C_Sparse(nn.Module):
 
         # call critic to compute the value for current state
         if self.use_critic:
-            features = np.ones([inputs.n, 1], dtype=np.float32)  # initialize the feature matrix
-            features = torch.FloatTensor(features)
+
             adj_M = torch.FloatTensor(inputs.M)  # adj matrix of reduced graph
             adj_M = utils.to_sparse(adj_M)  # convert to coo sparse tensor
+
+            features = torch.zeros([inputs.n, 3], dtype=torch.float32)  # initialize the feature matrix
+            features[:, 0] = torch.ones([inputs.n, 1], dtype=torch.float32)
+            features[:, 1] = torch.mm(adj_M, features[:, 0])
+            features[:, 2] = inputs.n - features[:, 1]
+
             if self.use_cuda:
                 adj_M = adj_M.cuda()
                 features = features.cuda()
