@@ -67,7 +67,7 @@ class Model_A2C(nn.Module):
         probs = self.actor(features, adj_M) # call actor to get a selection distribution
         probs = probs.view(-1)
 
-        m = Categorical(probs)
+        m = Categorical(logits=probs)
         node_selected = m.sample()
         # node_selected = probs.multinomial()  # choose the node given by GCN (add .squeeze(1) for batch training)
         log_prob = m.log_prob(node_selected)
@@ -145,7 +145,7 @@ class Model_A2C_Sparse(nn.Module):
 
         features = torch.zeros([inputs.n, 3], dtype=torch.float32)  # initialize the feature matrix
         features[:, 0] = torch.ones([inputs.n], dtype=torch.float32)
-        features[:, 1] = torch.mm(adj_M, features[:, 0].view(-1, 1)).view(-1)
+        features[:, 1] = torch.spmm(adj_M, features[:, 0].view(-1, 1)).view(-1)
         features[:, 2] = inputs.n - features[:, 1]
 
         random_choice = torch.ones(inputs.n)
@@ -165,6 +165,7 @@ class Model_A2C_Sparse(nn.Module):
 
         # probs = torch.exp(probs)
         m = Categorical(logits=probs) #
+        print('sum of probs: {}'.format(probs.exp().sum()))
 
         # node_selected = m_rand.sample()
         if torch.bernoulli(epsilon)==1:
@@ -181,6 +182,9 @@ class Model_A2C_Sparse(nn.Module):
         else:
             critic_current = 0
 
+
+        # if node_selected < 0 or node_selected >= inputs.n:
+        #     print(node_selected)
         r = inputs.eliminate_node(node_selected, reduce=True)  # reduce the graph and return the nb of edges added
 
         # call critic to compute the value for current state

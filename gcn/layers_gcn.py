@@ -271,11 +271,11 @@ class GraphAttentionConvLayer(Module):
         i = sparse_matrix._indices()
         v = sparse_matrix._values()
         v =F.softmax(v)
-        # for n in range(i[dim,:].max()+1):
-        #     set=np.where(i[dim,:]==n)[0]
-        #     v[set]=F.softmax(v[set])
-        #     # print(rowset)
-        #     # print(a._values()[rowset])
+        for n in range(i[dim,:].max()+1):
+            set=np.where(i[dim,:]==n)[0]
+            v[set]=F.softmax(v[set])
+            # print(rowset)
+            # print(a._values()[rowset])
         # v = F.dropout(v, self.dropout, training=self.training)
         sparse_matrix._values = v
         return sparse_matrix
@@ -283,8 +283,7 @@ class GraphAttentionConvLayer(Module):
     def forward(self, features, adj_sparse):
 
         features = torch.mm(features, self.weight) # features parameterized by weight
-        if self.bias is not None:
-            features += self.bias
+
 
         # build attention sparse matrix
         adj_idx = adj_sparse._indices() # get index set of adj
@@ -299,7 +298,11 @@ class GraphAttentionConvLayer(Module):
             else:
                 atten_sparse = torch.sparse.FloatTensor(adj_idx, adj_v, adj_sparse.size()) # build attention sparse adj matrix
 
-            # atten_sparse = self.sparse_softmax(sparse_matrix = atten_sparse, dim=0) # softmax of attention
+            atten_sparse = self.sparse_softmax(sparse_matrix = atten_sparse, dim=0) # softmax of attention
+
+            if self.bias is not None:
+                features += self.bias
+
             features = torch.spmm(atten_sparse, features)
 
         return features
@@ -376,11 +379,11 @@ class GraphAttentionConvLayerMemory(Module):
         i = sparse_matrix._indices()
         v = sparse_matrix._values()
         v =F.softmax(v)
-        # for n in range(i[dim,:].max()+1):
-        #     set=np.where(i[dim,:]==n)[0]
-        #     v[set]=F.softmax(v[set])
-        #     # print(rowset)
-        #     # print(a._values()[rowset])
+        for n in range(i[dim,:].max()+1):
+            set=np.where(i[dim,:]==n)[0]
+            v[set]=F.softmax(v[set])
+            # print(rowset)
+            # print(a._values()[rowset])
         # v = F.dropout(v, self.dropout, training=self.training)
         sparse_matrix._values = v
         return sparse_matrix
@@ -389,8 +392,6 @@ class GraphAttentionConvLayerMemory(Module):
 
         features_hat = torch.mm(features, self.weight)  # features * weight
         features = torch.mm(features, self.weight) # features parameterized by weight
-        if self.bias is not None:
-            features += self.bias
 
 
         # build attention sparse matrix
@@ -406,7 +407,11 @@ class GraphAttentionConvLayerMemory(Module):
             else:
                 atten_sparse = torch.sparse.FloatTensor(adj_idx, adj_v, adj_sparse.size()) # build attention sparse adj matrix
 
-            # atten_sparse = self.sparse_softmax(sparse_matrix = atten_sparse, dim=0) # softmax of attention
+            atten_sparse = self.sparse_softmax(sparse_matrix = atten_sparse, dim=0) # softmax of attention
+
+            if self.bias is not None:
+                features += self.bias
+
             features = torch.spmm(atten_sparse, features) + features_hat # adjacency matrix * features
 
         return features

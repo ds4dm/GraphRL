@@ -1,0 +1,2927 @@
+nohup: ignoring input
+[[1 2 3]
+ [4 5 6]]
+| Xavier Initialization
+| Xavier Initialization
+| Xavier Initialization
+| Xavier Initialization
+| Xavier Initialization
+Supervised Training started
+heuristic: min_degree actor learning rate: [0.1] epochs: 500 Train DataSet: UFSMDataset_Demo
+
+Use Critic:
+False
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:340: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
+node selected: 786
+node selected: 586
+node selected: 850
+node selected: 155
+node selected: 505
+node selected: 1069
+node selected: 271
+node selected: 554
+node selected: 927
+node selected: 378
+node selected: 730
+node selected: 412
+node selected: 31
+node selected: 423
+node selected: 640
+node selected: 39
+node selected: 113
+node selected: 23
+node selected: 59
+node selected: 412
+node selected: 1100
+node selected: 591
+node selected: 780
+node selected: 694
+node selected: 707
+node selected: 758
+node selected: 555
+node selected: 631
+node selected: 508
+node selected: 725
+node selected: 1094
+node selected: 844
+node selected: 970
+node selected: 147
+node selected: 357
+node selected: 673
+node selected: 944
+node selected: 993
+node selected: 454
+node selected: 29
+node selected: 460
+node selected: 1
+node selected: 618
+node selected: 97
+node selected: 516
+node selected: 131
+node selected: 657
+node selected: 161
+node selected: 870
+node selected: 501
+node selected: 261
+node selected: 394
+node selected: 758
+node selected: 436
+node selected: 253
+node selected: 31
+node selected: 234
+node selected: 536
+node selected: 1171
+node selected: 633
+node selected: 121
+node selected: 743
+node selected: 303
+node selected: 868
+node selected: 655
+node selected: 736
+node selected: 101
+node selected: 669
+node selected: 397
+node selected: 654
+node selected: 765
+node selected: 403
+node selected: 573
+node selected: 784
+node selected: 401
+node selected: 417
+node selected: 1067
+node selected: 1020
+node selected: 1019
+node selected: 330
+node selected: 964
+node selected: 1142
+node selected: 720
+node selected: 725
+node selected: 937
+node selected: 349
+node selected: 853
+node selected: 1101
+node selected: 44
+node selected: 644
+node selected: 796
+node selected: 438
+node selected: 627
+node selected: 5
+node selected: 316
+node selected: 619
+node selected: 1047
+node selected: 315
+node selected: 442
+node selected: 1150
+node selected: 527
+node selected: 101
+node selected: 514
+node selected: 1148
+node selected: 1183
+node selected: 653
+node selected: 215
+node selected: 871
+node selected: 1052
+node selected: 123
+node selected: 344
+node selected: 442
+node selected: 252
+node selected: 139
+node selected: 576
+node selected: 727
+node selected: 24
+node selected: 1089
+node selected: 941
+node selected: 1085
+node selected: 737
+node selected: 652
+node selected: 1043
+node selected: 326
+node selected: 800
+node selected: 35
+node selected: 547
+node selected: 725
+node selected: 532
+node selected: 1078
+node selected: 932
+node selected: 1060
+node selected: 85
+node selected: 493
+node selected: 69
+node selected: 857
+node selected: 69
+node selected: 617
+node selected: 116
+node selected: 620
+node selected: 423
+node selected: 284
+node selected: 284
+node selected: 939
+node selected: 114
+node selected: 1029
+node selected: 664
+node selected: 270
+node selected: 996
+node selected: 855
+node selected: 1027
+node selected: 614
+node selected: 326
+node selected: 20
+node selected: 405
+node selected: 619
+node selected: 640
+node selected: 534
+node selected: 619
+node selected: 386
+node selected: 365
+node selected: 1118
+node selected: 177
+node selected: 162
+node selected: 539
+node selected: 451
+node selected: 373
+node selected: 451
+node selected: 647
+node selected: 1073
+node selected: 677
+node selected: 1017
+node selected: 100
+node selected: 296
+node selected: 64
+node selected: 145
+node selected: 581
+node selected: 501
+node selected: 199
+node selected: 1018
+node selected: 485
+node selected: 219
+node selected: 871
+node selected: 161
+node selected: 442
+node selected: 632
+node selected: 435
+node selected: 138
+node selected: 775
+node selected: 752
+node selected: 225
+node selected: 239
+node selected: 853
+node selected: 1003
+node selected: 837
+node selected: 229
+node selected: 276
+node selected: 225
+node selected: 38
+node selected: 405
+node selected: 668
+node selected: 957
+node selected: 719
+node selected: 838
+node selected: 888
+node selected: 266
+node selected: 662
+node selected: 143
+node selected: 62
+node selected: 318
+node selected: 804
+node selected: 399
+node selected: 1058
+node selected: 937
+node selected: 71
+node selected: 473
+node selected: 480
+node selected: 775
+node selected: 491
+node selected: 42
+node selected: 1022
+node selected: 175
+node selected: 1067
+node selected: 366
+node selected: 116
+node selected: 257
+node selected: 99
+node selected: 672
+node selected: 520
+node selected: 754
+node selected: 170
+node selected: 30
+node selected: 545
+node selected: 1042
+node selected: 262
+node selected: 196
+node selected: 245
+node selected: 700
+node selected: 1
+node selected: 799
+node selected: 494
+node selected: 885
+node selected: 630
+node selected: 427
+node selected: 720
+node selected: 239
+node selected: 570
+node selected: 630
+node selected: 692
+node selected: 397
+node selected: 386
+node selected: 179
+node selected: 988
+node selected: 850
+node selected: 178
+node selected: 33
+node selected: 564
+node selected: 964
+node selected: 108
+node selected: 76
+node selected: 932
+node selected: 1017
+node selected: 424
+node selected: 92
+node selected: 242
+node selected: 312
+node selected: 7
+node selected: 897
+node selected: 594
+node selected: 686
+node selected: 489
+node selected: 874
+node selected: 614
+node selected: 627
+node selected: 921
+node selected: 65
+node selected: 101
+node selected: 609
+node selected: 248
+node selected: 9
+node selected: 537
+node selected: 344
+node selected: 526
+node selected: 626
+node selected: 254
+node selected: 429
+node selected: 968
+node selected: 183
+node selected: 582
+node selected: 515
+node selected: 587
+node selected: 841
+node selected: 555
+node selected: 80
+node selected: 236
+node selected: 578
+node selected: 470
+node selected: 387
+node selected: 510
+node selected: 594
+node selected: 298
+node selected: 103
+node selected: 588
+node selected: 438
+node selected: 380
+node selected: 748
+node selected: 53
+node selected: 425
+node selected: 553
+node selected: 936
+node selected: 926
+node selected: 165
+node selected: 205
+node selected: 736
+node selected: 933
+node selected: 177
+node selected: 584
+node selected: 950
+node selected: 517
+node selected: 500
+node selected: 432
+node selected: 150
+node selected: 146
+node selected: 392
+node selected: 764
+node selected: 145
+node selected: 341
+node selected: 346
+node selected: 288
+node selected: 45
+node selected: 679
+node selected: 485
+node selected: 309
+node selected: 714
+node selected: 432
+node selected: 485
+node selected: 123
+node selected: 344
+node selected: 725
+node selected: 607
+node selected: 176
+node selected: 244
+node selected: 671
+node selected: 510
+node selected: 947
+node selected: 922
+node selected: 52
+node selected: 630
+node selected: 514
+node selected: 414
+node selected: 621
+node selected: 135
+node selected: 555
+node selected: 411
+node selected: 210
+node selected: 319
+node selected: 678
+node selected: 908
+node selected: 78
+node selected: 822
+node selected: 253
+node selected: 351
+node selected: 213
+node selected: 557
+node selected: 177
+node selected: 493
+node selected: 389
+node selected: 739
+node selected: 106
+node selected: 81
+node selected: 441
+node selected: 718
+node selected: 918
+node selected: 677
+node selected: 409
+node selected: 785
+node selected: 14
+node selected: 590
+node selected: 208
+node selected: 125
+node selected: 644
+node selected: 273
+node selected: 894
+node selected: 793
+node selected: 611
+node selected: 688
+node selected: 438
+node selected: 353
+node selected: 468
+node selected: 15
+node selected: 796
+node selected: 615
+node selected: 413
+node selected: 304
+node selected: 804
+node selected: 484
+node selected: 336
+node selected: 14
+node selected: 602
+node selected: 687
+node selected: 230
+node selected: 784
+node selected: 228
+node selected: 609
+node selected: 333
+node selected: 612
+node selected: 717
+node selected: 303
+node selected: 798
+node selected: 450
+node selected: 739
+node selected: 826
+node selected: 191
+node selected: 798
+node selected: 873
+node selected: 206
+node selected: 109
+node selected: 377
+node selected: 750
+node selected: 60
+node selected: 797
+node selected: 8
+node selected: 769
+node selected: 462
+node selected: 378
+node selected: 666
+node selected: 737
+node selected: 802
+node selected: 634
+node selected: 500
+node selected: 419
+node selected: 19
+node selected: 166
+node selected: 270
+node selected: 763
+node selected: 507
+node selected: 281
+node selected: 606
+node selected: 368
+node selected: 370
+node selected: 285
+node selected: 733
+node selected: 806
+node selected: 56
+node selected: 429
+node selected: 97
+node selected: 246
+node selected: 296
+node selected: 447
+node selected: 45
+node selected: 697
+node selected: 798
+node selected: 2
+node selected: 587
+node selected: 139
+node selected: 270
+node selected: 671
+node selected: 700
+node selected: 753
+node selected: 196
+node selected: 305
+node selected: 139
+node selected: 0
+node selected: 519
+node selected: 752
+node selected: 36
+node selected: 451
+node selected: 129
+node selected: 80
+node selected: 400
+node selected: 416
+node selected: 294
+node selected: 7
+node selected: 519
+node selected: 245
+node selected: 168
+node selected: 46
+node selected: 657
+node selected: 503
+node selected: 9
+node selected: 470
+node selected: 398
+node selected: 381
+node selected: 642
+node selected: 725
+node selected: 328
+node selected: 328
+node selected: 17
+node selected: 157
+node selected: 275
+node selected: 293
+node selected: 430
+node selected: 567
+node selected: 193
+node selected: 478
+node selected: 435
+node selected: 565
+node selected: 272
+node selected: 155
+node selected: 591
+node selected: 712
+node selected: 632
+node selected: 230
+node selected: 540
+node selected: 504
+node selected: 610
+node selected: 510
+node selected: 323
+node selected: 193
+node selected: 119
+node selected: 744
+node selected: 491
+node selected: 732
+node selected: 161
+node selected: 253
+node selected: 191
+node selected: 197
+node selected: 95
+node selected: 158
+node selected: 467
+node selected: 555
+node selected: 701
+node selected: 182
+node selected: 330
+node selected: 524
+node selected: 611
+node selected: 282
+node selected: 153
+node selected: 153
+node selected: 593
+node selected: 97
+node selected: 389
+node selected: 226
+node selected: 207
+node selected: 661
+node selected: 13
+node selected: 360
+node selected: 263
+node selected: 19
+node selected: 398
+node selected: 84
+node selected: 292
+node selected: 571
+node selected: 694
+node selected: 649
+node selected: 35
+node selected: 383
+node selected: 377
+node selected: 385
+node selected: 612
+node selected: 600
+node selected: 725
+node selected: 695
+node selected: 385
+node selected: 285
+node selected: 202
+node selected: 554
+node selected: 381
+node selected: 721
+node selected: 71
+node selected: 695
+node selected: 685
+node selected: 579
+node selected: 27
+node selected: 227
+node selected: 232
+node selected: 435
+node selected: 291
+node selected: 536
+node selected: 495
+node selected: 498
+node selected: 143
+node selected: 391
+node selected: 159
+node selected: 593
+node selected: 641
+node selected: 249
+node selected: 586
+node selected: 434
+node selected: 139
+node selected: 237
+node selected: 31
+node selected: 115
+node selected: 21
+node selected: 103
+node selected: 170
+node selected: 435
+node selected: 174
+node selected: 680
+node selected: 128
+node selected: 220
+node selected: 359
+node selected: 382
+node selected: 503
+node selected: 266
+node selected: 17
+node selected: 363
+node selected: 576
+node selected: 447
+node selected: 39
+node selected: 394
+node selected: 557
+node selected: 141
+node selected: 607
+node selected: 9
+node selected: 421
+node selected: 466
+node selected: 146
+node selected: 294
+node selected: 370
+node selected: 286
+node selected: 473
+node selected: 339
+node selected: 571
+node selected: 466
+node selected: 598
+node selected: 541
+node selected: 446
+node selected: 661
+node selected: 323
+node selected: 72
+node selected: 170
+node selected: 557
+node selected: 403
+node selected: 648
+node selected: 395
+node selected: 117
+node selected: 524
+node selected: 372
+node selected: 511
+node selected: 616
+node selected: 39
+node selected: 212
+node selected: 519
+node selected: 211
+node selected: 14
+node selected: 22
+node selected: 226
+node selected: 230
+node selected: 81
+node selected: 243
+node selected: 184
+node selected: 192
+node selected: 222
+node selected: 528
+node selected: 428
+node selected: 532
+node selected: 267
+node selected: 344
+node selected: 421
+node selected: 187
+node selected: 562
+node selected: 445
+node selected: 430
+node selected: 42
+node selected: 296
+node selected: 352
+node selected: 504
+node selected: 205
+node selected: 35
+node selected: 67
+node selected: 34
+node selected: 317
+node selected: 188
+node selected: 463
+node selected: 492
+node selected: 4
+node selected: 222
+node selected: 78
+node selected: 394
+node selected: 521
+node selected: 183
+node selected: 538
+node selected: 559
+node selected: 616
+node selected: 144
+node selected: 522
+node selected: 328
+node selected: 419
+node selected: 320
+node selected: 103
+node selected: 20
+node selected: 372
+node selected: 372
+node selected: 261
+node selected: 273
+node selected: 67
+node selected: 592
+node selected: 255
+node selected: 568
+node selected: 318
+node selected: 334
+node selected: 375
+node selected: 25
+node selected: 180
+node selected: 522
+node selected: 28
+node selected: 215
+node selected: 321
+node selected: 366
+node selected: 20
+node selected: 308
+node selected: 461
+node selected: 202
+node selected: 586
+node selected: 347
+node selected: 375
+node selected: 316
+node selected: 273
+node selected: 347
+node selected: 324
+node selected: 219
+node selected: 430
+node selected: 159
+node selected: 279
+node selected: 273
+node selected: 322
+node selected: 409
+node selected: 571
+node selected: 329
+node selected: 148
+node selected: 462
+node selected: 508
+node selected: 391
+node selected: 129
+node selected: 516
+node selected: 72
+node selected: 553
+node selected: 392
+node selected: 114
+node selected: 169
+node selected: 336
+node selected: 282
+node selected: 197
+node selected: 103
+node selected: 465
+node selected: 522
+node selected: 511
+node selected: 369
+node selected: 325
+node selected: 205
+node selected: 173
+node selected: 32
+node selected: 27
+node selected: 233
+node selected: 453
+node selected: 396
+node selected: 185
+node selected: 68
+node selected: 285
+node selected: 334
+node selected: 118
+node selected: 399
+node selected: 429
+node selected: 237
+node selected: 497
+node selected: 484
+node selected: 103
+node selected: 463
+node selected: 403
+node selected: 102
+node selected: 376
+node selected: 420
+node selected: 300
+node selected: 54
+node selected: 138
+node selected: 430
+node selected: 215
+node selected: 231
+node selected: 282
+node selected: 162
+node selected: 376
+node selected: 59
+node selected: 517
+node selected: 379
+node selected: 401
+node selected: 422
+node selected: 334
+node selected: 415
+node selected: 184
+node selected: 476
+node selected: 492
+node selected: 116
+node selected: 281
+node selected: 406
+node selected: 203
+node selected: 373
+node selected: 411
+node selected: 5
+node selected: 303
+node selected: 320
+node selected: 91
+node selected: 189
+node selected: 204
+node selected: 335
+node selected: 194
+node selected: 369
+node selected: 44
+node selected: 99
+node selected: 322
+node selected: 49
+node selected: 471
+node selected: 392
+node selected: 66
+node selected: 6
+node selected: 40
+node selected: 391
+node selected: 35
+node selected: 480
+node selected: 273
+node selected: 74
+node selected: 275
+node selected: 308
+node selected: 373
+node selected: 218
+node selected: 172
+node selected: 123
+node selected: 304
+node selected: 436
+node selected: 173
+node selected: 242
+node selected: 247
+node selected: 356
+node selected: 271
+node selected: 48
+node selected: 22
+node selected: 249
+node selected: 299
+node selected: 64
+node selected: 135
+node selected: 383
+node selected: 74
+node selected: 84
+node selected: 98
+node selected: 140
+node selected: 407
+node selected: 151
+node selected: 207
+node selected: 315
+node selected: 207
+node selected: 88
+node selected: 7
+node selected: 277
+node selected: 63
+node selected: 78
+node selected: 316
+node selected: 412
+node selected: 72
+node selected: 15
+node selected: 427
+node selected: 330
+node selected: 180
+node selected: 28
+node selected: 75
+node selected: 405
+node selected: 384
+node selected: 372
+node selected: 386
+node selected: 354
+node selected: 212
+node selected: 191
+node selected: 415
+node selected: 191
+node selected: 321
+node selected: 311
+node selected: 416
+node selected: 263
+node selected: 320
+node selected: 39
+node selected: 422
+node selected: 94
+node selected: 325
+node selected: 141
+node selected: 91
+node selected: 415
+node selected: 282
+node selected: 28
+node selected: 150
+node selected: 155
+node selected: 393
+node selected: 258
+node selected: 265
+node selected: 207
+node selected: 66
+node selected: 65
+node selected: 309
+node selected: 399
+node selected: 207
+node selected: 359
+node selected: 189
+node selected: 281
+node selected: 221
+node selected: 211
+node selected: 70
+node selected: 281
+node selected: 323
+node selected: 86
+node selected: 50
+node selected: 76
+node selected: 258
+node selected: 118
+node selected: 326
+node selected: 367
+node selected: 340
+node selected: 197
+node selected: 173
+node selected: 312
+node selected: 281
+node selected: 85
+node selected: 194
+node selected: 112
+node selected: 309
+node selected: 49
+node selected: 31
+node selected: 334
+node selected: 319
+node selected: 41
+node selected: 95
+node selected: 188
+node selected: 27
+node selected: 314
+node selected: 286
+node selected: 161
+node selected: 105
+node selected: 309
+node selected: 10
+node selected: 290
+node selected: 340
+node selected: 122
+node selected: 352
+node selected: 196
+node selected: 297
+node selected: 18
+node selected: 35
+node selected: 323
+node selected: 215
+node selected: 239
+node selected: 210
+node selected: 145
+node selected: 257
+node selected: 211
+node selected: 83
+node selected: 185
+node selected: 92
+node selected: 98
+node selected: 184
+node selected: 248
+node selected: 103
+node selected: 175
+node selected: 52
+node selected: 181
+node selected: 134
+node selected: 8
+node selected: 143
+node selected: 59
+node selected: 281
+node selected: 165
+node selected: 182
+node selected: 268
+node selected: 55
+node selected: 201
+node selected: 237
+node selected: 320
+node selected: 299
+node selected: 119
+node selected: 109
+node selected: 208
+node selected: 218
+node selected: 174
+node selected: 224
+node selected: 11
+node selected: 120
+node selected: 108
+node selected: 183
+node selected: 305
+node selected: 24
+node selected: 84
+node selected: 61
+node selected: 126
+node selected: 148
+node selected: 97
+node selected: 99
+node selected: 154
+node selected: 268
+node selected: 225
+node selected: 122
+node selected: 136
+node selected: 85
+node selected: 259
+node selected: 178
+node selected: 69
+node selected: 300
+node selected: 252
+node selected: 94
+node selected: 144
+node selected: 54
+node selected: 224
+node selected: 190
+node selected: 140
+node selected: 141
+node selected: 198
+node selected: 95
+node selected: 121
+node selected: 71
+node selected: 163
+node selected: 77
+node selected: 133
+node selected: 72
+node selected: 276
+node selected: 183
+node selected: 167
+node selected: 168
+node selected: 14
+node selected: 170
+node selected: 207
+node selected: 79
+node selected: 254
+node selected: 86
+node selected: 160
+node selected: 40
+node selected: 111
+node selected: 70
+node selected: 177
+node selected: 154
+node selected: 176
+node selected: 145
+node selected: 8
+node selected: 166
+node selected: 11
+node selected: 231
+node selected: 182
+node selected: 85
+node selected: 33
+node selected: 82
+node selected: 144
+node selected: 208
+node selected: 55
+node selected: 28
+node selected: 251
+node selected: 92
+node selected: 145
+node selected: 186
+node selected: 88
+node selected: 76
+node selected: 28
+node selected: 79
+node selected: 149
+node selected: 154
+node selected: 205
+node selected: 126
+node selected: 67
+node selected: 81
+node selected: 50
+node selected: 127
+node selected: 65
+node selected: 90
+node selected: 110
+node selected: 94
+node selected: 116
+node selected: 19
+node selected: 115
+node selected: 85
+node selected: 92
+node selected: 48
+node selected: 123
+node selected: 215
+node selected: 153
+node selected: 178
+node selected: 121
+node selected: 44
+node selected: 111
+node selected: 15
+node selected: 12
+node selected: 110
+node selected: 174
+node selected: 201
+node selected: 50
+node selected: 12
+node selected: 84
+node selected: 52
+node selected: 71
+node selected: 209
+node selected: 175
+node selected: 172
+node selected: 121
+node selected: 13
+node selected: 178
+node selected: 91
+node selected: 106
+node selected: 33
+node selected: 5
+node selected: 132
+node selected: 44
+node selected: 1
+node selected: 100
+node selected: 110
+node selected: 133
+node selected: 113
+node selected: 172
+node selected: 34
+node selected: 110
+node selected: 187
+node selected: 177
+node selected: 142
+node selected: 85
+node selected: 15
+node selected: 58
+node selected: 89
+node selected: 145
+node selected: 160
+node selected: 156
+node selected: 121
+node selected: 32
+node selected: 85
+node selected: 61
+node selected: 125
+node selected: 71
+node selected: 17
+node selected: 117
+node selected: 15
+node selected: 104
+node selected: 147
+node selected: 164
+node selected: 14
+node selected: 161
+node selected: 150
+node selected: 73
+node selected: 26
+node selected: 92
+node selected: 88
+node selected: 40
+node selected: 19
+node selected: 46
+node selected: 14
+node selected: 117
+node selected: 12
+node selected: 72
+node selected: 113
+node selected: 60
+node selected: 46
+node selected: 101
+node selected: 108
+node selected: 32
+node selected: 87
+node selected: 27
+node selected: 63
+node selected: 13
+node selected: 95
+node selected: 76
+node selected: 1
+node selected: 7
+node selected: 122
+node selected: 27
+node selected: 38
+node selected: 37
+node selected: 120
+node selected: 23
+node selected: 48
+node selected: 56
+node selected: 14
+node selected: 60
+node selected: 107
+node selected: 22
+node selected: 31
+node selected: 12
+node selected: 24
+node selected: 28
+node selected: 65
+node selected: 32
+node selected: 45
+node selected: 110
+node selected: 18
+node selected: 17
+node selected: 29
+node selected: 46
+node selected: 26
+node selected: 61
+node selected: 25
+node selected: 3
+node selected: 86
+node selected: 46
+node selected: 53
+node selected: 61
+node selected: 79
+node selected: 82
+node selected: 38
+node selected: 96
+node selected: 103
+node selected: 81
+node selected: 5
+node selected: 97
+node selected: 1
+node selected: 43
+node selected: 24
+node selected: 20
+node selected: 12
+node selected: 89
+node selected: 45
+node selected: 13
+node selected: 32
+node selected: 61
+node selected: 86
+node selected: 78
+node selected: 58
+node selected: 57
+node selected: 70
+node selected: 64
+node selected: 23
+node selected: 56
+node selected: 12
+node selected: 6
+node selected: 32
+node selected: 27
+node selected: 17
+node selected: 17
+node selected: 73
+node selected: 10
+node selected: 66
+node selected: 30
+node selected: 45
+node selected: 59
+node selected: 41
+node selected: 49
+node selected: 5
+node selected: 33
+node selected: 40
+node selected: 43
+node selected: 22
+node selected: 20
+node selected: 57
+node selected: 0
+node selected: 32
+node selected: 40
+node selected: 42
+node selected: 0
+node selected: 45
+node selected: 20
+node selected: 34
+node selected: 15
+node selected: 32
+node selected: 5
+node selected: 36
+node selected: 49
+node selected: 29
+node selected: 43
+node selected: 9
+node selected: 0
+node selected: 30
+node selected: 20
+node selected: 29
+node selected: 2
+node selected: 32
+node selected: 16
+node selected: 3
+node selected: 18
+node selected: 35
+node selected: 31
+node selected: 14
+node selected: 15
+node selected: 25
+node selected: 27
+node selected: 26
+node selected: 19
+node selected: 26
+node selected: 13
+node selected: 23
+node selected: 4
+node selected: 5
+node selected: 19
+node selected: 5
+node selected: 1
+node selected: 20
+node selected: 6
+node selected: 0
+node selected: 14
+node selected: 8
+node selected: 3
+node selected: 9
+node selected: 4
+node selected: 9
+node selected: 7
+node selected: 1
+node selected: 3
+node selected: 5
+node selected: 6
+node selected: 0
+node selected: 1
+node selected: 3
+node selected: 0
+node selected: 0
+parameter name actor.gc1.weight parameter value tensor(1.00000e-02 *
+       [[-0.7533, -0.7920,  1.4321],
+        [ 1.5255, -0.8220,  0.7573],
+        [-0.4664,  1.4652, -0.1140]], device='cuda:0')
+parameter name actor.gc1.a parameter value tensor([[-0.6024],
+        [ 0.3741],
+        [-0.2633],
+        [ 0.6714],
+        [ 0.5574],
+        [ 0.7150]], device='cuda:0')
+parameter name actor.gc1.bias parameter value tensor(1.00000e-02 *
+       [[-0.0944, -2.6041,  0.5327]], device='cuda:0')
+parameter name actor.gc2.weight parameter value tensor(1.00000e-02 *
+       [[ 1.0345,  0.6951,  0.1422],
+        [ 1.2427, -0.0631, -1.4460],
+        [-0.1176, -0.2341,  0.7312]], device='cuda:0')
+parameter name actor.gc2.a parameter value tensor([[-0.9566],
+        [-0.6822],
+        [-1.9340],
+        [ 1.1368],
+        [ 0.4525],
+        [ 0.3557]], device='cuda:0')
+parameter name actor.gc2.bias parameter value tensor(1.00000e-03 *
+       [[-7.2194,  7.1707,  2.5987]], device='cuda:0')
+parameter name actor.gc3.weight parameter value tensor(1.00000e-02 *
+       [[-0.6461,  1.9206,  1.5957],
+        [ 0.6131, -0.7574,  0.7997],
+        [ 1.7174, -1.5391, -0.2828]], device='cuda:0')
+parameter name actor.gc3.a parameter value tensor([[ 1.0012],
+        [-0.5404],
+        [ 0.2274],
+        [-0.0129],
+        [-0.3859],
+        [ 1.3965]], device='cuda:0')
+parameter name actor.gc3.bias parameter value tensor(1.00000e-02 *
+       [[-0.8249, -2.4770, -0.2488]], device='cuda:0')
+parameter name actor.gc4.weight parameter value tensor(1.00000e-02 *
+       [[ 1.9266,  0.0974,  1.6824],
+        [ 1.1110,  1.4176, -0.4114],
+        [ 0.7386,  0.0099,  0.6742]], device='cuda:0')
+parameter name actor.gc4.a parameter value tensor([[ 0.1475],
+        [-1.0176],
+        [ 0.1102],
+        [-1.3011],
+        [-0.1895],
+        [ 0.5452]], device='cuda:0')
+parameter name actor.gc4.bias parameter value tensor(1.00000e-02 *
+       [[ 2.4375,  0.2285, -0.6314]], device='cuda:0')
+parameter name actor.gc5.weight parameter value tensor(1.00000e-02 *
+       [[ 1.4648],
+        [ 0.3247],
+        [-2.2279]], device='cuda:0')
+parameter name actor.gc5.a parameter value tensor([[-0.0987],
+        [-0.5014]], device='cuda:0')
+parameter name actor.gc5.bias parameter value tensor(1.00000e-02 *
+       [[ 3.8838]], device='cuda:0')
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/train_a2c_mc.py:542: RuntimeWarning: invalid value encountered in double_scalars
+  _val_ave_gcn = np.sum(val_gcn_greedy) / len(val_gcn_greedy)
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/train_a2c_mc.py:548: RuntimeWarning: invalid value encountered in double_scalars
+  _val_ave_mind = np.sum(val_mind) / len(val_mind)
+epochs 0 loss -768.5791625976562 train min_degreeperformance 8706.0 train gcn performance 223737.0 val min_degreeperformance nan val gcn performance nan
+node selected: 916
+node selected: 845
+node selected: 1007
+node selected: 215
+node selected: 843
+node selected: 999
+node selected: 1160
+node selected: 121
+node selected: 28
+node selected: 1002
+node selected: 1120
+node selected: 411
+node selected: 604
+node selected: 1203
+node selected: 21
+node selected: 1106
+node selected: 3
+node selected: 279
+node selected: 437
+node selected: 1242
+node selected: 349
+node selected: 970
+node selected: 581
+node selected: 130
+node selected: 402
+node selected: 1067
+node selected: 1069
+node selected: 170
+node selected: 631
+node selected: 1242
+node selected: 1146
+node selected: 1168
+node selected: 454
+node selected: 1222
+node selected: 355
+node selected: 502
+node selected: 298
+node selected: 12
+node selected: 346
+node selected: 364
+node selected: 672
+node selected: 412
+node selected: 1159
+node selected: 260
+node selected: 167
+node selected: 402
+node selected: 604
+node selected: 944
+node selected: 1239
+node selected: 520
+node selected: 423
+node selected: 1178
+node selected: 369
+node selected: 247
+node selected: 764
+node selected: 177
+node selected: 191
+node selected: 787
+node selected: 936
+node selected: 449
+node selected: 335
+node selected: 212
+node selected: 942
+node selected: 1017
+node selected: 1022
+node selected: 896
+node selected: 1126
+node selected: 424
+node selected: 1011
+node selected: 693
+node selected: 893
+node selected: 389
+node selected: 665
+node selected: 404
+node selected: 455
+node selected: 517
+node selected: 676
+node selected: 724
+node selected: 564
+node selected: 137
+node selected: 272
+node selected: 748
+node selected: 717
+node selected: 940
+node selected: 986
+node selected: 1150
+node selected: 913
+node selected: 30
+node selected: 644
+node selected: 1056
+node selected: 1092
+node selected: 81
+node selected: 195
+node selected: 460
+node selected: 898
+node selected: 762
+node selected: 834
+node selected: 1163
+node selected: 728
+node selected: 553
+node selected: 273
+node selected: 1029
+node selected: 208
+node selected: 89
+node selected: 705
+node selected: 94
+node selected: 1087
+node selected: 572
+node selected: 1028
+node selected: 904
+node selected: 765
+node selected: 415
+node selected: 275
+node selected: 481
+node selected: 550
+node selected: 1148
+node selected: 522
+node selected: 64
+node selected: 731
+node selected: 355
+node selected: 262
+node selected: 705
+node selected: 335
+node selected: 250
+node selected: 240
+node selected: 180
+node selected: 781
+node selected: 166
+node selected: 65
+node selected: 235
+node selected: 929
+node selected: 187
+node selected: 217
+node selected: 1060
+node selected: 540
+node selected: 587
+node selected: 64
+node selected: 475
+node selected: 1150
+node selected: 545
+node selected: 338
+node selected: 269
+node selected: 117
+node selected: 474
+node selected: 623
+node selected: 439
+node selected: 647
+node selected: 814
+node selected: 987
+node selected: 876
+node selected: 726
+node selected: 705
+node selected: 686
+node selected: 534
+node selected: 488
+node selected: 518
+node selected: 1004
+node selected: 296
+node selected: 180
+node selected: 524
+node selected: 389
+node selected: 487
+node selected: 973
+node selected: 1042
+node selected: 776
+node selected: 223
+node selected: 987
+node selected: 368
+node selected: 141
+node selected: 541
+node selected: 1071
+node selected: 264
+node selected: 791
+node selected: 55
+node selected: 329
+node selected: 776
+node selected: 548
+node selected: 204
+node selected: 489
+node selected: 717
+node selected: 356
+node selected: 574
+node selected: 860
+node selected: 614
+node selected: 757
+node selected: 33
+node selected: 1097
+node selected: 947
+node selected: 841
+node selected: 879
+node selected: 78
+node selected: 554
+node selected: 72
+node selected: 760
+node selected: 750
+node selected: 725
+node selected: 630
+node selected: 108
+node selected: 473
+node selected: 238
+node selected: 306
+node selected: 1090
+node selected: 497
+node selected: 584
+node selected: 635
+node selected: 825
+node selected: 694
+node selected: 878
+node selected: 930
+node selected: 119
+node selected: 888
+node selected: 322
+node selected: 391
+node selected: 808
+node selected: 761
+node selected: 1008
+node selected: 293
+node selected: 1056
+node selected: 445
+node selected: 178
+node selected: 963
+node selected: 644
+node selected: 372
+node selected: 361
+node selected: 295
+node selected: 529
+node selected: 186
+node selected: 266
+node selected: 928
+node selected: 557
+node selected: 257
+node selected: 379
+node selected: 884
+node selected: 486
+node selected: 819
+node selected: 875
+node selected: 772
+node selected: 277
+node selected: 356
+node selected: 330
+node selected: 649
+node selected: 577
+node selected: 623
+node selected: 276
+node selected: 387
+node selected: 735
+node selected: 624
+node selected: 471
+node selected: 611
+node selected: 538
+node selected: 277
+node selected: 546
+node selected: 614
+node selected: 599
+node selected: 816
+node selected: 156
+node selected: 571
+node selected: 211
+node selected: 519
+node selected: 359
+node selected: 606
+node selected: 222
+node selected: 520
+node selected: 369
+node selected: 605
+node selected: 151
+node selected: 814
+node selected: 374
+node selected: 19
+node selected: 971
+node selected: 684
+node selected: 216
+node selected: 151
+node selected: 33
+node selected: 394
+node selected: 134
+node selected: 555
+node selected: 423
+node selected: 683
+node selected: 997
+node selected: 650
+node selected: 429
+node selected: 633
+node selected: 500
+node selected: 636
+node selected: 620
+node selected: 471
+node selected: 332
+node selected: 773
+node selected: 17
+node selected: 363
+node selected: 259
+node selected: 260
+node selected: 124
+node selected: 421
+node selected: 825
+node selected: 448
+node selected: 204
+node selected: 525
+node selected: 655
+node selected: 492
+node selected: 679
+node selected: 208
+node selected: 825
+node selected: 545
+node selected: 508
+node selected: 186
+node selected: 355
+node selected: 475
+node selected: 856
+node selected: 596
+node selected: 72
+node selected: 141
+node selected: 858
+node selected: 653
+node selected: 883
+node selected: 403
+node selected: 96
+node selected: 97
+node selected: 166
+node selected: 527
+node selected: 638
+node selected: 87
+node selected: 892
+node selected: 574
+node selected: 58
+node selected: 965
+node selected: 96
+node selected: 909
+node selected: 782
+node selected: 177
+node selected: 668
+node selected: 870
+node selected: 871
+node selected: 374
+node selected: 550
+node selected: 237
+node selected: 83
+node selected: 24
+node selected: 719
+node selected: 505
+node selected: 569
+node selected: 949
+node selected: 474
+node selected: 674
+node selected: 115
+node selected: 863
+node selected: 185
+node selected: 876
+node selected: 484
+node selected: 818
+node selected: 374
+node selected: 918
+node selected: 840
+node selected: 930
+node selected: 759
+node selected: 292
+node selected: 678
+node selected: 69
+node selected: 358
+node selected: 824
+node selected: 63
+node selected: 284
+node selected: 405
+node selected: 566
+node selected: 421
+node selected: 296
+node selected: 585
+node selected: 380
+node selected: 742
+node selected: 554
+node selected: 767
+node selected: 907
+node selected: 667
+node selected: 761
+node selected: 862
+node selected: 670
+node selected: 648
+node selected: 478
+node selected: 196
+node selected: 619
+node selected: 777
+node selected: 306
+node selected: 552
+node selected: 247
+node selected: 224
+node selected: 121
+node selected: 670
+node selected: 559
+node selected: 686
+node selected: 743
+node selected: 756
+node selected: 311
+node selected: 367
+node selected: 602
+node selected: 633
+node selected: 133
+node selected: 382
+node selected: 562
+node selected: 614
+node selected: 789
+node selected: 215
+node selected: 319
+node selected: 386
+node selected: 368
+node selected: 287
+node selected: 408
+node selected: 813
+node selected: 848
+node selected: 408
+node selected: 4
+node selected: 77
+node selected: 37
+node selected: 868
+node selected: 393
+node selected: 136
+node selected: 722
+node selected: 419
+node selected: 192
+node selected: 283
+node selected: 143
+node selected: 615
+node selected: 106
+node selected: 102
+node selected: 775
+node selected: 800
+node selected: 373
+node selected: 860
+node selected: 453
+node selected: 102
+node selected: 237
+node selected: 124
+node selected: 148
+node selected: 500
+node selected: 559
+node selected: 747
+node selected: 24
+node selected: 70
+node selected: 365
+node selected: 342
+node selected: 722
+node selected: 363
+node selected: 301
+node selected: 481
+node selected: 561
+node selected: 687
+node selected: 227
+node selected: 765
+node selected: 270
+node selected: 273
+node selected: 374
+node selected: 458
+node selected: 308
+node selected: 559
+node selected: 629
+node selected: 337
+node selected: 488
+node selected: 640
+node selected: 134
+node selected: 674
+node selected: 533
+node selected: 751
+node selected: 616
+node selected: 622
+node selected: 157
+node selected: 258
+node selected: 731
+node selected: 52
+node selected: 758
+node selected: 296
+node selected: 784
+node selected: 485
+node selected: 562
+node selected: 378
+node selected: 643
+node selected: 18
+node selected: 359
+node selected: 612
+node selected: 71
+node selected: 619
+node selected: 322
+node selected: 183
+node selected: 63
+node selected: 409
+node selected: 228
+node selected: 86
+node selected: 251
+node selected: 198
+node selected: 736
+node selected: 344
+node selected: 637
+node selected: 649
+node selected: 698
+node selected: 660
+node selected: 633
+node selected: 490
+node selected: 172
+node selected: 770
+node selected: 492
+node selected: 292
+node selected: 434
+node selected: 272
+node selected: 50
+node selected: 599
+node selected: 601
+node selected: 425
+node selected: 214
+node selected: 195
+node selected: 175
+node selected: 450
+node selected: 611
+node selected: 687
+node selected: 76
+node selected: 459
+node selected: 38
+node selected: 243
+node selected: 515
+node selected: 752
+node selected: 295
+node selected: 395
+node selected: 253
+node selected: 717
+node selected: 395
+node selected: 11
+node selected: 133
+node selected: 26
+node selected: 592
+node selected: 100
+node selected: 762
+node selected: 759
+node selected: 500
+node selected: 134
+node selected: 242
+node selected: 380
+node selected: 183
+node selected: 59
+node selected: 75
+node selected: 224
+node selected: 470
+node selected: 553
+node selected: 201
+node selected: 711
+node selected: 571
+node selected: 426
+node selected: 692
+node selected: 631
+node selected: 618
+node selected: 700
+node selected: 345
+node selected: 274
+node selected: 437
+node selected: 300
+node selected: 467
+node selected: 83
+node selected: 322
+node selected: 671
+node selected: 174
+node selected: 60
+node selected: 22
+node selected: 415
+node selected: 395
+node selected: 205
+node selected: 724
+node selected: 675
+node selected: 538
+node selected: 137
+node selected: 3
+node selected: 72
+node selected: 357
+node selected: 489
+node selected: 623
+node selected: 580
+node selected: 145
+node selected: 472
+node selected: 260
+node selected: 216
+node selected: 702
+node selected: 612
+node selected: 636
+node selected: 415
+node selected: 574
+node selected: 600
+node selected: 390
+node selected: 472
+node selected: 330
+node selected: 675
+node selected: 369
+node selected: 431
+node selected: 135
+node selected: 7
+node selected: 617
+node selected: 630
+node selected: 692
+node selected: 20
+node selected: 643
+node selected: 560
+node selected: 238
+node selected: 0
+node selected: 220
+node selected: 181
+node selected: 362
+node selected: 210
+node selected: 35
+node selected: 283
+node selected: 91
+node selected: 190
+node selected: 290
+node selected: 489
+node selected: 517
+node selected: 488
+node selected: 546
+node selected: 244
+node selected: 81
+node selected: 501
+node selected: 575
+node selected: 318
+node selected: 603
+node selected: 149
+node selected: 452
+node selected: 225
+node selected: 660
+node selected: 136
+node selected: 59
+node selected: 317
+node selected: 199
+node selected: 255
+node selected: 158
+node selected: 406
+node selected: 505
+node selected: 491
+node selected: 464
+node selected: 564
+node selected: 516
+node selected: 446
+node selected: 215
+node selected: 27
+node selected: 221
+node selected: 498
+node selected: 129
+node selected: 445
+node selected: 239
+node selected: 519
+node selected: 291
+node selected: 536
+node selected: 369
+node selected: 575
+node selected: 627
+node selected: 575
+node selected: 533
+node selected: 442
+node selected: 289
+node selected: 540
+node selected: 568
+node selected: 357
+node selected: 380
+node selected: 627
+node selected: 313
+node selected: 498
+node selected: 495
+node selected: 372
+node selected: 38
+node selected: 257
+node selected: 34
+node selected: 330
+node selected: 320
+node selected: 509
+node selected: 376
+node selected: 35
+node selected: 367
+node selected: 306
+node selected: 312
+node selected: 613
+node selected: 472
+node selected: 304
+node selected: 240
+node selected: 251
+node selected: 153
+node selected: 505
+node selected: 193
+node selected: 573
+node selected: 588
+node selected: 106
+node selected: 374
+node selected: 189
+node selected: 412
+node selected: 459
+node selected: 529
+node selected: 201
+node selected: 604
+node selected: 511
+node selected: 171
+node selected: 396
+node selected: 244
+node selected: 26
+node selected: 369
+node selected: 535
+node selected: 467
+node selected: 423
+node selected: 52
+node selected: 122
+node selected: 541
+node selected: 394
+node selected: 106
+node selected: 579
+node selected: 375
+node selected: 262
+node selected: 338
+node selected: 390
+node selected: 128
+node selected: 514
+node selected: 328
+node selected: 383
+node selected: 140
+node selected: 363
+node selected: 384
+node selected: 136
+node selected: 539
+node selected: 552
+node selected: 95
+node selected: 490
+node selected: 260
+node selected: 99
+node selected: 222
+node selected: 32
+node selected: 114
+node selected: 395
+node selected: 190
+node selected: 7
+node selected: 141
+node selected: 100
+node selected: 388
+node selected: 280
+node selected: 127
+node selected: 86
+node selected: 496
+node selected: 271
+node selected: 422
+node selected: 237
+node selected: 479
+node selected: 331
+node selected: 309
+node selected: 200
+node selected: 253
+node selected: 180
+node selected: 451
+node selected: 23
+node selected: 20
+node selected: 496
+node selected: 3
+node selected: 252
+node selected: 94
+node selected: 389
+node selected: 157
+node selected: 489
+node selected: 152
+node selected: 136
+node selected: 68
+node selected: 149
+node selected: 313
+node selected: 517
+node selected: 12
+node selected: 125
+node selected: 503
+node selected: 427
+node selected: 256
+node selected: 6
+node selected: 292
+node selected: 423
+node selected: 59
+node selected: 248
+node selected: 194
+node selected: 13
+node selected: 222
+node selected: 397
+node selected: 5
+node selected: 12
+node selected: 502
+node selected: 72
+node selected: 224
+node selected: 422
+node selected: 113
+node selected: 223
+node selected: 44
+node selected: 315
+node selected: 41
+node selected: 80
+node selected: 374
+node selected: 1
+node selected: 426
+node selected: 349
+node selected: 389
+node selected: 42
+node selected: 0
+node selected: 460
+node selected: 491
+node selected: 222
+node selected: 471
+node selected: 67
+node selected: 305
+node selected: 56
+node selected: 177
+node selected: 202
+node selected: 79
+node selected: 117
+node selected: 98
+node selected: 472
+node selected: 162
+node selected: 24
+node selected: 422
+node selected: 77
+node selected: 139
+node selected: 149
+node selected: 17
+node selected: 118
+node selected: 60
+node selected: 202
+node selected: 50
+node selected: 352
+node selected: 259
+node selected: 232
+node selected: 64
+node selected: 263
+node selected: 112
+node selected: 231
+node selected: 55
+node selected: 7
+node selected: 227
+node selected: 251
+node selected: 201
+node selected: 2
+node selected: 62
+node selected: 60
+node selected: 244
+node selected: 40
+node selected: 172
+node selected: 366
+node selected: 181
+node selected: 185
+node selected: 127
+node selected: 18
+node selected: 18
+node selected: 96
+node selected: 14
+node selected: 417
+node selected: 39
+node selected: 285
+node selected: 270
+node selected: 426
+node selected: 34
+node selected: 164
+node selected: 52
+node selected: 25
+node selected: 94
+node selected: 42
+node selected: 119
+node selected: 313
+node selected: 406
+node selected: 38
+node selected: 357
+node selected: 62
+node selected: 158
+node selected: 67
+node selected: 314
+node selected: 251
+node selected: 374
+node selected: 162
+node selected: 286
+node selected: 160
+node selected: 247
+node selected: 226
+node selected: 347
+node selected: 352
+node selected: 9
+node selected: 277
+node selected: 0
+node selected: 174
+node selected: 88
+node selected: 122
+node selected: 150
+node selected: 31
+node selected: 369
+node selected: 36
+node selected: 160
+node selected: 150
+node selected: 365
+node selected: 46
+node selected: 185
+node selected: 54
+node selected: 146
+node selected: 140
+node selected: 129
+node selected: 60
+node selected: 144
+node selected: 110
+node selected: 217
+node selected: 349
+node selected: 290
+node selected: 158
+node selected: 64
+node selected: 202
+node selected: 295
+node selected: 322
+node selected: 166
+node selected: 49
+node selected: 23
+node selected: 339
+node selected: 33
+node selected: 81
+node selected: 47
+node selected: 241
+node selected: 23
+node selected: 379
+node selected: 240
+node selected: 365
+node selected: 268
+node selected: 199
+node selected: 56
+node selected: 37
+node selected: 10
+node selected: 193
+node selected: 291
+node selected: 165
+node selected: 186
+node selected: 303
+node selected: 149
+node selected: 45
+node selected: 86
+node selected: 298
+node selected: 308
+node selected: 103
+node selected: 281
+node selected: 171
+node selected: 325
+node selected: 162
+node selected: 116
+node selected: 310
+node selected: 45
+node selected: 84
+node selected: 335
+node selected: 180
+node selected: 306
+node selected: 336
+node selected: 55
+node selected: 48
+node selected: 254
+node selected: 175
+node selected: 24
+node selected: 331
+node selected: 221
+node selected: 192
+node selected: 242
+node selected: 61
+node selected: 169
+node selected: 154
+node selected: 288
+node selected: 162
+node selected: 179
+node selected: 92
+node selected: 298
+node selected: 52
+node selected: 260
+node selected: 150
+node selected: 205
+node selected: 20
+node selected: 50
+node selected: 327
+node selected: 163
+node selected: 200
+node selected: 44
+node selected: 290
+node selected: 102
+node selected: 255
+node selected: 93
+node selected: 126
+node selected: 301
+node selected: 240
+node selected: 173
+node selected: 63
+node selected: 284
+node selected: 188
+node selected: 280
+node selected: 96
+node selected: 89
+node selected: 262
+node selected: 263
+node selected: 236
+node selected: 274
+node selected: 11
+node selected: 14
+node selected: 158
+node selected: 126
+node selected: 122
+node selected: 183
+node selected: 100
+node selected: 14
+node selected: 158
+node selected: 100
+node selected: 26
+node selected: 195
+node selected: 55
+node selected: 53
+node selected: 55
+node selected: 195
+node selected: 108
+node selected: 150
+node selected: 110
+node selected: 86
+node selected: 259
+node selected: 85
+node selected: 80
+node selected: 200
+node selected: 176
+node selected: 75
+node selected: 119
+node selected: 50
+node selected: 22
+node selected: 4
+node selected: 236
+node selected: 222
+node selected: 273
+node selected: 90
+node selected: 103
+node selected: 229
+node selected: 1
+node selected: 248
+node selected: 143
+node selected: 240
+node selected: 159
+node selected: 1
+node selected: 30
+node selected: 159
+node selected: 27
+node selected: 177
+node selected: 251
+node selected: 86
+node selected: 87
+node selected: 32
+node selected: 123
+node selected: 0
+node selected: 168
+node selected: 142
+node selected: 26
+node selected: 113
+node selected: 224
+node selected: 210
+node selected: 33
+node selected: 5
+node selected: 204
+node selected: 228
+node selected: 163
+node selected: 20
+node selected: 193
+node selected: 175
+node selected: 195
+node selected: 91
+node selected: 143
+node selected: 68
+node selected: 43
+node selected: 216
+node selected: 33
+node selected: 39
+node selected: 106
+node selected: 126
+node selected: 60
+node selected: 198
+node selected: 135
+node selected: 109
+node selected: 164
+node selected: 141
+node selected: 219
+node selected: 3
+node selected: 22
+node selected: 48
+node selected: 24
+node selected: 206
+node selected: 24
+node selected: 156
+node selected: 139
+node selected: 34
+node selected: 9
+node selected: 82
+node selected: 60
+node selected: 134
+node selected: 209
+node selected: 127
+node selected: 12
+node selected: 128
+node selected: 176
+node selected: 157
+node selected: 157
+node selected: 11
+node selected: 134
+node selected: 106
+node selected: 174
+node selected: 179
+node selected: 77
+node selected: 64
+node selected: 81
+node selected: 57
+node selected: 181
+node selected: 70
+node selected: 67
+node selected: 154
+node selected: 31
+node selected: 181
+node selected: 115
+node selected: 175
+node selected: 181
+node selected: 183
+node selected: 67
+node selected: 123
+node selected: 156
+node selected: 35
+node selected: 41
+node selected: 143
+node selected: 122
+node selected: 45
+node selected: 102
+node selected: 11
+node selected: 64
+node selected: 136
+node selected: 146
+node selected: 164
+node selected: 165
+node selected: 168
+node selected: 152
+node selected: 15
+node selected: 98
+node selected: 145
+node selected: 92
+node selected: 89
+node selected: 48
+node selected: 37
+node selected: 148
+node selected: 77
+node selected: 139
+node selected: 121
+node selected: 46
+node selected: 63
+node selected: 30
+node selected: 90
+node selected: 106
+node selected: 130
+node selected: 26
+node selected: 136
+node selected: 31
+node selected: 6
+node selected: 64
+node selected: 108
+node selected: 49
+node selected: 101
+node selected: 74
+node selected: 129
+node selected: 57
+node selected: 75
+node selected: 25
+node selected: 55
+node selected: 75
+node selected: 71
+node selected: 35
+node selected: 28
+node selected: 77
+node selected: 46
+node selected: 43
+node selected: 63
+node selected: 72
+node selected: 59
+node selected: 90
+node selected: 45
+node selected: 60
+node selected: 80
+node selected: 21
+node selected: 16
+node selected: 4
+node selected: 65
+node selected: 30
+node selected: 19
+node selected: 11
+node selected: 21
+node selected: 85
+node selected: 34
+node selected: 72
+node selected: 106
+node selected: 65
+node selected: 14
+node selected: 53
+node selected: 89
+node selected: 67
+node selected: 4
+node selected: 23
+node selected: 80
+node selected: 5
+node selected: 18
+node selected: 92
+node selected: 80
+node selected: 35
+node selected: 23
+node selected: 4
+node selected: 26
+node selected: 13
+node selected: 83
+node selected: 38
+node selected: 23
+node selected: 47
+node selected: 60
+node selected: 85
+node selected: 68
+node selected: 72
+node selected: 38
+node selected: 49
+node selected: 56
+node selected: 12
+node selected: 20
+node selected: 57
+node selected: 42
+node selected: 35
+node selected: 3
+node selected: 54
+node selected: 44
+node selected: 26
+node selected: 25
+node selected: 50
+node selected: 57
+node selected: 15
+node selected: 55
+node selected: 29
+node selected: 62
+node selected: 56
+node selected: 43
+node selected: 50
+node selected: 46
+node selected: 38
+node selected: 52
+node selected: 48
+node selected: 0
+node selected: 2
+node selected: 39
+node selected: 9
+node selected: 13
+node selected: 5
+node selected: 31
+node selected: 8
+node selected: 8
+node selected: 43
+node selected: 10
+node selected: 43
+node selected: 32
+node selected: 16
+node selected: 43
+node selected: 4
+node selected: 29
+node selected: 33
+node selected: 17
+node selected: 25
+node selected: 29
+node selected: 3
+node selected: 14
+node selected: 2
+node selected: 13
+node selected: 27
+node selected: 24
+node selected: 11
+node selected: 17
+node selected: 22
+node selected: 14
+node selected: 6
+node selected: 14
+node selected: 3
+node selected: 1
+node selected: 0
+node selected: 5
+node selected: 15
+node selected: 18
+node selected: 10
+node selected: 9
+node selected: 10
+node selected: 4
+node selected: 5
+node selected: 14
+node selected: 7
+node selected: 12
+node selected: 1
+node selected: 5
+node selected: 0
+node selected: 7
+node selected: 0
+node selected: 4
+node selected: 4
+node selected: 2
+node selected: 3
+node selected: 2
+epochs 1 loss -718.1847534179688 train min_degreeperformance 8706.0 train gcn performance 259255.0 val min_degreeperformance nan val gcn performance nan
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [992,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [993,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [994,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [995,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [996,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [997,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [998,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [999,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1000,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1001,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1002,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1003,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1004,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1005,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1006,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1007,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1008,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1009,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1010,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1011,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1012,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1013,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1014,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1015,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1016,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1017,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1018,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1019,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1020,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1021,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1022,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [1023,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [896,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [897,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [898,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [899,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [900,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [901,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [902,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [903,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [904,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [905,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [906,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [907,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [908,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [909,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [910,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [911,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [912,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [913,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [914,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [915,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [916,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [917,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [918,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [919,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [920,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [921,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [922,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [923,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [924,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [925,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [926,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [927,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [864,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [865,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [866,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [867,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [868,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [869,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [870,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [871,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [872,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [873,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [874,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [875,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [876,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [877,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [878,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [879,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [880,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [881,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [882,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [883,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [884,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [885,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [886,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [887,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [888,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [889,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [890,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [891,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [892,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [893,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [894,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [895,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [768,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [769,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [770,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [771,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [772,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [773,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [774,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [775,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [776,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [777,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [778,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [779,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [780,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [781,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [782,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [783,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [784,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [785,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [786,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [787,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [788,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [789,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [790,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [791,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [792,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [793,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [794,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [795,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [796,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [797,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [798,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [799,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [960,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [961,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [962,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [963,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [964,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [965,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [966,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [967,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [968,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [969,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [970,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [971,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [972,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [973,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [974,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [975,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [976,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [977,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [978,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [979,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [980,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [981,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [982,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [983,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [984,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [985,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [986,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [987,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [988,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [989,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [990,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [991,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [800,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [801,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [802,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [803,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [804,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [805,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [806,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [807,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [808,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [809,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [810,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [811,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [812,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [813,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [814,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [815,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [816,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [817,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [818,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [819,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [820,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [821,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [822,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [823,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [824,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [825,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [826,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [827,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [828,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [829,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [830,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [831,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [928,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [929,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [930,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [931,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [932,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [933,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [934,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [935,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [936,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [937,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [938,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [939,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [940,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [941,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [942,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [943,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [944,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [945,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [946,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [947,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [948,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [949,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [950,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [951,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [952,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [953,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [954,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [955,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [956,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [957,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [958,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [959,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [832,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [833,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [834,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [835,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [836,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [837,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [838,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [839,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [840,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [841,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [842,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [843,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [844,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [845,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [846,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [847,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [848,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [849,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [850,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [851,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [852,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [853,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [854,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [855,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [856,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [857,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [858,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [859,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [860,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [861,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [862,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cuh:185: void sampleMultinomialOnce(long *, long, int, T *, T *, int, int) [with T = float, AccT = float]: block: [0,0,0], thread: [863,0,0] Assertion `THCNumerics<T>::ge(val, zero)` failed.
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/generic/THCStorage.c line=36 error=59 : device-side assert triggered
+Traceback (most recent call last):
+  File "main_mc.py", line 258, in <module>
+    density = args.p
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/train_a2c_mc.py", line 374, in train_and_validate
+    action, log_prob, reward, value_current, value_next, x_model = self.model(x_model) # forward propagation,action: node selected, reward: nb edges added
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/nn/modules/module.py", line 491, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/model_a2c.py", line 184, in forward
+    print('node selected: {}'.format(node_selected))
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/tensor.py", line 328, in __format__
+    return self.item().__format__(format_spec)
+RuntimeError: cuda runtime error (59) : device-side assert triggered at /opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/generic/THCStorage.c:36
