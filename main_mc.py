@@ -33,8 +33,8 @@ parser.add_argument('--pretrain_epochs', type=int, default=3, help='Training epo
 parser.add_argument('--lr_actor', type=float, default= 0.001, help='Learning rate of actor')
 parser.add_argument('--lr_critic', type=float, default= 0.001, help='Learning rate of critic')
 parser.add_argument('--wd', type=float, default=5e-4, help='Weight decay')
-parser.add_argument('--dhidden', type=int, default=1, help='Dimension of hidden features')
-parser.add_argument('--dinput', type=int, default=3, help='Dimension of input features')
+parser.add_argument('--dhidden', type=int, default=3, help='Dimension of hidden features')
+parser.add_argument('--dinput', type=int, default=1, help='Dimension of input features')
 parser.add_argument('--doutput', type=int, default=1, help='Dimension of output features')
 parser.add_argument('--dropout', type=float, default=0.1, help='Dropout Rate')
 parser.add_argument('--alpha', type=float, default=0.2, help='Aplha')
@@ -159,7 +159,7 @@ eps = [0, 0.001, 0.01 ,0.02, 0.05, 0.1, 0.2, 0.5 ]
 # lr = [0.00001, 0.0001, 0.001, ]
 # lr = [0.1, 0.01, 0.001]
 # lr = [0.00001, 0.0001, 0.001,0.1]
-lr = [0.02]
+lr = [0.1]
 time_start = time.time()
 
 for i in range(len(lr)):
@@ -176,11 +176,11 @@ for i in range(len(lr)):
     #                                      dropout=args.dropout,
     #                                      )  # alpha=args.alpha
 
-    # actor = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
-    #                                      nhidden=args.dhidden,
-    #                                      nout=args.doutput,
-    #                                      dropout=args.dropout,
-    #                                      )  # alpha=args.alpha
+    actor = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
+                                         nhidden=args.dhidden,
+                                         nout=args.doutput,
+                                         dropout=args.dropout,
+                                         )  # alpha=args.alpha
 
 
     # actor = GAN(nin=args.dinput,
@@ -197,12 +197,12 @@ for i in range(len(lr)):
     #             alpha=args.alpha
     #             )  # alpha=args.alpha
 
-    actor = GAN_Memory_5(nin=args.dinput,
-                         nhidden=args.dhidden,
-                         nout=args.doutput,
-                         dropout=args.dropout,
-                         alpha=args.alpha
-                         )  # alpha=args.alpha
+    # actor = GAN_Memory_5(nin=args.dinput,
+    #                      nhidden=args.dhidden,
+    #                      nout=args.doutput,
+    #                      dropout=args.dropout,
+    #                      alpha=args.alpha
+    #                      )  # alpha=args.alpha
 
     if dataset_name == 'UFSMDataset_Demo':
         test_dataset = dataset(start=24, end=26)

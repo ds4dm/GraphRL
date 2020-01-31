@@ -298,7 +298,7 @@ class GraphAttentionConvLayer(Module):
             else:
                 atten_sparse = torch.sparse.FloatTensor(adj_idx, adj_v, adj_sparse.size()) # build attention sparse adj matrix
 
-            atten_sparse = self.sparse_softmax(sparse_matrix = atten_sparse, dim=0) # softmax of attention
+            # atten_sparse = self.sparse_softmax(sparse_matrix = atten_sparse, dim=0) # softmax of attention
 
             if self.bias is not None:
                 features += self.bias
@@ -407,7 +407,7 @@ class GraphAttentionConvLayerMemory(Module):
             else:
                 atten_sparse = torch.sparse.FloatTensor(adj_idx, adj_v, adj_sparse.size()) # build attention sparse adj matrix
 
-            atten_sparse = self.sparse_softmax(sparse_matrix = atten_sparse, dim=0) # softmax of attention
+            # atten_sparse = self.sparse_softmax(sparse_matrix = atten_sparse, dim=0) # softmax of attention
 
             if self.bias is not None:
                 features += self.bias

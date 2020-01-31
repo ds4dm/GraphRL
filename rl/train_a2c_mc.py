@@ -585,48 +585,6 @@ class TrainModel_MC:
             val_ave_mind_np = np.array(val_ave_mind).reshape(-1)
             train_ave_mind_np = np.array(train_ave_mind).reshape(-1)
 
-            plt.clf()
-            plt.plot(t_plot, train_ave_gcn_np, t_plot, train_ave_mind_np)
-            plt.legend(('GNN-RL-epsilon', self.heuristic),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
-                       loc='upper right')  # 'GNN-initial', 'GNN-RL', 'min-degree'
-            plt.title(
-                'RL-MonteCarlo performance curve with pretrain trainDataset ' + self.train_dataset.__class__.__name__ + ' (average number of filled edges)')
-            plt.ylabel('number of fill-in')
-            # plt.draw()
-            plt.savefig(
-                './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
-                    lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_curve_g2m_number_input3d_gan5-h1-memo_logsoftmax_no_pretrain_train_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
-                    self.use_cuda) + '_return_-mean.png')
-            plt.clf()
-
-            plt.clf()
-            plt.plot(t_plot, val_ave_gcn_np, t_plot, val_ave_mind_np)
-            plt.legend(('GNN-RL-epsilon', self.heuristic),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
-                       loc='upper right')  # 'GNN-initial', 'GNN-RL', 'min-degree'
-            plt.title(
-                'RL-MonteCarlo performance curve with pretrain validationDataset' + self.train_dataset.__class__.__name__ + ' (average number of filled edges)')
-            plt.ylabel('number of fill-in')
-            # plt.draw()
-            plt.savefig(
-                './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
-                    lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy())  + '_' + self.heuristic + '_curve_g2m_number_input3d_gan5-h1-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
-                    self.use_cuda) + '_return_-mean.png')
-            plt.clf()
-
-            plt.clf()
-            plt.plot(t_plot, total_loss_train_np)
-            plt.legend(('GCN-PolicyGradient-loss'),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
-                       loc='upper right')  # 'GNN-initial', 'GNN-RL', 'min-degree'
-            plt.title(
-                'RL-MonteCarlo training loss curve with pretrain' + self.train_dataset.__class__.__name__ + ' (average number of filled edges)')
-            plt.ylabel('number of fill-in')
-            # plt.draw()
-            plt.savefig(
-                './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
-                    lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_loss_curve_g2m_number_input3d_gan5-h1-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_umlim_depth_prune_cuda' + str(
-                    self.use_cuda) + '_return_-mean.png')
-            plt.clf()
-
             # plt.clf()
             # plt.plot(t_plot, train_ave_gcn_np, t_plot, train_ave_mind_np)
             # plt.legend(('GNN-RL-epsilon', self.heuristic),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
@@ -636,9 +594,9 @@ class TrainModel_MC:
             # plt.ylabel('number of fill-in')
             # # plt.draw()
             # plt.savefig(
-            #     './results/rl/hypertraining_lractor_acmc_' + str(
-            #         lr_actor) + '_epsilon_'+ str(self.model.epsilon) + '_' + self.heuristic + '_curve_g2m_number_gcn_logsoftmax__with_pretrain_train_' + self.train_dataset.__class__.__name__ + 'fulldepth_cuda' + str(
-            #         self.use_cuda) + '_without_epsilon_return_test.png')
+            #     './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
+            #         lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_curve_g2m_number_input3d_gcn5-h3-memo_logsoftmax_no_pretrain_train_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
+            #         self.use_cuda) + '_return_-mean.png')
             # plt.clf()
             #
             # plt.clf()
@@ -650,9 +608,9 @@ class TrainModel_MC:
             # plt.ylabel('number of fill-in')
             # # plt.draw()
             # plt.savefig(
-            #     './results/rl/hypertraining_lractor_acmc_' + str(
-            #         lr_actor) + '_epsilon_'+ str(self.model.epsilon) +'_'+ self.heuristic + '_curve_g2m_number_gcn_logsoftmax_with_pretrain_val_' + self.train_dataset.__class__.__name__ + 'fulldepth_cuda' + str(
-            #         self.use_cuda) + '_without_epsilon_return_test.png')
+            #     './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
+            #         lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy())  + '_' + self.heuristic + '_curve_g2m_number_input3d_gcn5-h3-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
+            #         self.use_cuda) + '_return_-mean.png')
             # plt.clf()
             #
             # plt.clf()
@@ -664,16 +622,8 @@ class TrainModel_MC:
             # plt.ylabel('number of fill-in')
             # # plt.draw()
             # plt.savefig(
-            #     './results/rl/hypertraining_lractor_acmc_' + str(
-            #         lr_actor) + '_epsilon_'+ str(self.model.epsilon) +'_' + self.heuristic + '_loss_curve_g2m_number_gcn_logsoftmax_with_pretrain_val_' + self.train_dataset.__class__.__name__ + 'fulldepth_cuda' + str(
-            #         self.use_cuda) + '_without_epsilon_return_test.png')
+            #     './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
+            #         lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_loss_curve_g2m_number_input3d_gcn5-h3-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_umlim_depth_prune_cuda' + str(
+            #         self.use_cuda) + '_return_-mean.png')
             # plt.clf()
 
-            # print('epoch {:04d}'.format(epoch+1), 'gcn2' + self.heuristic,
-            #       # 'min_ratio {}'.format(_min_ratio_gcn2mind),
-            #       # 'max_ratio {}'.format(_max_ratio_gcn2mind),
-            #       ' train av_ratio {}'.format(_train_ave_ratio_gcn2mind),
-            #       ' validation av_ratio {}'.format(_val_ave_ratio_gcn2mind))
-            # for name, param in self.model.named_parameters():
-            #     print('parameter name {}'.format(name),
-            #           'parameter value {}'.format(param.data))

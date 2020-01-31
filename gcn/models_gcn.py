@@ -119,8 +119,8 @@ class GCN_Sparse_Policy_5(nn.Module):
 
         # second layer with softmax
         features = self.gc5(features, adj_matrix)
-        features = F.log_softmax(features.t())
-        features = features.t()
+        features = F.log_softmax(features.view(-1))
+        # features = features.t()
 
         return features
 
@@ -179,8 +179,8 @@ class GCN_Sparse_Memory_Policy_SelectNode_5(nn.Module):
 
         # second layer with softmax
         features = self.gc5(features, adj_matrix)
-        features = F.log_softmax(features.t())
-        features = features.t()
+        features = F.log_softmax(features.view(-1))
+        # features = features.t()
 
         return features
 
@@ -229,8 +229,8 @@ class GCN_Sparse_Memory_Policy_SelectNode_10(nn.Module):
 
         # second layer with softmax
         features = self.gc10(features, adj_matrix)
-        features = F.log_softmax(features.t())
-        features = features.t()
+        features = F.log_softmax(features.view(-1))
+        # features = features.t()
 
         return features
 
@@ -379,8 +379,8 @@ class GAN_Memory_10(nn.Module):
         features = F.relu(features)
         # features = F.dropout(features, self.dropout, training=self.training)
         features = self.gc10(features, adj_matrix)
-        features = F.log_softmax(features.t())
-        features = features.t()
+        features = F.log_softmax(features.view(-1))
+        # features = features.t()
         return features
 
 

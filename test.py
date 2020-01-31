@@ -8,10 +8,10 @@ w = []
 
 w = torch.tensor(w)
 
-features = torch.tensor([[0.1], [0.2],[0.3],[0.5]]) # initialize the feature matrix
-features = features.view(-1)
-features = F.log_softmax(features)
-print(features)
+features = torch.tensor([float('nan')]) # initialize the feature matrix
+if torch.isnan(features):
+
+    print(features)
 
 # f2 = torch.ones([1293], dtype=torch.float32)
 # a = torch.ones([1293,1293], dtype=torch.float32)
