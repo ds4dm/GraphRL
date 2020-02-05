@@ -4,14 +4,17 @@ import torch
 import torch.nn.functional as F
 from torch.distributions import Categorical
 
-w = []
+# w = [[1,2], [1,2]]
+#
+# w = torch.tensor(w)
+# a= w.sum()
+#
+# print(a)
 
-w = torch.tensor(w)
-
-features = torch.tensor([float('nan')]) # initialize the feature matrix
-if torch.isnan(features):
-
-    print(features)
+# features = torch.tensor([float('nan')]) # initialize the feature matrix
+# if torch.isnan(features):
+#
+#     print(features)
 
 # f2 = torch.ones([1293], dtype=torch.float32)
 # a = torch.ones([1293,1293], dtype=torch.float32)
@@ -20,6 +23,8 @@ if torch.isnan(features):
 # features[:,0] = f2
 # print(features[:,0])
 
+lr = 2
+print(len(lr))
 
 
 

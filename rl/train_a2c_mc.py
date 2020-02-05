@@ -39,7 +39,7 @@ class TrainModel_MC:
 
         depth_max = 1000000
 
-        self.actor_optim = optm.Adam(self.model.actor.parameters(),  weight_decay=self.weight_d, lr=lr_actor)
+        actor_optim = optm.Adam(self.model.actor.parameters(),  weight_decay=self.weight_d, lr=lr_actor)
 
         print('Use Critic:')
         print(use_critic)
@@ -190,6 +190,7 @@ class TrainModel_MC:
                                                                                # hence, if it actually represents loss
                                 # gamma_t = gamma_t * gamma
 
+
                             # step update of actor
                             actor_loss = torch.stack(actor_losses).sum()
                             total_loss_train_1graph = actor_loss.item()
@@ -220,6 +221,9 @@ class TrainModel_MC:
                             # ratio_gcn2mind.append(_ratio_gcn2mind)
                             # # ratio_gcn2rand.append(_ratio_gcn2rand)
 
+                            # del actor_losses[:]
+                            # del critic_losses[:]
+                            # del returns[:]
                             del self.model.rewards[:]
                             del self.model.actions[:]
                             del self.model.saved_actions[:]
@@ -405,7 +409,7 @@ class TrainModel_MC:
                             # standard return
                             returns = -returns
 
-                            returns = (returns - self.model.epsilon/ 530000) / (1 - self.model.epsilon)
+                            # returns = (returns - self.model.epsilon/ 530000) / (1 - self.model.epsilon)
                             # returns = returns / (returns.std() + self.eps)
 
                             returns = (returns - returns.mean()) / (returns.std() + self.eps)
@@ -426,18 +430,22 @@ class TrainModel_MC:
                                                                            # hence, it actually represents loss
                                 # gamma_t = gamma_t*gamma
 
+
                             # step update of actor
                             actor_loss = torch.stack(actor_losses).sum()
+
                             total_loss_train_1graph = actor_loss.item()
-                            self.actor_optim.zero_grad()
-                            actor_loss.backward(retain_graph=True)
-                            self.actor_optim.step()
+                            actor_optim.zero_grad()
+                            # actor_loss.backward(retain_graph=True)
+                            actor_loss.backward()
+                            actor_optim.step()
                             # print('epochs {}'.format(epoch), 'loss {}'.format(actor_loss))
 
                             # step update of critic
                             if use_critic:
                                 self.critic_optim.zero_grad()
                                 critic_closs = torch.stack(critic_losses).sum()
+
                                 critic_closs.backward()
                                 self.critic_optim.step()
                             else:
@@ -456,6 +464,10 @@ class TrainModel_MC:
                             # # rand.append(rewards_random)
                             # ratio_gcn2mind.append(_ratio_gcn2mind)
                             # # ratio_gcn2rand.append(_ratio_gcn2rand)
+
+                            # del returns[:]
+                            # del actor_losses[:]
+                            # del critic_losses[:]
 
                             del self.model.rewards[:]
                             del self.model.actions[:]

@@ -145,8 +145,8 @@ class GCN_Sparse_Memory_Policy_SelectNode(nn.Module):
 
         # second layer with softmax
         features = self.gc2(features, adj_matrix)
-        features = F.log_softmax(features.t())
-        features = features.t()
+        features = F.log_softmax(features.view(-1))
+        # features = features.t()
 
         return features
 
@@ -379,8 +379,8 @@ class GAN_Memory_10(nn.Module):
         features = F.relu(features)
         # features = F.dropout(features, self.dropout, training=self.training)
         features = self.gc10(features, adj_matrix)
-        features = F.log_softmax(features.view(-1))
-        # features = features.t()
+        features = F.log_softmax(features.t())
+        features = features.t()
         return features
 
 
@@ -434,5 +434,89 @@ class GNN_GAN(nn.Module):
         features = F.log_softmax(features.t())
         features = features.t()
         return features
+
+
+class GCN_Sparse_Memory_5(nn.Module):
+    """
+    GCN model for node selection policy
+    """
+    def __init__(self, nin, nhidden, nout, dropout):
+        super(GCN_Sparse_Memory_5, self).__init__()
+
+        self.gc1 = GraphConvolutionLayer_Sparse_Memory(nin, nhidden) # first graph conv layer
+        self.gc2 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc3 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc4 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc5 = GraphConvolutionLayer_Sparse_Memory(nhidden, nout) # second graph conv layer
+        self.dropout = dropout
+
+
+    def forward(self, features, adj_matrix):
+        # first layer with relu
+        # features = F.dropout(features, self.dropout, training=self.training)
+        features = self.gc1(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc2(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc3(features, adj_matrix)
+        features = F.relu(features)
+        features = self.gc4(features, adj_matrix)
+        features = F.relu(features)
+
+        # second layer with softmax
+        features = self.gc5(features, adj_matrix)
+        features = F.relu(features)
+        # features = features.t()
+
+        return features
+
+
+class GCN_Sparse_Policy(nn.Module):
+
+    def __init__(self, nin, nhidden_gcn, nout_gcn, nhidden_policy, nhidden_value, dropout):
+
+        super(GCN_Sparse_Policy, self).__init__()
+
+        self.gcn = GCN_Sparse_Memory_5(nin=nin, nhidden= nhidden_gcn, nout=nout_gcn, dropout=dropout)
+
+        self.policy1 = nn.Sequential(
+            nn.Linear(nout_gcn, nhidden_policy),
+            nn.ReLU(),
+            nn.Linear(nhidden_policy, 1)
+        )
+
+    def forward(self, features, adj_matrix):
+
+        features = self.gcn(features, adj_matrix)
+        probs = self.policy1(features).view(-1)
+        probs = F.log_softmax(probs)
+
+        return probs, features
+
+
+
+class MLP_Value(nn.Module):
+
+
+    def __init__(self, nout_gcn, nhidden_value,):
+
+        super(MLP_Value, self).__init__()
+
+        self.value = nn.Sequential(
+            nn.Linear(nout_gcn, nhidden_value),
+            nn.ReLU(),
+            nn.Linear(nhidden_value, 1),
+            nn.ReLU()
+        )
+
+    def forward(self, features):
+
+        v = self.value(features).sum()
+
+
+        return v
+
+
+
 
 

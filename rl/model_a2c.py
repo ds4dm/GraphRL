@@ -155,14 +155,13 @@ class Model_A2C_Sparse(nn.Module):
         # features[:, 1] = torch.spmm(adj_M, features[:, 0].view(-1, 1)).view(-1)
         # features[:, 2] = inputs.n - features[:, 1]
 
-        random_choice = torch.ones(inputs.n)
+
         epsilon = self.epsilon
 
         if self.use_cuda:
             adj_M = adj_M.cuda()
             features = features.cuda()
             epsilon = epsilon.cuda()
-            random_choice = random_choice.cuda()
 
         probs = self.actor(features, adj_M)  # call actor to get a selection distribution
         probs = probs.view(-1)
@@ -176,6 +175,10 @@ class Model_A2C_Sparse(nn.Module):
 
         # node_selected = m_rand.sample()
         if torch.bernoulli(epsilon)==1 or torch.isnan(probs.exp().sum()):
+            random_choice = torch.ones(inputs.n)
+            if self.use_cuda:
+                random_choice = random_choice.cuda()
+
             print('sum of probs: {}'.format(probs.exp().sum()))
             m_rand = Categorical(random_choice)
             node_selected = m_rand.sample()

@@ -33,7 +33,7 @@ parser.add_argument('--pretrain_epochs', type=int, default=3, help='Training epo
 parser.add_argument('--lr_actor', type=float, default= 0.001, help='Learning rate of actor')
 parser.add_argument('--lr_critic', type=float, default= 0.001, help='Learning rate of critic')
 parser.add_argument('--wd', type=float, default=5e-4, help='Weight decay')
-parser.add_argument('--dhidden', type=int, default=3, help='Dimension of hidden features')
+parser.add_argument('--dhidden', type=int, default=1, help='Dimension of hidden features')
 parser.add_argument('--dinput', type=int, default=1, help='Dimension of input features')
 parser.add_argument('--doutput', type=int, default=1, help='Dimension of output features')
 parser.add_argument('--dropout', type=float, default=0.1, help='Dropout Rate')
@@ -176,11 +176,11 @@ for i in range(len(lr)):
     #                                      dropout=args.dropout,
     #                                      )  # alpha=args.alpha
 
-    actor = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
-                                         nhidden=args.dhidden,
-                                         nout=args.doutput,
-                                         dropout=args.dropout,
-                                         )  # alpha=args.alpha
+    # actor = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
+    #                                      nhidden=args.dhidden,
+    #                                      nout=args.doutput,
+    #                                      dropout=args.dropout,
+    #                                      )  # alpha=args.alpha
 
 
     # actor = GAN(nin=args.dinput,
@@ -197,12 +197,12 @@ for i in range(len(lr)):
     #             alpha=args.alpha
     #             )  # alpha=args.alpha
 
-    # actor = GAN_Memory_5(nin=args.dinput,
-    #                      nhidden=args.dhidden,
-    #                      nout=args.doutput,
-    #                      dropout=args.dropout,
-    #                      alpha=args.alpha
-    #                      )  # alpha=args.alpha
+    actor = GAN_Memory_10(nin=args.dinput,
+                         nhidden=args.dhidden,
+                         nout=args.doutput,
+                         dropout=args.dropout,
+                         alpha=args.alpha
+                         )  # alpha=args.alpha
 
     if dataset_name == 'UFSMDataset_Demo':
         test_dataset = dataset(start=24, end=26)
@@ -244,7 +244,7 @@ for i in range(len(lr)):
           'epochs: {}'.format(args.epochs),
           'Train DataSet: ' + train_dataset.__class__.__name__ + '\n')
 
-    train_a2c = TrainModel_MC(model_a2c,
+    train_a2c = TrainModel_MC(model=model_a2c,
                               heuristic=heuristic,
                               train_dataset=train_dataset,
                               val_dataset=val_dataset,
@@ -252,11 +252,11 @@ for i in range(len(lr)):
                               use_cuda=args.cuda)
     # args.lr_actor = lr[i]
     train_a2c.train_and_validate(n_epochs=args.epochs,
-                             lr_actor=lr[i], # args.lr_actor
-                             lr_critic=args.lr_critic,
-                             use_critic = args.use_critic,
-                             density = args.p
-                             )
+                                 lr_actor=lr[i], # args.lr_actor
+                                 lr_critic=args.lr_critic,
+                                 use_critic = args.use_critic,
+                                 density = args.p
+                                 )
 print('Training finished')
 print('Training time: {:.4f}'.format(time.time()-time_start))
 
