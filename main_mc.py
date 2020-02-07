@@ -159,7 +159,7 @@ eps = [0, 0.001, 0.01 ,0.02, 0.05, 0.1, 0.2, 0.5 ]
 # lr = [0.00001, 0.0001, 0.001, ]
 # lr = [0.1, 0.01, 0.001]
 # lr = [0.00001, 0.0001, 0.001,0.1]
-lr = [0.1]
+lr = [1]
 time_start = time.time()
 
 for i in range(len(lr)):
@@ -176,11 +176,11 @@ for i in range(len(lr)):
     #                                      dropout=args.dropout,
     #                                      )  # alpha=args.alpha
 
-    # actor = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
-    #                                      nhidden=args.dhidden,
-    #                                      nout=args.doutput,
-    #                                      dropout=args.dropout,
-    #                                      )  # alpha=args.alpha
+    actor = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
+                                         nhidden=args.dhidden,
+                                         nout=args.doutput,
+                                         dropout=args.dropout,
+                                         )  # alpha=args.alpha
 
 
     # actor = GAN(nin=args.dinput,
@@ -197,12 +197,12 @@ for i in range(len(lr)):
     #             alpha=args.alpha
     #             )  # alpha=args.alpha
 
-    actor = GAN_Memory_10(nin=args.dinput,
-                         nhidden=args.dhidden,
-                         nout=args.doutput,
-                         dropout=args.dropout,
-                         alpha=args.alpha
-                         )  # alpha=args.alpha
+    # actor = GAN_Memory_10(nin=args.dinput,
+    #                      nhidden=args.dhidden,
+    #                      nout=args.doutput,
+    #                      dropout=args.dropout,
+    #                      alpha=args.alpha
+    #                      )  # alpha=args.alpha
 
     if dataset_name == 'UFSMDataset_Demo':
         test_dataset = dataset(start=24, end=26)
@@ -240,7 +240,7 @@ for i in range(len(lr)):
 
     print('Supervised Training started')
     print('heuristic: ' + heuristic,
-          'actor learning rate: {}'.format(lr),
+          'actor learning rate: {}'.format(lr[i]),
           'epochs: {}'.format(args.epochs),
           'Train DataSet: ' + train_dataset.__class__.__name__ + '\n')
 
@@ -251,6 +251,7 @@ for i in range(len(lr)):
                               weight_d=args.wd,
                               use_cuda=args.cuda)
     # args.lr_actor = lr[i]
+    
     train_a2c.train_and_validate(n_epochs=args.epochs,
                                  lr_actor=lr[i], # args.lr_actor
                                  lr_critic=args.lr_critic,

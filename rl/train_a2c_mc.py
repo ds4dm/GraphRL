@@ -33,13 +33,13 @@ class TrainModel_MC:
         self.beta = 0.9
         self.eps = np.finfo(np.float32).eps.item()
 
-
     def train_and_validate(self, n_epochs, lr_actor, lr_critic, use_critic, gamma=0.99, density=0.1):
+
         actor_initial = copy.deepcopy(self.model.actor)
 
         depth_max = 1000000
 
-        actor_optim = optm.Adam(self.model.actor.parameters(),  weight_decay=self.weight_d, lr=lr_actor)
+        actor_opt = optm.Adam(self.model.actor.parameters(),  weight_decay=self.weight_d, lr=lr_actor)
 
         print('Use Critic:')
         print(use_critic)
@@ -435,10 +435,10 @@ class TrainModel_MC:
                             actor_loss = torch.stack(actor_losses).sum()
 
                             total_loss_train_1graph = actor_loss.item()
-                            actor_optim.zero_grad()
+                            actor_opt.zero_grad()
                             # actor_loss.backward(retain_graph=True)
                             actor_loss.backward()
-                            actor_optim.step()
+                            actor_opt.step()
                             # print('epochs {}'.format(epoch), 'loss {}'.format(actor_loss))
 
                             # step update of critic
