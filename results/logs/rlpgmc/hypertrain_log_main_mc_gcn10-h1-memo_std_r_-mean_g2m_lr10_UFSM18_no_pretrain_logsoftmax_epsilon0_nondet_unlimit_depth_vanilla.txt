@@ -76,3 +76,4 @@ epochs 18 loss -768.1996459960938 train min_degreeperformance 8959.0 train gcn p
 epochs 19 loss -619.0164794921875 train min_degreeperformance 8959.0 train gcn performance 376316.0 val min_degreeperformance nan val gcn performance nan
 epochs 20 loss -662.216064453125 train min_degreeperformance 8959.0 train gcn performance 368937.0 val min_degreeperformance nan val gcn performance nan
 epochs 21 loss -750.326416015625 train min_degreeperformance 8959.0 train gcn performance 446646.0 val min_degreeperformance nan val gcn performance nan
+epochs 22 loss -834.5078735351562 train min_degreeperformance 8959.0 train gcn performance 266849.0 val min_degreeperformance nan val gcn performance nan
