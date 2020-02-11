@@ -212,7 +212,7 @@ class TrainModel_MC:
                             if use_critic:
 
                                 critic_loss = torch.stack(critic_losses).sum()
-                                total_loss_critic_train = critic_loss.item()
+                                total_loss_critic_train_1graph = critic_loss.item()
                                 # self.critic_optim.zero_grad()
                                 # critic_loss.backward()
                                 # self.critic_optim.step()
@@ -241,7 +241,7 @@ class TrainModel_MC:
 
                     av_loss_train += total_loss_train_1graph
                     if use_critic:
-                        av_loss_critic_train += total_loss_critic_train
+                        av_loss_critic_train += total_loss_critic_train_1graph
 
 
                 for X in self.val_loader:
