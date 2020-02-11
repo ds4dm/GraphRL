@@ -21,6 +21,7 @@ class Model_A2C(nn.Module):
         self.actions = []
         self.rewards = []
         self.saved_actions = []
+        self.values = []
 
         if self.use_critic:
             self.critic = critic
@@ -116,6 +117,7 @@ class Model_A2C_Sparse(nn.Module):
         self.epsilon = torch.tensor(epsilon, dtype=torch.float)
         self.actions = []
         self.rewards = []
+        self.values = []
         self.saved_actions = []
 
         if self.use_critic:
@@ -163,7 +165,7 @@ class Model_A2C_Sparse(nn.Module):
             features = features.cuda()
             epsilon = epsilon.cuda()
 
-        probs = self.actor(features, adj_M)  # call actor to get a selection distribution
+        probs, features_gcn = self.actor(features, adj_M)  # call actor to get a selection distribution
         probs = probs.view(-1)
 
         # node_selected = torch.argmax(probs)
@@ -191,7 +193,7 @@ class Model_A2C_Sparse(nn.Module):
         log_prob = m.log_prob(node_selected)
 
         if self.use_critic:  # call critic to compute the value for current state
-            critic_current = self.critic(features, adj_M).sum()
+            critic_current = self.critic(features_gcn)
         else:
             critic_current = 0
 
@@ -213,10 +215,12 @@ class Model_A2C_Sparse(nn.Module):
             # features[:, 2] = inputs.n - features[:, 1]
 
             if self.use_cuda:
+
                 adj_M = adj_M.cuda()
                 features = features.cuda()
 
-            critic_next = self.critic(features, adj_M).sum()
+            probs, features_gcn = self.actor(features, adj_M)  # call actor to get a selection distribution
+            critic_next = self.critic(features_gcn)
         else:
             critic_next = 0
 

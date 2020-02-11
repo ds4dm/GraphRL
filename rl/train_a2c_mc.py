@@ -55,6 +55,7 @@ class TrainModel_MC:
             plt.switch_backend('agg')
 
         total_loss_train = []
+        total_loss_critic_train = []
 
         t = []
 
@@ -86,6 +87,7 @@ class TrainModel_MC:
                 train_mind = []
 
                 av_loss_train = 0  # loss per epochs
+                av_loss_critic_train = 0
                 for X in self.train_loader:
                     for x in X:
 
@@ -137,7 +139,8 @@ class TrainModel_MC:
                                     x_model)  # forward propagation,action: node selected, reward: nb edges added
                                 self.model.rewards.append(reward)
                                 self.model.actions.append(action)
-                                self.model.saved_actions.append(SavedAction(log_prob, value_current))
+                                self.model.saved_actions.append(log_prob)
+                                self.model.values.append(value_current)
                             else:
                                 reward = x_model.eliminate_node(node_selected, reduce=True)
                                 # reward = 2
@@ -174,13 +177,19 @@ class TrainModel_MC:
 
                             returns = (returns - returns.mean()) / (returns.std() + self.eps)
                             saved_actions = self.model.saved_actions
+                            values = self.model.values
                             # compute cummulated loss of actor and critic of one graph
                             gamma_t = 1
-                            for (log_prob, value_current), R in zip(saved_actions, returns):
+                            for log_prob, value_current, R in zip(saved_actions, values, returns):
                                 if use_critic:
-                                    advantage = R - value_current
-                                    critic_losses.append(-value_current * advantage)
-                                    # critic_losses.append(self.critic_loss_criterion(value_current, torch.Tensor([R.detach()])))
+                                    advantage = R - torch.Tensor(value_current)
+                                    # critic_losses.append(-value_current * advantage)
+                                    if self.use_cuda:
+                                        R = torch.cuda.FloatTensor([R.detach()])
+                                    else:
+                                        R = torch.Tensor([R.detach()])
+
+                                    critic_losses.append(self.critic_loss_criterion(value_current, R))
                                 else:
                                     advantage = R - baseline
                                 if self.use_cuda:
@@ -200,13 +209,15 @@ class TrainModel_MC:
                             # print('epochs {}'.format(epoch), 'loss {}'.format(actor_loss))
 
                             # step update of critic
-                            # if use_critic:
-                            #     self.critic_optim.zero_grad()
-                            #     critic_closs = torch.stack(critic_losses).sum()
-                            #     critic_closs.backward()
-                            #     self.critic_optim.step()
-                            # else:
-                            #     baseline = baseline.detach()
+                            if use_critic:
+
+                                critic_loss = torch.stack(critic_losses).sum()
+                                total_loss_critic_train = critic_loss.item()
+                                # self.critic_optim.zero_grad()
+                                # critic_loss.backward()
+                                # self.critic_optim.step()
+                            else:
+                                baseline = baseline.detach()
 
                             train_gcn_greedy.append(sum(self.model.rewards))
                             if epoch == 0:
@@ -229,6 +240,8 @@ class TrainModel_MC:
                             del self.model.saved_actions[:]
 
                     av_loss_train += total_loss_train_1graph
+                    if use_critic:
+                        av_loss_critic_train += total_loss_critic_train
 
 
                 for X in self.val_loader:
@@ -321,6 +334,7 @@ class TrainModel_MC:
 
             else:
                 av_loss_train = 0  # loss per epochs
+                av_loss_critic_train = 0
                 # ratio_gcn2rand = []
                 n_graphs_proceed = 0
                 # for batch_id, sample_batch in enumerate(self.train_loader):
@@ -378,7 +392,8 @@ class TrainModel_MC:
                                 action, log_prob, reward, value_current, value_next, x_model = self.model(x_model) # forward propagation,action: node selected, reward: nb edges added
                                 self.model.rewards.append(reward)
                                 self.model.actions.append(action)
-                                self.model.saved_actions.append(SavedAction(log_prob, value_current))
+                                self.model.values.append(value_current)
+                                self.model.saved_actions.append(log_prob)
                             else:
                                 reward = x_model.eliminate_node(node_selected, reduce=True)
                                 # reward = 2
@@ -415,13 +430,19 @@ class TrainModel_MC:
                             returns = (returns - returns.mean()) / (returns.std() + self.eps)
 
                             saved_actions = self.model.saved_actions
+                            values = self.model.values
                             # compute cummulated loss of actor and critic of one graph
                             gamma_t = 1
-                            for (log_prob, value_current), R in zip(saved_actions, returns):
+                            for log_prob, value_current, R in zip(saved_actions, values, returns):
                                 if use_critic:
-                                    advantage = R - value_current
-                                    critic_losses.append(-value_current* advantage)
-                                    # critic_losses.append(self.critic_loss_criterion(value_current, torch.Tensor([R.detach()])))
+                                    advantage = R - torch.Tensor(value_current)
+
+                                    if self.use_cuda:
+                                        R = torch.cuda.FloatTensor([R.detach()])
+                                    else:
+                                        R = torch.Tensor([R.detach()])
+                                    # critic_losses.append(-value_current* advantage)
+                                    critic_losses.append(self.critic_loss_criterion(value_current, torch.Tensor([R.detach()])))
                                 else:
                                     advantage = R - baseline
                                 if self.use_cuda:
@@ -432,10 +453,9 @@ class TrainModel_MC:
 
 
                             # step update of actor
-                            actor_loss = torch.stack(actor_losses).sum()
-
-                            total_loss_train_1graph = actor_loss.item()
                             actor_opt.zero_grad()
+                            actor_loss = torch.stack(actor_losses).sum()
+                            total_loss_train_1graph = actor_loss.item()
                             # actor_loss.backward(retain_graph=True)
                             actor_loss.backward()
                             actor_opt.step()
@@ -444,9 +464,10 @@ class TrainModel_MC:
                             # step update of critic
                             if use_critic:
                                 self.critic_optim.zero_grad()
-                                critic_closs = torch.stack(critic_losses).sum()
+                                critic_loss = torch.stack(critic_losses).sum()
+                                total_loss_critic_train_1graph = critic_loss.item()
 
-                                critic_closs.backward()
+                                critic_loss.backward()
                                 self.critic_optim.step()
                             else:
                                 baseline = baseline.detach()
@@ -474,6 +495,8 @@ class TrainModel_MC:
                             del self.model.saved_actions[:]
 
                     av_loss_train += total_loss_train_1graph
+                    if use_critic:
+                        av_loss_critic_train += total_loss_critic_train_1graph
 
 
 
@@ -571,15 +594,26 @@ class TrainModel_MC:
 
             # print('epochs {}'.format(epoch),'loss {}'.format(av_loss_train) )
             total_loss_train.append(av_loss_train)
+            if use_critic:
+                total_loss_critic_train.append(av_loss_critic_train)
 
-            print('epochs {}'.format(epoch),
-                  'loss {}'.format(av_loss_train),
-                  'train '+ self.heuristic + 'performance {}'.format(_train_ave_mind),
-                  'train gcn performance {}'.format(_train_ave_gcn),
-                  'val ' + self.heuristic + 'performance {}'.format(_val_ave_mind),
-                  'val gcn performance {}'.format(_val_ave_gcn),
-
-                  )
+            if use_critic:
+                print('epochs {}'.format(epoch),
+                      'loss actor {}'.format(av_loss_train),
+                      'loss critic {}'.format(av_loss_critic_train),
+                      'train ' + self.heuristic + 'performance {}'.format(_train_ave_mind),
+                      'train gcn performance {}'.format(_train_ave_gcn),
+                      'val ' + self.heuristic + 'performance {}'.format(_val_ave_mind),
+                      'val gcn performance {}'.format(_val_ave_gcn),
+                      )
+            else:
+                print('epochs {}'.format(epoch),
+                      'loss actor{}'.format(av_loss_train),
+                      'train '+ self.heuristic + 'performance {}'.format(_train_ave_mind),
+                      'train gcn performance {}'.format(_train_ave_gcn),
+                      'val ' + self.heuristic + 'performance {}'.format(_val_ave_mind),
+                      'val gcn performance {}'.format(_val_ave_gcn),
+                      )
 
 
             # _val_ave_ratio_gcn2mind = _val_ave_gcn / _val_ave_mind

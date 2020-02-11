@@ -9,7 +9,7 @@ from utils.utils import open_dataset, varname
 from rl.model_a2c import Model_A2C_Sparse
 from rl.train_a2c_td import TrainModel_TD
 from rl.train_a2c_mc import TrainModel_MC
-from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GCN_Sparse_Memory_Policy_SelectNode_10, GAN_Memory_5, GAN_Memory_10
+from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GCN_Sparse_Memory_Policy_SelectNode_10, GAN_Memory_5, GAN_Memory_10, GCN_Sparse_Policy, MLP_Value
 from gcn.models_gcn import GCN_Value, GCN_Sparse_Value
 from supervised.train_supervised_learning import Train_SupervisedLearning
 
@@ -43,7 +43,7 @@ parser.add_argument('--ngraph', type=int, default=20, help='Number of graph per 
 parser.add_argument('--p', type=int, default=0.01, help='probiblity of edges')
 parser.add_argument('--nnode_test', type=int, default=10, help='Number of node per graph for test')
 parser.add_argument('--ngraph_test', type=int, default=1, help='Number of graph for test dataset')
-parser.add_argument('--use_critic', type=bool, default=False, help='Enable critic')
+parser.add_argument('--use_critic', type=bool, default=True, help='Enable critic')
 
 args = parser.parse_args()
 
@@ -130,13 +130,6 @@ epoch = 0
 # option of critic
 critic = None
 
-if args.use_critic:
-    critic = GCN_Sparse_Value(nin=args.dinput,
-                              nhidden=args.dhidden,
-                              nout=args.doutput,
-                              dropout=args.dropout,
-                              ) # alpha=args.alpha
-
 
 heuristic = 'min_degree' # 'min_degree' 'one_step_greedy'
 
@@ -159,7 +152,7 @@ eps = [0, 0.001, 0.01 ,0.02, 0.05, 0.1, 0.2, 0.5 ]
 # lr = [0.00001, 0.0001, 0.001, ]
 # lr = [0.1, 0.01, 0.001]
 # lr = [0.00001, 0.0001, 0.001,0.1]
-lr = [1000000]
+lr = [0.1]
 time_start = time.time()
 
 for i in range(len(lr)):
@@ -176,11 +169,17 @@ for i in range(len(lr)):
     #                                      dropout=args.dropout,
     #                                      )  # alpha=args.alpha
 
-    actor = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
-                                         nhidden=args.dhidden,
-                                         nout=args.doutput,
-                                         dropout=args.dropout,
-                                         )  # alpha=args.alpha
+    # actor = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
+    #                                      nhidden=args.dhidden,
+    #                                      nout=args.doutput,
+    #                                      dropout=args.dropout,
+    #                                      )  # alpha=args.alpha
+
+    actor = GCN_Sparse_Policy(nin=args.dinput, nhidden_gcn=args.dhidden, nout_gcn=args.doutput, nhidden_policy=args.dhidden, dropout=args.dropout)
+
+    if args.use_critic:
+        critic = MLP_Value(nout_gcn=args.doutput, nhidden_value=args.dhidden
+                           )  # alpha=args.alpha
 
 
     # actor = GAN(nin=args.dinput,
@@ -230,6 +229,7 @@ for i in range(len(lr)):
         #         args.p) + '_epochs' + str(args.pretrain_epochs) + '_cuda.pth'))
         # actor.load_state_dict(torch.load('./results/models/gcn_policy_one_step_greedy_pre_UFSMDataset_epochs30_cuda.pth'))
         actor.cuda()
+        critic.cuda()
     model_a2c = Model_A2C_Sparse(actor=actor,
                                  epsilon=0.0,  # non-pretrain:0.02 #pretrain:0.0
                                  use_critic=args.use_critic,
