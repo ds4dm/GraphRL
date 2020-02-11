@@ -157,7 +157,7 @@ class TrainModel_MC:
                         for r in self.model.rewards[::-1]:
                             R = r + gamma * R
                             returns.insert(0, R)
-                        returns = torch.tensor(returns)
+                        returns = torch.Tensor(returns)
 
                         # power-1 return
                         # returns = returns + 1
@@ -182,7 +182,7 @@ class TrainModel_MC:
                             gamma_t = 1
                             for log_prob, value_current, R in zip(saved_actions, values, returns):
                                 if use_critic:
-                                    advantage = R - torch.Tensor(value_current)
+                                    advantage = R - value_current.cpu()
                                     # critic_losses.append(-value_current * advantage)
                                     if self.use_cuda:
                                         R = torch.cuda.FloatTensor([R.detach()])
@@ -435,14 +435,14 @@ class TrainModel_MC:
                             gamma_t = 1
                             for log_prob, value_current, R in zip(saved_actions, values, returns):
                                 if use_critic:
-                                    advantage = R - torch.Tensor(value_current)
+                                    advantage = R - value_current.cpu()
 
                                     if self.use_cuda:
                                         R = torch.cuda.FloatTensor([R.detach()])
                                     else:
                                         R = torch.Tensor([R.detach()])
                                     # critic_losses.append(-value_current* advantage)
-                                    critic_losses.append(self.critic_loss_criterion(value_current, torch.Tensor([R.detach()])))
+                                    critic_losses.append(self.critic_loss_criterion(value_current, R))
                                 else:
                                     advantage = R - baseline
                                 if self.use_cuda:
