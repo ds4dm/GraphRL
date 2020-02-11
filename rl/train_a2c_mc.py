@@ -457,7 +457,7 @@ class TrainModel_MC:
                             actor_loss = torch.stack(actor_losses).sum()
                             total_loss_train_1graph = actor_loss.item()
                             # actor_loss.backward(retain_graph=True)
-                            actor_loss.backward()
+                            actor_loss.backward(retain_graph=True)
                             actor_opt.step()
                             # print('epochs {}'.format(epoch), 'loss {}'.format(actor_loss))
 
@@ -467,7 +467,7 @@ class TrainModel_MC:
                                 critic_loss = torch.stack(critic_losses).sum()
                                 total_loss_critic_train_1graph = critic_loss.item()
 
-                                critic_loss.backward()
+                                critic_loss.backward(retain_graph=True)
                                 self.critic_optim.step()
                             else:
                                 baseline = baseline.detach()
