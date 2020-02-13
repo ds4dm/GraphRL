@@ -9,3 +9,5 @@ heuristic: min_degree actor learning rate: 0.1 epochs: 500 Train DataSet: UFSMDa
 
 Use Critic:
 True
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:494: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  probs = F.log_softmax(probs)
