@@ -4,6 +4,15 @@ import torch
 import torch.nn.functional as F
 from torch.distributions import Categorical
 
+a = []
+
+a.append(1)
+a.append(2)
+
+
+print(a[0])
+
+
 # w = [[1,2], [1,2]]
 #
 # w = torch.tensor(w)

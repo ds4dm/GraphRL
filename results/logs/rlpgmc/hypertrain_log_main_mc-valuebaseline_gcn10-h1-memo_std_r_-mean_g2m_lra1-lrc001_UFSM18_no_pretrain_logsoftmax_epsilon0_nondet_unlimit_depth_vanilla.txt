@@ -9,7 +9,7 @@ heuristic: min_degree actor learning rate: 0.1 epochs: 500 Train DataSet: UFSMDa
 
 Use Critic:
 True
-/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:492: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:494: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   probs = F.log_softmax(probs)
 parameter name actor.gcn.gc1.weight parameter value tensor(1.00000e-02 *
        [[ 1.7804]], device='cuda:0')
@@ -21,19 +21,32 @@ parameter name actor.gcn.gc2.weight_hat parameter value tensor(1.00000e-02 *
 parameter name actor.gcn.gc3.weight parameter value tensor(1.00000e-02 *
        [[ 1.7918]], device='cuda:0')
 parameter name actor.gcn.gc3.weight_hat parameter value tensor([[ 0.5242]], device='cuda:0')
-parameter name actor.policy1.0.weight parameter value tensor([[ 0.2360]], device='cuda:0')
-parameter name actor.policy1.0.bias parameter value tensor([-0.8626], device='cuda:0')
-parameter name actor.policy1.2.weight parameter value tensor([[-0.2214]], device='cuda:0')
-parameter name actor.policy1.2.bias parameter value tensor([-0.9192], device='cuda:0')
-parameter name critic.value.0.weight parameter value tensor([[-0.1974]], device='cuda:0')
-parameter name critic.value.0.bias parameter value tensor([-0.7117], device='cuda:0')
-parameter name critic.value.2.weight parameter value tensor(1.00000e-02 *
-       [[-7.9086]], device='cuda:0')
-parameter name critic.value.2.bias parameter value tensor(1.00000e-02 *
-       [-2.4650], device='cuda:0')
-/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/train_a2c_mc.py:577: RuntimeWarning: invalid value encountered in double_scalars
+parameter name actor.policy1.weight parameter value tensor([[ 0.2360]], device='cuda:0')
+parameter name actor.policy1.bias parameter value tensor([-0.8626], device='cuda:0')
+parameter name critic.value.0.weight parameter value tensor([[-0.2214]], device='cuda:0')
+parameter name critic.value.0.bias parameter value tensor([-0.9192], device='cuda:0')
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/train_a2c_mc.py:582: RuntimeWarning: invalid value encountered in double_scalars
   _val_ave_gcn = np.sum(val_gcn_greedy) / len(val_gcn_greedy)
-/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/train_a2c_mc.py:583: RuntimeWarning: invalid value encountered in double_scalars
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/rl/train_a2c_mc.py:588: RuntimeWarning: invalid value encountered in double_scalars
   _val_ave_mind = np.sum(val_mind) / len(val_mind)
-epochs 0 loss actor -1021.8904418945312 loss critic 1288.0 train min_degreeperformance 9293.0 train gcn performance 132281.0 val min_degreeperformance nan val gcn performance nan
-epochs 1 loss actor -1004.09033203125 loss critic 1289.0003662109375 train min_degreeperformance 9293.0 train gcn performance 129922.0 val min_degreeperformance nan val gcn performance nan
+epochs 0 loss actor -587.3999633789062 loss critic 1290.0001220703125 train min_degreeperformance 8927.0 train gcn performance 452466.0 val min_degreeperformance nan val gcn performance nan
+epochs 1 loss actor -618.6607055664062 loss critic 1290.0 train min_degreeperformance 8927.0 train gcn performance 487637.0 val min_degreeperformance nan val gcn performance nan
+epochs 2 loss actor -887.8692626953125 loss critic 1289.000244140625 train min_degreeperformance 8927.0 train gcn performance 239179.0 val min_degreeperformance nan val gcn performance nan
+epochs 3 loss actor -758.4779052734375 loss critic 1289.0 train min_degreeperformance 8927.0 train gcn performance 255867.0 val min_degreeperformance nan val gcn performance nan
+epochs 4 loss actor -707.4400634765625 loss critic 1290.000244140625 train min_degreeperformance 8927.0 train gcn performance 226062.0 val min_degreeperformance nan val gcn performance nan
+epochs 5 loss actor -741.1320190429688 loss critic 1290.0 train min_degreeperformance 8927.0 train gcn performance 334051.0 val min_degreeperformance nan val gcn performance nan
+epochs 6 loss actor -777.2989501953125 loss critic 1289.0 train min_degreeperformance 8927.0 train gcn performance 222532.0 val min_degreeperformance nan val gcn performance nan
+epochs 7 loss actor -838.3094482421875 loss critic 1289.0 train min_degreeperformance 8927.0 train gcn performance 232492.0 val min_degreeperformance nan val gcn performance nan
+epochs 8 loss actor -848.310302734375 loss critic 1289.9998779296875 train min_degreeperformance 8927.0 train gcn performance 261890.0 val min_degreeperformance nan val gcn performance nan
+epochs 9 loss actor -683.8272094726562 loss critic 1290.0001220703125 train min_degreeperformance 8927.0 train gcn performance 402714.0 val min_degreeperformance nan val gcn performance nan
+epochs 10 loss actor -714.7898559570312 loss critic 1290.000244140625 train min_degreeperformance 8927.0 train gcn performance 444210.0 val min_degreeperformance nan val gcn performance nan
+epochs 11 loss actor -643.1668701171875 loss critic 1288.9998779296875 train min_degreeperformance 8927.0 train gcn performance 412985.0 val min_degreeperformance nan val gcn performance nan
+epochs 12 loss actor -833.1434326171875 loss critic 1289.9998779296875 train min_degreeperformance 8927.0 train gcn performance 264496.0 val min_degreeperformance nan val gcn performance nan
+epochs 13 loss actor -588.0139770507812 loss critic 1290.0 train min_degreeperformance 8927.0 train gcn performance 327336.0 val min_degreeperformance nan val gcn performance nan
+epochs 14 loss actor -809.2509765625 loss critic 1289.9998779296875 train min_degreeperformance 8927.0 train gcn performance 291429.0 val min_degreeperformance nan val gcn performance nan
+epochs 15 loss actor -720.435302734375 loss critic 1290.0 train min_degreeperformance 8927.0 train gcn performance 247776.0 val min_degreeperformance nan val gcn performance nan
+epochs 16 loss actor -727.4127807617188 loss critic 1290.0001220703125 train min_degreeperformance 8927.0 train gcn performance 469127.0 val min_degreeperformance nan val gcn performance nan
+epochs 17 loss actor -770.4835205078125 loss critic 1289.0 train min_degreeperformance 8927.0 train gcn performance 350405.0 val min_degreeperformance nan val gcn performance nan
+epochs 18 loss actor -768.1996459960938 loss critic 1290.0 train min_degreeperformance 8927.0 train gcn performance 224440.0 val min_degreeperformance nan val gcn performance nan
+epochs 19 loss actor -619.0164794921875 loss critic 1288.9998779296875 train min_degreeperformance 8927.0 train gcn performance 376316.0 val min_degreeperformance nan val gcn performance nan
+epochs 20 loss actor -662.216064453125 loss critic 1289.0001220703125 train min_degreeperformance 8927.0 train gcn performance 368937.0 val min_degreeperformance nan val gcn performance nan

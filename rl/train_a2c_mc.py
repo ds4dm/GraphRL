@@ -61,6 +61,7 @@ class TrainModel_MC:
 
         val_ave_gcn = []
         train_ave_gcn = []
+        critic_value_ave = []
         # min_gcn = []
         # max_gcn = []
 
@@ -83,6 +84,7 @@ class TrainModel_MC:
                            # in following epochs, heuristic won't be executed anymore (for avoiding unnecessary comuptation).
                 val_gcn_greedy = []
                 train_gcn_greedy = []
+                critic_value = []
                 val_mind = []
                 train_mind = []
 
@@ -220,6 +222,7 @@ class TrainModel_MC:
                                 baseline = baseline.detach()
 
                             train_gcn_greedy.append(sum(self.model.rewards))
+                            critic_value.append(self.model.values[0])
                             if epoch == 0:
                                 train_mind.append(train_rewards_mindegree)
                             #
@@ -238,6 +241,7 @@ class TrainModel_MC:
                             del self.model.rewards[:]
                             del self.model.actions[:]
                             del self.model.saved_actions[:]
+                            del self.model.values[:]
 
                     av_loss_train += total_loss_train_1graph
                     if use_critic:
@@ -340,6 +344,7 @@ class TrainModel_MC:
                 # for batch_id, sample_batch in enumerate(self.train_loader):
                 val_gcn_greedy = []
                 train_gcn_greedy = []
+                critic_value = []
 
                 for X in self.train_loader:
                     for x in X:
@@ -456,8 +461,8 @@ class TrainModel_MC:
                             actor_opt.zero_grad()
                             actor_loss = torch.stack(actor_losses).sum()
                             total_loss_train_1graph = actor_loss.item()
-                            # actor_loss.backward(retain_graph=True)
                             actor_loss.backward(retain_graph=True)
+                            # actor_loss.backward()
                             actor_opt.step()
                             # print('epochs {}'.format(epoch), 'loss {}'.format(actor_loss))
 
@@ -467,13 +472,15 @@ class TrainModel_MC:
                                 critic_loss = torch.stack(critic_losses).sum()
                                 total_loss_critic_train_1graph = critic_loss.item()
 
-                                critic_loss.backward(retain_graph=True)
+                                critic_loss.backward()
                                 self.critic_optim.step()
                             else:
                                 baseline = baseline.detach()
 
 
                             train_gcn_greedy.append(sum(self.model.rewards))
+                            critic_value.append(self.model.values[0])
+
                             # if epoch==0:
                             #     train_mind.append(train_rewards_mindegree)
                             #
@@ -493,6 +500,10 @@ class TrainModel_MC:
                             del self.model.rewards[:]
                             del self.model.actions[:]
                             del self.model.saved_actions[:]
+                            del self.model.values[:]
+                            del critic_loss
+                            del actor_loss
+
 
                     av_loss_train += total_loss_train_1graph
                     if use_critic:
@@ -573,9 +584,11 @@ class TrainModel_MC:
                     # n_graphs_proceed += len(X)
 
             train_gcn_greedy = np.array(train_gcn_greedy).reshape(-1)
+            critic_value = np.array(critic_value).reshape(-1)
             val_gcn_greedy = np.array(val_gcn_greedy).reshape(-1)
             _val_ave_gcn = np.sum(val_gcn_greedy) / len(val_gcn_greedy)
             _train_ave_gcn = np.sum(train_gcn_greedy) / len(train_gcn_greedy)
+            _critic_value_ave = np.sum(critic_value) / len(critic_value)
 
             if epoch == 0:
                 val_mind = np.array(val_mind).reshape(-1)
@@ -583,19 +596,7 @@ class TrainModel_MC:
                 _val_ave_mind = np.sum(val_mind) / len(val_mind)
                 _train_ave_mind = np.sum(train_mind) / len(train_mind)
 
-
-
-
-            t.append(epoch+1)
-            val_ave_gcn.append(_val_ave_gcn)
-            train_ave_gcn.append(_train_ave_gcn)
-            val_ave_mind.append(_val_ave_mind)
-            train_ave_mind.append(_train_ave_mind)
-
             # print('epochs {}'.format(epoch),'loss {}'.format(av_loss_train) )
-            total_loss_train.append(av_loss_train)
-            if use_critic:
-                total_loss_critic_train.append(av_loss_critic_train)
 
             if use_critic:
                 print('epochs {}'.format(epoch),
@@ -603,6 +604,7 @@ class TrainModel_MC:
                       'loss critic {}'.format(av_loss_critic_train),
                       'train ' + self.heuristic + 'performance {}'.format(_train_ave_mind),
                       'train gcn performance {}'.format(_train_ave_gcn),
+                      'critic value {}'.format(_critic_value_ave),
                       'val ' + self.heuristic + 'performance {}'.format(_val_ave_mind),
                       'val gcn performance {}'.format(_val_ave_gcn),
                       )
@@ -622,14 +624,25 @@ class TrainModel_MC:
             # train_ave_ratio_gcn2mind.append(_train_ave_ratio_gcn2mind)
 
 
-            t_plot = np.array(t).reshape(-1)
 
-            total_loss_train_np = np.array(total_loss_train).reshape(-1)
+            # t.append(epoch + 1)
+            # val_ave_gcn.append(_val_ave_gcn)
+            # train_ave_gcn.append(_train_ave_gcn)
+            # critic_value_ave.append(_critic_value_ave)
+            # val_ave_mind.append(_val_ave_mind)
+            # train_ave_mind.append(_train_ave_mind)
+            # total_loss_train.append(av_loss_train)
+            # if use_critic:
+            #     total_loss_critic_train.append(av_loss_critic_train)
 
-            val_ave_gcn_np = np.array(val_ave_gcn).reshape(-1)
-            train_ave_gcn_np = np.array(train_ave_gcn).reshape(-1)
-            val_ave_mind_np = np.array(val_ave_mind).reshape(-1)
-            train_ave_mind_np = np.array(train_ave_mind).reshape(-1)
+            # t_plot = np.array(t).reshape(-1)
+            #
+            # total_loss_train_np = np.array(total_loss_train).reshape(-1)
+            #
+            # val_ave_gcn_np = np.array(val_ave_gcn).reshape(-1)
+            # train_ave_gcn_np = np.array(train_ave_gcn).reshape(-1)
+            # val_ave_mind_np = np.array(val_ave_mind).reshape(-1)
+            # train_ave_mind_np = np.array(train_ave_mind).reshape(-1)
 
             # plt.clf()
             # plt.plot(t_plot, train_ave_gcn_np, t_plot, train_ave_mind_np)

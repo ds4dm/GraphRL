@@ -193,7 +193,8 @@ class Model_A2C_Sparse(nn.Module):
         log_prob = m.log_prob(node_selected)
 
         if self.use_critic:  # call critic to compute the value for current state
-            critic_current = self.critic(features_gcn)
+            features_hidden = features_gcn.detach()
+            critic_current = self.critic(features_hidden)
         else:
             critic_current = 0
 
@@ -220,7 +221,8 @@ class Model_A2C_Sparse(nn.Module):
                 features = features.cuda()
 
             probs, features_gcn = self.actor(features, adj_M)  # call actor to get a selection distribution
-            critic_next = self.critic(features_gcn)
+            features_hidden = features_gcn.detach()
+            critic_next = self.critic(features_hidden)
         else:
             critic_next = 0
 

@@ -458,8 +458,8 @@ class GCN_Sparse_Memory_3(nn.Module):
         features = F.relu(features)
         features = self.gc2(features, adj_matrix)
         features = F.relu(features)
-        features = self.gc3(features, adj_matrix)
-        features = F.relu(features)
+        # features = self.gc3(features, adj_matrix)
+        # features = F.relu(features)
         # features = self.gc4(features, adj_matrix)
         # features = F.relu(features)
 
@@ -479,11 +479,13 @@ class GCN_Sparse_Policy(nn.Module):
 
         self.gcn = GCN_Sparse_Memory_3(nin=nin, nhidden= nhidden_gcn, nout=nout_gcn, dropout=dropout)
 
-        self.policy1 = nn.Sequential(
-            nn.Linear(nout_gcn, nhidden_policy),
-            nn.ReLU(),
-            nn.Linear(nhidden_policy, 1)
-        )
+        # self.policy1 = nn.Sequential(
+        #     nn.Linear(nout_gcn, nhidden_policy),
+        #     nn.ReLU(),
+        #     nn.Linear(nhidden_policy, 1)
+        # )
+        self.policy1 = nn.Linear(nout_gcn, 1)
+
 
     def forward(self, features, adj_matrix):
 
@@ -500,10 +502,15 @@ class MLP_Value(nn.Module):
 
         super(MLP_Value, self).__init__()
 
+        # self.value = nn.Sequential(
+        #     nn.Linear(nout_gcn, nhidden_value),
+        #     nn.ReLU(),
+        #     nn.Linear(nhidden_value, 1),
+        #     nn.ReLU()
+        # )
+
         self.value = nn.Sequential(
-            nn.Linear(nout_gcn, nhidden_value),
-            nn.ReLU(),
-            nn.Linear(nhidden_value, 1),
+            nn.Linear(nout_gcn, 1),
             nn.ReLU()
         )
 
