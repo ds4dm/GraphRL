@@ -445,10 +445,10 @@ class GCN_Sparse_Memory_3(nn.Module):
 
         self.gc1 = GraphConvolutionLayer_Sparse_Memory(nin, nhidden) # first graph conv layer
         self.gc2 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
-        self.gc3 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        # self.gc3 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
         # self.gc4 = GraphConvolutionLayer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
         # self.gc5 = GraphConvolutionLayer_Sparse_Memory(nhidden, nout) # second graph conv layer
-        self.dropout = dropout
+        # self.dropout = dropout
 
 
     def forward(self, features, adj_matrix):
@@ -457,7 +457,7 @@ class GCN_Sparse_Memory_3(nn.Module):
         features = self.gc1(features, adj_matrix)
         features = F.relu(features)
         features = self.gc2(features, adj_matrix)
-        features = F.relu(features)
+        # features = F.relu(features)
         # features = self.gc3(features, adj_matrix)
         # features = F.relu(features)
         # features = self.gc4(features, adj_matrix)
@@ -510,8 +510,7 @@ class MLP_Value(nn.Module):
         # )
 
         self.value = nn.Sequential(
-            nn.Linear(nout_gcn, 1),
-            nn.ReLU()
+            nn.Linear(nout_gcn, 1)
         )
 
     def forward(self, features):
