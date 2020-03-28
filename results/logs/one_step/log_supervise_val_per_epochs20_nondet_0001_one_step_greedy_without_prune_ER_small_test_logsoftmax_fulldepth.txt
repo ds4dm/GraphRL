@@ -1,0 +1,16 @@
+nohup: ignoring input
+| Xavier Initialization
+| Xavier Initialization
+Supervised Validation started
+heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: ErgDataset
+
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:85: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
+epochs 0 loss 0.002344740052782847 one_step_greedy_performance 12108.99 gcn_performance 15282.565 random_performance 15320.355
+epochs 1 loss 0.002442320197546425 one_step_greedy_performance 12108.99 gcn_performance 12557.1 random_performance 15320.355
+epochs 2 loss 0.0024410995468790732 one_step_greedy_performance 12108.99 gcn_performance 12503.27 random_performance 15320.355
+epochs 3 loss 0.0021667084193679235 one_step_greedy_performance 12108.99 gcn_performance 12646.91 random_performance 15320.355
+epochs 4 loss 0.0017198913788657338 one_step_greedy_performance 12108.99 gcn_performance 12267.885 random_performance 15320.355
+epochs 5 loss 0.0019412455866767602 one_step_greedy_performance 12108.99 gcn_performance 12185.605 random_performance 15320.355
+epochs 6 loss 0.0015067021442106013 one_step_greedy_performance 12108.99 gcn_performance 12440.265 random_performance 15320.355
+epochs 7 loss 0.001519086062288564 one_step_greedy_performance 12108.99 gcn_performance 12422.415 random_performance 15320.355

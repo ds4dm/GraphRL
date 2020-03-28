@@ -501,7 +501,8 @@ class TrainModel_MC:
                             del self.model.actions[:]
                             del self.model.saved_actions[:]
                             del self.model.values[:]
-                            del critic_loss
+                            if use_critic:
+                                del critic_loss
                             del actor_loss
 
 

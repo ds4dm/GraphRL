@@ -43,7 +43,7 @@ parser.add_argument('--ngraph', type=int, default=20, help='Number of graph per 
 parser.add_argument('--p', type=int, default=0.01, help='probiblity of edges')
 parser.add_argument('--nnode_test', type=int, default=10, help='Number of node per graph for test')
 parser.add_argument('--ngraph_test', type=int, default=1, help='Number of graph for test dataset')
-parser.add_argument('--use_critic', type=bool, default=True, help='Enable critic')
+parser.add_argument('--use_critic', type=bool, default=False, help='Enable critic')
 
 args = parser.parse_args()
 
@@ -229,7 +229,8 @@ for i in range(len(lr)):
         #         args.p) + '_epochs' + str(args.pretrain_epochs) + '_cuda.pth'))
         # actor.load_state_dict(torch.load('./results/models/gcn_policy_one_step_greedy_pre_UFSMDataset_epochs30_cuda.pth'))
         actor.cuda()
-        critic.cuda()
+        if args.use_critic:
+            critic.cuda()
     model_a2c = Model_A2C_Sparse(actor=actor,
                                  epsilon=0.0,  # non-pretrain:0.02 #pretrain:0.0
                                  use_critic=args.use_critic,
