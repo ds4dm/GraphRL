@@ -783,7 +783,7 @@ class Train_SupervisedLearning:
 
 
 
-        for epoch in range(12, epochs):
+        for epoch in range(epochs):
 
             # print('epochs {}'.format(epoch))
 
