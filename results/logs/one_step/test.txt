@@ -3,15 +3,9 @@ parameter name gc1.weight parameter value torch.Size([1, 1])
 parameter name gc1.bias parameter value torch.Size([1, 1])
 parameter name gc2.weight parameter value torch.Size([1, 1])
 parameter name gc2.bias parameter value torch.Size([1, 1])
-Traceback (most recent call last):
-  File "test.py", line 74, in <module>
-    + '_epochs_' + str(epoch) + '_cuda.pth',  map_location=device))
-  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 303, in load
-    return _load(f, map_location, pickle_module)
-  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 469, in _load
-    result = unpickler.load()
-  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 437, in persistent_load
-    data_type(size), location)
-  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 323, in restore_location
-    result = map_location(storage, location)
-TypeError: 'torch.Device' object is not callable
+parameter name gc1.weight parameter value tensor(1.00000e-02 *
+       [[ 1.7613]])
+parameter name gc1.bias parameter value tensor([[ 0.7425]])
+parameter name gc2.weight parameter value tensor([[-0.7502]])
+parameter name gc2.bias parameter value tensor(1.00000e-05 *
+       [[ 1.1406]])
