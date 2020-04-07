@@ -12,3 +12,43 @@ epochs 4 loss 0.000634057231688165 min_degreeperformance 12511.775 gcn_performan
 epochs 5 loss 0.0006287699554700058 min_degreeperformance 12511.775 gcn_performance 12537.89
 epochs 6 loss 0.0006349086234713366 min_degreeperformance 12511.775 gcn_performance 12547.94
 epochs 7 loss 0.0006359648157661156 min_degreeperformance 12511.775 gcn_performance 12528.235
+epochs 8 loss 0.0006345864118466495 min_degreeperformance 12511.775 gcn_performance 12518.89
+epochs 9 loss 0.0006410026278367535 min_degreeperformance 12511.775 gcn_performance 12522.78
+epochs 10 loss 0.0006328738921604169 min_degreeperformance 12511.775 gcn_performance 12542.785
+epochs 11 loss 0.0006362377083206193 min_degreeperformance 12511.775 gcn_performance 12523.51
+epochs 12 loss 0.000644686097050901 min_degreeperformance 12511.775 gcn_performance 12525.195
+epochs 13 loss 0.0006303648373638815 min_degreeperformance 12511.775 gcn_performance 12525.085
+epochs 14 loss 0.0006328913486054398 min_degreeperformance 12511.775 gcn_performance 12519.78
+epochs 15 loss 0.0006376069808750471 min_degreeperformance 12511.775 gcn_performance 12534.75
+epochs 16 loss 0.0006361022870773291 min_degreeperformance 12511.775 gcn_performance 12540.24
+epochs 17 loss 0.0006199300519639354 min_degreeperformance 12511.775 gcn_performance 12509.51
+epochs 18 loss 0.0006458398557745238 min_degreeperformance 12511.775 gcn_performance 12515.535
+epochs 19 loss 0.0006180390491066564 min_degreeperformance 12511.775 gcn_performance 12522.095
+epochs 20 loss 0.0006548481104462207 min_degreeperformance 12511.775 gcn_performance 12515.185
+epochs 21 loss 0.0006280687726606334 min_degreeperformance 12511.775 gcn_performance 12517.675
+epochs 22 loss 0.0006438000540318375 min_degreeperformance 12511.775 gcn_performance 12523.75
+epochs 23 loss 0.0006488376535548903 min_degreeperformance 12511.775 gcn_performance 12528.81
+epochs 24 loss 0.0006233103213608679 min_degreeperformance 12511.775 gcn_performance 12517.3
+epochs 25 loss 0.0006370049108035878 min_degreeperformance 12511.775 gcn_performance 12527.73
+epochs 26 loss 0.0006268532386803382 min_degreeperformance 12511.775 gcn_performance 12525.62
+epochs 27 loss 0.00064908800264472 min_degreeperformance 12511.775 gcn_performance 12536.415
+epochs 28 loss 0.0006284782474349148 min_degreeperformance 12511.775 gcn_performance 12530.44
+epochs 29 loss 0.0006164571417094039 min_degreeperformance 12511.775 gcn_performance 12515.435
+epochs 30 loss 0.0006425128637004021 min_degreeperformance 12511.775 gcn_performance 12516.715
+epochs 31 loss 0.000631231951276605 min_degreeperformance 12511.775 gcn_performance 12515.9
+epochs 32 loss 0.0006282922300225298 min_degreeperformance 12511.775 gcn_performance 12542.14
+epochs 33 loss 0.0006474876260253806 min_degreeperformance 12511.775 gcn_performance 12516.33
+epochs 34 loss 0.0006348131718964034 min_degreeperformance 12511.775 gcn_performance 12522.68
+epochs 35 loss 0.0006427511647473538 min_degreeperformance 12511.775 gcn_performance 12532.855
+epochs 36 loss 0.0006266373222029366 min_degreeperformance 12511.775 gcn_performance 12509.42
+epochs 37 loss 0.0006309724282926646 min_degreeperformance 12511.775 gcn_performance 12527.52
+epochs 38 loss 0.0006247726844816876 min_degreeperformance 12511.775 gcn_performance 12553.805
+epochs 39 loss 0.0006539508672078318 min_degreeperformance 12511.775 gcn_performance 12526.415
+epochs 40 loss 0.0006183684941122782 min_degreeperformance 12511.775 gcn_performance 12501.425
+Finished
+Training time: 16247.2900
+Elimination time: 6.4500
+Heuristicmin_degree time: 194.2200
+Dense 2 Sparce time: 988.4700
+IO to cuda time: 366.2200
+Model and Opt time: 4217.1800
