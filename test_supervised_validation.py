@@ -19,7 +19,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--nocuda', action= 'store_true', default=False, help='Disable Cuda')
 parser.add_argument('--novalidation', action= 'store_true', default=True, help='Disable validation')
 parser.add_argument('--seed', type=int, default=63, help='Radom seed') #50
-parser.add_argument('--epochs', type=int, default=41, help='Training epochs')
+parser.add_argument('--epochs', type=int, default=21, help='Training epochs')
 parser.add_argument('--lr', type=float, default= 0.0001, help='Learning rate')
 parser.add_argument('--wd', type=float, default=5e-4, help='Weight decay')
 parser.add_argument('--dhidden', type=int, default=1, help='Dimension of hidden features')
