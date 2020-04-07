@@ -36,7 +36,7 @@ parser.add_argument('--ngraph_test', type=int, default=100, help='Number of grap
 args = parser.parse_args()
 
 args.cuda = not args.nocuda and torch.cuda.is_available()
-
+print("cuda available: {} ".format(torch.cuda.is_available()))
 
 np.random.seed(30)
 torch.manual_seed(30)
