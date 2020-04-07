@@ -37,6 +37,8 @@ args = parser.parse_args()
 
 args.cuda = not args.nocuda and torch.cuda.is_available()
 
+print(torch.cuda.is_available())
+
 np.random.seed(30)
 torch.manual_seed(30)
 
