@@ -1,0 +1,5 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "visualization_graph.py", line 1, in <module>
+    import networkx as nx
+ImportError: No module named networkx
