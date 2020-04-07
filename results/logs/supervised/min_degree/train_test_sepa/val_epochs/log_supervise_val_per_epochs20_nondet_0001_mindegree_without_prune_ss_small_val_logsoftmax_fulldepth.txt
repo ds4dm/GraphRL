@@ -4,3 +4,4 @@ heuristic: min_degree learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:85: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.t())
+epochs 0 loss 0.020096142387502538 min_degree_performance 2724.471223021583 gcn_performance 13424.25179856115 random_performance 13350.51798561151
