@@ -22,9 +22,11 @@ class Graph:
 
         self.n = M.shape[0]  # Number of nodes
         self.M = np.array(M).astype(np.uint8)  # Adjacency matrix
-        self.M_ex = np.copy(self.M)  # Adjacency matrix of chordal extention
+        self.M_ex = np.zeros([10,10],dtype=np.uint8) # Adjacency matrix of chordal extention
+        self.M_init = np.array(M).astype(np.uint8)
         self.num_e = 0
         self._degree = np.count_nonzero(self.M, axis=1)  # Degree of nodes
+        self.vertices = np.arange(self.n)
 
         d = np.sum(self.M, 1)
         d_min = np.min(d)  # minimum degree
@@ -109,11 +111,14 @@ class Graph:
                 # Change to self.M_ex for one-step solution ordering
                 self.M[i, j] = 1
                 self.M[j, i] = 1
+                self.M_ex[i, j] = 1
+                self.M_ex[j, i] = 1
                 m += 1
         zeros_row = np.zeros(self.n)
         # Remove node from the graph
         if reduce:
             self.n -= 1
+            self.vertices = np.delete(self.vertices,k,0)
             self.M = np.delete(self.M, k, 0)
             self.M = np.delete(self.M, k, 1)
         else:
@@ -168,6 +173,8 @@ class Graph:
             M[:,q[i]] = np.transpose(zeros_row)
         return q, q2
 
+
+
     def min_degree(self, M):
         """
         Identify nodes with min degree and choose one of them by random.
@@ -180,12 +187,12 @@ class Graph:
         node_chosen = np.random.choice(indices.reshape(-1))
         return node_chosen, d_min
 
-    def onestep(self):
-
-        p = self.onestep_d()
-        node = np.random.choice(self.n, 1, p=p)
-
-        return node[0]
+    # def onestep(self):
+    #
+    #     p = self.onestep_d()
+    #     node = np.random.choice(self.n, 1, p=p)
+    #
+    #     return node[0]
 
 
     def onestep_greedy(self):
@@ -251,30 +258,30 @@ class Graph:
         """
         return c_onestep_greedy_d(self.M)
 
-    def onestep_d(self):
-        """
-        Identify node(s) whose elimination adds fewer edges.
-
-        # Arguments
-
-        # Returns
-        - `p`: Array of Float
-            Uniform probability distribution over the nodes.
-        """
-        s = np.zeros(self.n, dtype=int)
-        r = np.arange(self.n)
-
-        for i in range(self.n):
-            e = 0  # number of edges to add
-            neighbours = r[self.M[:, i] == 1]  # neighbours of node i
-            for (j, k) in itertools.combinations(neighbours, 2):
-                e += (1-self.M[j, k])
-            s[i] = e
-
-        s_min = np.min(s)
-        p = (s == s_min)  # identify nodes with minimum score
-        p = (p / np.sum(p))  # normalize to get probability distribution
-
-        # s = (s / np.sum(s))  # normalize to get probability distribution
-
-        return p
+    # def onestep_d(self):
+    #     """
+    #     Identify node(s) whose elimination adds fewer edges.
+    #
+    #     # Arguments
+    #
+    #     # Returns
+    #     - `p`: Array of Float
+    #         Uniform probability distribution over the nodes.
+    #     """
+    #     s = np.zeros(self.n, dtype=int)
+    #     r = np.arange(self.n)
+    #
+    #     for i in range(self.n):
+    #         e = 0  # number of edges to add
+    #         neighbours = r[self.M[:, i] == 1]  # neighbours of node i
+    #         for (j, k) in itertools.combinations(neighbours, 2):
+    #             e += (1-self.M[j, k])
+    #         s[i] = e
+    #
+    #     s_min = np.min(s)
+    #     p = (s == s_min)  # identify nodes with minimum score
+    #     p = (p / np.sum(p))  # normalize to get probability distribution
+    #
+    #     # s = (s / np.sum(s))  # normalize to get probability distribution
+    #
+    #     return p

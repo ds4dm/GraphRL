@@ -61,7 +61,7 @@ def to_sparse(dense):
         sparse = torch.sparse.FloatTensor(dense.size())
     return sparse
 
-def erdosrenyi(cls, n, p=0.7):
+def erdosrenyi(n, p=0.7):
     """
     Generate a random Erdos-Renyi graph.
 
@@ -81,7 +81,7 @@ def erdosrenyi(cls, n, p=0.7):
     # Create adjacency matrix
     M = np.zeros((n, n), dtype=np.uint8)
     if p == 0:
-        return cls(M)  # early return
+        return M  # early return
 
     for i in range(n):
         for j in range(i + 1, n):

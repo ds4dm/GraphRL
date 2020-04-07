@@ -4,13 +4,11 @@ import torch
 import torch.nn.functional as F
 from torch.distributions import Categorical
 
-a = []
+w = [[1,2], [1,2]]
 
-a.append(1)
-a.append(2)
+w = torch.tensor(w)
 
-
-print(a[0])
+print(w.size())
 
 
 # w = [[1,2], [1,2]]
@@ -32,8 +30,6 @@ print(a[0])
 # features[:,0] = f2
 # print(features[:,0])
 
-lr = 2
-print(len(lr))
 
 
 
