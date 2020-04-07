@@ -1,6 +1,6 @@
 nohup: ignoring input
-cuda available: 
-cuda available: 
+cuda available: True 
+cuda available: True 
 THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cu line=25 error=46 : all CUDA-capable devices are busy or unavailable
 Traceback (most recent call last):
   File "test_supervised_validation.py", line 118, in <module>
