@@ -1,5 +1,7 @@
 nohup: ignoring input
-False
+cuda available: False 
+cuda available: False 
+cuda available: False 
 parameter name gc1.weight parameter value torch.Size([1, 1])
 parameter name gc1.bias parameter value torch.Size([1, 1])
 parameter name gc2.weight parameter value torch.Size([1, 1])
