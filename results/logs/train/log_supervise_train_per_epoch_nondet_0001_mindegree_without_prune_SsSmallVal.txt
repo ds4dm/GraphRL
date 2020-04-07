@@ -2,11 +2,13 @@ nohup: ignoring input
 Supervised Training started
 heuristic: min_degree learning rate: 0.0001 epochs: 41 DataSet: UFSMDataset
 
-Traceback (most recent call last):
-  File "test_supervised_validation.py", line 131, in <module>
-    total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
-  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/supervised/train_supervised_learning.py", line 325, in train
-    + '_epochs_' + str(epoch) + '_cuda.pth'))
-  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 301, in load
-    f = open(f, 'rb')
-FileNotFoundError: [Errno 2] No such file or directory: './supervised/models_dagger/min_degree/SmallSsTraining/lr0.0001/per_epochs/gcn_policy_min_degree_pre_UFSMDataset_epochs_0_cuda.pth'
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:85: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
+epochs 0 loss 0.01063048199813226 min_degreeperformance 12511.775 gcn_performance 12505.225
+epochs 1 loss 0.0006558903464538723 min_degreeperformance 12511.775 gcn_performance 12539.815
+epochs 2 loss 0.0006247254796452958 min_degreeperformance 12511.775 gcn_performance 12520.49
+epochs 3 loss 0.0006481272657095327 min_degreeperformance 12511.775 gcn_performance 12512.995
+epochs 4 loss 0.000634057231688165 min_degreeperformance 12511.775 gcn_performance 12534.92
+epochs 5 loss 0.0006287699554700058 min_degreeperformance 12511.775 gcn_performance 12537.89
+epochs 6 loss 0.0006349086234713366 min_degreeperformance 12511.775 gcn_performance 12547.94
+epochs 7 loss 0.0006359648157661156 min_degreeperformance 12511.775 gcn_performance 12528.235
