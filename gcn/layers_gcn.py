@@ -85,7 +85,7 @@ class GraphConvolutionLayer_Sparse(Module):
         self.nfeatures_out = nfeatures_out
 
         # initialize the parameters
-        print("cuda available: ".format(torch.cuda.is_available()))
+        print("cuda available: {} ".format(torch.cuda.is_available()))
         self.weight = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(self.nfeatures_in, self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=np.sqrt(2.0)), requires_grad=True)
 
         #Parameter(torch.Tensor(self.nfeatures_in,self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))

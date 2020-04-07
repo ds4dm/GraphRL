@@ -39,7 +39,7 @@ np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 
 args.cuda = not args.nocuda and torch.cuda.is_available()
-print("cuda available: ".format(torch.cuda.is_available()))
+print("cuda available: {} ".format(torch.cuda.is_available()))
 
 if args.cuda:
    torch.cuda.manual_seed(args.seed)
