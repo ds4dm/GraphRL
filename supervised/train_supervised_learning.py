@@ -319,11 +319,11 @@ class Train_SupervisedLearning:
             steps_epoch = 0
 
             # if dagger
-            if self.use_cuda:
-                self.model2.load_state_dict(
-                    torch.load('./supervised/models_dagger/'+self.heuristic+'/SmallSsTraining/lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
-                           + '_epochs_' + str(epoch) + '_cuda.pth'))
-            self.model2.eval()
+            # if self.use_cuda:
+            #     self.model2.load_state_dict(
+            #         torch.load('./supervised/models_dagger/'+self.heuristic+'/SmallSsTraining/lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+            #                + '_epochs_' + str(epoch) + '_cuda.pth'))
+            # self.model2.eval()eval
 
 
             for X in self.train_loader:
