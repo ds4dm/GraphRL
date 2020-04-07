@@ -611,6 +611,8 @@ class Train_SupervisedLearning:
                   'loss {}'.format(av_loss_train),
                   self.heuristic+'performance {}'.format(_val_ave_mind),
                   'gcn_performance {}'.format(_val_ave_gcn),
+                  self.heuristic + 'performance {}'.format(_val_ave_mind),
+                  'gcn_performance {}'.format(_val_ave_gcn),
                   )
 
             plt.clf()
@@ -789,7 +791,7 @@ class Train_SupervisedLearning:
 
             if self.use_cuda:
                 self.model.load_state_dict(
-                    torch.load('./supervised/models/'+self.heuristic+'/SmallErgTraining/lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                    torch.load('./supervised/models/'+self.heuristic+'/SmallSsTraining/lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                            + '_epochs_' + str(epoch) + '_cuda.pth'))
 
             val_gcn_greedy = []
