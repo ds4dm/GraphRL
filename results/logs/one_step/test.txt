@@ -1,12 +1,17 @@
 nohup: ignoring input
-THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cu line=25 error=46 : all CUDA-capable devices are busy or unavailable
+parameter name gc1.weight parameter value torch.Size([1, 1])
+parameter name gc1.bias parameter value torch.Size([1, 1])
+parameter name gc2.weight parameter value torch.Size([1, 1])
+parameter name gc2.bias parameter value torch.Size([1, 1])
 Traceback (most recent call last):
-  File "test.py", line 53, in <module>
-    dropout=args.dropout,
-  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py", line 72, in __init__
-    self.gc1 = GraphConvolutionLayer_Sparse(nin, nhidden) # first graph conv layer
-  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/layers_gcn.py", line 88, in __init__
-    self.weight = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(self.nfeatures_in, self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=np.sqrt(2.0)), requires_grad=True)
-  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/cuda/__init__.py", line 161, in _lazy_init
-    torch._C._cuda_init()
-RuntimeError: cuda runtime error (46) : all CUDA-capable devices are busy or unavailable at /opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cu:25
+  File "test.py", line 74, in <module>
+    + '_epochs_' + str(epoch) + '_cuda.pth',  map_location=device))
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 303, in load
+    return _load(f, map_location, pickle_module)
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 469, in _load
+    result = unpickler.load()
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 437, in persistent_load
+    data_type(size), location)
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 323, in restore_location
+    result = map_location(storage, location)
+TypeError: 'torch.Device' object is not callable
