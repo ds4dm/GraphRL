@@ -22,7 +22,7 @@ class Graph:
 
         self.n = M.shape[0]  # Number of nodes
         self.M = np.array(M).astype(np.uint8)  # Adjacency matrix
-        self.M_ex = np.zeros([10,10],dtype=np.uint8) # Adjacency matrix of chordal extention
+        self.M_ex = np.zeros([self.n,self.n],dtype=np.uint8) # Adjacency matrix of chordal extention
         self.M_init = np.array(M).astype(np.uint8)
         self.num_e = 0
         self._degree = np.count_nonzero(self.M, axis=1)  # Degree of nodes
