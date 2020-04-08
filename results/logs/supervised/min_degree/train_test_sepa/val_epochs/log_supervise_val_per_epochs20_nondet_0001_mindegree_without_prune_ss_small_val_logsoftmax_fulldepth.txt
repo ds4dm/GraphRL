@@ -21,3 +21,14 @@ epochs 13 loss 0.0007498749126209294 min_degree_performance 2724.471223021583 gc
 epochs 14 loss 0.000946273552059497 min_degree_performance 2724.471223021583 gcn_performance 2819.4748201438847 random_performance 13350.51798561151
 epochs 15 loss 0.0006896395924074824 min_degree_performance 2724.471223021583 gcn_performance 2766.05035971223 random_performance 13350.51798561151
 epochs 16 loss 0.0007545557731728412 min_degree_performance 2724.471223021583 gcn_performance 2776.5359712230215 random_performance 13350.51798561151
+epochs 17 loss 0.0010482266116829187 min_degree_performance 2724.471223021583 gcn_performance 2810.460431654676 random_performance 13350.51798561151
+epochs 18 loss 0.0008840806844677935 min_degree_performance 2724.471223021583 gcn_performance 2720.3812949640287 random_performance 13350.51798561151
+epochs 19 loss 0.0006490657352320773 min_degree_performance 2724.471223021583 gcn_performance 2740.794964028777 random_performance 13350.51798561151
+epochs 20 loss 0.0009117706203977856 min_degree_performance 2724.471223021583 gcn_performance 2770.6007194244603 random_performance 13350.51798561151
+Supervised Validation Finished
+Validation time: 3689.4500
+Elimination time: 798.4200
+Heuristicmin_degree time: 101.5000
+Dense 2 Sparce time: 526.7600
+IO to cuda time: 205.6600
+Model and Opt time: 0.0000
