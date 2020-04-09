@@ -9,3 +9,14 @@ heuristic: min_degree learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
   features = F.log_softmax(features.t())
 epochs 0 loss 0.005871565241749225 min_degree_performance 61333.26779661017 gcn_performance 484425.94576271187 random_performance 467856.6779661017
 epochs 1 loss 0.0004963250611754026 min_degree_performance 61333.26779661017 gcn_performance 61555.810169491524 random_performance 467856.6779661017
+epochs 2 loss 0.0031714670459979458 min_degree_performance 61333.26779661017 gcn_performance 62269.437288135596 random_performance 467856.6779661017
+epochs 3 loss 0.0006055984728052527 min_degree_performance 61333.26779661017 gcn_performance 61931.00338983051 random_performance 467856.6779661017
+epochs 4 loss 0.000319236649323595 min_degree_performance 61333.26779661017 gcn_performance 61599.69491525424 random_performance 467856.6779661017
+epochs 5 loss 0.0012927562766813533 min_degree_performance 61333.26779661017 gcn_performance 61856.60338983051 random_performance 467856.6779661017
+epochs 6 loss 0.0018721166285421168 min_degree_performance 61333.26779661017 gcn_performance 62121.61694915254 random_performance 467856.6779661017
+epochs 7 loss 0.0029065333089803515 min_degree_performance 61333.26779661017 gcn_performance 62386.89152542373 random_performance 467856.6779661017
+epochs 8 loss 0.0005719341871748912 min_degree_performance 61333.26779661017 gcn_performance 61543.38305084746 random_performance 467856.6779661017
+epochs 9 loss 0.00037883507318727476 min_degree_performance 61333.26779661017 gcn_performance 61706.88474576271 random_performance 467856.6779661017
+epochs 10 loss 0.00062518367508884 min_degree_performance 61333.26779661017 gcn_performance 61605.769491525425 random_performance 467856.6779661017
+epochs 11 loss 0.0020145526649037095 min_degree_performance 61333.26779661017 gcn_performance 61954.393220338985 random_performance 467856.6779661017
+epochs 12 loss 0.000471289869409887 min_degree_performance 61333.26779661017 gcn_performance 61801.44406779661 random_performance 467856.6779661017
