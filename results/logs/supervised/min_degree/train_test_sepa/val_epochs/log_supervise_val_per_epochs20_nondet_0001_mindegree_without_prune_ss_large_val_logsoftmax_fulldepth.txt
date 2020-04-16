@@ -21,5 +21,17 @@ epochs 10 loss 0.00062518367508884 min_degree_performance 61333.26779661017 gcn_
 epochs 11 loss 0.0020145526649037095 min_degree_performance 61333.26779661017 gcn_performance 61954.393220338985 random_performance 467856.6779661017
 epochs 12 loss 0.000471289869409887 min_degree_performance 61333.26779661017 gcn_performance 61801.44406779661 random_performance 467856.6779661017
 epochs 13 loss 0.000816297227070588 min_degree_performance 61333.26779661017 gcn_performance 61782.48813559322 random_performance 467856.6779661017
-epochs 14 loss 0.0012289267947973765 min_degree_performance 61333.26779661017 gcn_performance 61859.28813559322 random_performance 467856.6779661017
+epochs 14 loss 0.0012292690336071512 min_degree_performance 61333.26779661017 gcn_performance 61859.34237288136 random_performance 467856.6779661017
 epochs 15 loss 0.00031550262992398 min_degree_performance 61333.26779661017 gcn_performance 61375.047457627115 random_performance 467856.6779661017
+epochs 16 loss 0.0010029266175525758 min_degree_performance 61333.26779661017 gcn_performance 61907.091525423726 random_performance 467856.6779661017
+epochs 17 loss 0.0022202886822320304 min_degree_performance 61333.26779661017 gcn_performance 62128.908474576274 random_performance 467856.6779661017
+epochs 18 loss 0.0003794521500267019 min_degree_performance 61333.26779661017 gcn_performance 61558.22372881356 random_performance 467856.6779661017
+epochs 19 loss 0.00039147563360350865 min_degree_performance 61333.26779661017 gcn_performance 61633.28813559322 random_performance 467856.6779661017
+epochs 20 loss 0.0005500639492954691 min_degree_performance 61333.26779661017 gcn_performance 61758.84745762712 random_performance 467856.6779661017
+Supervised Validation Finished
+Validation time: 144611.8300
+Elimination time: 43528.6300
+Heuristicmin_degree time: 4789.3900
+Dense 2 Sparce time: 36206.7500
+IO to cuda time: 6544.8000
+Model and Opt time: 0.0000
