@@ -18,3 +18,4 @@ epochs 8 loss 0.000554217658233668 one_step_greedy_performance 51564.445 gcn_per
 epochs 9 loss 0.0005704217281636544 one_step_greedy_performance 51564.445 gcn_performance 55078.475 random_performance 59686.69
 epochs 10 loss 0.00047091690799372837 one_step_greedy_performance 51564.445 gcn_performance 53729.89 random_performance 59686.69
 epochs 11 loss 0.000601786813196034 one_step_greedy_performance 51564.445 gcn_performance 55483.49 random_performance 59686.69
+epochs 12 loss 0.0006119261476694577 one_step_greedy_performance 51564.445 gcn_performance 55923.045 random_performance 59686.69
