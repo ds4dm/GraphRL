@@ -129,15 +129,15 @@ policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuris
 
 # Train the model
 
-# total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
+total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
 
 
-val_dataset = val_ER_mid
+# val_dataset = val_ER_mid
+#
+# dataset_type = varname(val_ER_mid)
 
-dataset_type = varname(val_ER_mid)
-
-t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
-
+# t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+#
 
 #
 # plot_performance_supervised(dataset_type=dataset_type,
