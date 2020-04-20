@@ -120,10 +120,10 @@ model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
 if args.cuda:
     model.cuda()
 
-heuristic = 'min_degree' # 'one_step_greedy' 'min_degree'
+heuristic = 'one_step_greedy' # 'one_step_greedy' 'min_degree'
 prune = True
 
-policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=val_ss_small, val_dataset=val_ER_small, test_dataset=test_ER_small, use_cuda = args.cuda)
+policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=train_ER_small, val_dataset=val_ER_small, test_dataset=test_ER_small, use_cuda = args.cuda)
 
 
 
