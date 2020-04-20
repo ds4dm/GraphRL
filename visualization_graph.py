@@ -40,7 +40,7 @@ args.cuda = not args.nocuda and torch.cuda.is_available()
 np.random.seed(30)
 torch.manual_seed(30)
 
-g = Graph.erdosrenyi(n=10, p=0.3)
+g = Graph.erdosrenyi(n=8, p=0.25)
 g2 = Graph(g.M)
 g_for_model = Graph(g.M)
 g2_for_model = Graph(g.M)
@@ -140,7 +140,7 @@ def get_fig(g, g_for_model, model, pos, axs_row, use_cuda=True):
 
     return g
 
-n = 9
+n = 7
 
 
 fig, axs = plt.subplots(nrows=n, ncols=4, figsize=(40,100), constrained_layout=True)
