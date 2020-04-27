@@ -3,10 +3,9 @@ cuda available: True
 cuda available: True 
 cuda available: True 
 cuda available: True 
+cuda available: True 
 Supervised Validation started
-heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: ErgDataset
+heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:93: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.t())
-epochs 0 loss 0.003812651284701838 one_step_greedy_performance 12107.645 gcn_performance 12175.76 random_performance 15303.195
-epochs 1 loss 0.0020171753348260458 one_step_greedy_performance 12107.645 gcn_performance 12258.185 random_performance 15303.195

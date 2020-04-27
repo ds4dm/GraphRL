@@ -11,3 +11,4 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 epochs 0 loss 0.015992120192567374 one_step_greedy_performance 2482.7158273381297 gcn_performance 2788.928057553957 random_performance 13539.089928057554
 epochs 1 loss 0.011296175786472563 one_step_greedy_performance 2482.7158273381297 gcn_performance 3026.546762589928 random_performance 13539.089928057554
 epochs 2 loss 0.010798700053696613 one_step_greedy_performance 2482.7158273381297 gcn_performance 3080.8525179856115 random_performance 13539.089928057554
+epochs 3 loss 0.010780509637811544 one_step_greedy_performance 2482.7158273381297 gcn_performance 3088.9676258992804 random_performance 13539.089928057554
