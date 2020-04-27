@@ -791,11 +791,11 @@ class Train_SupervisedLearning:
 
             if self.use_cuda:
                 self.model.load_state_dict(
-                    torch.load('./supervised/models/'+self.heuristic+'/SmallErgTraining/lrs'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                    torch.load('./supervised/models/'+self.heuristic+'/SmallErgTraining/lrss'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                            + '_epochs_' + str(epoch) + '_cuda.pth'))
             else:
                 self.model.load_state_dict(
-                    torch.load('./supervised/models/' + self.heuristic + '/SmallErgTraining/lrs' + str(
+                    torch.load('./supervised/models/' + self.heuristic + '/SmallErgTraining/lrss' + str(
                         self.lr) + '/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                                + '_epochs_' + str(epoch) + '_cuda.pth', map_location='cpu'))
 
