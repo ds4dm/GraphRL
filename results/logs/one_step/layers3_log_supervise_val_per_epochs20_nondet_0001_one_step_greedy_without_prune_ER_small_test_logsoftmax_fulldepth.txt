@@ -10,3 +10,4 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: ErgDataset
   features = F.log_softmax(features.t())
 epochs 0 loss 0.003812651284701838 one_step_greedy_performance 12107.645 gcn_performance 12175.76 random_performance 15303.195
 epochs 1 loss 0.0020171753348260458 one_step_greedy_performance 12107.645 gcn_performance 12258.185 random_performance 15303.195
+epochs 2 loss 0.001920460310520062 one_step_greedy_performance 12107.645 gcn_performance 12290.895 random_performance 15303.195
