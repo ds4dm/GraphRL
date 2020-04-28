@@ -19,3 +19,21 @@ epochs 6 loss 0.010522502932626488 one_step_greedy_performance 2484.007194244604
 epochs 7 loss 0.010269275763946916 one_step_greedy_performance 2484.0071942446043 gcn_performance 3145.1258992805756 random_performance 13507.125899280576
 epochs 8 loss 0.01062943097661214 one_step_greedy_performance 2484.0071942446043 gcn_performance 3131.0071942446043 random_performance 13507.125899280576
 epochs 9 loss 0.01047909346493654 one_step_greedy_performance 2484.0071942446043 gcn_performance 3116.8489208633096 random_performance 13507.125899280576
+epochs 10 loss 0.010557087170390028 one_step_greedy_performance 2484.0071942446043 gcn_performance 3122.122302158273 random_performance 13507.125899280576
+epochs 11 loss 0.010497664124231228 one_step_greedy_performance 2484.0071942446043 gcn_performance 3134.115107913669 random_performance 13507.125899280576
+epochs 12 loss 0.01071606192295258 one_step_greedy_performance 2484.0071942446043 gcn_performance 3111.1079136690646 random_performance 13507.125899280576
+epochs 13 loss 0.010486661392401168 one_step_greedy_performance 2484.0071942446043 gcn_performance 3124.1187050359713 random_performance 13507.125899280576
+epochs 14 loss 0.010756759652768646 one_step_greedy_performance 2484.0071942446043 gcn_performance 3120.431654676259 random_performance 13507.125899280576
+epochs 15 loss 0.010691781018898155 one_step_greedy_performance 2484.0071942446043 gcn_performance 3103.161870503597 random_performance 13507.125899280576
+epochs 16 loss 0.010613241543367631 one_step_greedy_performance 2484.0071942446043 gcn_performance 3134.0251798561153 random_performance 13507.125899280576
+epochs 17 loss 0.010527793486242207 one_step_greedy_performance 2484.0071942446043 gcn_performance 3131.9352517985612 random_performance 13507.125899280576
+epochs 18 loss 0.010534115208454396 one_step_greedy_performance 2484.0071942446043 gcn_performance 3124.9352517985612 random_performance 13507.125899280576
+epochs 19 loss 0.0106676181690836 one_step_greedy_performance 2484.0071942446043 gcn_performance 3114.6187050359713 random_performance 13507.125899280576
+epochs 20 loss 0.010614638397782705 one_step_greedy_performance 2484.0071942446043 gcn_performance 3120.723021582734 random_performance 13507.125899280576
+Supervised Validation Finished
+Validation time: 117872.1000
+Elimination time: 791.0400
+Heuristicone_step_greedy time: 109312.7300
+Dense 2 Sparce time: 555.0400
+IO to cuda time: 210.8900
+Model and Opt time: 0.0000
