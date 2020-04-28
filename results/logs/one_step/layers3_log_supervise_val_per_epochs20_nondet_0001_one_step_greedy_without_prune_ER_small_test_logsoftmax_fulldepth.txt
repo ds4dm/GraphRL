@@ -11,3 +11,10 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: ErgDataset
 epochs 0 loss 0.003812651284701838 one_step_greedy_performance 12107.645 gcn_performance 12175.76 random_performance 15303.195
 epochs 1 loss 0.0020171753348260458 one_step_greedy_performance 12107.645 gcn_performance 12258.185 random_performance 15303.195
 epochs 2 loss 0.001920460310520062 one_step_greedy_performance 12107.645 gcn_performance 12290.895 random_performance 15303.195
+epochs 3 loss 0.0019431931603385495 one_step_greedy_performance 12107.645 gcn_performance 12266.685 random_performance 15303.195
+epochs 4 loss 0.001954470828612042 one_step_greedy_performance 12107.645 gcn_performance 12281.55 random_performance 15303.195
+epochs 5 loss 0.001952275311513224 one_step_greedy_performance 12107.645 gcn_performance 12270.94 random_performance 15303.195
+epochs 6 loss 0.0019303971166952589 one_step_greedy_performance 12107.645 gcn_performance 12300.04 random_performance 15303.195
+epochs 7 loss 0.0019420438863486224 one_step_greedy_performance 12107.645 gcn_performance 12296.785 random_performance 15303.195
+epochs 8 loss 0.0019307665651659338 one_step_greedy_performance 12107.645 gcn_performance 12289.275 random_performance 15303.195
+epochs 9 loss 0.0019314371981962923 one_step_greedy_performance 12107.645 gcn_performance 12285.325 random_performance 15303.195
