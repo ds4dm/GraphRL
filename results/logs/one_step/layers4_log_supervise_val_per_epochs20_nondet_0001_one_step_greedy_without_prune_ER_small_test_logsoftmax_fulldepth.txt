@@ -1,0 +1,11 @@
+nohup: ignoring input
+cuda available: True 
+cuda available: True 
+cuda available: True 
+cuda available: True 
+cuda available: True 
+Supervised Validation started
+heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: ErgDataset
+
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:93: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
