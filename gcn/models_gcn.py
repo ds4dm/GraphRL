@@ -72,7 +72,8 @@ class GCN_Sparse_Policy_SelectNode(nn.Module):
         self.gc1 = GraphConvolutionLayer_Sparse(nin, nhidden) # first graph conv layer
         self.gc2 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
         self.gc3 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
-        self.gc4 = GraphConvolutionLayer_Sparse(nhidden, nout) # second graph conv layer
+        self.gc4 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc5 = GraphConvolutionLayer_Sparse(nhidden, nout) # second graph conv layer
         self.dropout = dropout
 
 
@@ -88,8 +89,12 @@ class GCN_Sparse_Policy_SelectNode(nn.Module):
         features = self.gc3(features, adj_matrix)
         features = F.relu(features)
 
-        # second layer with softmax
         features = self.gc4(features, adj_matrix)
+        features = F.relu(features)
+
+
+        # second layer with softmax
+        features = self.gc5(features, adj_matrix)
         features = F.log_softmax(features.t())
         features = features.t()
 
