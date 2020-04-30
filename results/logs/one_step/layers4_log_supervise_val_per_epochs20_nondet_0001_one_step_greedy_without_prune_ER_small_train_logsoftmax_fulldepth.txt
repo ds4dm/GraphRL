@@ -19,3 +19,21 @@ epochs 6 loss 0.0019142008392321298 one_step_greedy_performance 12108.99 gcn_per
 epochs 7 loss 0.001917471129439157 one_step_greedy_performance 12108.99 gcn_performance 12280.385 random_performance 15320.355
 epochs 8 loss 0.0019240289033389585 one_step_greedy_performance 12108.99 gcn_performance 12293.94 random_performance 15320.355
 epochs 9 loss 0.0019338259566975043 one_step_greedy_performance 12108.99 gcn_performance 12279.64 random_performance 15320.355
+epochs 10 loss 0.0018890291586068115 one_step_greedy_performance 12108.99 gcn_performance 12297.705 random_performance 15320.355
+epochs 11 loss 0.0019460172261805055 one_step_greedy_performance 12108.99 gcn_performance 12279.785 random_performance 15320.355
+epochs 12 loss 0.001911364489804738 one_step_greedy_performance 12108.99 gcn_performance 12283.545 random_performance 15320.355
+epochs 13 loss 0.0019229223094732364 one_step_greedy_performance 12108.99 gcn_performance 12278.005 random_performance 15320.355
+epochs 14 loss 0.0019320497548421653 one_step_greedy_performance 12108.99 gcn_performance 12277.865 random_performance 15320.355
+epochs 15 loss 0.0018997520560297997 one_step_greedy_performance 12108.99 gcn_performance 12290.86 random_performance 15320.355
+epochs 16 loss 0.00194687234578489 one_step_greedy_performance 12108.99 gcn_performance 12265.44 random_performance 15320.355
+epochs 17 loss 0.001933208711454846 one_step_greedy_performance 12108.99 gcn_performance 12300.62 random_performance 15320.355
+epochs 18 loss 0.0019147977128070866 one_step_greedy_performance 12108.99 gcn_performance 12277.17 random_performance 15320.355
+epochs 19 loss 0.001925500739329877 one_step_greedy_performance 12108.99 gcn_performance 12269.58 random_performance 15320.355
+epochs 20 loss 0.0019107381624324882 one_step_greedy_performance 12108.99 gcn_performance 12290.655 random_performance 15320.355
+Supervised Validation Finished
+Validation time: 171725.6400
+Elimination time: 970.3100
+Heuristicone_step_greedy time: 160481.6900
+Dense 2 Sparce time: 510.9700
+IO to cuda time: 197.3000
+Model and Opt time: 0.0000
