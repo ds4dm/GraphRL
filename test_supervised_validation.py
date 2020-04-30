@@ -123,7 +123,7 @@ if args.cuda:
 heuristic = 'one_step_greedy' # 'one_step_greedy' 'min_degree'
 prune = True
 
-policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=train_ER_small, val_dataset=val_ER_small, test_dataset=test_ER_small, use_cuda = args.cuda)
+policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=val_ss_small, val_dataset=val_ER_small, test_dataset=test_ER_small, use_cuda = args.cuda)
 
 
 
@@ -135,7 +135,7 @@ val_dataset = val_ss_small
 
 dataset_type = varname(val_ss_small)
 
-t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+# t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
 
 
 
