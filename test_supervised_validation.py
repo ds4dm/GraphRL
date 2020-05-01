@@ -130,7 +130,7 @@ policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuris
 
 # Train the model
 
-# total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
+total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
 
 val_dataset = val_ss_small
 
