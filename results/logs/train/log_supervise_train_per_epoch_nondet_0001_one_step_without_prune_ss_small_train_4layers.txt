@@ -1,1 +1,8 @@
-
+nohup: ignoring input
+cuda available: True 
+cuda available: True 
+cuda available: True 
+cuda available: True 
+cuda available: True 
+model initialized
+training func is running after this line
