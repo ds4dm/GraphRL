@@ -1,6 +1,1 @@
-nohup: ignoring input
-cuda available: True 
-cuda available: True 
-cuda available: True 
-cuda available: True 
-cuda available: True 
+
