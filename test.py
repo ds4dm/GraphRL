@@ -60,19 +60,19 @@ for name, param in model.named_parameters():
                 print('parameter name {}'.format(name),
                     'parameter value {}'.format(param.data.size()))
 
-epoch = 15
+epoch = 0
 heuristic = 'one_step_greedy' # 'one_step_greedy' 'min_degree'
 train_dataset=train_ER_small
 
 if args.cuda:
     model.load_state_dict(
-        torch.load('./supervised/models/' + heuristic + '/SmallErgTraining/lr' + str(
+        torch.load('./supervised/models/' + heuristic + '/SmallErgTraining/lrss' + str(
             args.lr) + '/per_epochs/gcn_policy_' + heuristic + '_pre_' + train_dataset.__class__.__name__
                    + '_epochs_' + str(epoch) + '_cuda.pth'))
 else:
     # device = torch.device('cpu')
     model.load_state_dict(
-    torch.load('./supervised/models/' + heuristic + '/SmallErgTraining/lrs' + str(
+    torch.load('./supervised/models/' + heuristic + '/SmallErgTraining/lrss' + str(
         args.lr) + '/per_epochs/gcn_policy_' + heuristic + '_pre_' + train_dataset.__class__.__name__
                + '_epochs_' + str(epoch) + '_cuda.pth',  map_location='cpu'))
 
