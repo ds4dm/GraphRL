@@ -295,11 +295,11 @@ class Train_SupervisedLearning:
 
 
         torch.save(self.model.state_dict(),
-                   './supervised/models/'+self.heuristic+'/SmallErgTraining/layers3_test_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                   './supervised/models/'+self.heuristic+'/SmallSsTraining/layers4lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                    + '_epochs_' + str(0) + '_cuda.pth')
 
         torch.save(self.model.state_dict(),
-                   './supervised/models/'+self.heuristic+'/SmallErgTraining/layers3_test_lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                   './supervised/models/'+self.heuristic+'/SmallSsTraining/layers4lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                    + '_steps_' + str(steps) + '_cuda.pth')
 
         for epoch in range(epochs):
@@ -456,7 +456,7 @@ class Train_SupervisedLearning:
 
                             if steps % 1000 == 0:
                                 torch.save(self.model.state_dict(),
-                                           './supervised/models/'+self.heuristic+'/SmallErgTraining/layers3_test_lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                                           './supervised/models/'+self.heuristic+'/SmallSsTraining/layers4lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                                            + '_steps_' + str(steps) + '_cuda.pth')
 
                         else:
@@ -482,7 +482,7 @@ class Train_SupervisedLearning:
 
 
             torch.save(self.model.state_dict(),
-                       './supervised/models/'+self.heuristic+'/SmallErgTraining/layers3_test_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                       './supervised/models/'+self.heuristic+'/SmallSsTraining/layers4lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                        + '_epochs_' + str(epoch+1) + '_cuda.pth')
 
             for X in self.val_loader:
@@ -609,8 +609,8 @@ class Train_SupervisedLearning:
 
             print('epochs {}'.format(epoch),
                   'loss {}'.format(av_loss_train),
-                  self.heuristic+'performance {}'.format(_val_ave_mind),
-                  'gcn_performance {}'.format(_val_ave_gcn),
+                  self.heuristic+'performance {}'.format(_train_ave_mind),
+                  'gcn_performance {}'.format(_train_ave_gcn),
                   self.heuristic + 'performance {}'.format(_val_ave_mind),
                   'gcn_performance {}'.format(_val_ave_gcn),
                   )

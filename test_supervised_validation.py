@@ -124,7 +124,7 @@ if args.cuda:
 heuristic = 'one_step_greedy' # 'one_step_greedy' 'min_degree'
 prune = True
 print("training func is running after this line")
-policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=val_ss_small, val_dataset=val_ER_small, test_dataset=test_ER_small, use_cuda = args.cuda)
+policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=val_ss_small, val_dataset=val_ss_small, test_dataset=test_ER_small, use_cuda = args.cuda)
 
 
 
