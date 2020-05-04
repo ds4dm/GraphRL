@@ -11,3 +11,14 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.t())
+epochs 0 loss 0.007876986025076544 one_step_greedyperformance 2514.205035971223 gcn_performance 8711.133093525179 one_step_greedyperformance 2474.5755395683454 gcn_performance 7764.474820143885
+epochs 1 loss 0.00929567701624855 one_step_greedyperformance 2514.205035971223 gcn_performance 7668.89928057554 one_step_greedyperformance 2474.5755395683454 gcn_performance 5435.23381294964
+epochs 2 loss 0.009245146045203037 one_step_greedyperformance 2514.205035971223 gcn_performance 7993.1654676258995 one_step_greedyperformance 2474.5755395683454 gcn_performance 6977.471223021583
+epochs 3 loss 0.009994506104323626 one_step_greedyperformance 2514.205035971223 gcn_performance 7442.949640287769 one_step_greedyperformance 2474.5755395683454 gcn_performance 7124.226618705036
+epochs 4 loss 0.009632990663967415 one_step_greedyperformance 2514.205035971223 gcn_performance 7848.280575539568 one_step_greedyperformance 2474.5755395683454 gcn_performance 7945.356115107914
+epochs 5 loss 0.010118230692674911 one_step_greedyperformance 2514.205035971223 gcn_performance 7550.773381294964 one_step_greedyperformance 2474.5755395683454 gcn_performance 7739.935251798561
+epochs 6 loss 0.010735329051103318 one_step_greedyperformance 2514.205035971223 gcn_performance 5843.701438848921 one_step_greedyperformance 2474.5755395683454 gcn_performance 9225.464028776978
+epochs 7 loss 0.007961849564385181 one_step_greedyperformance 2514.205035971223 gcn_performance 8943.98201438849 one_step_greedyperformance 2474.5755395683454 gcn_performance 8376.262589928057
+epochs 8 loss 0.008823707289020771 one_step_greedyperformance 2514.205035971223 gcn_performance 7692.215827338129 one_step_greedyperformance 2474.5755395683454 gcn_performance 7628.320143884892
+epochs 9 loss 0.009649668697774201 one_step_greedyperformance 2514.205035971223 gcn_performance 7970.075539568345 one_step_greedyperformance 2474.5755395683454 gcn_performance 8094.485611510791
+epochs 10 loss 0.009955695412571188 one_step_greedyperformance 2514.205035971223 gcn_performance 7619.03237410072 one_step_greedyperformance 2474.5755395683454 gcn_performance 7614.057553956834
