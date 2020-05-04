@@ -8,13 +8,5 @@ training func is running after this line
 Supervised Training started
 heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 
-Traceback (most recent call last):
-  File "test_supervised_validation.py", line 133, in <module>
-    total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
-  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/supervised/train_supervised_learning.py", line 299, in train
-    + '_epochs_' + str(0) + '_cuda.pth')
-  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 161, in save
-    return _with_file_like(f, "wb", lambda f: _save(obj, f, pickle_module, pickle_protocol))
-  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 116, in _with_file_like
-    f = open(f, mode)
-FileNotFoundError: [Errno 2] No such file or directory: './supervised/models/one_step_greedy/SmallSsTraining/layers3_memo_test_lr0.0001/per_epochs/gcn_policy_one_step_greedy_pre_UFSMDataset_epochs_0_cuda.pth'
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
