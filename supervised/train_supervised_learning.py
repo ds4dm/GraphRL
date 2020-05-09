@@ -795,7 +795,7 @@ class Train_SupervisedLearning:
                            + '_epochs_' + str(epoch) + '_cuda.pth'))
             else:
                 self.model.load_state_dict(
-                    torch.load('./supervised/models/' + self.heuristic + '/SmallSsTraining/layers3r' + str(
+                    torch.load('./supervised/models/' + self.heuristic + '/SmallSsTraining/layers3lr' + str(
                         self.lr) + '/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                                + '_epochs_' + str(epoch) + '_cuda.pth', map_location='cpu'))
 
