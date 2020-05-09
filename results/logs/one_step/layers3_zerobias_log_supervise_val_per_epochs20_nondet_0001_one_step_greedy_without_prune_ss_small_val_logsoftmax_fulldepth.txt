@@ -1,0 +1,37 @@
+nohup: ignoring input
+cuda available: False 
+cuda available: False 
+cuda available: False 
+cuda available: False 
+model initialized
+training func is running after this line
+Supervised Validation started
+heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
+
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
+epochs 0 loss 0.005037668900968076 one_step_greedy_performance 2494.8129496402876 gcn_performance 13156.93525179856 random_performance 13255.622302158274
+Traceback (most recent call last):
+  File "test_supervised_validation.py", line 146, in <module>
+    # t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/supervised/train_supervised_learning.py", line 1003, in validation_epochs
+    val_ave_rand_np=val_ave_rand_np)
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/supervised/train_supervised_learning.py", line 57, in plot_performance_supervised
+    plt.clf()
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/matplotlib/pyplot.py", line 686, in clf
+    gcf().clf()
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/matplotlib/pyplot.py", line 601, in gcf
+    return figure()
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/matplotlib/pyplot.py", line 548, in figure
+    **kwargs)
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/matplotlib/backend_bases.py", line 161, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/matplotlib/backend_bases.py", line 167, in new_figure_manager_given_figure
+    canvas = cls.FigureCanvas(figure)
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/matplotlib/backends/backend_qt5agg.py", line 24, in __init__
+    super(FigureCanvasQTAgg, self).__init__(figure=figure)
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/matplotlib/backends/backend_qt5.py", line 234, in __init__
+    _create_qApp()
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/matplotlib/backends/backend_qt5.py", line 125, in _create_qApp
+    raise RuntimeError('Invalid DISPLAY variable')
+RuntimeError: Invalid DISPLAY variable

@@ -10,3 +10,22 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:165: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.view(-1))
+epochs 0 loss 0.004980931487557086 one_step_greedyperformance 2489.26618705036 gcn_performance 13553.492805755395 one_step_greedyperformance 2472.5539568345325 gcn_performance 13585.212230215828
+epochs 1 loss 0.004776805376734084 one_step_greedyperformance 2489.26618705036 gcn_performance 13618.29856115108 one_step_greedyperformance 2472.5539568345325 gcn_performance 13690.352517985611
+epochs 2 loss 0.004836749474433374 one_step_greedyperformance 2489.26618705036 gcn_performance 13373.593525179856 one_step_greedyperformance 2472.5539568345325 gcn_performance 13565.424460431655
+epochs 3 loss 0.004652545516546856 one_step_greedyperformance 2489.26618705036 gcn_performance 13657.938848920863 one_step_greedyperformance 2472.5539568345325 gcn_performance 13597.604316546762
+epochs 4 loss 0.004748946991578824 one_step_greedyperformance 2489.26618705036 gcn_performance 13492.931654676258 one_step_greedyperformance 2472.5539568345325 gcn_performance 13516.604316546762
+epochs 5 loss 0.004788013372478133 one_step_greedyperformance 2489.26618705036 gcn_performance 13620.665467625899 one_step_greedyperformance 2472.5539568345325 gcn_performance 13311.830935251799
+epochs 6 loss 0.004853022047146135 one_step_greedyperformance 2489.26618705036 gcn_performance 13438.68345323741 one_step_greedyperformance 2472.5539568345325 gcn_performance 13607.76618705036
+epochs 7 loss 0.004756904783483658 one_step_greedyperformance 2489.26618705036 gcn_performance 13446.154676258993 one_step_greedyperformance 2472.5539568345325 gcn_performance 13527.089928057554
+epochs 8 loss 0.004917993564236211 one_step_greedyperformance 2489.26618705036 gcn_performance 13569.535971223022 one_step_greedyperformance 2472.5539568345325 gcn_performance 13579.658273381296
+epochs 9 loss 0.00472261292532049 one_step_greedyperformance 2489.26618705036 gcn_performance 13780.81654676259 one_step_greedyperformance 2472.5539568345325 gcn_performance 13735.111510791367
+epochs 10 loss 0.004898212022855191 one_step_greedyperformance 2489.26618705036 gcn_performance 13138.104316546762 one_step_greedyperformance 2472.5539568345325 gcn_performance 13476.071942446044
+epochs 11 loss 0.004795910646122435 one_step_greedyperformance 2489.26618705036 gcn_performance 13695.489208633093 one_step_greedyperformance 2472.5539568345325 gcn_performance 13686.20143884892
+epochs 12 loss 0.0048118833702648555 one_step_greedyperformance 2489.26618705036 gcn_performance 13350.061151079137 one_step_greedyperformance 2472.5539568345325 gcn_performance 13355.56474820144
+epochs 13 loss 0.004812340245106054 one_step_greedyperformance 2489.26618705036 gcn_performance 13801.237410071943 one_step_greedyperformance 2472.5539568345325 gcn_performance 13369.931654676258
+epochs 14 loss 0.00474742735332846 one_step_greedyperformance 2489.26618705036 gcn_performance 13405.55035971223 one_step_greedyperformance 2472.5539568345325 gcn_performance 13704.726618705035
+epochs 15 loss 0.004817961691070532 one_step_greedyperformance 2489.26618705036 gcn_performance 13387.309352517985 one_step_greedyperformance 2472.5539568345325 gcn_performance 13807.856115107914
+epochs 16 loss 0.004819343429118944 one_step_greedyperformance 2489.26618705036 gcn_performance 13678.26618705036 one_step_greedyperformance 2472.5539568345325 gcn_performance 13201.834532374101
+epochs 17 loss 0.004887078731616774 one_step_greedyperformance 2489.26618705036 gcn_performance 13217.0 one_step_greedyperformance 2472.5539568345325 gcn_performance 13949.406474820144
+epochs 18 loss 0.004868737262110854 one_step_greedyperformance 2489.26618705036 gcn_performance 13230.665467625899 one_step_greedyperformance 2472.5539568345325 gcn_performance 13621.341726618704
