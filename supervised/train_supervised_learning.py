@@ -747,8 +747,8 @@ class Train_SupervisedLearning:
 
         opt = optm.Adam(self.model.parameters(), weight_decay=self.weight_d, lr=lr)
 
-        if self.use_cuda:
-            plt.switch_backend('agg')
+
+        plt.switch_backend('agg')
 
         total_acc_train = 0
         n_graphs_proceed = 0
