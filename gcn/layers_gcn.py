@@ -206,7 +206,7 @@ class GraphConvolutionLayer_Sparse_Memory(Module):
         features = torch.mm(features, self.weight) # features * weight
 
         if self.bias is not None:
-            features = self.bias
+            features += self.bias
 
         features = torch.spmm(adj_matrix, features) + features  # adjacency matrix * features
 
