@@ -295,11 +295,11 @@ class Train_SupervisedLearning:
 
 
         torch.save(self.model.state_dict(),
-                   './supervised/models/'+self.heuristic+'/SmallSsTraining/layers3lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                   './supervised/models/'+self.heuristic+'/SmallSsTraining/layers3_memo_test_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                    + '_epochs_' + str(0) + '_cuda.pth')
 
         torch.save(self.model.state_dict(),
-                   './supervised/models/'+self.heuristic+'/SmallSsTraining/layers3lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                   './supervised/models/'+self.heuristic+'/SmallSsTraining/layers3_memo_test_lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                    + '_steps_' + str(steps) + '_cuda.pth')
 
         for epoch in range(epochs):
@@ -456,7 +456,7 @@ class Train_SupervisedLearning:
 
                             if steps % 1000 == 0:
                                 torch.save(self.model.state_dict(),
-                                           './supervised/models/'+self.heuristic+'/SmallSsTraining/layers3lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                                           './supervised/models/'+self.heuristic+'/SmallSsTraining/layers3_memo_test_lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                                            + '_steps_' + str(steps) + '_cuda.pth')
 
                         else:
@@ -482,7 +482,7 @@ class Train_SupervisedLearning:
 
 
             torch.save(self.model.state_dict(),
-                       './supervised/models/'+self.heuristic+'/SmallSsTraining/layers3lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                       './supervised/models/'+self.heuristic+'/SmallSsTraining/layers3_memo_test_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                        + '_epochs_' + str(epoch+1) + '_cuda.pth')
 
             for X in self.val_loader:
@@ -747,8 +747,8 @@ class Train_SupervisedLearning:
 
         opt = optm.Adam(self.model.parameters(), weight_decay=self.weight_d, lr=lr)
 
-
-        plt.switch_backend('agg')
+        if self.use_cuda:
+            plt.switch_backend('agg')
 
         total_acc_train = 0
         n_graphs_proceed = 0
@@ -791,11 +791,11 @@ class Train_SupervisedLearning:
 
             if self.use_cuda:
                 self.model.load_state_dict(
-                    torch.load('./supervised/models/'+self.heuristic+'/SmallSsTraining/layers3lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                    torch.load('./supervised/models/'+self.heuristic+'/SmallSsTraining/layers3_memo_test_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                            + '_epochs_' + str(epoch) + '_cuda.pth'))
             else:
                 self.model.load_state_dict(
-                    torch.load('./supervised/models/' + self.heuristic + '/SmallSsTraining/layers3lr' + str(
+                    torch.load('./supervised/models/' + self.heuristic + '/SmallSsTraining/layers3_memo_test_lr' + str(
                         self.lr) + '/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                                + '_epochs_' + str(epoch) + '_cuda.pth', map_location='cpu'))
 
