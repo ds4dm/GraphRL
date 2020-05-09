@@ -112,17 +112,17 @@ train_ER_small, val_ER_small, test_ER_small = open_dataset('./data/ERGcollection
 train_ER_mid, val_ER_mid, test_ER_mid = open_dataset('./data/ERGcollection/erg_mid.pkl')
 
 # build the GCN model
-# model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
-#                               nhidden= args.dhidden,
-#                               nout=args.doutput,
-#                               dropout=args.dropout,
-#                               ) # alpha=args.alpha
-
-model = GCN_Sparse_Memory_Policy_SelectNode(nin=args.dinput,
+model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
                               nhidden= args.dhidden,
                               nout=args.doutput,
                               dropout=args.dropout,
                               ) # alpha=args.alpha
+
+# model = GCN_Sparse_Memory_Policy_SelectNode(nin=args.dinput,
+#                               nhidden= args.dhidden,
+#                               nout=args.doutput,
+#                               dropout=args.dropout,
+#                               ) # alpha=args.alpha
 
 print("model initialized")
 if args.cuda:
