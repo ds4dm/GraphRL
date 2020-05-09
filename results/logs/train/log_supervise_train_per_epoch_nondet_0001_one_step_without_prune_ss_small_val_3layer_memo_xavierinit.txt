@@ -1,14 +1,12 @@
 nohup: ignoring input
 cuda available: True 
-| Xavier Initialization
-| Xavier Initialization
-| Xavier Initialization
+cuda available: True 
+cuda available: True 
+cuda available: True 
 model initialized
 training func is running after this line
 Supervised Training started
 heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 
-/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:165: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
-  features = F.log_softmax(features.view(-1))
-epochs 0 loss 0.004980931487557086 one_step_greedyperformance 2489.26618705036 gcn_performance 13553.492805755395 one_step_greedyperformance 2472.5539568345325 gcn_performance 13585.212230215828
-epochs 1 loss 0.004776805376734084 one_step_greedyperformance 2489.26618705036 gcn_performance 13618.29856115108 one_step_greedyperformance 2472.5539568345325 gcn_performance 13690.352517985611
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
