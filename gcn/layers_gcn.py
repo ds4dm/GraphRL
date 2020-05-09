@@ -148,7 +148,7 @@ class GraphConvolutionLayer_Sparse_Memory(Module):
     Convolution layer for Graph
     """
 
-    def __init__(self, nfeatures_in, nfeatures_out, init='xavier', bias = False):
+    def __init__(self, nfeatures_in, nfeatures_out, init='xavier', bias = True):
 
         super(GraphConvolutionLayer_Sparse_Memory, self).__init__()
         self.nfeatures_in = nfeatures_in
@@ -171,17 +171,17 @@ class GraphConvolutionLayer_Sparse_Memory(Module):
         else:
             self.register_parameter('bias',None)
 
-        if init == 'uniform':
-            print("| Uniform Initialization")
-            self.reset_parameters_uniform()
-        elif init == 'xavier':
-            print("| Xavier Initialization")
-            self.reset_parameters_xavier()
-        elif init == 'kaiming':
-            print("| Kaiming Initialization")
-            self.reset_parameters_kaiming()
-        else:
-            raise NotImplementedError
+        # if init == 'uniform':
+        #     print("| Uniform Initialization")
+        #     self.reset_parameters_uniform()
+        # elif init == 'xavier':
+        #     print("| Xavier Initialization")
+        #     self.reset_parameters_xavier()
+        # elif init == 'kaiming':
+        #     print("| Kaiming Initialization")
+        #     self.reset_parameters_kaiming()
+        # else:
+        #     raise NotImplementedError
 
     def reset_parameters_uniform(self):
         stdv = 1. / math.sqrt(self.weight.size(1))
