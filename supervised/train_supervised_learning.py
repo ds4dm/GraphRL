@@ -479,8 +479,6 @@ class Train_SupervisedLearning:
 
             av_loss_train = av_loss_train / steps_epoch
 
-
-
             torch.save(self.model.state_dict(),
                        './supervised/models/'+self.heuristic+'/SmallSsTraining/layers3_memo_test_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                        + '_epochs_' + str(epoch+1) + '_cuda.pth')
