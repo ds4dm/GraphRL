@@ -8,3 +8,14 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:165: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.view(-1))
 epochs 0 loss 0.14109696538472485 one_step_greedyperformance 2478.8741007194244 gcn_performance 4100.992805755395 one_step_greedyperformance 2510.5107913669067 gcn_performance 6368.158273381295
+epochs 1 loss 0.00840268767979633 one_step_greedyperformance 2478.8741007194244 gcn_performance 4934.5 one_step_greedyperformance 2510.5107913669067 gcn_performance 7407.794964028777
+epochs 2 loss 0.008028987114161001 one_step_greedyperformance 2478.8741007194244 gcn_performance 5168.287769784172 one_step_greedyperformance 2510.5107913669067 gcn_performance 6246.9604316546765
+epochs 3 loss 0.00796150630882384 one_step_greedyperformance 2478.8741007194244 gcn_performance 5798.374100719425 one_step_greedyperformance 2510.5107913669067 gcn_performance 6098.053956834532
+epochs 4 loss 0.007689531849169134 one_step_greedyperformance 2478.8741007194244 gcn_performance 6312.525179856115 one_step_greedyperformance 2510.5107913669067 gcn_performance 5915.6474820143885
+epochs 5 loss 0.006993131482320003 one_step_greedyperformance 2478.8741007194244 gcn_performance 6412.992805755395 one_step_greedyperformance 2510.5107913669067 gcn_performance 5814.874100719425
+epochs 6 loss 0.007130414429766689 one_step_greedyperformance 2478.8741007194244 gcn_performance 6888.687050359712 one_step_greedyperformance 2510.5107913669067 gcn_performance 7016.107913669065
+epochs 7 loss 0.006924441563593326 one_step_greedyperformance 2478.8741007194244 gcn_performance 6564.230215827338 one_step_greedyperformance 2510.5107913669067 gcn_performance 5672.701438848921
+epochs 8 loss 0.0073773700250086794 one_step_greedyperformance 2478.8741007194244 gcn_performance 6369.625899280575 one_step_greedyperformance 2510.5107913669067 gcn_performance 8798.503597122302
+epochs 9 loss 0.007211890775564613 one_step_greedyperformance 2478.8741007194244 gcn_performance 6134.672661870503 one_step_greedyperformance 2510.5107913669067 gcn_performance 6138.841726618705
+epochs 10 loss 0.007275676472879484 one_step_greedyperformance 2478.8741007194244 gcn_performance 5988.525179856115 one_step_greedyperformance 2510.5107913669067 gcn_performance 6606.115107913669
+epochs 11 loss 0.006995233129883607 one_step_greedyperformance 2478.8741007194244 gcn_performance 6523.1474820143885 one_step_greedyperformance 2510.5107913669067 gcn_performance 6511.097122302158

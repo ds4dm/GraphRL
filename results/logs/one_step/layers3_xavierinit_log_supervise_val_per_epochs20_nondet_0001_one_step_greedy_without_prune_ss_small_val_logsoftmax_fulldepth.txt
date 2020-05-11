@@ -12,3 +12,14 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
   features = F.log_softmax(features.t())
 epochs 0 loss 0.0162985098801207 one_step_greedy_performance 2518.593525179856 gcn_performance 2762.205035971223 random_performance 13666.323741007194
 epochs 1 loss 0.007270723446930651 one_step_greedy_performance 2518.593525179856 gcn_performance 8148.36690647482 random_performance 13666.323741007194
+epochs 2 loss 0.011747776107611173 one_step_greedy_performance 2518.593525179856 gcn_performance 2991.3417266187053 random_performance 13666.323741007194
+epochs 3 loss 0.017431129293690346 one_step_greedy_performance 2518.593525179856 gcn_performance 3638.8417266187053 random_performance 13666.323741007194
+epochs 4 loss 0.013334360990779781 one_step_greedy_performance 2518.593525179856 gcn_performance 3236.327338129496 random_performance 13666.323741007194
+epochs 5 loss 0.018799667269149303 one_step_greedy_performance 2518.593525179856 gcn_performance 4531.769784172662 random_performance 13666.323741007194
+epochs 6 loss 0.010156112120068252 one_step_greedy_performance 2518.593525179856 gcn_performance 7327.769784172662 random_performance 13666.323741007194
+epochs 7 loss 0.015775417015549593 one_step_greedy_performance 2518.593525179856 gcn_performance 3900.7158273381297 random_performance 13666.323741007194
+epochs 8 loss 0.01708618303731708 one_step_greedy_performance 2518.593525179856 gcn_performance 5451.89928057554 random_performance 13666.323741007194
+epochs 9 loss 0.017050196575300318 one_step_greedy_performance 2518.593525179856 gcn_performance 6362.964028776978 random_performance 13666.323741007194
+epochs 10 loss 0.011920977846345533 one_step_greedy_performance 2518.593525179856 gcn_performance 6503.241007194245 random_performance 13666.323741007194
+epochs 11 loss 0.010803431302332458 one_step_greedy_performance 2518.593525179856 gcn_performance 7271.589928057554 random_performance 13666.323741007194
+epochs 12 loss 0.016832784518027773 one_step_greedy_performance 2518.593525179856 gcn_performance 3369.9424460431655 random_performance 13666.323741007194

@@ -16,3 +16,11 @@ epochs 2 loss 0.009072144435300404 one_step_greedyperformance 2488.1906474820144
 epochs 3 loss 0.00952065694825155 one_step_greedyperformance 2488.1906474820144 gcn_performance 7564.330935251798 one_step_greedyperformance 2478.0 gcn_performance 3185.6978417266187
 epochs 4 loss 0.010374803284939517 one_step_greedyperformance 2488.1906474820144 gcn_performance 6688.392086330935 one_step_greedyperformance 2478.0 gcn_performance 4529.884892086331
 epochs 5 loss 0.01002737532970599 one_step_greedyperformance 2488.1906474820144 gcn_performance 7071.902877697842 one_step_greedyperformance 2478.0 gcn_performance 7433.143884892086
+epochs 6 loss 0.00976205452324926 one_step_greedyperformance 2488.1906474820144 gcn_performance 7655.406474820144 one_step_greedyperformance 2478.0 gcn_performance 3857.827338129496
+epochs 7 loss 0.010494577374102872 one_step_greedyperformance 2488.1906474820144 gcn_performance 6017.1115107913665 one_step_greedyperformance 2478.0 gcn_performance 5469.6654676258995
+epochs 8 loss 0.009785229381215463 one_step_greedyperformance 2488.1906474820144 gcn_performance 7227.021582733813 one_step_greedyperformance 2478.0 gcn_performance 6307.035971223022
+epochs 9 loss 0.010059142594441746 one_step_greedyperformance 2488.1906474820144 gcn_performance 6846.737410071943 one_step_greedyperformance 2478.0 gcn_performance 6563.971223021583
+epochs 10 loss 0.010898530955604564 one_step_greedyperformance 2488.1906474820144 gcn_performance 7364.420863309352 one_step_greedyperformance 2478.0 gcn_performance 7179.384892086331
+epochs 11 loss 0.009777351086626088 one_step_greedyperformance 2488.1906474820144 gcn_performance 6988.8705035971225 one_step_greedyperformance 2478.0 gcn_performance 3367.384892086331
+epochs 12 loss 0.01002428283327355 one_step_greedyperformance 2488.1906474820144 gcn_performance 7612.935251798561 one_step_greedyperformance 2478.0 gcn_performance 8897.924460431655
+epochs 13 loss 0.010007335579192646 one_step_greedyperformance 2488.1906474820144 gcn_performance 6479.701438848921 one_step_greedyperformance 2478.0 gcn_performance 8069.712230215828
