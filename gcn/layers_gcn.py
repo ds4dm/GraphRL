@@ -86,13 +86,13 @@ class GraphConvolutionLayer_Sparse(Module):
 
         # initialize the parameters
         print("cuda available: {} ".format(torch.cuda.is_available()))
-        self.weight = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(self.nfeatures_in, self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=np.sqrt(2.0)), requires_grad=True)
+        self.weight = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(self.nfeatures_in, self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2), requires_grad=True)
 
         #Parameter(torch.Tensor(self.nfeatures_in,self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))
         if bias:
             # self.bias = nn.Parameter(nn.init.constant_(torch.Tensor(self.nfeatures_out).type(
             #     torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), 0.0))
-            self.bias = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(1, self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=np.sqrt(2.0)), requires_grad=True)
+            self.bias = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(1, self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2), requires_grad=True)
 
             # #Parameter(torch.Tensor(self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))
         else:
@@ -205,10 +205,10 @@ class GraphConvolutionLayer_Sparse_Memory(Module):
         # features_hat = torch.mm(features, self.weight)  # features * weight
         features = torch.mm(features, self.weight) # features * weight
 
+        features = torch.spmm(adj_matrix, features) + features  # adjacency matrix * features
+
         if self.bias is not None:
             features += self.bias
-
-        features = torch.spmm(adj_matrix, features) + features  # adjacency matrix * features
 
         return features
 

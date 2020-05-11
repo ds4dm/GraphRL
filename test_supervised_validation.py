@@ -18,7 +18,7 @@ from data.graph import Graph
 parser = argparse.ArgumentParser()
 parser.add_argument('--nocuda', action= 'store_true', default=False, help='Disable Cuda')
 parser.add_argument('--novalidation', action= 'store_true', default=True, help='Disable validation')
-parser.add_argument('--seed', type=int, default=63, help='Radom seed') #50
+parser.add_argument('--seed', type=int, default=50, help='Radom seed') #50
 parser.add_argument('--epochs', type=int, default=21, help='Training epochs')
 parser.add_argument('--lr', type=float, default= 0.0001, help='Learning rate')
 parser.add_argument('--wd', type=float, default=5e-4, help='Weight decay')
@@ -112,17 +112,17 @@ train_ER_small, val_ER_small, test_ER_small = open_dataset('./data/ERGcollection
 train_ER_mid, val_ER_mid, test_ER_mid = open_dataset('./data/ERGcollection/erg_mid.pkl')
 
 # build the GCN model
-# model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
-#                               nhidden= args.dhidden,
-#                               nout=args.doutput,
-#                               dropout=args.dropout,
-#                               ) # alpha=args.alpha
-
-model = GCN_Sparse_Memory_Policy_SelectNode(nin=args.dinput,
+model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
                               nhidden= args.dhidden,
                               nout=args.doutput,
                               dropout=args.dropout,
                               ) # alpha=args.alpha
+
+# model = GCN_Sparse_Memory_Policy_SelectNode(nin=args.dinput,
+#                               nhidden= args.dhidden,
+#                               nout=args.doutput,
+#                               dropout=args.dropout,
+#                               ) # alpha=args.alpha
 
 print("model initialized")
 if args.cuda:
@@ -131,19 +131,19 @@ if args.cuda:
 heuristic = 'one_step_greedy' # 'one_step_greedy' 'min_degree'
 prune = True
 print("training func is running after this line")
-policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=val_ss_small, val_dataset=val_ss_small, test_dataset=test_ER_small, use_cuda = args.cuda)
+policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=train_ER_small, val_dataset=val_ER_small, test_dataset=test_ER_small, use_cuda = args.cuda)
 
 
 
 # Train the model
 
-# total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
+total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
 
 val_dataset = val_ss_small
 
 dataset_type = varname(val_ss_small)
 
-t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+# t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
 
 
 
