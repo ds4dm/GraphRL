@@ -15,3 +15,4 @@ epochs 1 loss 0.0022991391239909754 one_step_greedyperformance 12639.035 gcn_per
 epochs 2 loss 0.0018752415570587667 one_step_greedyperformance 12639.035 gcn_performance 12907.17 one_step_greedyperformance 12445.19 gcn_performance 12607.08
 epochs 3 loss 0.001727205069742998 one_step_greedyperformance 12639.035 gcn_performance 12887.225 one_step_greedyperformance 12445.19 gcn_performance 12589.605
 epochs 4 loss 0.0017202134601407263 one_step_greedyperformance 12639.035 gcn_performance 12912.445 one_step_greedyperformance 12445.19 gcn_performance 12616.475
+epochs 5 loss 0.0017141293341867289 one_step_greedyperformance 12639.035 gcn_performance 12932.81 one_step_greedyperformance 12445.19 gcn_performance 13486.765
