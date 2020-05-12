@@ -295,11 +295,11 @@ class Train_SupervisedLearning:
 
 
         torch.save(self.model.state_dict(),
-                   './supervised/models/'+self.heuristic+'/SmallErgTraining/layers10_test_memo_zerobias_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                   './supervised/models/'+self.heuristic+'/SmallErgTraining/layers10_test_memo_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                    + '_epochs_' + str(0) + '_cuda.pth')
 
         torch.save(self.model.state_dict(),
-                   './supervised/models/'+self.heuristic+'/SmallErgTraining/layers10_test_memo_zerobias_lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                   './supervised/models/'+self.heuristic+'/SmallErgTraining/layers10_test_memo_lr'+str(self.lr)+'/per_steps/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                    + '_steps_' + str(steps) + '_cuda.pth')
 
         for epoch in range(epochs):
@@ -789,11 +789,11 @@ class Train_SupervisedLearning:
 
             if self.use_cuda:
                 self.model.load_state_dict(
-                    torch.load('./supervised/models/'+self.heuristic+'/SmallErgTraining/layers10_test_memo_zerobias_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                    torch.load('./supervised/models/'+self.heuristic+'/SmallErgTraining/layers10_test_memo_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                            + '_epochs_' + str(epoch) + '_cuda.pth'))
             else:
                 self.model.load_state_dict(
-                    torch.load('./supervised/models/' + self.heuristic + '/SmallErgTraining/layers10_test_memo_zerobias_lr' + str(
+                    torch.load('./supervised/models/' + self.heuristic + '/SmallErgTraining/layers10_test_memo_lr' + str(
                         self.lr) + '/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
                                + '_epochs_' + str(epoch) + '_cuda.pth', map_location='cpu'))
 
