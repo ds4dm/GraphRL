@@ -162,10 +162,10 @@ class GraphConvolutionLayer_Sparse_Memory(Module):
 
         #Parameter(torch.Tensor(self.nfeatures_in,self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))
         if bias:
-            # self.bias = nn.Parameter(nn.init.constant_(torch.Tensor(self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor),0.0))
-            self.bias = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(1, self.nfeatures_out).type(
-                torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2),
-                                     requires_grad=True)
+            self.bias = nn.Parameter(nn.init.constant_(torch.Tensor(self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor),0.0))
+            # self.bias = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(1, self.nfeatures_out).type(
+            #     torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2),
+            #                          requires_grad=True)
 
             #Parameter(torch.Tensor(self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))
         else:
