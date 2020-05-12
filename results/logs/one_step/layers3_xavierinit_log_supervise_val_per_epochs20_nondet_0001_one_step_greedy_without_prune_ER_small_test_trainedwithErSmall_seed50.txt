@@ -1,0 +1,5 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "test_supervised_validation.py", line 13, in <module>
+    from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Policy_7
+ImportError: cannot import name 'GCN_Sparse_Policy_7'

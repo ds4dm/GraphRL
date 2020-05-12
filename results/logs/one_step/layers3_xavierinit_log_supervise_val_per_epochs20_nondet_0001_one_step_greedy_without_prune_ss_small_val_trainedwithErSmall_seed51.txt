@@ -1,0 +1,12 @@
+nohup: ignoring input
+cuda available: False 
+cuda available: False 
+cuda available: False 
+cuda available: False 
+model initialized
+training func is running after this line
+Supervised Validation started
+heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
+
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
