@@ -18,7 +18,7 @@ from data.graph import Graph
 parser = argparse.ArgumentParser()
 parser.add_argument('--nocuda', action= 'store_true', default=False, help='Disable Cuda')
 parser.add_argument('--novalidation', action= 'store_true', default=True, help='Disable validation')
-parser.add_argument('--seed', type=int, default=50, help='Radom seed') #50
+parser.add_argument('--seed', type=int, default=51, help='Radom seed') #50
 parser.add_argument('--epochs', type=int, default=21, help='Training epochs')
 parser.add_argument('--lr', type=float, default= 0.0001, help='Learning rate')
 parser.add_argument('--wd', type=float, default=5e-4, help='Weight decay')
@@ -112,17 +112,17 @@ train_ER_small, val_ER_small, test_ER_small = open_dataset('./data/ERGcollection
 train_ER_mid, val_ER_mid, test_ER_mid = open_dataset('./data/ERGcollection/erg_mid.pkl')
 
 # build the GCN model
-# model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
-#                               nhidden= args.dhidden,
-#                               nout=args.doutput,
-#                               dropout=args.dropout,
-#                               ) # alpha=args.alpha
-
-model = GCN_Sparse_Policy_7(nin=args.dinput,
+model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
                               nhidden= args.dhidden,
                               nout=args.doutput,
                               dropout=args.dropout,
                               ) # alpha=args.alpha
+
+# model = GCN_Sparse_Policy_7(nin=args.dinput,
+#                               nhidden= args.dhidden,
+#                               nout=args.doutput,
+#                               dropout=args.dropout,
+#                               ) # alpha=args.alpha
 
 
 # model = GCN_Sparse_Memory_Policy_SelectNode(nin=args.dinput,
