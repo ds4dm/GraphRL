@@ -113,11 +113,11 @@ train_ER_mid, val_ER_mid, test_ER_mid = open_dataset('./data/ERGcollection/erg_m
 
 # build the GCN model
 
-# model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
-#                               nhidden= args.dhidden,
-#                               nout=args.doutput,
-#                               dropout=args.dropout,
-#                               ) # alpha=args.alpha
+model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
+                              nhidden= args.dhidden,
+                              nout=args.doutput,
+                              dropout=args.dropout,
+                              ) # alpha=args.alpha
 
 # model = GCN_Sparse_Policy_10(nin=args.dinput,
 #                               nhidden= args.dhidden,
@@ -132,11 +132,11 @@ train_ER_mid, val_ER_mid, test_ER_mid = open_dataset('./data/ERGcollection/erg_m
 #                               dropout=args.dropout,
 #                               ) # alpha=args.alpha
 
-model = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
-                              nhidden= args.dhidden,
-                              nout=args.doutput,
-                              dropout=args.dropout,
-                              ) # alpha=args.alpha
+# model = GCN_Sparse_Memory_Policy_SelectNode_10(nin=args.dinput,
+#                               nhidden= args.dhidden,
+#                               nout=args.doutput,
+#                               dropout=args.dropout,
+#                               ) # alpha=args.alpha
 
 print("model initialized")
 if args.cuda:
