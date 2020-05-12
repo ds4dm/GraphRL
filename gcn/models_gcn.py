@@ -137,12 +137,12 @@ class GCN_Sparse_Policy_5(nn.Module):
 
         return features
 
-class GCN_Sparse_Policy_7(nn.Module):
+class GCN_Sparse_Policy_10(nn.Module):
     """
     GCN model for node selection policy
     """
     def __init__(self, nin, nhidden, nout, dropout):
-        super(GCN_Sparse_Policy_7, self).__init__()
+        super(GCN_Sparse_Policy_10, self).__init__()
 
         self.gc1 = GraphConvolutionLayer_Sparse(nin, nhidden) # first graph conv layer
         self.gc2 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
@@ -150,7 +150,10 @@ class GCN_Sparse_Policy_7(nn.Module):
         self.gc4 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
         self.gc5 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
         self.gc6 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
-        self.gc7 = GraphConvolutionLayer_Sparse(nhidden, nout) # second graph conv layer
+        self.gc7 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc8 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc9 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc10 = GraphConvolutionLayer_Sparse(nhidden, nout) # second graph conv layer
         self.dropout = dropout
 
 
@@ -175,8 +178,17 @@ class GCN_Sparse_Policy_7(nn.Module):
         features = self.gc6(features, adj_matrix)
         features = F.relu(features)
 
-        # second layer with softmax
         features = self.gc7(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc8(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc9(features, adj_matrix)
+        features = F.relu(features)
+
+        # second layer with softmax
+        features = self.gc10(features, adj_matrix)
         features = F.log_softmax(features.view(-1))
         # features = features.t()
 
