@@ -10,7 +10,7 @@ from data.ergDataset import ErgDataset
 from utils.utils import open_dataset, varname
 
 from data.UFSMDataset import UFSMDataset
-from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode
+from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Policy_7
 from supervised.train_supervised_learning import Train_SupervisedLearning
 from data.graph import Graph
 
@@ -112,11 +112,18 @@ train_ER_small, val_ER_small, test_ER_small = open_dataset('./data/ERGcollection
 train_ER_mid, val_ER_mid, test_ER_mid = open_dataset('./data/ERGcollection/erg_mid.pkl')
 
 # build the GCN model
-model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
+# model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
+#                               nhidden= args.dhidden,
+#                               nout=args.doutput,
+#                               dropout=args.dropout,
+#                               ) # alpha=args.alpha
+
+model = GCN_Sparse_Policy_7(nin=args.dinput,
                               nhidden= args.dhidden,
                               nout=args.doutput,
                               dropout=args.dropout,
                               ) # alpha=args.alpha
+
 
 # model = GCN_Sparse_Memory_Policy_SelectNode(nin=args.dinput,
 #                               nhidden= args.dhidden,
@@ -137,13 +144,13 @@ policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuris
 
 # Train the model
 
-# total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
+total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
 
 val_dataset = val_ss_small
 
 dataset_type = varname(val_ss_small)
 
-t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+# t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
 
 # plot_performance_supervised(dataset_type=dataset_type,
 #                             steps = 'epoch',
