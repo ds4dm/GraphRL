@@ -18,3 +18,14 @@ epochs 7 loss 0.00817735126575073 one_step_greedy_performance 2482.2410071942445
 epochs 8 loss 0.008068170000043492 one_step_greedy_performance 2482.2410071942445 gcn_performance 5725.345323741008 random_performance 13381.294964028777
 epochs 9 loss 0.011748091200406907 one_step_greedy_performance 2482.2410071942445 gcn_performance 8646.920863309353 random_performance 13381.294964028777
 epochs 10 loss 0.008475938319057864 one_step_greedy_performance 2482.2410071942445 gcn_performance 6189.406474820144 random_performance 13381.294964028777
+epochs 11 loss 0.009160820380786866 one_step_greedy_performance 2482.2410071942445 gcn_performance 6581.158273381295 random_performance 13381.294964028777
+epochs 12 loss 0.00805084311434354 one_step_greedy_performance 2482.2410071942445 gcn_performance 6504.669064748202 random_performance 13381.294964028777
+epochs 13 loss 0.00985798640803688 one_step_greedy_performance 2482.2410071942445 gcn_performance 9054.323741007194 random_performance 13381.294964028777
+Traceback (most recent call last):
+  File "test_supervised_validation.py", line 146, in <module>
+    t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/supervised/train_supervised_learning.py", line 798, in validation_epochs
+    + '_epochs_' + str(epoch) + '_cuda.pth', map_location='cpu'))
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 301, in load
+    f = open(f, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: './supervised/models/one_step_greedy/SmallSsTraining/layers3_memo_test_lr0.0001/per_epochs/gcn_policy_one_step_greedy_pre_UFSMDataset_epochs_14_cuda.pth'
