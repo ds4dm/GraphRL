@@ -1724,7 +1724,7 @@ class Train_SupervisedLearning:
         print('Supervised Validation started')
         print('heuristic: ' + self.heuristic,
               'learning rate: {}'.format(lr),
-              'epoch: {}'.format(epoch),
+              'epochs: {}'.format(epoch),
               'DataSet: ' + self.val_dataset.__class__.__name__ + '\n')
 
         opt = optm.Adam(self.model.parameters(), weight_decay=self.weight_d, lr=lr)
@@ -1808,106 +1808,104 @@ class Train_SupervisedLearning:
                 i = 0
                 while (i < depth) and (x_model.n > 2):
 
-                    # if epoch==0:
-                    #     if self.heuristic == 'min_degree':
-                    #         action_heuristic, d_min = x_mind.min_degree(x_mind.M)
-                    #     elif self.heuristic == 'one_step_greedy':
-                    #         action_heuristic = x_mind.onestep_greedy()
-                    #     # node_mind, d_min = x_mind.min_degree(x_mind.M)
-                    #     val_rewards_mindegree += x_mind.eliminate_node(action_heuristic, reduce=True)
-                    #
-                    #     # action_rand = np.random.randint(low=0, high=x_rand.n)
-                    #     # val_rewards_rand += x_rand.eliminate_node(action_rand, reduce=True)
-
-
-                    node_selected, d_min = x_model.min_degree(x_model.M)
-                    if not (d_min == 0 and self.prune==True):
-                        i += 1
-                        # if epoch==0:
-                        #     steps_epoch0.append(i)
-
-                        features = np.ones([x_model.n, 1], dtype=np.float32)
-                        m = torch.FloatTensor(x_model.M)
-                        _t1 = time.clock()
-                        m = utils.to_sparse(m)  # convert to coo sparse tensor
-                        t_spa += time.clock() - _t1
-                        features = torch.FloatTensor(features)
-
-                        _t3 = time.clock()
+                    if epoch==0:
                         if self.heuristic == 'min_degree':
-                            distribution_labels = x_model.min_degree_d()
+                            action_heuristic, d_min = x_mind.min_degree(x_mind.M)
                         elif self.heuristic == 'one_step_greedy':
-                            distribution_labels = x_model.onestep_greedy_d()
+                            action_heuristic = x_mind.onestep_greedy()
+                        # node_mind, d_min = x_mind.min_degree(x_mind.M)
+                        val_rewards_mindegree += x_mind.eliminate_node(action_heuristic, reduce=True)
 
-                        # distribution_labels = np.log(distribution_labels)
-
-                        t_heu += time.clock() - _t3
-                        distribution_labels = torch.FloatTensor(distribution_labels)
-
-                        # node_chosen, z = x1.min_degree(x1.M)  # get the node with minimum degree as label
-                        # node_chosen = torch.from_numpy(np.array(node_chosen))  # one-hot coding
-                        # node_chosen = node_chosen.reshape(1)
-                        _t4 = time.clock()
-                        if self.use_cuda:
-                            m = m.cuda()
-                            features = features.cuda()
-                            distribution_labels = distribution_labels.cuda()
-
-                        t_IO += time.clock() - _t4
-
-                        output = self.model(features, m)
-                        output = output.view(-1)
+                        # action_rand = np.random.randint(low=0, high=x_rand.n)
+                        # val_rewards_rand += x_rand.eliminate_node(action_rand, reduce=True)
 
 
-                        # m = Categorical(output)
-                        # node_selected = m.sample()
-                        # node_selected = torch.LongTensor([[node_selected]])
-                        # m.probs.zero_()
-                        # m.probs.scatter_(1, node_selected, 1)
+                #     node_selected, d_min = x_model.min_degree(x_model.M)
+                #     if not (d_min == 0 and self.prune==True):
+                #         i += 1
+                #         if epoch==0:
+                #             steps_epoch0.append(i)
+                #
+                #         features = np.ones([x_model.n, 1], dtype=np.float32)
+                #         m = torch.FloatTensor(x_model.M)
+                #         _t1 = time.clock()
+                #         m = utils.to_sparse(m)  # convert to coo sparse tensor
+                #         t_spa += time.clock() - _t1
+                #         features = torch.FloatTensor(features)
+                #
+                #         _t3 = time.clock()
+                #         if self.heuristic == 'min_degree':
+                #             distribution_labels = x_model.min_degree_d()
+                #         elif self.heuristic == 'one_step_greedy':
+                #             distribution_labels = x_model.onestep_greedy_d()
+                #
+                #         # distribution_labels = np.log(distribution_labels)
+                #
+                #         t_heu += time.clock() - _t3
+                #         distribution_labels = torch.FloatTensor(distribution_labels)
+                #
+                #         # node_chosen, z = x1.min_degree(x1.M)  # get the node with minimum degree as label
+                #         # node_chosen = torch.from_numpy(np.array(node_chosen))  # one-hot coding
+                #         # node_chosen = node_chosen.reshape(1)
+                #         _t4 = time.clock()
+                #         if self.use_cuda:
+                #             m = m.cuda()
+                #             features = features.cuda()
+                #             distribution_labels = distribution_labels.cuda()
+                #
+                #         t_IO += time.clock() - _t4
+                #
+                #         output = self.model(features, m)
+                #         output = output.view(-1)
+                #
+                #
+                #         # m = Categorical(output)
+                #         # node_selected = m.sample()
+                #         # node_selected = torch.LongTensor([[node_selected]])
+                #         # m.probs.zero_()
+                #         # m.probs.scatter_(1, node_selected, 1)
+                #
+                #         loss_val = F.kl_div(output, distribution_labels) # get the negetive likelyhood
+                #         total_loss_val_1graph += loss_val.item()
+                #         steps +=1
+                #         if epoch==0:
+                #             steps_loss_val.append(loss_val.item())
+                #
+                #         # _t5 = time.clock()
+                #         # opt.zero_grad()
+                #         # loss_train.backward()
+                #         # opt.step()
+                #         # t5 += time.clock() - _t5
+                #
+                #
+                #         # action_gcn = np.argmax(np.array(output.detach().cpu().numpy()))  # choose the node given by GCN
+                #         # output = np.array(output.detach().cpu().numpy())
+                #         # output = np.exp(output)
+                #         # action_gcn = np.random.choice(a=x1.n, p=output)
+                #
+                #         # output = torch.log(output)
+                #         # output = torch.exp(output)
+                #
+                #         # m = Categorical(logits=output) # logits=probs
+                #         # action_gcn = m.sample()
+                #         action_gcn = output.argmax()
+                #
+                #         # output = np.array(output.detach().cpu().numpy())
+                #         # output = np.exp(output)
+                #         # action_gcn = np.argmax(output)
+                #
+                #
+                #         _t2 = time.clock()
+                #         edges_added = x_model.eliminate_node(action_gcn, reduce=True)
+                #         val_rewards_gcn_greedy += edges_added
+                #         t_eli += time.clock() - _t2
+                #     else:
+                #         reward = x_model.eliminate_node(node_selected, reduce=True)
+                # val_gcn_greedy.append(val_rewards_gcn_greedy)
 
-                        loss_val = F.kl_div(output, distribution_labels) # get the negetive likelyhood
-                        total_loss_val_1graph += loss_val.item()
-                        steps +=1
-                        # if epoch==0:
-                        #     steps_loss_val.append(loss_val.item())
-
-                        # _t5 = time.clock()
-                        # opt.zero_grad()
-                        # loss_train.backward()
-                        # opt.step()
-                        # t5 += time.clock() - _t5
-
-
-                        # action_gcn = np.argmax(np.array(output.detach().cpu().numpy()))  # choose the node given by GCN
-                        # output = np.array(output.detach().cpu().numpy())
-                        # output = np.exp(output)
-                        # action_gcn = np.random.choice(a=x1.n, p=output)
-
-                        # output = torch.log(output)
-                        # output = torch.exp(output)
-
-                        # m = Categorical(logits=output) # logits=probs
-                        # action_gcn = m.sample()
-
-                        # greedy policy
-                        action_gcn = output.argmax()
-
-                        # output = np.array(output.detach().cpu().numpy())
-                        # output = np.exp(output)
-                        # action_gcn = np.argmax(output)
-
-
-                        _t2 = time.clock()
-                        edges_added = x_model.eliminate_node(action_gcn, reduce=True)
-                        val_rewards_gcn_greedy += edges_added
-                        t_eli += time.clock() - _t2
-                    else:
-                        reward = x_model.eliminate_node(node_selected, reduce=True)
-                val_gcn_greedy.append(val_rewards_gcn_greedy)
-
-                # if epoch==0:
-                #     val_mind.append(val_rewards_mindegree)
-                #     # val_rand.append(val_rewards_rand)
+                if epoch==0:
+                    val_mind.append(val_rewards_mindegree)
+                    # val_rand.append(val_rewards_rand)
 
                 # print('graph {}'.format(graph_no),
                 #       'min_degree_performance {}'.format(val_rewards_mindegree),
@@ -1925,17 +1923,17 @@ class Train_SupervisedLearning:
                 #                args.epochs) + '_cuda.pth')
 
                 graph_no += 1
-                av_loss_val += total_loss_val_1graph
-        av_loss_val = av_loss_val/steps
+            # av_loss_val += total_loss_val_1graph
+        # av_loss_val = av_loss_val/steps
 
 
 
-        val_gcn_greedy = np.array(val_gcn_greedy).reshape(-1)
-        _val_ave_gcn = np.sum(val_gcn_greedy) / len(val_gcn_greedy)
+        # val_gcn_greedy = np.array(val_gcn_greedy).reshape(-1)
+        # _val_ave_gcn = np.sum(val_gcn_greedy) / len(val_gcn_greedy)
 
-        # if epoch==0:
-        #     val_mind = np.array(val_mind).reshape(-1)
-        #     _val_ave_mind = np.sum(val_mind) / len(val_mind)
+        if epoch==0:
+            val_mind = np.array(val_mind).reshape(-1)
+            _val_ave_mind = np.sum(val_mind) / len(val_mind)
 
             # val_rand = np.array(val_rand).reshape(-1)
             # _val_ave_rand = np.sum(val_rand) / len(val_rand)
@@ -1945,7 +1943,7 @@ class Train_SupervisedLearning:
 
 
         t.append(epoch)
-        val_ave_gcn.append(_val_ave_gcn)
+        # val_ave_gcn.append(_val_ave_gcn)
         # val_ave_mind.append(_val_ave_mind)
         # val_ave_rand.append(_val_ave_rand)
 
@@ -1954,7 +1952,7 @@ class Train_SupervisedLearning:
 
 
         # print('epochs {}'.format(epoch),'loss {}'.format(av_loss_train) )
-        total_loss_val.append(av_loss_val)
+        # total_loss_val.append(av_loss_val)
 
         t_plot = np.array(t).reshape(-1)
 
@@ -1968,8 +1966,9 @@ class Train_SupervisedLearning:
         # val_ave_rand_np = np.array(val_ave_rand).reshape(-1)
 
         print('epochs {}'.format(epoch),
-              'loss {}'.format(av_loss_val),
-              'gcn_performance {}'.format(_val_ave_gcn)
+              # 'loss {}'.format(av_loss_val),
+              self.heuristic+'_performance {}'.format(_val_ave_mind),
+              # 'gcn_performance {}'.format(_val_ave_gcn)
               )
 
         # self.plot_performance_supervised(dataset_type=dataset_type,
