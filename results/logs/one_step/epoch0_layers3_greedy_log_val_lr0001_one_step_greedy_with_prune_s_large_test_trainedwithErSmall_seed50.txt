@@ -8,3 +8,19 @@ training func is running after this line
 Supervised Validation started
 heuristic: one_step_greedy learning rate: 0.0001 epochs: 0 DataSet: UFSMDataset
 
+Traceback (most recent call last):
+  File "test_supervised_validation.py", line 162, in <module>
+    t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np = policy_sl.validation_single_epoch(epoch=0, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/supervised/train_supervised_learning.py", line 1815, in validation_single_epoch
+    action_heuristic = x_mind.onestep_greedy()
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/data/graph.py", line 208, in onestep_greedy
+    p = self.onestep_greedy_d()
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/data/graph.py", line 259, in onestep_greedy_d
+    return c_onestep_greedy_d(self.M)
+  File "data/c_graph.pyx", line 50, in c_graph.c_onestep_greedy_d
+    s_min = np.min(s)
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/numpy/core/fromnumeric.py", line 2420, in amin
+    out=out, **kwargs)
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/numpy/core/_methods.py", line 29, in _amin
+    return umr_minimum(a, axis, None, out, keepdims)
+ValueError: zero-size array to reduction operation minimum which has no identity
