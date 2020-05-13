@@ -37,10 +37,10 @@ args = parser.parse_args()
 
 args.cuda = not args.nocuda and torch.cuda.is_available()
 
-np.random.seed(30)
-torch.manual_seed(30)
-
-g = Graph.erdosrenyi(n=8, p=0.25)
+np.random.seed(32)
+torch.manual_seed(32)
+n = 7
+g = Graph.erdosrenyi(n=n, p=0.30)
 g2 = Graph(g.M)
 g_for_model = Graph(g.M)
 g2_for_model = Graph(g.M)
@@ -59,7 +59,7 @@ for name, param in model.named_parameters():
                 print('parameter name {}'.format(name),
                     'parameter value {}'.format(param.data.size()))
 
-epoch = 15
+epoch = 18
 heuristic = 'one_step_greedy' # 'one_step_greedy' 'min_degree'
 train_dataset=train_ER_small
 
@@ -95,8 +95,9 @@ def step_model(model, M, use_cuda=True):
     output = model(features, m)
     output = output.view(-1)
 
-    m = Categorical(logits=output)  # logits=probs
-    action_gcn = m.sample()
+    # m = Categorical(logits=output)  # logits=probs
+    # action_gcn = m.sample()
+    action_gcn = output.argmax()
 
     return action_gcn
 
@@ -140,12 +141,11 @@ def get_fig(g, g_for_model, model, pos, axs_row, use_cuda=True):
 
     return g
 
-n = 7
 
 
 fig, axs = plt.subplots(nrows=n, ncols=4, figsize=(40,100), constrained_layout=True)
 
-for i in range(n):
+for i in range(n-1):
 
     g = get_fig(g=g, g_for_model=g_for_model, model=model, pos=pos, axs_row=axs[i], use_cuda=args.cuda)
 plt.show()

@@ -1706,6 +1706,376 @@ class Train_SupervisedLearning:
         print('IO to cuda time: {:.4f}'.format(t_IO))
         print('Model and Opt time: {:.4f}'.format(t_model_opt))
 
+    def validation_single_epoch(self, lr =0.001, epoch=0, val_dataset=None, dataset_type='val'):
+        """
+        Training function
+        :param model: neural network model
+        :param opt: optimizaiton function
+        :param train_loader: training dataset loader
+        :param features: features vector
+        :param is_cuda:
+        :return: averaged loss per graph
+        """
+
+        if val_dataset:
+            self.val_dataset = val_dataset
+            self.val_loader = DataLoader(self.val_dataset, shuffle=True, batch_size=1, collate_fn=lambda x: x)
+
+        print('Supervised Validation started')
+        print('heuristic: ' + self.heuristic,
+              'learning rate: {}'.format(lr),
+              'epoch: {}'.format(epoch),
+              'DataSet: ' + self.val_dataset.__class__.__name__ + '\n')
+
+        opt = optm.Adam(self.model.parameters(), weight_decay=self.weight_d, lr=lr)
+
+
+        plt.switch_backend('agg')
+
+        total_acc_train = 0
+        n_graphs_proceed = 0
+        # n_iteration = 0
+
+        t_all = time.clock()
+        t_spa = 0
+        t_eli = 0
+        t_heu = 0
+        t_IO = 0
+        t_model_opt = 0
+
+        t = []
+
+        steps_loss_val = []
+        steps_epoch0 = []
+
+        val_ave_gcn = []
+
+        # min_gcn = []
+        # max_gcn = []
+
+        val_ave_mind = []
+        # val_ave_rand = []
+
+        # min_mind = []
+        # max_mind = []
+
+        val_ave_ratio_gcn2mind = []
+
+        # min_ratio_gcn2mind = []
+        # max_ratio_gcn2mind = []
+        total_loss_val = []
+
+        # print('epochs {}'.format(epoch))
+
+        if self.use_cuda:
+            self.model.load_state_dict(
+                torch.load('./supervised/models/'+self.heuristic+'/SmallErgTraining/layers3_test_lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                       + '_epochs_' + str(epoch) + '_cuda.pth'))
+        else:
+            self.model.load_state_dict(
+                torch.load('./supervised/models/' + self.heuristic + '/SmallErgTraining/layers3_test_lr' + str(
+                    self.lr) + '/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                           + '_epochs_' + str(epoch) + '_cuda.pth', map_location='cpu'))
+
+        val_gcn_greedy = []
+
+        if epoch==0:
+            val_mind = []
+            # val_rand = []
+        ratio_gcn2mind = []
+
+        av_loss_val = 0 # loss per epochs
+        graph_no = 0
+        steps = 0
+
+        for X in self.val_loader:
+            for x in X:
+
+                self.model.eval()
+                n = x.n
+
+                val_rewards_mindegree = 0
+                # val_rewards_rand = 0
+                val_rewards_gcn_greedy = 0
+
+                x_mind = Graph(x.M)
+                # x_rand = Graph(x.M)
+                x_model = Graph(x.M)
+                total_loss_val_1graph = 0
+                # depth = np.min([n - 2, 300])
+                depth = n - 2
+                # edges_total = 0
+                i = 0
+                while (i < depth) and (x_model.n > 2):
+
+                    # if epoch==0:
+                    #     if self.heuristic == 'min_degree':
+                    #         action_heuristic, d_min = x_mind.min_degree(x_mind.M)
+                    #     elif self.heuristic == 'one_step_greedy':
+                    #         action_heuristic = x_mind.onestep_greedy()
+                    #     # node_mind, d_min = x_mind.min_degree(x_mind.M)
+                    #     val_rewards_mindegree += x_mind.eliminate_node(action_heuristic, reduce=True)
+                    #
+                    #     # action_rand = np.random.randint(low=0, high=x_rand.n)
+                    #     # val_rewards_rand += x_rand.eliminate_node(action_rand, reduce=True)
+
+
+                    node_selected, d_min = x_model.min_degree(x_model.M)
+                    if not (d_min == 0 and self.prune==True):
+                        i += 1
+                        # if epoch==0:
+                        #     steps_epoch0.append(i)
+
+                        features = np.ones([x_model.n, 1], dtype=np.float32)
+                        m = torch.FloatTensor(x_model.M)
+                        _t1 = time.clock()
+                        m = utils.to_sparse(m)  # convert to coo sparse tensor
+                        t_spa += time.clock() - _t1
+                        features = torch.FloatTensor(features)
+
+                        _t3 = time.clock()
+                        if self.heuristic == 'min_degree':
+                            distribution_labels = x_model.min_degree_d()
+                        elif self.heuristic == 'one_step_greedy':
+                            distribution_labels = x_model.onestep_greedy_d()
+
+                        # distribution_labels = np.log(distribution_labels)
+
+                        t_heu += time.clock() - _t3
+                        distribution_labels = torch.FloatTensor(distribution_labels)
+
+                        # node_chosen, z = x1.min_degree(x1.M)  # get the node with minimum degree as label
+                        # node_chosen = torch.from_numpy(np.array(node_chosen))  # one-hot coding
+                        # node_chosen = node_chosen.reshape(1)
+                        _t4 = time.clock()
+                        if self.use_cuda:
+                            m = m.cuda()
+                            features = features.cuda()
+                            distribution_labels = distribution_labels.cuda()
+
+                        t_IO += time.clock() - _t4
+
+                        output = self.model(features, m)
+                        output = output.view(-1)
+
+
+                        # m = Categorical(output)
+                        # node_selected = m.sample()
+                        # node_selected = torch.LongTensor([[node_selected]])
+                        # m.probs.zero_()
+                        # m.probs.scatter_(1, node_selected, 1)
+
+                        loss_val = F.kl_div(output, distribution_labels) # get the negetive likelyhood
+                        total_loss_val_1graph += loss_val.item()
+                        steps +=1
+                        # if epoch==0:
+                        #     steps_loss_val.append(loss_val.item())
+
+                        # _t5 = time.clock()
+                        # opt.zero_grad()
+                        # loss_train.backward()
+                        # opt.step()
+                        # t5 += time.clock() - _t5
+
+
+                        # action_gcn = np.argmax(np.array(output.detach().cpu().numpy()))  # choose the node given by GCN
+                        # output = np.array(output.detach().cpu().numpy())
+                        # output = np.exp(output)
+                        # action_gcn = np.random.choice(a=x1.n, p=output)
+
+                        # output = torch.log(output)
+                        # output = torch.exp(output)
+
+                        # m = Categorical(logits=output) # logits=probs
+                        # action_gcn = m.sample()
+
+                        # greedy policy
+                        action_gcn = output.argmax()
+
+                        # output = np.array(output.detach().cpu().numpy())
+                        # output = np.exp(output)
+                        # action_gcn = np.argmax(output)
+
+
+                        _t2 = time.clock()
+                        edges_added = x_model.eliminate_node(action_gcn, reduce=True)
+                        val_rewards_gcn_greedy += edges_added
+                        t_eli += time.clock() - _t2
+                    else:
+                        reward = x_model.eliminate_node(node_selected, reduce=True)
+                val_gcn_greedy.append(val_rewards_gcn_greedy)
+
+                # if epoch==0:
+                #     val_mind.append(val_rewards_mindegree)
+                #     # val_rand.append(val_rewards_rand)
+
+                # print('graph {}'.format(graph_no),
+                #       'min_degree_performance {}'.format(val_rewards_mindegree),
+                #       'gcn_performance {}'.format(val_rewards_gcn_greedy),
+                #       'random_performance {}'.format(val_rewards_rand)
+                #       )
+
+                # if self.use_cuda:
+                #     torch.save(self.model.state_dict(),
+                #                './supervised/models_test/SmallErgTraining/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
+                #                   + '_epoch' + str(epoch) + 'graph_'  + str(graph_no)+ '_cuda.pth')
+
+                # torch.save(model.state_dict(),
+                #            './results/models/gcn_policy_' + heuristic + '_pre_' + dataset.__name__ + '_epochs' + str(
+                #                args.epochs) + '_cuda.pth')
+
+                graph_no += 1
+                av_loss_val += total_loss_val_1graph
+        av_loss_val = av_loss_val/steps
+
+
+
+        val_gcn_greedy = np.array(val_gcn_greedy).reshape(-1)
+        _val_ave_gcn = np.sum(val_gcn_greedy) / len(val_gcn_greedy)
+
+        # if epoch==0:
+        #     val_mind = np.array(val_mind).reshape(-1)
+        #     _val_ave_mind = np.sum(val_mind) / len(val_mind)
+
+            # val_rand = np.array(val_rand).reshape(-1)
+            # _val_ave_rand = np.sum(val_rand) / len(val_rand)
+
+
+
+
+
+        t.append(epoch)
+        val_ave_gcn.append(_val_ave_gcn)
+        # val_ave_mind.append(_val_ave_mind)
+        # val_ave_rand.append(_val_ave_rand)
+
+        # _val_ave_ratio_gcn2mind = _val_ave_gcn/_val_ave_mind
+        # val_ave_ratio_gcn2mind.append(_val_ave_ratio_gcn2mind)
+
+
+        # print('epochs {}'.format(epoch),'loss {}'.format(av_loss_train) )
+        total_loss_val.append(av_loss_val)
+
+        t_plot = np.array(t).reshape(-1)
+
+        # steps_epoch0_np = np.array(steps_epoch0).reshape(-1)
+        # steps_loss_train_np = np.array(steps_loss_train).reshape(-1)
+
+        total_loss_val_np = np.array(total_loss_val).reshape(-1)
+
+        val_ave_gcn_np = np.array(val_ave_gcn).reshape(-1)
+        val_ave_mind_np = np.array(val_ave_mind).reshape(-1)
+        # val_ave_rand_np = np.array(val_ave_rand).reshape(-1)
+
+        print('epochs {}'.format(epoch),
+              'loss {}'.format(av_loss_val),
+              'gcn_performance {}'.format(_val_ave_gcn)
+              )
+
+        # self.plot_performance_supervised(dataset_type=dataset_type,
+        #                             steps='epoch',
+        #                             t_plot=t_plot,
+        #                             val_ave_gcn_np=val_ave_gcn_np,
+        #                             val_ave_mind_np=val_ave_mind_np,
+        #                             val_ave_rand_np=val_ave_rand_np)
+        # self.plot_loss_supervised(dataset_type=dataset_type, steps='epoch', t_plot=t_plot, total_loss_val_np=total_loss_val_np)
+
+        # plt.clf()
+        # plt.plot(t_plot, val_ave_gcn_np, t_plot, val_ave_mind_np, t_plot, val_ave_rand_np)
+        # plt.legend(('GNN', self.heuristic, 'random'),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
+        #            loc='upper right')  # 'GNN-initial', 'GNN-RL', 'min-degree'
+        # plt.title(
+        #     'Performance on ' + self.val_dataset.__class__.__name__ + ' (average number of filled edges)')
+        # plt.ylabel('number of fill-in')
+        # # plt.draw()
+        # plt.savefig(
+        #     './results/supervised/validation_lr' + str(
+        #         lr) + '_' + self.heuristic +'_prune_'+str(self.prune)+ 'perform_curve_g2m_number_gcn_logsoftmax_' +'_' + self.val_dataset.__class__.__name__ + 'fulldepth_cuda' + str(
+        #         self.use_cuda) + '.png')
+        # plt.clf()
+        #
+        # plt.clf()
+        # plt.plot(t_plot, total_loss_val_np)
+        # # plt.legend(('loss'),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
+        # #            loc='upper right')  # 'GNN-initial', 'GNN-RL', 'min-degree'
+        # plt.title(
+        #     'Supervised loss curve ' + self.train_dataset.__class__.__name__ )
+        # plt.ylabel('loss')
+        # # plt.draw()
+        # plt.savefig(
+        #     './results/supervised/validation_lr' + str(
+        #         lr) + '_' + self.heuristic +'_prune_'+str(self.prune)+ '_loss_curve_logsoftmax_'  +'_' + self.train_dataset.__class__.__name__ + 'fulldepth_cuda' + str(
+        #         self.use_cuda) + '.png')
+        # plt.clf()
+
+
+
+        # if epoch==0:
+        #     plt.clf()
+        #     plt.plot(steps_epoch0_np, steps_loss_train_np)
+        #     # plt.legend(('loss'),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
+        #     #            loc='upper right')  # 'GNN-initial', 'GNN-RL', 'min-degree'
+        #     plt.title(
+        #         'First Epoch Supervised loss curve ' + self.train_dataset.__class__.__name__)
+        #     plt.ylabel('loss')
+        #     # plt.draw()
+        #     plt.savefig(
+        #         './results/supervised/lr' + str(
+        #             lr) + '_' + self.heuristic + '_epoch0_loss_curve_logsoftmax_' + self.train_dataset.__class__.__name__ + 'fulldepth_cuda' + str(
+        #             self.use_cuda) + '.png')
+        #     plt.clf()
+
+
+
+        # print('epoch {:04d}'.format(epoch), 'gcn2'+self.heuristic,
+              # 'min_ratio {}'.format(_min_ratio_gcn2mind),
+              # 'max_ratio {}'.format(_max_ratio_gcn2mind),
+              # ' validation av_ratio {}'.format(_val_ave_ratio_gcn2mind))
+        # for name, param in self.model.named_parameters():
+        #     print('parameter name {}'.format(name),
+        #         'parameter value {}'.format(param.data))
+
+
+        # gcn_greedy = np.array(ave_gcn).reshape(-1)
+        # ave_ratio_gcn2mind = np.array(ave_ratio_gcn2mind).reshape(-1)
+        # # ave_ratio_gcn2rand = np.array(ave_ratio_gcn2rand).reshape(-1)
+        #
+        # t = np.arange(0, epochs, 1)
+        # if self.use_cuda:
+        #     plt.clf()
+        #     plt.plot(t, ave_ratio_gcn2mind)
+        #     plt.legend(('GNN-RL/'+self.heuristic),
+        #                loc='upper right')
+        #     plt.title('Supervised learning curve ratio with pretrain '+self.train_dataset.__class__.__name__)
+        #     plt.ylabel('fill-in ratio: gnn model/heuristic')
+        #     plt.savefig(
+        #         './results/supervised'+str(lr)+'_'+self.heuristic+'_curve_g2m_ratio_gcn_logsoftmax_'+self.train_dataset.__class__.__name__+'_cuda.png')
+        #     plt.clf()
+        # else:
+        #     plt.clf()
+        #     plt.plot(t, ave_ratio_gcn2mind)
+        #     plt.legend(('GNN-RL/mindegree'),
+        #                loc='upper right')
+        #     plt.title('RL-MonteCarlo learning curve ratio with pretrain ERG100')
+        #     plt.ylabel('fill-in ratio: gnn model/heuristic')
+        #     plt.savefig('./results/acmc001_learning_curve_g2m_ratio_gcn_non_pretrainERG100_with_epsilon05.png')
+        #     plt.clf()
+        #
+        # total_loss_train = np.array(total_loss_train).reshape(-1)
+
+        t_all = time.clock() - t_all
+
+        print('Supervised Validation Finished')
+        # print('Training time: {:.4f}'.format(time_end-time_start))
+        print('Validation time: {:.4f}'.format(t_all))
+        print('Elimination time: {:.4f}'.format(t_eli))
+        print('Heuristic' + self.heuristic + ' time: {:.4f}'.format(t_heu))
+        print('Dense 2 Sparce time: {:.4f}'.format(t_spa))
+        print('IO to cuda time: {:.4f}'.format(t_IO))
+        print('Model and Opt time: {:.4f}'.format(t_model_opt))
+
+        return t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np
+
     def validation(self, iteration, iteration_min):
 
         t_all = time.clock()
