@@ -14,3 +14,4 @@ epochs 0 loss 0.032528205600040154 one_step_greedy_performance 2494.241007194244
 epochs 1 loss 0.004931427309934308 one_step_greedy_performance 2494.2410071942445 gcn_performance 13777.438848920863 random_performance 13978.309352517985
 epochs 2 loss 0.009760697089491411 one_step_greedy_performance 2494.2410071942445 gcn_performance 3286.5791366906474 random_performance 13978.309352517985
 epochs 3 loss 0.011353241702402386 one_step_greedy_performance 2494.2410071942445 gcn_performance 3130.86690647482 random_performance 13978.309352517985
+epochs 4 loss 0.011436854346925597 one_step_greedy_performance 2494.2410071942445 gcn_performance 3120.6258992805756 random_performance 13978.309352517985

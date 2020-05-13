@@ -12,3 +12,4 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
   features = F.log_softmax(features.t())
 epochs 0 loss 0.03062619658444381 one_step_greedy_performance 2489.953237410072 gcn_performance 3572.071942446043 random_performance 13399.15107913669
 epochs 1 loss 0.004773298981031469 one_step_greedy_performance 2489.953237410072 gcn_performance 13998.71582733813 random_performance 13399.15107913669
+epochs 2 loss 0.009808193862389085 one_step_greedy_performance 2489.953237410072 gcn_performance 3343.7086330935253 random_performance 13399.15107913669
