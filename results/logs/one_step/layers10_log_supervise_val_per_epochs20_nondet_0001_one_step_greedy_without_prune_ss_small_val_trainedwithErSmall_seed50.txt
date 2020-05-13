@@ -17,3 +17,12 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:192: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.view(-1))
+epochs 0 loss 0.011683906982002832 one_step_greedy_performance 2491.8489208633096 gcn_performance 17342.179856115108 random_performance 13522.964028776978
+Traceback (most recent call last):
+  File "test_supervised_validation.py", line 154, in <module>
+    # total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/supervised/train_supervised_learning.py", line 798, in validation_epochs
+    + '_epochs_' + str(epoch) + '_cuda.pth', map_location='cpu'))
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 301, in load
+    f = open(f, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: './supervised/models/one_step_greedy/SmallErgTraining/layers10_test_lr0.0001/per_epochs/gcn_policy_one_step_greedy_pre_ErgDataset_epochs_1_cuda.pth'

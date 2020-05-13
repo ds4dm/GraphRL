@@ -11,3 +11,5 @@ heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: UFSMDataset
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.t())
 epochs 0 loss 0.032528205600040154 one_step_greedy_performance 2494.2410071942445 gcn_performance 3551.8992805755397 random_performance 13978.309352517985
+epochs 1 loss 0.004931427309934308 one_step_greedy_performance 2494.2410071942445 gcn_performance 13777.438848920863 random_performance 13978.309352517985
+epochs 2 loss 0.009760697089491411 one_step_greedy_performance 2494.2410071942445 gcn_performance 3286.5791366906474 random_performance 13978.309352517985

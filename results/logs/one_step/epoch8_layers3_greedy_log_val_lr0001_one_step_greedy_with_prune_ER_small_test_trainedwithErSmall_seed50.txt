@@ -1,0 +1,20 @@
+nohup: ignoring input
+cuda available: False 
+cuda available: False 
+cuda available: False 
+cuda available: False 
+model initialized
+training func is running after this line
+Supervised Validation started
+heuristic: one_step_greedy learning rate: 0.0001 epoch: 8 DataSet: ErgDataset
+
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
+epochs 8 loss 0.0021281571868803162 gcn_performance 12135.955
+Supervised Validation Finished
+Validation time: 7903.1100
+Elimination time: 41.4000
+Heuristicone_step_greedy time: 7718.5300
+Dense 2 Sparce time: 25.7600
+IO to cuda time: 0.0800
+Model and Opt time: 0.0000
