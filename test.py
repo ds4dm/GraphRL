@@ -1,9 +1,9 @@
 import numpy as np
-a = np.array([1,1,0])
-b = np.array([1,0,1])
-c = np.logical_and(a,b)
+a = np.array([[1,1,0],[0,0,0]])
+c = np.sum(a,1)
+b = np.ones(5)
+print(c.shape)
 print(a)
-print(b)
 print(c)
 #
 #
