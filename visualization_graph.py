@@ -101,40 +101,78 @@ def step_model(model, M, use_cuda=True):
 
     return action_gcn
 
-def get_fig(g, g_for_model, model, pos, axs_row, use_cuda=True):
+def get_fig(g, g_for_model, model, pos, axs, i, use_cuda=True):
 
 
-    graph_0 = nx.Graph(g.M)
-    graph_1 =nx.Graph(g.M_ex)
-    graph_init = nx.Graph(g.M_init)
+    # graph_0 = nx.Graph(g.M)
+    # graph_1 =nx.Graph(g.M_ex)
+    # graph_init = nx.Graph(g.M_init)
+    M_eli = np.logical_xor(np.logical_or(g.M_ex, g.M_init), g.M)
 
-    graph_redu_model = nx.Graph(g_for_model.M)
-    graph_exte_model = nx.Graph(g_for_model.M_ex)
-    graph_init_model = nx.Graph(g_for_model.M_init)
+    g_init_res = nx.Graph(np.logical_and(g.M_init, g.M))
+    g_init_eli = nx.Graph(np.logical_and(g.M_init, M_eli))
+    g_ex_res = nx.Graph(np.logical_and(g.M_ex, g.M))
+    g_ex_eli = nx.Graph(np.logical_and(g.M_ex, M_eli))
 
-    ax_0 = axs_row[0]
-    ax_1 = axs_row[1]
-    nx.draw(graph_0, pos=pos,ax= ax_0)
-    nx.draw(graph_init, pos=pos, ax=ax_1)
-    nx.draw(graph_1, pos=pos, edge_color='r', ax=ax_1)
+
+
+    # graph_redu_model = nx.Graph(g_for_model.M)
+    # graph_exte_model = nx.Graph(g_for_model.M_ex)
+    # graph_init_model = nx.Graph(g_for_model.M_init)
+    M_model_eli = np.logical_xor(np.logical_or(g_for_model.M_ex, g_for_model.M_init), g_for_model.M)
+
+    g_Model_init_res = nx.Graph(np.logical_and(g_for_model.M_init, g_for_model.M))
+    g_Model_init_eli = nx.Graph(np.logical_and(g_for_model.M_init, M_model_eli))
+    g_Model_ex_res = nx.Graph(np.logical_and(g_for_model.M_ex, g_for_model.M))
+    g_Model_ex_eli = nx.Graph(np.logical_and(g_for_model.M_ex, M_model_eli))
+
+
+    # ax_0 = axs_row[0]
+    # ax_1 = axs_row[1]
+    # nx.draw(graph_0, pos=pos,ax= ax_0)
+    # nx.draw(graph_init, pos=pos, ax=ax_1)
+    # nx.draw(graph_1, pos=pos, edge_color='r', ax=ax_1)
+
+    ax_0 = axs[0][i]
+    if not i==0:
+        axs[0][i].set_title('step '+str(i), fontsize=20)
+    nx.draw(g_init_res, pos=pos, ax=ax_0)
+    nx.draw(g_init_eli, pos=pos, style='dashed', ax=ax_0)
+    nx.draw(g_ex_res, pos=pos, edge_color='r', ax=ax_0)
+    nx.draw(g_ex_eli, pos=pos, edge_color='r', style='dashed', ax=ax_0)
+
     # ax_0.set_frame_on(True)
 
     # print(g.vertices)
     action, d_min = g.min_degree(g2.M)
+    nx.draw_networkx_nodes(g_ex_eli, pos=pos, nodelist=[g2.vertices[action]], node_color='orange', ax=ax_0)
     g.eliminate_node(g2.vertices[action],reduce=False)
     g2.eliminate_node(action, reduce=True)
 
-    ax_2 = axs_row[2]
-    ax_3 = axs_row[3]
-    nx.draw(graph_redu_model, pos=pos, ax=ax_2)
-    nx.draw(graph_init_model, pos=pos, ax=ax_3)
-    nx.draw(graph_exte_model, pos=pos, edge_color='r', ax=ax_3)
+
+
+    # ax_2 = axs_row[2]
+    # ax_3 = axs_row[3]
+    # nx.draw(graph_redu_model, pos=pos, ax=ax_2)
+    # nx.draw(graph_init_model, pos=pos, ax=ax_3)
+    # nx.draw(graph_exte_model, pos=pos, edge_color='r', ax=ax_3)
+    # # ax_0.set_frame_on(True)
+
+    ax_1 = axs[1][i]
+    if not i == 0:
+        axs[1][i].set_title('step ' + str(i), fontsize=20)
+
+    nx.draw(g_Model_init_res, pos=pos, ax=ax_1)
+    nx.draw(g_Model_init_eli, pos=pos, style='dashed', ax=ax_1)
+    nx.draw(g_Model_ex_res, pos=pos, edge_color='r', ax=ax_1)
+    nx.draw(g_Model_ex_eli, pos=pos, edge_color='r', style='dashed', ax=ax_1)
     # ax_0.set_frame_on(True)
 
     action, d_min = g2_for_model.min_degree(g2_for_model.M)
     if not (d_min == 0 or d_min==1):
         action = step_model(model, g2_for_model.M,use_cuda=use_cuda)
 
+    nx.draw_networkx_nodes(g_Model_ex_eli, pos=pos, nodelist=[g2_for_model.vertices[action]], node_color='orange', ax=ax_1)
     g_for_model.eliminate_node(g2_for_model.vertices[action], reduce=False)
     g2_for_model.eliminate_node(action, reduce=True)
 
@@ -143,11 +181,13 @@ def get_fig(g, g_for_model, model, pos, axs_row, use_cuda=True):
 
 
 
-fig, axs = plt.subplots(nrows=n, ncols=4, figsize=(40,100), constrained_layout=True)
+fig, axs = plt.subplots(nrows=2, ncols=n-1, figsize=(20,8), constrained_layout=True)
+axs[0][0].set_title('Min degree step 0', fontsize=20)
+axs[1][0].set_title('GNN policy step 0', fontsize=20)
 
 for i in range(n-1):
 
-    g = get_fig(g=g, g_for_model=g_for_model, model=model, pos=pos, axs_row=axs[i], use_cuda=args.cuda)
+    g = get_fig(g=g, g_for_model=g_for_model, model=model, pos=pos, axs=axs, i=i, use_cuda=args.cuda)
 plt.show()
 
 

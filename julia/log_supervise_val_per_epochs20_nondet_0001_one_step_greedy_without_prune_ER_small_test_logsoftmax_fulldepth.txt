@@ -1,9 +1,17 @@
-epochs 0 loss 0.03597600526750841 one_step_greedy_performance 12109.945 gcn_performance 12286.535 random_performance 15252.67
-epochs 1 loss 0.002316187159685693 one_step_greedy_performance 12109.945 gcn_performance 15307.805 random_performance 15252.67
-epochs 2 loss 0.001929316382710685 one_step_greedy_performance 12109.945 gcn_performance 12340.48 random_performance 15252.67
-epochs 3 loss 0.001742642523413338 one_step_greedy_performance 12109.945 gcn_performance 12273.04 random_performance 15252.67
-epochs 4 loss 0.0017015049665999918 one_step_greedy_performance 12109.945 gcn_performance 12250.535 random_performance 15252.67
-epochs 5 loss 0.001739931094328002 one_step_greedy_performance 12109.945 gcn_performance 12262.565 random_performance 15252.67
+nohup: ignoring input
+| Xavier Initialization
+| Xavier Initialization
+Supervised Validation started
+heuristic: one_step_greedy learning rate: 0.0001 epochs: 21 DataSet: ErgDataset
+
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:85: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
+epochs 0 loss 0.002344740052782847 one_step_greedy_performance 12108.99 gcn_performance 15282.565 random_performance 15320.355
+epochs 1 loss 0.002442320197546425 one_step_greedy_performance 12108.99 gcn_performance 12557.1 random_performance 15320.355
+epochs 2 loss 0.0024410995468790732 one_step_greedy_performance 12108.99 gcn_performance 12503.27 random_performance 15320.355
+epochs 3 loss 0.0021667084193679235 one_step_greedy_performance 12108.99 gcn_performance 12646.91 random_performance 15320.355
+epochs 4 loss 0.0017198913788657338 one_step_greedy_performance 12108.99 gcn_performance 12267.885 random_performance 15320.355
+epochs 5 loss 0.0019412455866767602 one_step_greedy_performance 12108.99 gcn_performance 12185.605 random_performance 15320.355
 epochs 6 loss 0.0015067021442106013 one_step_greedy_performance 12108.99 gcn_performance 12440.265 random_performance 15320.355
 epochs 7 loss 0.001519086062288564 one_step_greedy_performance 12108.99 gcn_performance 12422.415 random_performance 15320.355
 epochs 8 loss 0.0015467616321670537 one_step_greedy_performance 12108.99 gcn_performance 12330.94 random_performance 15320.355
@@ -19,3 +27,10 @@ epochs 17 loss 0.0015420429528218006 one_step_greedy_performance 12108.99 gcn_pe
 epochs 18 loss 0.0015666443556558744 one_step_greedy_performance 12108.99 gcn_performance 12653.65 random_performance 15320.355
 epochs 19 loss 0.0019703123356966134 one_step_greedy_performance 12108.99 gcn_performance 12178.36 random_performance 15320.355
 epochs 20 loss 0.0016412097050523288 one_step_greedy_performance 12108.99 gcn_performance 12856.235 random_performance 15320.355
+Supervised Validation Finished
+Validation time: 172378.1000
+Elimination time: 938.3700
+Heuristicone_step_greedy time: 161812.2100
+Dense 2 Sparce time: 508.7400
+IO to cuda time: 197.8100
+Model and Opt time: 0.0000

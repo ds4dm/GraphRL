@@ -1,5 +1,10 @@
 import numpy as np
-print(np.sqrt(2))
+a = np.array([1,1,0])
+b = np.array([1,0,1])
+c = np.logical_and(a,b)
+print(a)
+print(b)
+print(c)
 #
 #
 #

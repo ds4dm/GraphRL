@@ -1806,8 +1806,9 @@ class Train_SupervisedLearning:
                 depth = n - 2
                 # edges_total = 0
                 i = 0
-                while (i < depth) and (x_model.n > 2):
+                while (i < depth) and (x_mind.n > 2):
 
+                    i +=1
                     if epoch==0:
                         if self.heuristic == 'min_degree':
                             action_heuristic, d_min = x_mind.min_degree(x_mind.M)
@@ -1822,7 +1823,7 @@ class Train_SupervisedLearning:
 
                 #     node_selected, d_min = x_model.min_degree(x_model.M)
                 #     if not (d_min == 0 and self.prune==True):
-                #         i += 1
+                #
                 #         if epoch==0:
                 #             steps_epoch0.append(i)
                 #
