@@ -10,3 +10,11 @@ heuristic: one_step_greedy learning rate: 0.0001 epoch: 8 DataSet: ErgDataset
 
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.t())
+epochs 8 loss 0.002195798284473899 gcn_performance 52244.8
+Supervised Validation Finished
+Validation time: 104747.6600
+Elimination time: 301.1000
+Heuristicone_step_greedy time: 103443.4600
+Dense 2 Sparce time: 177.2100
+IO to cuda time: 0.1800
+Model and Opt time: 0.0000

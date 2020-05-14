@@ -28,3 +28,13 @@ epochs 14 loss 0.0017600827429944627 one_step_greedyperformance 12639.035 gcn_pe
 epochs 15 loss 0.0017188858502221243 one_step_greedyperformance 12639.035 gcn_performance 12911.36 one_step_greedyperformance 12445.19 gcn_performance 12889.985
 epochs 16 loss 0.0017201280827792971 one_step_greedyperformance 12639.035 gcn_performance 12924.315 one_step_greedyperformance 12445.19 gcn_performance 12566.245
 epochs 17 loss 0.0017568449207768099 one_step_greedyperformance 12639.035 gcn_performance 12922.25 one_step_greedyperformance 12445.19 gcn_performance 12748.825
+epochs 18 loss 0.0017191484521427353 one_step_greedyperformance 12639.035 gcn_performance 12873.975 one_step_greedyperformance 12445.19 gcn_performance 12857.395
+epochs 19 loss 0.0017408057532544126 one_step_greedyperformance 12639.035 gcn_performance 12873.645 one_step_greedyperformance 12445.19 gcn_performance 12558.64
+epochs 20 loss 0.001705946612686758 one_step_greedyperformance 12639.035 gcn_performance 12903.955 one_step_greedyperformance 12445.19 gcn_performance 12789.075
+Finished
+Training time: 237341.6500
+Elimination time: 1.7800
+Heuristicone_step_greedy time: 209933.4500
+Dense 2 Sparce time: 551.4100
+IO to cuda time: 240.9100
+Model and Opt time: 1902.4300
