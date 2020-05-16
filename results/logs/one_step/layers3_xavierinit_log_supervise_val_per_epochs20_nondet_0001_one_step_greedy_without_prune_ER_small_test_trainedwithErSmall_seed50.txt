@@ -30,3 +30,11 @@ epochs 16 loss 0.001645429894912583 one_step_greedy_performance 12109.945 gcn_pe
 epochs 17 loss 0.001981988312363903 one_step_greedy_performance 12109.945 gcn_performance 12210.68 random_performance 15252.67
 epochs 18 loss 0.0016202337737896645 one_step_greedy_performance 12109.945 gcn_performance 12407.885 random_performance 15252.67
 epochs 19 loss 0.0016094870925151177 one_step_greedy_performance 12109.945 gcn_performance 12528.735 random_performance 15252.67
+epochs 20 loss 0.0018871106356020634 one_step_greedy_performance 12109.945 gcn_performance 12213.465 random_performance 15252.67
+Supervised Validation Finished
+Validation time: 197529.1000
+Elimination time: 1001.2500
+Heuristicone_step_greedy time: 185148.9400
+Dense 2 Sparce time: 544.2100
+IO to cuda time: 1.2600
+Model and Opt time: 0.0000
