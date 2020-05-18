@@ -2,6 +2,8 @@ nohup: ignoring input
 cuda available: False 
 cuda available: False 
 cuda available: False 
+cuda available: False 
+cuda available: False 
 model initialized
 training func is running after this line
 Supervised Validation started

@@ -1,13 +1,13 @@
 nohup: ignoring input
-cuda available: False 
-cuda available: False 
-cuda available: False 
-cuda available: False 
-cuda available: False 
+cuda available: True 
+cuda available: True 
+cuda available: True 
+cuda available: True 
+cuda available: True 
 model initialized
 training func is running after this line
 Supervised Validation started
-heuristic: min_degree learning rate: 0.0001 epochs: 25 DataSet: ErgDataset
+heuristic: min_degree learning rate: 0.0001 epochs: 25 DataSet: UFSMDataset
 
 model_GNN_ERs loaded
 model_GNN_SSs loaded

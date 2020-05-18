@@ -1,9 +1,9 @@
 nohup: ignoring input
-cuda available: False 
-cuda available: False 
-cuda available: False 
-cuda available: False 
-cuda available: False 
+cuda available: True 
+cuda available: True 
+cuda available: True 
+cuda available: True 
+cuda available: True 
 model initialized
 training func is running after this line
 Supervised Validation started
@@ -13,3 +13,11 @@ model_GNN_ERs loaded
 model_GNN_SSs loaded
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.t())
+epochs 25 KLlossExp2GNN_ERsmall 0.000546172540175247 KLlossExp2GNN_SSsmall 2.2408845044012023e-05 KLlossExp2Random 0.005668889026402754 MD_performance 12168.19
+Supervised Validation Finished
+Validation time: 175.3700
+Elimination time: 37.5300
+Heuristicmin_degree time: 2.9900
+Dense 2 Sparce time: 25.4700
+IO to cuda time: 10.7700
+Model and Opt time: 0.0000
