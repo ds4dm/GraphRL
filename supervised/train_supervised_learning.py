@@ -1988,8 +1988,8 @@ class Train_SupervisedLearning:
         print('epochs {}'.format(epoch),
               'KLlossExp2GNN {}'.format(av_loss_val),
               'KLlossExp2Random {}'.format(av_loss_exp2rand),
-              # 'MF_performance {}'.format(_val_ave_gcn)
-              'GNN_performance {}'.format(_val_ave_gcn)
+              'MF_performance {}'.format(_val_ave_gcn)
+              # 'GNN_performance {}'.format(_val_ave_gcn)
               # self.heuristic+'_performance {}'.format(_val_ave_mind),
               # 'gcn_performance {}'.format(_val_ave_gcn)
               )
