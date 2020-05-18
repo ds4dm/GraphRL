@@ -1,8 +1,8 @@
 nohup: ignoring input
-cuda available: False
-cuda available: False
-cuda available: False
-cuda available: False
+cuda available: False 
+cuda available: False 
+cuda available: False 
+cuda available: False 
 model initialized
 training func is running after this line
 Supervised Validation started
@@ -18,4 +18,3 @@ Heuristicone_step_greedy time: 7729.2900
 Dense 2 Sparce time: 25.9100
 IO to cuda time: 0.0700
 Model and Opt time: 0.0000
-
