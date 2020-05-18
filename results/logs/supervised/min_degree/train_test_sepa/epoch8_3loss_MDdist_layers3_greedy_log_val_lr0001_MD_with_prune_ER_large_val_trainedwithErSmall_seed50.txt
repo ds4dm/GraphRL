@@ -1,0 +1,22 @@
+nohup: ignoring input
+cuda available: True 
+cuda available: True 
+cuda available: True 
+model initialized
+training func is running after this line
+Supervised Validation started
+heuristic: min_degree learning rate: 0.0001 epochs: 25 DataSet: ErgDataset
+
+model_GNN_ERs loaded
+model_GNN_SSs loaded
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  features = F.log_softmax(features.t())
+122
+Traceback (most recent call last):
+  File "test_supervised_validation.py", line 164, in <module>
+    t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np = policy_sl.validation_loss_single_epoch(epoch=25, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/supervised/train_supervised_learning.py", line 2334, in validation_loss_single_epoch
+    edges_added = x_model.eliminate_node(action_gcn, reduce=True)
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/data/graph.py", line 98, in eliminate_node
+    assert (0 <= k < self.n)  # node must exist in graph
+AssertionError
