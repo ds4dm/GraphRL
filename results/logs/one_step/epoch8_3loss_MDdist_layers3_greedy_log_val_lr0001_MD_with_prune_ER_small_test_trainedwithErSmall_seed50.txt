@@ -1,2 +1,18 @@
 nohup: ignoring input
 cuda available: True 
+cuda available: True 
+cuda available: True 
+model initialized
+training func is running after this line
+Supervised Validation started
+heuristic: min_degree learning rate: 0.0001 epochs: 25 DataSet: ErgDataset
+
+model_GNN_ERs loaded
+Traceback (most recent call last):
+  File "test_supervised_validation.py", line 164, in <module>
+    t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np = policy_sl.validation_loss_single_epoch(epoch=25, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+  File "/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/supervised/train_supervised_learning.py", line 2178, in validation_loss_single_epoch
+    torch.load('./supervised/models/'+self.heuristic+'/SmallSsTraining/lr'+str(self.lr)+'/per_epochs/gcn_policy_min_degree_pre_UFSMDataset_epochs_4_cuda'))
+  File "/home/x86_64-unknown-linux_ol7-gnu/anaconda-5.2.0/envs/pytorch/lib/python3.6/site-packages/torch/serialization.py", line 301, in load
+    f = open(f, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: './supervised/models/min_degree/SmallSsTraining/lr0.0001/per_epochs/gcn_policy_min_degree_pre_UFSMDataset_epochs_4_cuda'
