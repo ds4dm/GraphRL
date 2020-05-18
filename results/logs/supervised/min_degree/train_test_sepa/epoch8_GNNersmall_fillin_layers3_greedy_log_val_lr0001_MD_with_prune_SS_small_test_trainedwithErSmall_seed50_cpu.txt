@@ -13,3 +13,11 @@ model_GNN_ERs loaded
 model_GNN_SSs loaded
 /local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
   features = F.log_softmax(features.t())
+epochs 25 KLlossExp2GNN_ERsmall 0.008487575487954568 KLlossExp2GNN_SSsmall 0.00045975937078772037 KLlossExp2Random 0.0207985912707814 GNN_real ERsmall_performance 2876.744604316547
+Supervised Validation Finished
+Validation time: 193.5600
+Elimination time: 26.6300
+Heuristicmin_degree time: 7.1800
+Dense 2 Sparce time: 27.7300
+IO to cuda time: 0.1200
+Model and Opt time: 0.0000
