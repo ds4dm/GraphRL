@@ -2318,7 +2318,7 @@ class Train_SupervisedLearning:
                         # m = Categorical(logits=output) # logits=probs
                         # action_gcn = m.sample()
 
-                        action_gcn = output.argmax()
+                        action_gcn = output2.argmax()
 
                         # output = np.array(output.detach().cpu().numpy())
                         # output = np.exp(output)
