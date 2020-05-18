@@ -119,6 +119,12 @@ model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
                               dropout=args.dropout,
                               ) # alpha=args.alpha
 
+model2 = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
+                              nhidden= args.dhidden,
+                              nout=args.doutput,
+                              dropout=args.dropout,
+                              ) # alpha=args.alpha
+
 # model = GCN_Sparse_Policy_10(nin=args.dinput,
 #                               nhidden= args.dhidden,
 #                               nout=args.doutput,
@@ -141,11 +147,12 @@ model = GCN_Sparse_Policy_SelectNode(nin=args.dinput,
 print("model initialized")
 if args.cuda:
     model.cuda()
+    model2.cuda()
 
 heuristic = 'min_degree' # 'one_step_greedy' 'min_degree'
 prune = True
 print("training func is running after this line")
-policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=train_ER_small, val_dataset=val_ER_small, test_dataset=test_ER_small, use_cuda = args.cuda)
+policy_sl = Train_SupervisedLearning(model=model, model2=model2, heuristic=heuristic,lr=args.lr, prune=prune, train_dataset=train_ER_small, val_dataset=val_ER_small, test_dataset=test_ER_small, use_cuda = args.cuda)
 
 
 
@@ -153,9 +160,9 @@ policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuris
 
 # total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
 
-val_dataset = test_ER_small
+val_dataset = val_ss_small
 
-dataset_type = varname(test_ER_small)
+dataset_type = varname(val_ss_small)
 
 # t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
 
