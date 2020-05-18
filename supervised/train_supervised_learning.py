@@ -2175,13 +2175,11 @@ class Train_SupervisedLearning:
 
         if self.use_cuda:
             self.model2.load_state_dict(
-                torch.load('./supervised/models/'+self.heuristic+'/SmallSsTraining/lr'+str(self.lr)+'/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
-                       + '_epochs_4_cuda.pth'))
+                torch.load('./supervised/models/'+self.heuristic+'/SmallSsTraining/lr'+str(self.lr)+'/per_epochs/gcn_policy_min_degree_pre_UFSMDataset_epochs_4_cuda'))
         else:
             self.model2.load_state_dict(
                 torch.load('./supervised/models/' + self.heuristic + '/SmallSsTraining/lr' + str(
-                    self.lr) + '/per_epochs/gcn_policy_' + self.heuristic + '_pre_' + self.train_dataset.__class__.__name__
-                           + '_epochs_4_cuda.pth', map_location='cpu'))
+                    self.lr) + '/per_epochs/gcn_policy_min_degree_pre_UFSMDataset_epochs_4_cuda', map_location='cpu'))
 
         print('model_GNN_SSs loaded')
 
