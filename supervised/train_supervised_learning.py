@@ -2234,7 +2234,6 @@ class Train_SupervisedLearning:
 
 
                     node_selected, d_min = x_model.min_degree(x_model.M)
-
                     if not (d_min == 0 and self.prune==True):
 
                         if epoch==0:
@@ -2326,7 +2325,7 @@ class Train_SupervisedLearning:
                         # action_gcn = np.argmax(output)
 
                         if self.heuristic == 'min_degree':
-                            action_gcn, d_min = x_model.min_degree(x_mind.M)
+                            action_gcn, d_min = x_model.min_degree(x_model.M)
                         elif self.heuristic == 'one_step_greedy':
                             action_gcn = x_model.onestep_greedy()
 
