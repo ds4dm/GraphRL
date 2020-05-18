@@ -11,5 +11,11 @@ heuristic: min_degree learning rate: 0.0001 epochs: 25 DataSet: UFSMDataset
 
 model_GNN_ERs loaded
 model_GNN_SSs loaded
-/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
-  features = F.log_softmax(features.t())
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:98: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argumepochs 25 KLlossExp2GNN_ERsmall 0.000242078444epochs 25 KLlossExp2GNN_ERsmall 0.003713392527859899 KLlossExp2GNN_SSsmall 0.00020312369798113848 KLlossExp2Random 0.007656695618760008 GNN_real ERsmall_performance 62956.735593220335
+Supervised Validation Finished
+Validation time: 10398.8200
+Elimination time: 1784.4500
+Heuristicmin_degree time: 264.3000
+Dense 2 Sparce time: 1685.0900
+IO to cuda time: 0.6700
+Model and Opt time: 0.0000
