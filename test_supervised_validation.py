@@ -18,7 +18,7 @@ from data.graph import Graph
 parser = argparse.ArgumentParser()
 parser.add_argument('--nocuda', action= 'store_true', default=False, help='Disable Cuda')
 parser.add_argument('--novalidation', action= 'store_true', default=True, help='Disable validation')
-parser.add_argument('--seed', type=int, default=51, help='Radom seed') #50
+parser.add_argument('--seed', type=int, default=50, help='Radom seed') #50
 parser.add_argument('--epochs', type=int, default=21, help='Training epochs')
 parser.add_argument('--lr', type=float, default= 0.0001, help='Learning rate')
 parser.add_argument('--wd', type=float, default=5e-4, help='Weight decay')
@@ -153,9 +153,9 @@ policy_sl = Train_SupervisedLearning(model=model, model2=model, heuristic=heuris
 
 # total_loss_train = policy_sl.train(epochs=args.epochs, lr=args.lr)
 
-val_dataset = test_ER_small
+val_dataset = train_ER_small
 
-dataset_type = varname(test_ER_small)
+dataset_type = varname(train_ER_small)
 
 # t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
 
