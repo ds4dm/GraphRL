@@ -1902,16 +1902,16 @@ class Train_SupervisedLearning:
                         # m = Categorical(logits=output) # logits=probs
                         # action_gcn = m.sample()
 
-                        action_gcn = output.argmax()
+                        # action_gcn = output.argmax()
 
                         # output = np.array(output.detach().cpu().numpy())
                         # output = np.exp(output)
                         # action_gcn = np.argmax(output)
 
-                        # if self.heuristic == 'min_degree':
-                        #     action_gcn, d_min = x_model.min_degree(x_mind.M)
-                        # elif self.heuristic == 'one_step_greedy':
-                        #     action_gcn = x_model.onestep_greedy()
+                        if self.heuristic == 'min_degree':
+                            action_gcn, d_min = x_model.min_degree(x_model.M)
+                        elif self.heuristic == 'one_step_greedy':
+                            action_gcn = x_model.onestep_greedy()
 
                         _t2 = time.clock()
                         edges_added = x_model.eliminate_node(action_gcn, reduce=True)

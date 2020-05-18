@@ -166,7 +166,7 @@ dataset_type = varname(val_ss_large)
 
 # t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np, val_ave_rand_np = policy_sl.validation_epochs(epochs=args.epochs, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
 
-t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np = policy_sl.validation_single_epoch(epoch=10, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
+t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np = policy_sl.validation_single_epoch(epoch=8, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
 
 # t_plot, total_loss_val_np, val_ave_gcn_np, val_ave_mind_np = policy_sl.validation_loss_single_epoch(epoch=25, lr=args.lr, val_dataset=val_dataset, dataset_type=dataset_type)
 
