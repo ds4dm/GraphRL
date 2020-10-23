@@ -8,3 +8,11 @@ training func is running after this line
 Supervised Validation started
 heuristic: one_step_greedy learning rate: 0.0001 epochs: 0 DataSet: UFSMDataset
 
+epochs 0 one_step_greedy_performance 58433.23389830509
+Supervised Validation Finished
+Validation time: 1096965.2100
+Elimination time: 0.0000
+Heuristicone_step_greedy time: 0.0000
+Dense 2 Sparce time: 0.0000
+IO to cuda time: 0.0000
+Model and Opt time: 0.0000
