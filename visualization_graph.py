@@ -46,6 +46,8 @@ g_for_model = Graph(g.M)
 g2_for_model = Graph(g.M)
 graph = nx.Graph(g.M)
 pos = nx.spring_layout(graph)
+nodelist_MD = []
+nodelist_GNN = []
 
 train_ER_small, val_ER_small, test_ER_small = open_dataset('./data/ERGcollection/erg_small.pkl')
 
@@ -133,19 +135,26 @@ def get_fig(g, g_for_model, model, pos, axs, i, use_cuda=True):
     # nx.draw(graph_init, pos=pos, ax=ax_1)
     # nx.draw(graph_1, pos=pos, edge_color='r', ax=ax_1)
 
+    edge_width = 3
     ax_0 = axs[0][i]
     if not i==0:
-        axs[0][i].set_title('step '+str(i), fontsize=20)
-    nx.draw(g_init_res, pos=pos, ax=ax_0)
-    nx.draw(g_init_eli, pos=pos, style='dashed', ax=ax_0)
-    nx.draw(g_ex_res, pos=pos, edge_color='r', ax=ax_0)
-    nx.draw(g_ex_eli, pos=pos, edge_color='r', style='dashed', ax=ax_0)
+        axs[0][i].set_title('step '+str(i), fontsize=30)
+    nx.draw(g_init_res, pos=pos, width=edge_width, node_size=800, ax=ax_0)
+    nx.draw(g_init_eli, pos=pos, style='dotted',  width=edge_width, ax=ax_0)
+    nx.draw(g_ex_res, pos=pos, edge_color='r', width=edge_width,  ax=ax_0)
+    nx.draw(g_ex_eli, pos=pos, edge_color='r', width=edge_width,  style='dotted', ax=ax_0)
 
     # ax_0.set_frame_on(True)
 
     # print(g.vertices)
     action, d_min = g.min_degree(g2.M)
-    nx.draw_networkx_nodes(g_ex_eli, pos=pos, nodelist=[g2.vertices[action]], node_color='orange', ax=ax_0)
+    nx.draw_networkx_nodes(g_ex_eli, pos=pos, nodelist=[g2.vertices[action]], node_size=800, node_color='orange', ax=ax_0)
+    if not i==0:
+        nx.draw_networkx_nodes(g_ex_eli, pos=pos, nodelist=nodelist_MD, node_size=800, node_color='#87CEFA',
+                               ax=ax_0)
+    nodelist_MD.append(g2.vertices[action])
+
+
     g.eliminate_node(g2.vertices[action],reduce=False)
     g2.eliminate_node(action, reduce=True)
 
@@ -160,30 +169,37 @@ def get_fig(g, g_for_model, model, pos, axs, i, use_cuda=True):
 
     ax_1 = axs[1][i]
     if not i == 0:
-        axs[1][i].set_title('step ' + str(i), fontsize=20)
+        axs[1][i].set_title('step ' + str(i), fontsize=30)
 
-    nx.draw(g_Model_init_res, pos=pos, ax=ax_1)
-    nx.draw(g_Model_init_eli, pos=pos, style='dashed', ax=ax_1)
-    nx.draw(g_Model_ex_res, pos=pos, edge_color='r', ax=ax_1)
-    nx.draw(g_Model_ex_eli, pos=pos, edge_color='r', style='dashed', ax=ax_1)
+
+    nx.draw(g_Model_init_res, pos=pos,  width=edge_width, node_size=800, ax=ax_1)
+    nx.draw(g_Model_init_eli, pos=pos, style='dotted',  width=edge_width, ax=ax_1)
+    nx.draw(g_Model_ex_res, pos=pos, edge_color='r',  width=edge_width, ax=ax_1)
+    nx.draw(g_Model_ex_eli, pos=pos, edge_color='r', style='dotted',  width=edge_width, ax=ax_1)
     # ax_0.set_frame_on(True)
 
     action, d_min = g2_for_model.min_degree(g2_for_model.M)
     if not (d_min == 0 or d_min==1):
         action = step_model(model, g2_for_model.M,use_cuda=use_cuda)
+    nx.draw_networkx_nodes(g_Model_ex_eli, pos=pos, nodelist=[g2_for_model.vertices[action]], node_size=800, node_color='orange', ax=ax_1)
+    if not i==0:
+        nx.draw_networkx_nodes(g_Model_ex_eli, pos=pos, nodelist=nodelist_GNN, node_size=800,
+                               node_color='#87CEFA', ax=ax_1)
+    nodelist_GNN.append(g2_for_model.vertices[action])
 
-    nx.draw_networkx_nodes(g_Model_ex_eli, pos=pos, nodelist=[g2_for_model.vertices[action]], node_color='orange', ax=ax_1)
+
     g_for_model.eliminate_node(g2_for_model.vertices[action], reduce=False)
     g2_for_model.eliminate_node(action, reduce=True)
+
 
 
     return g
 
 
 
-fig, axs = plt.subplots(nrows=2, ncols=n-1, figsize=(20,8), constrained_layout=True)
-axs[0][0].set_title('Min degree step 0', fontsize=20)
-axs[1][0].set_title('GNN policy step 0', fontsize=20)
+fig, axs = plt.subplots(nrows=2, ncols=n-1, figsize=(24,10), constrained_layout=True)
+axs[0][0].set_title('Min degree step 0', fontsize=30)
+axs[1][0].set_title('GNN policy step 0', fontsize=30)
 
 for i in range(n-1):
 

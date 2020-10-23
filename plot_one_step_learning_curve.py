@@ -69,7 +69,7 @@ step_size = [0.001,0.0005,0.0001,0.00001]
 steps_per_epoch = 76709
 
 heuristic = 'min_degree'
-time = 'Number of $10^3$ steps'
+time = 'Number of epochs'
 
 performance = '$\hat{C}_{fillin}$'
 loss = '$\hat{\mathcal{L}}_{KL}$ (log scale)'
@@ -89,7 +89,7 @@ dataset = 'ER_small_val'
 
 t_file, loss_gcn_file, perf_min_file, perf_gcn_file, perf_ran_file = np.loadtxt('./results/logs/one_step/log_supervise_train_per_epoch_nondet_0001_one_step_without_prune_ER_small_train_3layers_xavierinit.txt', delimiter=' ', usecols=(1,3,5,7,9), unpack=True)
 
-loss_gcn_file /= steps_per_epoch
+# loss_gcn_file /= steps_per_epoch
 t= t_file[0:row_max]
 loss_gcn = loss_gcn_file[0:row_max]
 loss_gcn = np.log(loss_gcn)

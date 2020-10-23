@@ -1,5 +1,5 @@
 import numpy as np
-c = np.log(5.1e-4)
+c = np.log(2.0e-3)
 # print(c.shape)
 # # print(a)
 print(c)

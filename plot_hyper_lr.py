@@ -89,7 +89,7 @@ for i in range(len(step_size)):
 
     t_file, loss_gcn_file, perf_min_file, perf_gcn_file, perf_ran_file = np.loadtxt('./results/logs/step_size/log_supervise_val_per_steps40000_nondet_'+str(step_size[i])+'_mindegree_without_prune_'+dataset+'_logsoftmax_fulldepth.txt', delimiter=' ', usecols=(1,3,5,7,9), unpack=True)
 
-    loss_gcn_file /= steps_per_epoch
+    # loss_gcn_file /= steps_per_epoch
     t[i]= t_file[0:row_max]/1000
     loss_gcn[i] = loss_gcn_file[0:row_max]
     loss_gcn[i] = np.log(loss_gcn[i])
