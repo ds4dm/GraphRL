@@ -249,83 +249,83 @@ class TrainModel_MC:
                         av_loss_critic_train += total_loss_critic_train_1graph
 
 
-                for X in self.val_loader:
-                    for x in X:
-
-                        self.model.eval()
-                        n = x.n
-
-                        # ratio_gcn2mind = []
-                        # ratio_gcn2rand = []
-                        val_rewards_mindegree = 0  # number of added edges
-                        val_rewards_gcn_greedy = 0
-                        # rewards_random = 0
-                        x_mind = Graph(x.M)
-                        # x_rand = Graph(x.M)
-                        x_model = Graph(x.M)
-
-                        # loop for training while eliminating a graph iteratively
-                        i = 1
-                        depth = np.min([n - 2, depth_max])
-                        # depth = n-2
-                        while (i < depth) and (x_model.n > 2):
-
-                            # baseline1: compute return of min degree
-                            # if i % 100 == 0:
-                            #     print('iterations {}'.format(i))
-                            if epoch == 0:
-                                if self.heuristic == 'min_degree':
-                                    node_chosen, d_min = x_mind.min_degree(x_mind.M)
-                                elif self.heuristic == 'one_step_greedy':
-                                    node_chosen = x_mind.onestep_greedy()
-                                # node_mind, d_min = x_mind.min_degree(x_mind.M)
-                                val_rewards_mindegree += x_mind.eliminate_node(node_chosen, reduce=True)
-
-                            # baseline2: compute return of random
-                            # rewards_random += x_rand.eliminate_node(np.random.randint(low=0, high=x_rand.n), reduce=True)
-
-                            # call actor-critic model
-
-                            node_selected, d_min = x_model.min_degree(x_model.M)
-                            if not (d_min == 1 or d_min == 0):
-                                i += 1
-                                features = np.ones([x_model.n, 1], dtype=np.float32)
-                                M_gcn = torch.FloatTensor(x_model.M)
-                                features = torch.FloatTensor(features)
-                                M_gcn = utils.to_sparse(M_gcn)  # convert to coo sparse tensor
-
-                                if self.use_cuda:
-                                    M_gcn = M_gcn.cuda()
-                                    features = features.cuda()
-
-                                probs = self.model.actor(features, M_gcn)
-                                probs = probs.view(-1)
-                                # probs = torch.exp(probs)
-                                m = Categorical(logits=probs)  # logits=probs
-                                q_gcn_samples = m.sample()
-                                edges_added = x_model.eliminate_node(q_gcn_samples,
-                                                                     reduce=True)  # eliminate the node and return the number of edges added
-                                val_rewards_gcn_greedy += edges_added
-                            else:
-                                reward = x_model.eliminate_node(node_selected, reduce=True)
-
-                        # print('graph {:04d}'.format(n_graphs_proceed), 'epoch {:04d}'.format(epoch),
-                        #       'gcn2mind ratio {}'.format(_ratio_gcn2mind),
-                        #       'value {}'.format(saved_actions[0].value_current),
-                        #       'R {}'.format(returns[0]))
-                        # print('graph {:04d}'.format(n_graphs_proceed), 'epoch {:04d}'.format(epoch),
-                        #       'gcn2rand ratio {}'.format(_ratio_gcn2rand))
-
-                        # _ratio_gcn2mind = rewards_gcn_greedy / rewards_mindegree
-                        # _ratio_gcn2rand = rewards_gcn / rewards_random
-                        val_gcn_greedy.append(val_rewards_gcn_greedy)
-                        if epoch == 0:
-                            val_mind.append(val_rewards_mindegree)
-                        # rand.append(rewards_random)
-                        # ratio_gcn2mind.append(_ratio_gcn2mind)
-                        # ratio_gcn2rand.append(_ratio_gcn2rand)
-
-                    # n_graphs_proceed += len(X)
+                # for X in self.val_loader:
+                #     for x in X:
+                #
+                #         self.model.eval()
+                #         n = x.n
+                #
+                #         # ratio_gcn2mind = []
+                #         # ratio_gcn2rand = []
+                #         val_rewards_mindegree = 0  # number of added edges
+                #         val_rewards_gcn_greedy = 0
+                #         # rewards_random = 0
+                #         x_mind = Graph(x.M)
+                #         # x_rand = Graph(x.M)
+                #         x_model = Graph(x.M)
+                #
+                #         # loop for training while eliminating a graph iteratively
+                #         i = 1
+                #         depth = np.min([n - 2, depth_max])
+                #         # depth = n-2
+                #         while (i < depth) and (x_model.n > 2):
+                #
+                #             # baseline1: compute return of min degree
+                #             # if i % 100 == 0:
+                #             #     print('iterations {}'.format(i))
+                #             if epoch == 0:
+                #                 if self.heuristic == 'min_degree':
+                #                     node_chosen, d_min = x_mind.min_degree(x_mind.M)
+                #                 elif self.heuristic == 'one_step_greedy':
+                #                     node_chosen = x_mind.onestep_greedy()
+                #                 # node_mind, d_min = x_mind.min_degree(x_mind.M)
+                #                 val_rewards_mindegree += x_mind.eliminate_node(node_chosen, reduce=True)
+                #
+                #             # baseline2: compute return of random
+                #             # rewards_random += x_rand.eliminate_node(np.random.randint(low=0, high=x_rand.n), reduce=True)
+                #
+                #             # call actor-critic model
+                #
+                #             node_selected, d_min = x_model.min_degree(x_model.M)
+                #             if not (d_min == 1 or d_min == 0):
+                #                 i += 1
+                #                 features = np.ones([x_model.n, 1], dtype=np.float32)
+                #                 M_gcn = torch.FloatTensor(x_model.M)
+                #                 features = torch.FloatTensor(features)
+                #                 M_gcn = utils.to_sparse(M_gcn)  # convert to coo sparse tensor
+                #
+                #                 if self.use_cuda:
+                #                     M_gcn = M_gcn.cuda()
+                #                     features = features.cuda()
+                #
+                #                 probs = self.model.actor(features, M_gcn)
+                #                 probs = probs.view(-1)
+                #                 # probs = torch.exp(probs)
+                #                 m = Categorical(logits=probs)  # logits=probs
+                #                 q_gcn_samples = m.sample()
+                #                 edges_added = x_model.eliminate_node(q_gcn_samples.cpu(),
+                #                                                      reduce=True)  # eliminate the node and return the number of edges added
+                #                 val_rewards_gcn_greedy += edges_added
+                #             else:
+                #                 reward = x_model.eliminate_node(node_selected, reduce=True)
+                #
+                #         # print('graph {:04d}'.format(n_graphs_proceed), 'epoch {:04d}'.format(epoch),
+                #         #       'gcn2mind ratio {}'.format(_ratio_gcn2mind),
+                #         #       'value {}'.format(saved_actions[0].value_current),
+                #         #       'R {}'.format(returns[0]))
+                #         # print('graph {:04d}'.format(n_graphs_proceed), 'epoch {:04d}'.format(epoch),
+                #         #       'gcn2rand ratio {}'.format(_ratio_gcn2rand))
+                #
+                #         # _ratio_gcn2mind = rewards_gcn_greedy / rewards_mindegree
+                #         # _ratio_gcn2rand = rewards_gcn / rewards_random
+                #         val_gcn_greedy.append(val_rewards_gcn_greedy)
+                #         if epoch == 0:
+                #             val_mind.append(val_rewards_mindegree)
+                #         # rand.append(rewards_random)
+                #         # ratio_gcn2mind.append(_ratio_gcn2mind)
+                #         # ratio_gcn2rand.append(_ratio_gcn2rand)
+                #
+                #     # n_graphs_proceed += len(X)
 
 
                 # print('epoch {:04d}'.format(epoch), 'gcn2' + self.heuristic,
@@ -513,77 +513,77 @@ class TrainModel_MC:
 
 
 
-                for X in self.val_loader:
-                    for x in X:
-
-                        self.model.eval()
-                        n = x.n
-
-                        # ratio_gcn2mind = []
-                        # ratio_gcn2rand = []
-                        # val_rewards_mindegree = 0  # number of added edges
-                        val_rewards_gcn_greedy = 0
-                        # rewards_random = 0
-                        x_mind = Graph(x.M)
-                        # x_rand = Graph(x.M)
-                        x_model = Graph(x.M)
-
-                        # loop for training while eliminating a graph iteratively
-                        i = 1
-                        depth = np.min([n - 2, depth_max])
-                        # depth = n-2
-                        while (i < depth) and (x_model.n > 2):
-
-                            # if epoch==0:
-                            #     if self.heuristic == 'min_degree':
-                            #         node_chosen, d_min = x_mind.min_degree(x_mind.M)
-                            #     elif self.heuristic == 'one_step_greedy':
-                            #         node_chosen, d_min = x_mind.onestep_greedy()
-                            #     # node_mind, d_min = x_mind.min_degree(x_mind.M)
-                            #     val_rewards_mindegree += x_mind.eliminate_node(node_chosen, reduce=True)
-
-                            # call actor-critic model
-
-                            node_selected, d_min = x_model.min_degree(x_model.M)
-                            if not (d_min == 1 or d_min == 0):
-                                i += 1
-                                features = np.ones([x_model.n, 1], dtype=np.float32)
-                                M_gcn = torch.FloatTensor(x_model.M)
-                                features = torch.FloatTensor(features)
-                                M_gcn = utils.to_sparse(M_gcn)  # convert to coo sparse tensor
-
-                                if self.use_cuda:
-                                    M_gcn = M_gcn.cuda()
-                                    features = features.cuda()
-
-                                probs = self.model.actor(features, M_gcn)
-                                probs = probs.view(-1)
-                                # probs = torch.exp(probs)
-                                m = Categorical(logits=probs) # logits=probs
-                                q_gcn_samples = m.sample()
-                                edges_added = x_model.eliminate_node(q_gcn_samples,
-                                                                    reduce=True)  # eliminate the node and return the number of edges added
-                                val_rewards_gcn_greedy += edges_added
-                            else:
-                                reward = x_model.eliminate_node(node_selected, reduce=True)
-
-                        # print('graph {:04d}'.format(n_graphs_proceed), 'epoch {:04d}'.format(epoch),
-                        #       'gcn2mind ratio {}'.format(_ratio_gcn2mind),
-                        #       'value {}'.format(saved_actions[0].value_current),
-                        #       'R {}'.format(returns[0]))
-                        # print('graph {:04d}'.format(n_graphs_proceed), 'epoch {:04d}'.format(epoch),
-                        #       'gcn2rand ratio {}'.format(_ratio_gcn2rand))
-
-                        # _ratio_gcn2mind = rewards_gcn_greedy / rewards_mindegree
-                        # _ratio_gcn2rand = rewards_gcn / rewards_random
-                        val_gcn_greedy.append(val_rewards_gcn_greedy)
-                        # if epoch==0:
-                        #     val_mind.append(val_rewards_mindegree)
-                        # rand.append(rewards_random)
-                        # ratio_gcn2mind.append(_ratio_gcn2mind)
-                        # ratio_gcn2rand.append(_ratio_gcn2rand)
-
-                    # n_graphs_proceed += len(X)
+                # for X in self.val_loader:
+                #     for x in X:
+                #
+                #         self.model.eval()
+                #         n = x.n
+                #
+                #         # ratio_gcn2mind = []
+                #         # ratio_gcn2rand = []
+                #         # val_rewards_mindegree = 0  # number of added edges
+                #         val_rewards_gcn_greedy = 0
+                #         # rewards_random = 0
+                #         x_mind = Graph(x.M)
+                #         # x_rand = Graph(x.M)
+                #         x_model = Graph(x.M)
+                #
+                #         # loop for training while eliminating a graph iteratively
+                #         i = 1
+                #         depth = np.min([n - 2, depth_max])
+                #         # depth = n-2
+                #         while (i < depth) and (x_model.n > 2):
+                #
+                #             # if epoch==0:
+                #             #     if self.heuristic == 'min_degree':
+                #             #         node_chosen, d_min = x_mind.min_degree(x_mind.M)
+                #             #     elif self.heuristic == 'one_step_greedy':
+                #             #         node_chosen, d_min = x_mind.onestep_greedy()
+                #             #     # node_mind, d_min = x_mind.min_degree(x_mind.M)
+                #             #     val_rewards_mindegree += x_mind.eliminate_node(node_chosen, reduce=True)
+                #
+                #             # call actor-critic model
+                #
+                #             node_selected, d_min = x_model.min_degree(x_model.M)
+                #             if not (d_min == 1 or d_min == 0):
+                #                 i += 1
+                #                 features = np.ones([x_model.n, 1], dtype=np.float32)
+                #                 M_gcn = torch.FloatTensor(x_model.M)
+                #                 features = torch.FloatTensor(features)
+                #                 M_gcn = utils.to_sparse(M_gcn)  # convert to coo sparse tensor
+                #
+                #                 if self.use_cuda:
+                #                     M_gcn = M_gcn.cuda()
+                #                     features = features.cuda()
+                #
+                #                 probs = self.model.actor(features, M_gcn)
+                #                 probs = probs.view(-1)
+                #                 # probs = torch.exp(probs)
+                #                 m = Categorical(logits=probs) # logits=probs
+                #                 q_gcn_samples = m.sample()
+                #                 edges_added = x_model.eliminate_node(q_gcn_samples.cpu(),
+                #                                                     reduce=True)  # eliminate the node and return the number of edges added
+                #                 val_rewards_gcn_greedy += edges_added
+                #             else:
+                #                 reward = x_model.eliminate_node(node_selected, reduce=True)
+                #
+                #         # print('graph {:04d}'.format(n_graphs_proceed), 'epoch {:04d}'.format(epoch),
+                #         #       'gcn2mind ratio {}'.format(_ratio_gcn2mind),
+                #         #       'value {}'.format(saved_actions[0].value_current),
+                #         #       'R {}'.format(returns[0]))
+                #         # print('graph {:04d}'.format(n_graphs_proceed), 'epoch {:04d}'.format(epoch),
+                #         #       'gcn2rand ratio {}'.format(_ratio_gcn2rand))
+                #
+                #         # _ratio_gcn2mind = rewards_gcn_greedy / rewards_mindegree
+                #         # _ratio_gcn2rand = rewards_gcn / rewards_random
+                #         val_gcn_greedy.append(val_rewards_gcn_greedy)
+                #         # if epoch==0:
+                #         #     val_mind.append(val_rewards_mindegree)
+                #         # rand.append(rewards_random)
+                #         # ratio_gcn2mind.append(_ratio_gcn2mind)
+                #         # ratio_gcn2rand.append(_ratio_gcn2rand)
+                #
+                #     # n_graphs_proceed += len(X)
 
             train_gcn_greedy = np.array(train_gcn_greedy).reshape(-1)
             critic_value = np.array(critic_value).reshape(-1)
