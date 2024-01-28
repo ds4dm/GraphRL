@@ -308,7 +308,7 @@ class TrainModel_MC:
                                     M_gcn = M_gcn.cuda()
                                     features = features.cuda()
 
-                                probs = self.model.actor(features, M_gcn)
+                                probs, features_gcn = self.model.actor(features, M_gcn)
                                 probs = probs.view(-1)
                                 # probs = torch.exp(probs)
                                 m = Categorical(logits=probs)  # logits=probs
@@ -567,7 +567,7 @@ class TrainModel_MC:
                                     M_gcn = M_gcn.cuda()
                                     features = features.cuda()
 
-                                probs = self.model.actor(features, M_gcn)
+                                probs, features_gcn = self.model.actor(features, M_gcn)
                                 probs = probs.view(-1)
                                 # probs = torch.exp(probs)
                                 m = Categorical(logits=probs) # logits=probs

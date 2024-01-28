@@ -181,7 +181,7 @@ class Model_A2C_Sparse(nn.Module):
             if self.use_cuda:
                 random_choice = random_choice.cuda()
 
-            print('sum of probs: {}'.format(probs.exp().sum()))
+            # print('sum of probs: {}'.format(probs.exp().sum()))
             m_rand = Categorical(random_choice)
             node_selected = m_rand.sample()
         else:
