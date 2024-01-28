@@ -158,7 +158,7 @@ class Model_A2C_Sparse(nn.Module):
         # features[:, 2] = inputs.n - features[:, 1]
 
 
-        epsilon = self.epsilon
+        epsilon = torch.tensor(self.epsilon, dtype=torch.float)
 
         if self.use_cuda:
             adj_M = adj_M.cuda()

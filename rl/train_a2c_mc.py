@@ -42,6 +42,7 @@ class TrainModel_MC:
         depth_max = 1000000
 
         actor_opt = optm.Adam(self.model.actor.parameters(),  weight_decay=self.weight_d, lr=lr_actor)
+
         scheduler_1 = ReduceLROnPlateau(actor_opt, mode='min', factor=0.8, patience=20, min_lr=1e-5)
 
         print('Use Critic:')
