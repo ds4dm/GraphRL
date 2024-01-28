@@ -84,12 +84,14 @@ class TrainModel_MC:
 
         for epoch in range(n_epochs):
 
-            start_epsilon = 1
-            end_epsilon = 0.02
-            exploration_fraction = 0.5
-            total_epochs = n_epochs
-            epsilon = utils.linear_schedule(start_epsilon, end_epsilon, exploration_fraction * total_epochs, epoch)
-            self.model.epsilon = epsilon
+            # start_epsilon = 1
+            # end_epsilon = 0.02
+            # exploration_fraction = 0.5
+            # total_epochs = n_epochs
+            # epsilon = utils.linear_schedule(start_epsilon, end_epsilon, exploration_fraction * total_epochs, epoch)
+            # self.model.epsilon = epsilon
+            self.model.epsilon = 0.02
+
 
             if epoch == 0: # in epoch o, heuristic will be executed and its result acts as a baseline,
                            # in following epochs, heuristic won't be executed anymore (for avoiding unnecessary comuptation).
