@@ -80,7 +80,7 @@ class Model_A2C(nn.Module):
         if self.use_critic: # call critic to compute the value for current state
             critic_current = self.critic(features, adj_M).sum()
 
-        r = inputs.eliminate_node(node_selected, reduce=True) # reduce the graph and return the nb of edges added
+        r = -inputs.eliminate_node(node_selected, reduce=True) # reduce the graph and return the nb of edges added
 
         adj_M = torch.FloatTensor(inputs.M)  # adj matrix of reduced graph
 
@@ -201,7 +201,7 @@ class Model_A2C_Sparse(nn.Module):
 
         # if node_selected < 0 or node_selected >= inputs.n:
         #     print(node_selected)
-        r = inputs.eliminate_node(node_selected, reduce=True)  # reduce the graph and return the nb of edges added
+        r = - inputs.eliminate_node(node_selected, reduce=True)  # reduce the graph and return the nb of edges added
 
         # call critic to compute the value for current state
         if self.use_critic:

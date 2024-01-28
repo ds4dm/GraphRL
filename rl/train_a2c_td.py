@@ -115,7 +115,7 @@ class TrainModel_TD:
                             #     print(log_prob.data[0])
                             #     log_prob = Variable(torch.FloatTensor([0.]), requires_grad=True)
 
-                            actor_loss = log_prob * advantage.detach() # loss of actor
+                            actor_loss = - log_prob * advantage.detach() # loss of actor
 
                             # step training of actor
                             self.actor_optim.zero_grad()
@@ -138,7 +138,7 @@ class TrainModel_TD:
                             else:
                                 baseline =  baseline.detach()
                         else:
-                            r = x.eliminate_node(node_selected, reduce=True)
+                            r = - x.eliminate_node(node_selected, reduce=True)
 
                         # self.model.rewards.append(r)
                         # self.model.actions.append(node_selected)
@@ -147,9 +147,9 @@ class TrainModel_TD:
                     R = 0
                     for r in self.model.rewards[::-1]:
                         R = r + gamma * R
-                    print('return_sampling {}'.format(R))
+                    print('return_sampling {}'.format(-R))
 
-                    rewards_gcn = sum(self.model.rewards)
+                    rewards_gcn = - sum(self.model.rewards)
 
                     _ratio_gcn2mind = rewards_gcn / rewards_mindegree
                     _ratio_gcn2rand = rewards_gcn / rewards_random

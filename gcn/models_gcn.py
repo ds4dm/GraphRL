@@ -336,8 +336,10 @@ class GCN_Sparse_Value(nn.Module):
         #
         # #third layer with relu
         features = self.gc3(features, adj_matrix)
-        # features = F.relu(features)
-        features = features
+        features = F.relu(features)
+
+        features = self.linear(features)
+        # features = features
 
         return features
 

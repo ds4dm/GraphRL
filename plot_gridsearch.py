@@ -10,7 +10,9 @@ from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
 
-l, p = np.loadtxt('./results/logs/log_supervise_gan_gridsearch_mindegree_ER_small20graphs_train.txt', delimiter=' ', usecols=(7, 9), unpack=True)
+# l, p = np.loadtxt('./results/logs/log_supervise_gan_gridsearch_mindegree_ER_small20graphs_train.txt', delimiter=' ', usecols=(7, 9), unpack=True)
+l, p = np.loadtxt('./results/logs/log_supervise_gridsearch_mindegree__ER_small_20graphs_train.txt', delimiter=' ', usecols=(7, 9), unpack=True)
+
 l= np.reshape(l,(41,41))
 print(l)
 p= np.reshape(p,(41,41))

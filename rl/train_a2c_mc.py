@@ -11,6 +11,7 @@ from collections import namedtuple
 import matplotlib.pyplot as plt
 import copy
 import time
+from pathlib import Path
 
 SavedAction = namedtuple('SavedAction', ['log_prob', 'value_current'])
 
@@ -172,12 +173,12 @@ class TrainModel_MC:
                         if len(returns):
 
                             # standard return
-                            returns = -returns
+                            # returns = -returns
 
                             # returns = (returns - self.model.epsilon / 530000) / (1 - self.model.epsilon)
                             # returns = returns / (returns.std() + self.eps)
 
-                            returns = (returns - returns.mean()) / (returns.std() + self.eps)
+                            # returns = (returns - returns.mean()) / (returns.std() + self.eps)
                             saved_actions = self.model.saved_actions
                             values = self.model.values
                             # compute cummulated loss of actor and critic of one graph
@@ -427,12 +428,12 @@ class TrainModel_MC:
 
                         if len(returns):
                             # standard return
-                            returns = -returns
+                            # returns = -returns
 
                             # returns = (returns - self.model.epsilon/ 530000) / (1 - self.model.epsilon)
                             # returns = returns / (returns.std() + self.eps)
 
-                            returns = (returns - returns.mean()) / (returns.std() + self.eps)
+                            # returns = (returns - returns.mean()) / (returns.std() + self.eps)
 
                             saved_actions = self.model.saved_actions
                             values = self.model.values
@@ -603,7 +604,7 @@ class TrainModel_MC:
                 print('epochs {}'.format(epoch),
                       'loss actor {}'.format(av_loss_train),
                       'loss critic {}'.format(av_loss_critic_train),
-                      'train ' + self.heuristic + 'performance {}'.format(_train_ave_mind),
+                      'train ' + self.heuristic + 'performance {}'.format(-_train_ave_mind),
                       'train gcn performance {}'.format(_train_ave_gcn),
                       'critic value {}'.format(_critic_value_ave),
                       'val ' + self.heuristic + 'performance {}'.format(_val_ave_mind),
@@ -613,7 +614,7 @@ class TrainModel_MC:
                 print('epochs {}'.format(epoch),
                       'loss actor{}'.format(av_loss_train),
                       'train '+ self.heuristic + 'performance {}'.format(_train_ave_mind),
-                      'train gcn performance {}'.format(_train_ave_gcn),
+                      'train gcn performance {}'.format(-_train_ave_gcn),
                       'val ' + self.heuristic + 'performance {}'.format(_val_ave_mind),
                       'val gcn performance {}'.format(_val_ave_gcn),
                       )
@@ -635,16 +636,15 @@ class TrainModel_MC:
             # total_loss_train.append(av_loss_train)
             # if use_critic:
             #     total_loss_critic_train.append(av_loss_critic_train)
-
+            #
             # t_plot = np.array(t).reshape(-1)
-            #
             # total_loss_train_np = np.array(total_loss_train).reshape(-1)
-            #
             # val_ave_gcn_np = np.array(val_ave_gcn).reshape(-1)
             # train_ave_gcn_np = np.array(train_ave_gcn).reshape(-1)
             # val_ave_mind_np = np.array(val_ave_mind).reshape(-1)
             # train_ave_mind_np = np.array(train_ave_mind).reshape(-1)
-
+            #
+            # Path("results/plots_2024/rlmc/").mkdir(exist_ok=True)
             # plt.clf()
             # plt.plot(t_plot, train_ave_gcn_np, t_plot, train_ave_mind_np)
             # plt.legend(('GNN-RL-epsilon', self.heuristic),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
@@ -654,24 +654,26 @@ class TrainModel_MC:
             # plt.ylabel('number of fill-in')
             # # plt.draw()
             # plt.savefig(
-            #     './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
+            #     './results/plots_2024/rlmc/hyper_lractor_acmc_std_r_' + str(
             #         lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_curve_g2m_number_input3d_gcn5-h3-memo_logsoftmax_no_pretrain_train_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
             #         self.use_cuda) + '_return_-mean.png')
             # plt.clf()
             #
-            # plt.clf()
-            # plt.plot(t_plot, val_ave_gcn_np, t_plot, val_ave_mind_np)
-            # plt.legend(('GNN-RL-epsilon', self.heuristic),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
-            #            loc='upper right')  # 'GNN-initial', 'GNN-RL', 'min-degree'
-            # plt.title(
-            #     'RL-MonteCarlo performance curve with pretrain validationDataset' + self.train_dataset.__class__.__name__ + ' (average number of filled edges)')
-            # plt.ylabel('number of fill-in')
-            # # plt.draw()
-            # plt.savefig(
-            #     './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
-            #         lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy())  + '_' + self.heuristic + '_curve_g2m_number_input3d_gcn5-h3-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
-            #         self.use_cuda) + '_return_-mean.png')
-            # plt.clf()
+            # #
+            # # plt.clf()
+            # # plt.plot(t_plot, val_ave_gcn_np, t_plot, val_ave_mind_np)
+            # # plt.legend(('GNN-RL-epsilon', self.heuristic),  # 'GNN-RL', 'GNN-RL-epsilon', 'min-degree'
+            # #            loc='upper right')  # 'GNN-initial', 'GNN-RL', 'min-degree'
+            # # plt.title(
+            # #     'RL-MonteCarlo performance curve with pretrain validationDataset' + self.train_dataset.__class__.__name__ + ' (average number of filled edges)')
+            # # plt.ylabel('number of fill-in')
+            # # # plt.draw()
+            # # plt.savefig(
+            # #     './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
+            # #         lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy())  + '_' + self.heuristic + '_curve_g2m_number_input3d_gcn5-h3-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_unlim_depth_prune_cuda' + str(
+            # #         self.use_cuda) + '_return_-mean.png')
+            # # plt.clf()
+            # #
             #
             # plt.clf()
             # plt.plot(t_plot, total_loss_train_np)
@@ -682,8 +684,9 @@ class TrainModel_MC:
             # plt.ylabel('number of fill-in')
             # # plt.draw()
             # plt.savefig(
-            #     './results/rl/rmc/hyper_lractor_acmc_std_r_' + str(
+            #     './results/plots_2024/rlmc/hyper_lractor_acmc_std_r_' + str(
             #         lr_actor) + '_epsilon_' + str(self.model.epsilon.numpy()) + '_' + self.heuristic + '_loss_curve_g2m_number_input3d_gcn5-h3-memo_logsoftmax_no_pretrain_val_' + self.train_dataset.__class__.__name__ + '_umlim_depth_prune_cuda' + str(
             #         self.use_cuda) + '_return_-mean.png')
             # plt.clf()
+            # plt.close('all')
 
