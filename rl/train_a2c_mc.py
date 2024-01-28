@@ -43,7 +43,7 @@ class TrainModel_MC:
 
         actor_opt = optm.Adam(self.model.actor.parameters(),  weight_decay=self.weight_d, lr=lr_actor)
 
-        # scheduler_1 = ReduceLROnPlateau(actor_opt, mode='min', factor=0.8, patience=20, min_lr=1e-5)
+        scheduler_1 = ReduceLROnPlateau(actor_opt, mode='min', factor=0.8, patience=20, min_lr=1e-5)
 
         print('Use Critic:')
         print(use_critic)
@@ -632,7 +632,7 @@ class TrainModel_MC:
                       'val gcn performance {}'.format(_val_ave_gcn),
                       )
 
-            # scheduler_1.step(-_train_ave_gcn)
+            scheduler_1.step(-_train_ave_gcn)
 
 
             # _val_ave_ratio_gcn2mind = _val_ave_gcn / _val_ave_mind
