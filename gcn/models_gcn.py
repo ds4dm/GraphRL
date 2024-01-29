@@ -603,11 +603,11 @@ class GCN_Sparse_Policy_Baseline1(nn.Module):
     def __init__(self, nin, nhidden, nout, dropout):
         super(GCN_Sparse_Policy_Baseline1, self).__init__()
 
-        self.gc1 = MessagePassing_GNN_Layer_Sparse_Memory(nin, nhidden) # first graph conv layer
-        self.gc2 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc1 = MessagePassing_GNN_Layer_Sparse(nin, nhidden) # first graph conv layer
+        self.gc2 = MessagePassing_GNN_Layer_Sparse(nhidden, nhidden)  # first graph conv layer
         # self.gc3 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
         # self.gc4 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
-        self.gc3 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nout) # second graph conv layer
+        self.gc3 = MessagePassing_GNN_Layer_Sparse(nhidden, nout) # second graph conv layer
         self.dropout = dropout
 
 
