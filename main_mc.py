@@ -210,7 +210,7 @@ for i in range(len(lr)):
 
     if dataset_name == 'UFSMDataset_Demo':
         test_dataset = dataset(start=24, end=26)
-        train_dataset = dataset(start=19, end=20)
+        train_dataset = dataset(start=20, end=21)
         # val_dataset = dataset(args.nnode_test, args.ngraph_test, args.p)
         val_dataset = dataset(start=19, end=20)
     elif dataset_name == 'ErgDataset':
