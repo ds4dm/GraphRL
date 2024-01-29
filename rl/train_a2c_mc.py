@@ -191,7 +191,7 @@ class TrainModel_MC:
                             # returns = (returns - self.model.epsilon / 530000) / (1 - self.model.epsilon)
                             # returns = returns / (returns.std() + self.eps)
 
-                            # returns = (returns - returns.mean()) / (returns.std() + self.eps)
+                            returns = (returns - returns.mean()) / (returns.std() + self.eps)
 
                             saved_actions = self.model.saved_actions
                             values = self.model.values
@@ -450,7 +450,7 @@ class TrainModel_MC:
                             # returns = (returns - self.model.epsilon/ 530000) / (1 - self.model.epsilon)
                             # returns = returns / (returns.std() + self.eps)
 
-                            # returns = (returns - returns.mean()) / (returns.std() + self.eps)
+                            returns = (returns - returns.mean()) / (returns.std() + self.eps)
 
                             saved_actions = self.model.saved_actions
                             values = self.model.values
