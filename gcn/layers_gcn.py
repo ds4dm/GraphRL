@@ -394,7 +394,7 @@ class MessagePassing_GNN_Layer_Sparse_Memory(Module):
             embeded_features += self.bias
 
         propagated_features = torch.spmm(adj_matrix, embeded_features) # + embeded_features  # adjacency matrix * features
-        output_features = self.output_module(torch.cat([propagated_features, input_features], dim=-1))
+        output_features = self.output_module(torch.cat([propagated_features, embeded_features], dim=-1))
 
         return output_features
 
