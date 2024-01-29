@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
-from gcn.layers_gcn import GraphConvolutionLayer, GraphConvolutionLayer_Sparse, GraphConvolutionLayer_Sparse_Memory, GraphAttentionConvLayer, GraphAttentionConvLayerMemory
+from gcn.layers_gcn import GraphConvolutionLayer, GraphConvolutionLayer_Sparse, GraphConvolutionLayer_Sparse_Memory, GraphAttentionConvLayer, GraphAttentionConvLayerMemory, MessagePassing_GNN_Layer_Sparse_Memory, MessagePassing_GNN_Layer_Sparse
 
 
 class GCN_Policy_SelectNode(nn.Module):
@@ -594,6 +594,45 @@ class MLP_Value(nn.Module):
         v = self.value(features).sum()
 
         return v
+
+
+class GCN_Sparse_Policy_Baseline1(nn.Module):
+    """
+    GCN model for node selection policy
+    """
+    def __init__(self, nin, nhidden, nout, dropout):
+        super(GCN_Sparse_Policy_Baseline1, self).__init__()
+
+        self.gc1 = MessagePassing_GNN_Layer_Sparse_Memory(nin, nhidden) # first graph conv layer
+        self.gc2 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        # self.gc3 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        # self.gc4 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc3 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nout) # second graph conv layer
+        self.dropout = dropout
+
+
+    def forward(self, features, adj_matrix):
+        # first layer with relu
+        # features = F.dropout(features, self.dropout, training=self.training)
+        features = self.gc1(features, adj_matrix)
+        features = F.relu(features)
+
+        features_hidden = self.gc2(features, adj_matrix)
+        features_out = F.relu(features_hidden)
+        #
+        # features = self.gc3(features, adj_matrix)
+        # features = F.relu(features)
+
+        # features = self.gc4(features, adj_matrix)
+        # features = F.relu(features)
+
+
+        # output layer with softmax
+        features_out = self.gc3(features_out, adj_matrix)
+        probs = F.log_softmax(features_out.t())
+        probs = probs.t()
+
+        return probs, features_hidden
 
 
 

@@ -9,7 +9,7 @@ from utils.utils import open_dataset, varname
 from rl.model_a2c import Model_A2C_Sparse
 from rl.train_a2c_td import TrainModel_TD
 from rl.train_a2c_mc import TrainModel_MC
-from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GCN_Sparse_Memory_Policy_SelectNode_10, GAN_Memory_5, GAN_Memory_10, GCN_Sparse_Policy, MLP_Value
+from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GCN_Sparse_Memory_Policy_SelectNode_10, GAN_Memory_5, GAN_Memory_10, GCN_Sparse_Policy, MLP_Value, GCN_Sparse_Policy_Baseline1
 from gcn.models_gcn import GCN_Value, GCN_Sparse_Value
 from supervised.train_supervised_learning import Train_SupervisedLearning
 
@@ -20,6 +20,7 @@ import torch
 import numpy as np
 import pickle as pkl
 import matplotlib.pyplot as plt
+import random
 
 
 
@@ -28,7 +29,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--nocuda', action= 'store_true', default=False, help='Disable Cuda')
 parser.add_argument('--novalidation', action= 'store_true', default=False, help='Disable validation')
 parser.add_argument('--seed', type=int, default=0, help='Radom seed')
-parser.add_argument('--epochs', type=int, default=1000, help='Training epochs')
+parser.add_argument('--epochs', type=int, default=500, help='Training epochs')
 parser.add_argument('--pretrain_epochs', type=int, default=3, help='PreTraining epochs')
 parser.add_argument('--lr_actor', type=float, default=0.0001, help='Learning rate of actor')
 parser.add_argument('--lr_critic', type=float, default=0.0001, help='Learning rate of critic')
@@ -49,6 +50,7 @@ args = parser.parse_args()
 
 np.random.seed(args.seed)
 torch.manual_seed(args.seed)
+random.seed(args.seed)
 
 args.cuda = not args.nocuda and torch.cuda.is_available()
 
@@ -175,7 +177,10 @@ for i in range(len(lr)):
     #                                      dropout=args.dropout,
     #                                      )  # alpha=args.alpha
 
-    actor = GCN_Sparse_Policy(nin=args.dinput, nhidden_gcn=args.dhidden, nout_gcn=args.doutput, nhidden_policy=args.dhidden, dropout=args.dropout)
+    # actor = GCN_Sparse_Policy(nin=args.dinput, nhidden_gcn=args.dhidden, nout_gcn=args.doutput, nhidden_policy=args.dhidden, dropout=args.dropout)
+
+    actor = GCN_Sparse_Policy_Baseline1(nin=args.dinput, nhidden=args.dhidden, nout=args.doutput,
+                              dropout=args.dropout)
 
     if args.use_critic:
         critic = MLP_Value(nout_gcn=args.doutput, nhidden_value=args.dhidden

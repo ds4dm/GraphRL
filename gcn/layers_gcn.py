@@ -132,6 +132,7 @@ class GraphConvolutionLayer_Sparse(Module):
 
         features = torch.mm(features, self.weight) # features * weight
         features = torch.spmm(adj_matrix, features) # adjacency matrix * features
+
         if self.bias is not None:
             return features+ self.bias
         else:
@@ -148,7 +149,7 @@ class GraphConvolutionLayer_Sparse_Memory(Module):
     Convolution layer for Graph
     """
 
-    def __init__(self, nfeatures_in, nfeatures_out, init='xavier', bias = True):
+    def __init__(self, nfeatures_in, nfeatures_out, init='xavier', nfeatures_hidden=1, bias = True):
 
         super(GraphConvolutionLayer_Sparse_Memory, self).__init__()
         self.nfeatures_in = nfeatures_in
@@ -170,6 +171,17 @@ class GraphConvolutionLayer_Sparse_Memory(Module):
             #Parameter(torch.Tensor(self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))
         else:
             self.register_parameter('bias',None)
+
+        # output_layers
+        self.output_module = torch.nn.Sequential(
+            torch.nn.Linear(2 * self.nfeatures_out, self.nfeatures_out, bias=False),
+            torch.nn.ReLU(),
+            torch.nn.Linear(self.nfeatures_out, self.nfeatures_out, bias=False),
+        )
+
+        for layer in self.output_module():
+            if isinstance(layer, torch.nn.Linear):
+                torch.nn.init.xavier_normal_(layer.weight, gain=0.2)
 
         # if init == 'uniform':
         #     print("| Uniform Initialization")
@@ -200,10 +212,11 @@ class GraphConvolutionLayer_Sparse_Memory(Module):
             nn.init.constant_(self.bias.data, 0.0)
 
 
-    def forward(self, features, adj_matrix):
+
+    def forward(self, input_features, adj_matrix):
 
         # features_hat = torch.mm(features, self.weight)  # features * weight
-        features = torch.mm(features, self.weight) # features * weight
+        features = torch.mm(input_features, self.weight) # features * weight
 
         features = torch.spmm(adj_matrix, features) + features  # adjacency matrix * features
 
@@ -211,6 +224,179 @@ class GraphConvolutionLayer_Sparse_Memory(Module):
             features += self.bias
 
         return features
+
+    def __repr__(self):
+        return self.__class__.__name__ \
+        +'('+str(self.nfeatures_in) \
+        +' -> '+str(self.nfeatures_out)+')'
+
+
+class MessagePassing_GNN_Layer_Sparse(Module):
+    """
+    Convolution layer for Graph
+    """
+
+    def __init__(self, nfeatures_in, nfeatures_out, init='xavier', nfeatures_hidden=1, bias = True):
+
+        super(MessagePassing_GNN_Layer_Sparse, self).__init__()
+        self.nfeatures_in = nfeatures_in
+        self.nfeatures_out = nfeatures_out
+
+        # initialize the parameters
+        self.weight = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(self.nfeatures_in, self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2), requires_grad=True)
+        self.weight_hat = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(self.nfeatures_in, self.nfeatures_out).type(
+            torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2),
+                                   requires_grad=True)
+
+        #Parameter(torch.Tensor(self.nfeatures_in,self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))
+        if bias:
+            # self.bias = nn.Parameter(nn.init.constant_(torch.Tensor(self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor),0.0))
+            self.bias = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(1, self.nfeatures_out).type(
+                torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2),
+                                     requires_grad=True)
+
+            #Parameter(torch.Tensor(self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))
+        else:
+            self.register_parameter('bias',None)
+
+        # output_layers
+        self.output_module = torch.nn.Sequential(
+            torch.nn.Linear(self.nfeatures_out, self.nfeatures_out, bias=False),
+            torch.nn.ReLU(),
+            torch.nn.Linear(self.nfeatures_out, self.nfeatures_out, bias=False),
+        )
+
+        for layer in self.output_module():
+            if isinstance(layer, torch.nn.Linear):
+                torch.nn.init.xavier_normal_(layer.weight, gain=0.2)
+
+        # if init == 'uniform':
+        #     print("| Uniform Initialization")
+        #     self.reset_parameters_uniform()
+        # elif init == 'xavier':
+        #     print("| Xavier Initialization")
+        #     self.reset_parameters_xavier()
+        # elif init == 'kaiming':
+        #     print("| Kaiming Initialization")
+        #     self.reset_parameters_kaiming()
+        # else:
+        #     raise NotImplementedError
+
+    def reset_parameters_uniform(self):
+        stdv = 1. / math.sqrt(self.weight.size(1))
+        self.weight.data.uniform_(-stdv, stdv)
+        if self.bias is not None:
+            self.bias.data.uniform_(-stdv, stdv)
+
+    def reset_parameters_xavier(self):
+        nn.init.xavier_normal_(self.weight.data, gain=0.02) # Implement Xavier Uniform
+        if self.bias is not None:
+            nn.init.constant_(self.bias.data, 0.0)
+
+    def reset_parameters_kaiming(self):
+        nn.init.kaiming_normal_(self.weight.data, a=0, mode='fan_in')
+        if self.bias is not None:
+            nn.init.constant_(self.bias.data, 0.0)
+
+
+
+    def forward(self, input_features, adj_matrix):
+
+        # features_hat = torch.mm(features, self.weight)  # features * weight
+        embeded_features = torch.mm(input_features, self.weight) # features * weight
+        if self.bias is not None:
+            embeded_features += self.bias
+
+        propagated_features = torch.spmm(adj_matrix, embeded_features) # + embeded_features  # adjacency matrix * features
+        output_features = self.output_module(propagated_features)
+
+        return output_features
+
+    def __repr__(self):
+        return self.__class__.__name__ \
+        +'('+str(self.nfeatures_in) \
+        +' -> '+str(self.nfeatures_out)+')'
+
+class MessagePassing_GNN_Layer_Sparse_Memory(Module):
+    """
+    Convolution layer for Graph
+    """
+
+    def __init__(self, nfeatures_in, nfeatures_out, init='xavier', nfeatures_hidden=1, bias = True):
+
+        super(MessagePassing_GNN_Layer_Sparse_Memory, self).__init__()
+        self.nfeatures_in = nfeatures_in
+        self.nfeatures_out = nfeatures_out
+
+        # initialize the parameters
+        self.weight = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(self.nfeatures_in, self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2), requires_grad=True)
+        self.weight_hat = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(self.nfeatures_in, self.nfeatures_out).type(
+            torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2),
+                                   requires_grad=True)
+
+        #Parameter(torch.Tensor(self.nfeatures_in,self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))
+        if bias:
+            # self.bias = nn.Parameter(nn.init.constant_(torch.Tensor(self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor),0.0))
+            self.bias = nn.Parameter(nn.init.xavier_normal_(torch.Tensor(1, self.nfeatures_out).type(
+                torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor), gain=0.2),
+                                     requires_grad=True)
+
+            #Parameter(torch.Tensor(self.nfeatures_out).type(torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor))
+        else:
+            self.register_parameter('bias',None)
+
+        # output_layers
+        self.output_module = torch.nn.Sequential(
+            torch.nn.Linear(2 * self.nfeatures_out, self.nfeatures_out, bias=False),
+            torch.nn.ReLU(),
+            torch.nn.Linear(self.nfeatures_out, self.nfeatures_out, bias=False),
+        )
+
+        for layer in self.output_module:
+            if isinstance(layer, torch.nn.Linear):
+                torch.nn.init.xavier_normal_(layer.weight, gain=0.2)
+
+        # if init == 'uniform':
+        #     print("| Uniform Initialization")
+        #     self.reset_parameters_uniform()
+        # elif init == 'xavier':
+        #     print("| Xavier Initialization")
+        #     self.reset_parameters_xavier()
+        # elif init == 'kaiming':
+        #     print("| Kaiming Initialization")
+        #     self.reset_parameters_kaiming()
+        # else:
+        #     raise NotImplementedError
+
+    def reset_parameters_uniform(self):
+        stdv = 1. / math.sqrt(self.weight.size(1))
+        self.weight.data.uniform_(-stdv, stdv)
+        if self.bias is not None:
+            self.bias.data.uniform_(-stdv, stdv)
+
+    def reset_parameters_xavier(self):
+        nn.init.xavier_normal_(self.weight.data, gain=0.02) # Implement Xavier Uniform
+        if self.bias is not None:
+            nn.init.constant_(self.bias.data, 0.0)
+
+    def reset_parameters_kaiming(self):
+        nn.init.kaiming_normal_(self.weight.data, a=0, mode='fan_in')
+        if self.bias is not None:
+            nn.init.constant_(self.bias.data, 0.0)
+
+
+
+    def forward(self, input_features, adj_matrix):
+
+        # features_hat = torch.mm(features, self.weight)  # features * weight
+        embeded_features = torch.mm(input_features, self.weight) # features * weight
+        if self.bias is not None:
+            embeded_features += self.bias
+
+        propagated_features = torch.spmm(adj_matrix, embeded_features) # + embeded_features  # adjacency matrix * features
+        output_features = self.output_module(torch.cat([propagated_features, input_features], dim=-1))
+
+        return output_features
 
     def __repr__(self):
         return self.__class__.__name__ \
