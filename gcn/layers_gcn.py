@@ -266,7 +266,7 @@ class MessagePassing_GNN_Layer_Sparse(Module):
             torch.nn.Linear(self.nfeatures_out, self.nfeatures_out, bias=False),
         )
 
-        for layer in self.output_module():
+        for layer in self.output_module:
             if isinstance(layer, torch.nn.Linear):
                 torch.nn.init.xavier_normal_(layer.weight, gain=0.2)
 
