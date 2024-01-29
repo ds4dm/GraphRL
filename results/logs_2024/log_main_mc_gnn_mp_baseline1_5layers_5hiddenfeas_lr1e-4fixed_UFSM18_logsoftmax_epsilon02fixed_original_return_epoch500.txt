@@ -1,0 +1,332 @@
+nohup: ignoring input
+[[1 2 3]
+ [4 5 6]]
+Supervised Training started
+heuristic: min_degree actor learning rate: 0.1 epochs: 500 Train DataSet: UFSMDataset_Demo
+
+Use Critic:
+False
+/local_workspace/liudefen/PycharmProjects/PycharmProjects/GraphRL/gcn/models_gcn.py:639: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  probs = F.log_softmax(features_out.t())
+parameter name actor.gc1.weight parameter value tensor([[ 0.1779, -0.0339, -0.2516,  0.0656, -0.1252]])
+parameter name actor.gc1.weight_hat parameter value tensor([[-0.1615,  0.0466,  0.0968, -0.0831, -0.0466]])
+parameter name actor.gc1.bias parameter value tensor([[-0.0689,  0.0210, -0.0989,  0.1271, -0.1237]])
+parameter name actor.gc1.output_module.0.weight parameter value tensor([[ 0.0317, -0.0586, -0.0946, -0.0548, -0.0958, -0.0160, -0.1778, -0.0053,
+          0.0170,  0.0582],
+        [-0.0135, -0.0270, -0.0884, -0.0455, -0.0339,  0.1403, -0.0934,  0.0068,
+         -0.0486,  0.0444],
+        [-0.0533, -0.0645, -0.0306, -0.0588, -0.0742,  0.0132,  0.0079, -0.0551,
+          0.0178, -0.0056],
+        [ 0.0085, -0.0434, -0.1348, -0.0018, -0.0350, -0.0105, -0.0232,  0.0706,
+         -0.0724,  0.0220],
+        [-0.0078,  0.0729, -0.0014,  0.0724, -0.0568,  0.0229,  0.0156, -0.0088,
+          0.0263, -0.0229]])
+parameter name actor.gc1.output_module.2.weight parameter value tensor([[-0.1070,  0.0176, -0.1053, -0.0059, -0.0321],
+        [-0.1397, -0.0317,  0.0967,  0.0827, -0.0257],
+        [ 0.0914, -0.0457, -0.1533, -0.0456, -0.0425],
+        [-0.0567, -0.1313,  0.0543, -0.0489, -0.0984],
+        [-0.0644,  0.0011,  0.0304, -0.0236,  0.1145]])
+parameter name actor.gc2.weight parameter value tensor([[-0.0442, -0.1148,  0.0392, -0.0010,  0.1197],
+        [-0.0250, -0.0494, -0.2584, -0.0950,  0.1105],
+        [-0.1322, -0.1570,  0.0068, -0.0965,  0.1288],
+        [-0.0099,  0.0516,  0.0668, -0.0057,  0.0929],
+        [ 0.0811, -0.0425, -0.0779,  0.0129,  0.1702]])
+parameter name actor.gc2.weight_hat parameter value tensor([[ 0.0580, -0.0035, -0.0717, -0.0443, -0.0323],
+        [ 0.0523, -0.1034, -0.0128, -0.0519, -0.0811],
+        [-0.0529,  0.0135, -0.0931, -0.0644, -0.1981],
+        [-0.0612,  0.0462,  0.0709,  0.0074,  0.0378],
+        [-0.1671, -0.0989,  0.0129,  0.0522,  0.1206]])
+parameter name actor.gc2.bias parameter value tensor([[ 0.0142,  0.0167, -0.1639,  0.2360,  0.1113]])
+parameter name actor.gc2.output_module.0.weight parameter value tensor([[ 0.0568, -0.0798, -0.0045, -0.1090, -0.1289,  0.0215,  0.0582,  0.0923,
+         -0.1412,  0.1565],
+        [-0.0703, -0.0412,  0.1201,  0.1059,  0.2995,  0.0817,  0.1343, -0.0405,
+          0.0575,  0.0498],
+        [ 0.1108, -0.0558,  0.0176,  0.0122, -0.0349, -0.1378,  0.0542, -0.0068,
+         -0.1045,  0.1231],
+        [-0.0889,  0.0559,  0.0743, -0.1637,  0.0809, -0.0004,  0.1065,  0.1647,
+          0.0897, -0.0355],
+        [ 0.0331,  0.0987,  0.0749, -0.0409,  0.0317,  0.0201,  0.0080,  0.0262,
+         -0.0550,  0.0168]])
+parameter name actor.gc2.output_module.2.weight parameter value tensor([[ 0.0033,  0.0364,  0.1120, -0.1073, -0.0023],
+        [ 0.1612, -0.0948,  0.3044, -0.1989,  0.0295],
+        [-0.0168,  0.0949, -0.0014,  0.1141,  0.0008],
+        [-0.0330,  0.1090,  0.1395, -0.2821,  0.1256],
+        [ 0.0969,  0.0706, -0.0123,  0.0110, -0.0963]])
+parameter name actor.gc3.weight parameter value tensor([[ 0.1425, -0.1459,  0.0941,  0.0106,  0.0833],
+        [ 0.1115,  0.1445,  0.0306, -0.0788, -0.1549],
+        [-0.0488, -0.0564, -0.0568,  0.0872,  0.0188],
+        [ 0.0027,  0.1529,  0.0501, -0.0692,  0.0533],
+        [-0.1118,  0.1025,  0.0661,  0.1121, -0.0398]])
+parameter name actor.gc3.weight_hat parameter value tensor([[-0.0853, -0.0732,  0.0322, -0.1444, -0.2212],
+        [ 0.0032, -0.0306, -0.0341,  0.0013,  0.2796],
+        [ 0.0160, -0.0577,  0.0010,  0.0400,  0.0873],
+        [-0.1263, -0.0921,  0.0232,  0.0547,  0.1057],
+        [-0.0988,  0.0802, -0.0158,  0.1063,  0.0583]])
+parameter name actor.gc3.bias parameter value tensor([[ 0.0767,  0.0861,  0.0410, -0.1750, -0.0906]])
+parameter name actor.gc3.output_module.0.weight parameter value tensor([[ 0.0445, -0.0910,  0.1823, -0.0516,  0.0840, -0.0401,  0.0596,  0.1461,
+          0.0380, -0.0315],
+        [-0.0345,  0.0238, -0.0711,  0.0583, -0.0419,  0.0150, -0.0509,  0.0697,
+          0.0535, -0.1063],
+        [-0.1494, -0.0129,  0.0456, -0.1233,  0.0580, -0.0285,  0.0933,  0.0376,
+          0.0255, -0.0758],
+        [-0.0700,  0.0671,  0.0303,  0.0719,  0.0767,  0.0939, -0.1181, -0.0562,
+         -0.0891,  0.0419],
+        [ 0.0511,  0.0221,  0.0203, -0.0069,  0.1176, -0.0089, -0.1018, -0.0661,
+         -0.0253, -0.0149]])
+parameter name actor.gc3.output_module.2.weight parameter value tensor([[ 0.0027, -0.0764,  0.0482, -0.0471, -0.1191],
+        [ 0.1382,  0.0365, -0.1480,  0.0470, -0.1616],
+        [-0.0498, -0.0203,  0.0588, -0.0106,  0.0605],
+        [-0.1619,  0.0619, -0.0488, -0.0431,  0.0949],
+        [-0.0570,  0.0392,  0.0863, -0.0850, -0.1919]])
+parameter name actor.gc4.weight parameter value tensor([[-0.0146,  0.2039,  0.0204,  0.0033,  0.0329],
+        [ 0.0873,  0.0445,  0.0240, -0.0244, -0.0040],
+        [ 0.0465,  0.0680, -0.0921, -0.1118, -0.0417],
+        [-0.0286,  0.0628,  0.0139,  0.0989,  0.0979],
+        [ 0.0510,  0.0694, -0.2386,  0.1234, -0.0465]])
+parameter name actor.gc4.weight_hat parameter value tensor([[-0.0237, -0.0696,  0.1259, -0.2663, -0.0129],
+        [-0.0390,  0.0986, -0.0688,  0.0450, -0.1141],
+        [-0.0333, -0.0803, -0.0615, -0.0953,  0.0360],
+        [-0.0362, -0.0522, -0.0485,  0.1029,  0.1440],
+        [-0.0661,  0.0608, -0.0688, -0.0065, -0.1291]])
+parameter name actor.gc4.bias parameter value tensor([[-0.1379, -0.0085, -0.1868,  0.0260,  0.0592]])
+parameter name actor.gc4.output_module.0.weight parameter value tensor([[ 0.0122,  0.0742,  0.0940,  0.1520,  0.0085, -0.0108,  0.0652, -0.0556,
+         -0.0330, -0.1303],
+        [ 0.0508, -0.1794,  0.0015, -0.0092,  0.1231,  0.1662, -0.0316,  0.0522,
+          0.0617,  0.0051],
+        [ 0.0005, -0.1026,  0.0087, -0.0242,  0.0920,  0.0337,  0.0450, -0.0160,
+         -0.0176, -0.0457],
+        [ 0.0596, -0.0417,  0.0297, -0.0312,  0.0785,  0.0037, -0.1209, -0.0337,
+          0.0028, -0.0967],
+        [ 0.0405, -0.0790,  0.1550,  0.0036,  0.0330,  0.0595, -0.0102, -0.0269,
+         -0.0334, -0.0528]])
+parameter name actor.gc4.output_module.2.weight parameter value tensor([[ 0.0627, -0.1708,  0.0943, -0.0937,  0.0201],
+        [ 0.0608,  0.0473, -0.0712,  0.0519,  0.0147],
+        [-0.0376, -0.0759,  0.0324,  0.0486, -0.1282],
+        [-0.0970, -0.0115,  0.0598, -0.1229,  0.1372],
+        [-0.0477, -0.0375, -0.0631,  0.0246,  0.0178]])
+parameter name actor.gc5.weight parameter value tensor([[ 0.0821],
+        [-0.2654],
+        [-0.0591],
+        [-0.1121],
+        [ 0.2557]])
+parameter name actor.gc5.weight_hat parameter value tensor([[-0.0507],
+        [ 0.0081],
+        [-0.0645],
+        [ 0.0029],
+        [ 0.1439]])
+parameter name actor.gc5.bias parameter value tensor([[-0.1630]])
+parameter name actor.gc5.output_module.0.weight parameter value tensor([[ 0.0132, -0.2904]])
+parameter name actor.gc5.output_module.2.weight parameter value tensor([[0.1417]])
+epochs 0 loss actor-151277888.0 train min_degreeperformance 8617.0 train gcn performance 248672.0 val min_degreeperformance 9081.0 val gcn performance 346771.0
+epochs 1 loss actor-127368616.0 train min_degreeperformance 8617.0 train gcn performance 207047.0 val min_degreeperformance 9081.0 val gcn performance 525273.0
+epochs 2 loss actor-291995744.0 train min_degreeperformance 8617.0 train gcn performance 564612.0 val min_degreeperformance 9081.0 val gcn performance 420755.0
+epochs 3 loss actor-243259888.0 train min_degreeperformance 8617.0 train gcn performance 433697.0 val min_degreeperformance 9081.0 val gcn performance 312781.0
+epochs 4 loss actor-232928096.0 train min_degreeperformance 8617.0 train gcn performance 362020.0 val min_degreeperformance 9081.0 val gcn performance 470334.0
+epochs 5 loss actor-218001856.0 train min_degreeperformance 8617.0 train gcn performance 400334.0 val min_degreeperformance 9081.0 val gcn performance 775428.0
+epochs 6 loss actor-48463424.0 train min_degreeperformance 8617.0 train gcn performance 775394.0 val min_degreeperformance 9081.0 val gcn performance 476788.0
+epochs 7 loss actor-241231424.0 train min_degreeperformance 8617.0 train gcn performance 433484.0 val min_degreeperformance 9081.0 val gcn performance 482476.0
+epochs 8 loss actor-220162272.0 train min_degreeperformance 8617.0 train gcn performance 516936.0 val min_degreeperformance 9081.0 val gcn performance 674933.0
+epochs 9 loss actor-242881712.0 train min_degreeperformance 8617.0 train gcn performance 667662.0 val min_degreeperformance 9081.0 val gcn performance 680665.0
+epochs 10 loss actor-259192832.0 train min_degreeperformance 8617.0 train gcn performance 675622.0 val min_degreeperformance 9081.0 val gcn performance 698585.0
+epochs 11 loss actor-239329072.0 train min_degreeperformance 8617.0 train gcn performance 695075.0 val min_degreeperformance 9081.0 val gcn performance 708433.0
+epochs 12 loss actor-202539840.0 train min_degreeperformance 8617.0 train gcn performance 716401.0 val min_degreeperformance 9081.0 val gcn performance 723465.0
+epochs 13 loss actor-205357824.0 train min_degreeperformance 8617.0 train gcn performance 723698.0 val min_degreeperformance 9081.0 val gcn performance 736183.0
+epochs 14 loss actor-288762592.0 train min_degreeperformance 8617.0 train gcn performance 725515.0 val min_degreeperformance 9081.0 val gcn performance 742745.0
+epochs 15 loss actor-319167136.0 train min_degreeperformance 8617.0 train gcn performance 734355.0 val min_degreeperformance 9081.0 val gcn performance 745917.0
+epochs 16 loss actor-217667680.0 train min_degreeperformance 8617.0 train gcn performance 749613.0 val min_degreeperformance 9081.0 val gcn performance 754155.0
+epochs 17 loss actor-163159200.0 train min_degreeperformance 8617.0 train gcn performance 757817.0 val min_degreeperformance 9081.0 val gcn performance 761889.0
+epochs 18 loss actor-552212032.0 train min_degreeperformance 8617.0 train gcn performance 756024.0 val min_degreeperformance 9081.0 val gcn performance 767554.0
+epochs 19 loss actor-352763136.0 train min_degreeperformance 8617.0 train gcn performance 765465.0 val min_degreeperformance 9081.0 val gcn performance 770954.0
+epochs 20 loss actor-125106416.0 train min_degreeperformance 8617.0 train gcn performance 770268.0 val min_degreeperformance 9081.0 val gcn performance 774185.0
+epochs 21 loss actor-454985408.0 train min_degreeperformance 8617.0 train gcn performance 771916.0 val min_degreeperformance 9081.0 val gcn performance 777033.0
+epochs 22 loss actor-289359744.0 train min_degreeperformance 8617.0 train gcn performance 774083.0 val min_degreeperformance 9081.0 val gcn performance 777163.0
+epochs 23 loss actor-98694376.0 train min_degreeperformance 8617.0 train gcn performance 776069.0 val min_degreeperformance 9081.0 val gcn performance 777930.0
+epochs 24 loss actor-523831200.0 train min_degreeperformance 8617.0 train gcn performance 776657.0 val min_degreeperformance 9081.0 val gcn performance 778457.0
+epochs 25 loss actor-82264848.0 train min_degreeperformance 8617.0 train gcn performance 778368.0 val min_degreeperformance 9081.0 val gcn performance 778618.0
+epochs 26 loss actor-2233492992.0 train min_degreeperformance 8617.0 train gcn performance 774260.0 val min_degreeperformance 9081.0 val gcn performance 778900.0
+epochs 27 loss actor-2000862848.0 train min_degreeperformance 8617.0 train gcn performance 776279.0 val min_degreeperformance 9081.0 val gcn performance 779315.0
+epochs 28 loss actor-2237356288.0 train min_degreeperformance 8617.0 train gcn performance 775875.0 val min_degreeperformance 9081.0 val gcn performance 779186.0
+epochs 29 loss actor-77889760.0 train min_degreeperformance 8617.0 train gcn performance 778676.0 val min_degreeperformance 9081.0 val gcn performance 778934.0
+epochs 30 loss actor-3067717376.0 train min_degreeperformance 8617.0 train gcn performance 775661.0 val min_degreeperformance 9081.0 val gcn performance 779231.0
+epochs 31 loss actor-92244096.0 train min_degreeperformance 8617.0 train gcn performance 778469.0 val min_degreeperformance 9081.0 val gcn performance 779406.0
+epochs 32 loss actor-86053816.0 train min_degreeperformance 8617.0 train gcn performance 778872.0 val min_degreeperformance 9081.0 val gcn performance 779030.0
+epochs 33 loss actor-3747885056.0 train min_degreeperformance 8617.0 train gcn performance 776658.0 val min_degreeperformance 9081.0 val gcn performance 778969.0
+epochs 34 loss actor-2678402304.0 train min_degreeperformance 8617.0 train gcn performance 777972.0 val min_degreeperformance 9081.0 val gcn performance 779164.0
+epochs 35 loss actor-3170175744.0 train min_degreeperformance 8617.0 train gcn performance 776691.0 val min_degreeperformance 9081.0 val gcn performance 778805.0
+epochs 36 loss actor-82671048.0 train min_degreeperformance 8617.0 train gcn performance 779305.0 val min_degreeperformance 9081.0 val gcn performance 779174.0
+epochs 37 loss actor-74100040.0 train min_degreeperformance 8617.0 train gcn performance 779393.0 val min_degreeperformance 9081.0 val gcn performance 779169.0
+epochs 38 loss actor-78381616.0 train min_degreeperformance 8617.0 train gcn performance 779055.0 val min_degreeperformance 9081.0 val gcn performance 779142.0
+epochs 39 loss actor-1387797504.0 train min_degreeperformance 8617.0 train gcn performance 777849.0 val min_degreeperformance 9081.0 val gcn performance 779022.0
+epochs 40 loss actor-111050128.0 train min_degreeperformance 8617.0 train gcn performance 778398.0 val min_degreeperformance 9081.0 val gcn performance 779082.0
+epochs 41 loss actor-93437720.0 train min_degreeperformance 8617.0 train gcn performance 779111.0 val min_degreeperformance 9081.0 val gcn performance 778995.0
+epochs 42 loss actor-87406104.0 train min_degreeperformance 8617.0 train gcn performance 778902.0 val min_degreeperformance 9081.0 val gcn performance 778913.0
+epochs 43 loss actor-168922832.0 train min_degreeperformance 8617.0 train gcn performance 778147.0 val min_degreeperformance 9081.0 val gcn performance 778839.0
+epochs 44 loss actor-11106188288.0 train min_degreeperformance 8617.0 train gcn performance 776304.0 val min_degreeperformance 9081.0 val gcn performance 779238.0
+epochs 45 loss actor-126012832.0 train min_degreeperformance 8617.0 train gcn performance 779125.0 val min_degreeperformance 9081.0 val gcn performance 778954.0
+epochs 46 loss actor-8116362240.0 train min_degreeperformance 8617.0 train gcn performance 777208.0 val min_degreeperformance 9081.0 val gcn performance 778721.0
+epochs 47 loss actor-88558512.0 train min_degreeperformance 8617.0 train gcn performance 778945.0 val min_degreeperformance 9081.0 val gcn performance 779069.0
+epochs 48 loss actor-9473470464.0 train min_degreeperformance 8617.0 train gcn performance 777680.0 val min_degreeperformance 9081.0 val gcn performance 779137.0
+epochs 49 loss actor-8255920128.0 train min_degreeperformance 8617.0 train gcn performance 777647.0 val min_degreeperformance 9081.0 val gcn performance 779029.0
+epochs 50 loss actor-14444496896.0 train min_degreeperformance 8617.0 train gcn performance 777038.0 val min_degreeperformance 9081.0 val gcn performance 779116.0
+epochs 51 loss actor-177580736.0 train min_degreeperformance 8617.0 train gcn performance 778842.0 val min_degreeperformance 9081.0 val gcn performance 779107.0
+epochs 52 loss actor-92460744.0 train min_degreeperformance 8617.0 train gcn performance 778885.0 val min_degreeperformance 9081.0 val gcn performance 779131.0
+epochs 53 loss actor-131884496.0 train min_degreeperformance 8617.0 train gcn performance 778574.0 val min_degreeperformance 9081.0 val gcn performance 779152.0
+epochs 54 loss actor-31178117120.0 train min_degreeperformance 8617.0 train gcn performance 776089.0 val min_degreeperformance 9081.0 val gcn performance 779036.0
+epochs 55 loss actor-493283840.0 train min_degreeperformance 8617.0 train gcn performance 778797.0 val min_degreeperformance 9081.0 val gcn performance 779015.0
+epochs 56 loss actor-207054256.0 train min_degreeperformance 8617.0 train gcn performance 778441.0 val min_degreeperformance 9081.0 val gcn performance 778868.0
+epochs 57 loss actor-19783481344.0 train min_degreeperformance 8617.0 train gcn performance 777625.0 val min_degreeperformance 9081.0 val gcn performance 778919.0
+epochs 58 loss actor-20104353792.0 train min_degreeperformance 8617.0 train gcn performance 777249.0 val min_degreeperformance 9081.0 val gcn performance 778973.0
+epochs 59 loss actor-8468533760.0 train min_degreeperformance 8617.0 train gcn performance 777382.0 val min_degreeperformance 9081.0 val gcn performance 778852.0
+epochs 60 loss actor-10641059840.0 train min_degreeperformance 8617.0 train gcn performance 777220.0 val min_degreeperformance 9081.0 val gcn performance 778880.0
+epochs 61 loss actor-191838000.0 train min_degreeperformance 8617.0 train gcn performance 778957.0 val min_degreeperformance 9081.0 val gcn performance 778769.0
+epochs 62 loss actor-156228848.0 train min_degreeperformance 8617.0 train gcn performance 778942.0 val min_degreeperformance 9081.0 val gcn performance 778999.0
+epochs 63 loss actor-300902720.0 train min_degreeperformance 8617.0 train gcn performance 778643.0 val min_degreeperformance 9081.0 val gcn performance 778953.0
+epochs 64 loss actor-52355063808.0 train min_degreeperformance 8617.0 train gcn performance 776410.0 val min_degreeperformance 9081.0 val gcn performance 779026.0
+epochs 65 loss actor-14349793280.0 train min_degreeperformance 8617.0 train gcn performance 777303.0 val min_degreeperformance 9081.0 val gcn performance 779266.0
+epochs 66 loss actor-41586909184.0 train min_degreeperformance 8617.0 train gcn performance 775727.0 val min_degreeperformance 9081.0 val gcn performance 778732.0
+epochs 67 loss actor-20555468800.0 train min_degreeperformance 8617.0 train gcn performance 777270.0 val min_degreeperformance 9081.0 val gcn performance 779165.0
+epochs 68 loss actor-53858275328.0 train min_degreeperformance 8617.0 train gcn performance 776439.0 val min_degreeperformance 9081.0 val gcn performance 779064.0
+epochs 69 loss actor-413660640.0 train min_degreeperformance 8617.0 train gcn performance 778619.0 val min_degreeperformance 9081.0 val gcn performance 779221.0
+epochs 70 loss actor-45853155328.0 train min_degreeperformance 8617.0 train gcn performance 777281.0 val min_degreeperformance 9081.0 val gcn performance 778974.0
+epochs 71 loss actor-104851768.0 train min_degreeperformance 8617.0 train gcn performance 778731.0 val min_degreeperformance 9081.0 val gcn performance 778924.0
+epochs 72 loss actor-1889273856.0 train min_degreeperformance 8617.0 train gcn performance 778191.0 val min_degreeperformance 9081.0 val gcn performance 779072.0
+epochs 73 loss actor-161764816.0 train min_degreeperformance 8617.0 train gcn performance 778789.0 val min_degreeperformance 9081.0 val gcn performance 778980.0
+epochs 74 loss actor-43069341696.0 train min_degreeperformance 8617.0 train gcn performance 777725.0 val min_degreeperformance 9081.0 val gcn performance 779274.0
+epochs 75 loss actor-28141967360.0 train min_degreeperformance 8617.0 train gcn performance 776632.0 val min_degreeperformance 9081.0 val gcn performance 778971.0
+epochs 76 loss actor-113672871936.0 train min_degreeperformance 8617.0 train gcn performance 774691.0 val min_degreeperformance 9081.0 val gcn performance 778995.0
+epochs 77 loss actor-259045474304.0 train min_degreeperformance 8617.0 train gcn performance 772758.0 val min_degreeperformance 9081.0 val gcn performance 779015.0
+epochs 78 loss actor-39398019072.0 train min_degreeperformance 8617.0 train gcn performance 777717.0 val min_degreeperformance 9081.0 val gcn performance 778900.0
+epochs 79 loss actor-109162560.0 train min_degreeperformance 8617.0 train gcn performance 779025.0 val min_degreeperformance 9081.0 val gcn performance 779003.0
+epochs 80 loss actor-37656150016.0 train min_degreeperformance 8617.0 train gcn performance 776459.0 val min_degreeperformance 9081.0 val gcn performance 779210.0
+epochs 81 loss actor-104138940416.0 train min_degreeperformance 8617.0 train gcn performance 776453.0 val min_degreeperformance 9081.0 val gcn performance 778979.0
+epochs 82 loss actor-82332131328.0 train min_degreeperformance 8617.0 train gcn performance 777084.0 val min_degreeperformance 9081.0 val gcn performance 778927.0
+epochs 83 loss actor-815537536.0 train min_degreeperformance 8617.0 train gcn performance 778922.0 val min_degreeperformance 9081.0 val gcn performance 778902.0
+epochs 84 loss actor-74697474048.0 train min_degreeperformance 8617.0 train gcn performance 777477.0 val min_degreeperformance 9081.0 val gcn performance 778999.0
+epochs 85 loss actor-750553408.0 train min_degreeperformance 8617.0 train gcn performance 779156.0 val min_degreeperformance 9081.0 val gcn performance 779210.0
+epochs 86 loss actor-129085906944.0 train min_degreeperformance 8617.0 train gcn performance 776395.0 val min_degreeperformance 9081.0 val gcn performance 778907.0
+epochs 87 loss actor-365435552.0 train min_degreeperformance 8617.0 train gcn performance 778745.0 val min_degreeperformance 9081.0 val gcn performance 779130.0
+epochs 88 loss actor-1221780864.0 train min_degreeperformance 8617.0 train gcn performance 778053.0 val min_degreeperformance 9081.0 val gcn performance 779073.0
+epochs 89 loss actor-119431372800.0 train min_degreeperformance 8617.0 train gcn performance 777316.0 val min_degreeperformance 9081.0 val gcn performance 778873.0
+epochs 90 loss actor-39443873792.0 train min_degreeperformance 8617.0 train gcn performance 777796.0 val min_degreeperformance 9081.0 val gcn performance 779066.0
+epochs 91 loss actor-133329051648.0 train min_degreeperformance 8617.0 train gcn performance 777516.0 val min_degreeperformance 9081.0 val gcn performance 778559.0
+epochs 92 loss actor-103289240.0 train min_degreeperformance 8617.0 train gcn performance 779309.0 val min_degreeperformance 9081.0 val gcn performance 779211.0
+epochs 93 loss actor-208592846848.0 train min_degreeperformance 8617.0 train gcn performance 776598.0 val min_degreeperformance 9081.0 val gcn performance 779417.0
+epochs 94 loss actor-89194799104.0 train min_degreeperformance 8617.0 train gcn performance 777887.0 val min_degreeperformance 9081.0 val gcn performance 778923.0
+epochs 95 loss actor-3424311808.0 train min_degreeperformance 8617.0 train gcn performance 777878.0 val min_degreeperformance 9081.0 val gcn performance 779157.0
+epochs 96 loss actor-150881665024.0 train min_degreeperformance 8617.0 train gcn performance 777767.0 val min_degreeperformance 9081.0 val gcn performance 779342.0
+epochs 97 loss actor-875719936.0 train min_degreeperformance 8617.0 train gcn performance 778584.0 val min_degreeperformance 9081.0 val gcn performance 778843.0
+epochs 98 loss actor-147923255296.0 train min_degreeperformance 8617.0 train gcn performance 777188.0 val min_degreeperformance 9081.0 val gcn performance 779093.0
+epochs 99 loss actor-103494393856.0 train min_degreeperformance 8617.0 train gcn performance 777408.0 val min_degreeperformance 9081.0 val gcn performance 779054.0
+epochs 100 loss actor-73172016.0 train min_degreeperformance 8617.0 train gcn performance 778974.0 val min_degreeperformance 9081.0 val gcn performance 779184.0
+epochs 101 loss actor-1062469824.0 train min_degreeperformance 8617.0 train gcn performance 778338.0 val min_degreeperformance 9081.0 val gcn performance 778788.0
+epochs 102 loss actor-135286767616.0 train min_degreeperformance 8617.0 train gcn performance 777949.0 val min_degreeperformance 9081.0 val gcn performance 778893.0
+epochs 103 loss actor-202271965184.0 train min_degreeperformance 8617.0 train gcn performance 778073.0 val min_degreeperformance 9081.0 val gcn performance 778882.0
+epochs 104 loss actor-169812213760.0 train min_degreeperformance 8617.0 train gcn performance 776808.0 val min_degreeperformance 9081.0 val gcn performance 779373.0
+epochs 105 loss actor-369134108672.0 train min_degreeperformance 8617.0 train gcn performance 776680.0 val min_degreeperformance 9081.0 val gcn performance 779296.0
+epochs 106 loss actor-655919232.0 train min_degreeperformance 8617.0 train gcn performance 779141.0 val min_degreeperformance 9081.0 val gcn performance 778957.0
+epochs 107 loss actor-231013957632.0 train min_degreeperformance 8617.0 train gcn performance 776674.0 val min_degreeperformance 9081.0 val gcn performance 779014.0
+epochs 108 loss actor-3939584768.0 train min_degreeperformance 8617.0 train gcn performance 778138.0 val min_degreeperformance 9081.0 val gcn performance 779207.0
+epochs 109 loss actor-439312515072.0 train min_degreeperformance 8617.0 train gcn performance 774538.0 val min_degreeperformance 9081.0 val gcn performance 779205.0
+epochs 110 loss actor-271369120.0 train min_degreeperformance 8617.0 train gcn performance 778818.0 val min_degreeperformance 9081.0 val gcn performance 778951.0
+epochs 111 loss actor-2855574528.0 train min_degreeperformance 8617.0 train gcn performance 778461.0 val min_degreeperformance 9081.0 val gcn performance 779253.0
+epochs 112 loss actor-150674915328.0 train min_degreeperformance 8617.0 train gcn performance 776651.0 val min_degreeperformance 9081.0 val gcn performance 779026.0
+epochs 113 loss actor-285277552640.0 train min_degreeperformance 8617.0 train gcn performance 777440.0 val min_degreeperformance 9081.0 val gcn performance 779056.0
+epochs 114 loss actor-317392977920.0 train min_degreeperformance 8617.0 train gcn performance 777356.0 val min_degreeperformance 9081.0 val gcn performance 778870.0
+epochs 115 loss actor-757806784.0 train min_degreeperformance 8617.0 train gcn performance 778817.0 val min_degreeperformance 9081.0 val gcn performance 779137.0
+epochs 116 loss actor-314559135744.0 train min_degreeperformance 8617.0 train gcn performance 777457.0 val min_degreeperformance 9081.0 val gcn performance 778997.0
+epochs 117 loss actor-1486125952.0 train min_degreeperformance 8617.0 train gcn performance 778732.0 val min_degreeperformance 9081.0 val gcn performance 779172.0
+epochs 118 loss actor-326745161728.0 train min_degreeperformance 8617.0 train gcn performance 777782.0 val min_degreeperformance 9081.0 val gcn performance 779043.0
+epochs 119 loss actor-15908429824.0 train min_degreeperformance 8617.0 train gcn performance 778256.0 val min_degreeperformance 9081.0 val gcn performance 779161.0
+epochs 120 loss actor-342673129472.0 train min_degreeperformance 8617.0 train gcn performance 777851.0 val min_degreeperformance 9081.0 val gcn performance 779073.0
+epochs 121 loss actor-1997494400.0 train min_degreeperformance 8617.0 train gcn performance 778683.0 val min_degreeperformance 9081.0 val gcn performance 778932.0
+epochs 122 loss actor-2095903616.0 train min_degreeperformance 8617.0 train gcn performance 779010.0 val min_degreeperformance 9081.0 val gcn performance 779197.0
+epochs 123 loss actor-567194484736.0 train min_degreeperformance 8617.0 train gcn performance 776420.0 val min_degreeperformance 9081.0 val gcn performance 778922.0
+epochs 124 loss actor-642073493504.0 train min_degreeperformance 8617.0 train gcn performance 775705.0 val min_degreeperformance 9081.0 val gcn performance 778885.0
+epochs 125 loss actor-379109736448.0 train min_degreeperformance 8617.0 train gcn performance 778096.0 val min_degreeperformance 9081.0 val gcn performance 779256.0
+epochs 126 loss actor-833289125888.0 train min_degreeperformance 8617.0 train gcn performance 776658.0 val min_degreeperformance 9081.0 val gcn performance 779126.0
+epochs 127 loss actor-471705976832.0 train min_degreeperformance 8617.0 train gcn performance 777859.0 val min_degreeperformance 9081.0 val gcn performance 779252.0
+epochs 128 loss actor-2584083200.0 train min_degreeperformance 8617.0 train gcn performance 778658.0 val min_degreeperformance 9081.0 val gcn performance 778799.0
+epochs 129 loss actor-82902288.0 train min_degreeperformance 8617.0 train gcn performance 779008.0 val min_degreeperformance 9081.0 val gcn performance 778894.0
+epochs 130 loss actor-825488703488.0 train min_degreeperformance 8617.0 train gcn performance 776151.0 val min_degreeperformance 9081.0 val gcn performance 778865.0
+epochs 131 loss actor-509469556736.0 train min_degreeperformance 8617.0 train gcn performance 778041.0 val min_degreeperformance 9081.0 val gcn performance 779108.0
+epochs 132 loss actor-1505758464.0 train min_degreeperformance 8617.0 train gcn performance 778983.0 val min_degreeperformance 9081.0 val gcn performance 778720.0
+epochs 133 loss actor-745999936.0 train min_degreeperformance 8617.0 train gcn performance 779197.0 val min_degreeperformance 9081.0 val gcn performance 779052.0
+epochs 134 loss actor-576012812288.0 train min_degreeperformance 8617.0 train gcn performance 777235.0 val min_degreeperformance 9081.0 val gcn performance 779029.0
+epochs 135 loss actor-12718566400.0 train min_degreeperformance 8617.0 train gcn performance 778469.0 val min_degreeperformance 9081.0 val gcn performance 778815.0
+epochs 136 loss actor-1215452938240.0 train min_degreeperformance 8617.0 train gcn performance 776093.0 val min_degreeperformance 9081.0 val gcn performance 778920.0
+epochs 137 loss actor-1211700224.0 train min_degreeperformance 8617.0 train gcn performance 779060.0 val min_degreeperformance 9081.0 val gcn performance 778702.0
+epochs 138 loss actor-535202988032.0 train min_degreeperformance 8617.0 train gcn performance 777719.0 val min_degreeperformance 9081.0 val gcn performance 778877.0
+epochs 139 loss actor-1420180848640.0 train min_degreeperformance 8617.0 train gcn performance 776427.0 val min_degreeperformance 9081.0 val gcn performance 779258.0
+epochs 140 loss actor-607701827584.0 train min_degreeperformance 8617.0 train gcn performance 777566.0 val min_degreeperformance 9081.0 val gcn performance 779129.0
+epochs 141 loss actor-781132824576.0 train min_degreeperformance 8617.0 train gcn performance 778022.0 val min_degreeperformance 9081.0 val gcn performance 778717.0
+epochs 142 loss actor-1873147520.0 train min_degreeperformance 8617.0 train gcn performance 778944.0 val min_degreeperformance 9081.0 val gcn performance 778789.0
+epochs 143 loss actor-3016991178752.0 train min_degreeperformance 8617.0 train gcn performance 773991.0 val min_degreeperformance 9081.0 val gcn performance 779019.0
+epochs 144 loss actor-889108692992.0 train min_degreeperformance 8617.0 train gcn performance 778074.0 val min_degreeperformance 9081.0 val gcn performance 779108.0
+epochs 145 loss actor-578915991552.0 train min_degreeperformance 8617.0 train gcn performance 777222.0 val min_degreeperformance 9081.0 val gcn performance 779012.0
+epochs 146 loss actor-8250719232.0 train min_degreeperformance 8617.0 train gcn performance 778397.0 val min_degreeperformance 9081.0 val gcn performance 778903.0
+epochs 147 loss actor-10685053952.0 train min_degreeperformance 8617.0 train gcn performance 778207.0 val min_degreeperformance 9081.0 val gcn performance 778837.0
+epochs 148 loss actor-1356096471040.0 train min_degreeperformance 8617.0 train gcn performance 776170.0 val min_degreeperformance 9081.0 val gcn performance 779273.0
+epochs 149 loss actor-1864463548416.0 train min_degreeperformance 8617.0 train gcn performance 776030.0 val min_degreeperformance 9081.0 val gcn performance 779192.0
+epochs 150 loss actor-1343817344.0 train min_degreeperformance 8617.0 train gcn performance 778865.0 val min_degreeperformance 9081.0 val gcn performance 778994.0
+epochs 151 loss actor-1369113088.0 train min_degreeperformance 8617.0 train gcn performance 778997.0 val min_degreeperformance 9081.0 val gcn performance 778968.0
+epochs 152 loss actor-2229862924288.0 train min_degreeperformance 8617.0 train gcn performance 775328.0 val min_degreeperformance 9081.0 val gcn performance 779166.0
+epochs 153 loss actor-2851208448.0 train min_degreeperformance 8617.0 train gcn performance 778632.0 val min_degreeperformance 9081.0 val gcn performance 778782.0
+epochs 154 loss actor-1209506856960.0 train min_degreeperformance 8617.0 train gcn performance 777762.0 val min_degreeperformance 9081.0 val gcn performance 778980.0
+epochs 155 loss actor-72818720.0 train min_degreeperformance 8617.0 train gcn performance 779172.0 val min_degreeperformance 9081.0 val gcn performance 779199.0
+epochs 156 loss actor-1235968327680.0 train min_degreeperformance 8617.0 train gcn performance 777313.0 val min_degreeperformance 9081.0 val gcn performance 778959.0
+epochs 157 loss actor-34653818880.0 train min_degreeperformance 8617.0 train gcn performance 778144.0 val min_degreeperformance 9081.0 val gcn performance 779303.0
+epochs 158 loss actor-953663815680.0 train min_degreeperformance 8617.0 train gcn performance 777179.0 val min_degreeperformance 9081.0 val gcn performance 778892.0
+epochs 159 loss actor-2032734208.0 train min_degreeperformance 8617.0 train gcn performance 779179.0 val min_degreeperformance 9081.0 val gcn performance 778855.0
+epochs 160 loss actor-11828861952.0 train min_degreeperformance 8617.0 train gcn performance 778435.0 val min_degreeperformance 9081.0 val gcn performance 778929.0
+epochs 161 loss actor-1071023849472.0 train min_degreeperformance 8617.0 train gcn performance 777084.0 val min_degreeperformance 9081.0 val gcn performance 778696.0
+epochs 162 loss actor-4866266112.0 train min_degreeperformance 8617.0 train gcn performance 778646.0 val min_degreeperformance 9081.0 val gcn performance 779062.0
+epochs 163 loss actor-1237312077824.0 train min_degreeperformance 8617.0 train gcn performance 777789.0 val min_degreeperformance 9081.0 val gcn performance 779471.0
+epochs 164 loss actor-2593321648128.0 train min_degreeperformance 8617.0 train gcn performance 776760.0 val min_degreeperformance 9081.0 val gcn performance 779277.0
+epochs 165 loss actor-712836448256.0 train min_degreeperformance 8617.0 train gcn performance 777858.0 val min_degreeperformance 9081.0 val gcn performance 778805.0
+epochs 166 loss actor-2405379080192.0 train min_degreeperformance 8617.0 train gcn performance 776461.0 val min_degreeperformance 9081.0 val gcn performance 779169.0
+epochs 167 loss actor-1394659200.0 train min_degreeperformance 8617.0 train gcn performance 778839.0 val min_degreeperformance 9081.0 val gcn performance 779069.0
+epochs 168 loss actor-779076501504.0 train min_degreeperformance 8617.0 train gcn performance 777189.0 val min_degreeperformance 9081.0 val gcn performance 778816.0
+epochs 169 loss actor-1348106977280.0 train min_degreeperformance 8617.0 train gcn performance 777682.0 val min_degreeperformance 9081.0 val gcn performance 779116.0
+epochs 170 loss actor-4802580316160.0 train min_degreeperformance 8617.0 train gcn performance 774979.0 val min_degreeperformance 9081.0 val gcn performance 779112.0
+epochs 171 loss actor-1502501404672.0 train min_degreeperformance 8617.0 train gcn performance 777587.0 val min_degreeperformance 9081.0 val gcn performance 779220.0
+epochs 172 loss actor-1856620462080.0 train min_degreeperformance 8617.0 train gcn performance 776586.0 val min_degreeperformance 9081.0 val gcn performance 779136.0
+epochs 173 loss actor-17059932160.0 train min_degreeperformance 8617.0 train gcn performance 778901.0 val min_degreeperformance 9081.0 val gcn performance 778802.0
+epochs 174 loss actor-1810791006208.0 train min_degreeperformance 8617.0 train gcn performance 777858.0 val min_degreeperformance 9081.0 val gcn performance 778895.0
+epochs 175 loss actor-2344018771968.0 train min_degreeperformance 8617.0 train gcn performance 776621.0 val min_degreeperformance 9081.0 val gcn performance 778949.0
+epochs 176 loss actor-73144992.0 train min_degreeperformance 8617.0 train gcn performance 779257.0 val min_degreeperformance 9081.0 val gcn performance 778863.0
+epochs 177 loss actor-1671044923392.0 train min_degreeperformance 8617.0 train gcn performance 777706.0 val min_degreeperformance 9081.0 val gcn performance 779232.0
+epochs 178 loss actor-30387447808.0 train min_degreeperformance 8617.0 train gcn performance 778345.0 val min_degreeperformance 9081.0 val gcn performance 778979.0
+epochs 179 loss actor-634560774144.0 train min_degreeperformance 8617.0 train gcn performance 778011.0 val min_degreeperformance 9081.0 val gcn performance 778790.0
+epochs 180 loss actor-72949880.0 train min_degreeperformance 8617.0 train gcn performance 779051.0 val min_degreeperformance 9081.0 val gcn performance 778923.0
+epochs 181 loss actor-22292467712.0 train min_degreeperformance 8617.0 train gcn performance 778212.0 val min_degreeperformance 9081.0 val gcn performance 779122.0
+epochs 182 loss actor-46856212480.0 train min_degreeperformance 8617.0 train gcn performance 778736.0 val min_degreeperformance 9081.0 val gcn performance 778894.0
+epochs 183 loss actor-19214501888.0 train min_degreeperformance 8617.0 train gcn performance 778566.0 val min_degreeperformance 9081.0 val gcn performance 779212.0
+epochs 184 loss actor-2146681728.0 train min_degreeperformance 8617.0 train gcn performance 778874.0 val min_degreeperformance 9081.0 val gcn performance 779181.0
+epochs 185 loss actor-4041708666880.0 train min_degreeperformance 8617.0 train gcn performance 776619.0 val min_degreeperformance 9081.0 val gcn performance 779149.0
+epochs 186 loss actor-1486673936384.0 train min_degreeperformance 8617.0 train gcn performance 777236.0 val min_degreeperformance 9081.0 val gcn performance 779191.0
+epochs 187 loss actor-3412474986496.0 train min_degreeperformance 8617.0 train gcn performance 776361.0 val min_degreeperformance 9081.0 val gcn performance 779041.0
+epochs 188 loss actor-4367484977152.0 train min_degreeperformance 8617.0 train gcn performance 776057.0 val min_degreeperformance 9081.0 val gcn performance 779074.0
+epochs 189 loss actor-2250606903296.0 train min_degreeperformance 8617.0 train gcn performance 777623.0 val min_degreeperformance 9081.0 val gcn performance 779504.0
+epochs 190 loss actor-2249077555200.0 train min_degreeperformance 8617.0 train gcn performance 777669.0 val min_degreeperformance 9081.0 val gcn performance 778869.0
+epochs 191 loss actor-14404026368.0 train min_degreeperformance 8617.0 train gcn performance 778643.0 val min_degreeperformance 9081.0 val gcn performance 779237.0
+epochs 192 loss actor-2546590285824.0 train min_degreeperformance 8617.0 train gcn performance 777716.0 val min_degreeperformance 9081.0 val gcn performance 779207.0
+epochs 193 loss actor-2504169357312.0 train min_degreeperformance 8617.0 train gcn performance 776383.0 val min_degreeperformance 9081.0 val gcn performance 778914.0
+epochs 194 loss actor-2649715638272.0 train min_degreeperformance 8617.0 train gcn performance 776936.0 val min_degreeperformance 9081.0 val gcn performance 778809.0
+epochs 195 loss actor-33497057280.0 train min_degreeperformance 8617.0 train gcn performance 778853.0 val min_degreeperformance 9081.0 val gcn performance 778755.0
+epochs 196 loss actor-2782743232512.0 train min_degreeperformance 8617.0 train gcn performance 777268.0 val min_degreeperformance 9081.0 val gcn performance 779318.0
+epochs 197 loss actor-1509822824448.0 train min_degreeperformance 8617.0 train gcn performance 777615.0 val min_degreeperformance 9081.0 val gcn performance 778740.0
+epochs 198 loss actor-2904196382720.0 train min_degreeperformance 8617.0 train gcn performance 778105.0 val min_degreeperformance 9081.0 val gcn performance 778868.0
+epochs 199 loss actor-7390089728.0 train min_degreeperformance 8617.0 train gcn performance 779068.0 val min_degreeperformance 9081.0 val gcn performance 779171.0
+epochs 200 loss actor-2497688633344.0 train min_degreeperformance 8617.0 train gcn performance 776984.0 val min_degreeperformance 9081.0 val gcn performance 779079.0
+epochs 201 loss actor-4897657847808.0 train min_degreeperformance 8617.0 train gcn performance 776061.0 val min_degreeperformance 9081.0 val gcn performance 779153.0
+epochs 202 loss actor-2509122048.0 train min_degreeperformance 8617.0 train gcn performance 779167.0 val min_degreeperformance 9081.0 val gcn performance 778983.0
+epochs 203 loss actor-2806615638016.0 train min_degreeperformance 8617.0 train gcn performance 776956.0 val min_degreeperformance 9081.0 val gcn performance 779163.0
+epochs 204 loss actor-9066204160.0 train min_degreeperformance 8617.0 train gcn performance 778674.0 val min_degreeperformance 9081.0 val gcn performance 779022.0
+epochs 205 loss actor-27135510528.0 train min_degreeperformance 8617.0 train gcn performance 778492.0 val min_degreeperformance 9081.0 val gcn performance 779183.0
+epochs 206 loss actor-2034670336.0 train min_degreeperformance 8617.0 train gcn performance 779057.0 val min_degreeperformance 9081.0 val gcn performance 778650.0
+epochs 207 loss actor-1614210924544.0 train min_degreeperformance 8617.0 train gcn performance 778092.0 val min_degreeperformance 9081.0 val gcn performance 778964.0
+epochs 208 loss actor-5571329536.0 train min_degreeperformance 8617.0 train gcn performance 779064.0 val min_degreeperformance 9081.0 val gcn performance 779262.0
+epochs 209 loss actor-4097182793728.0 train min_degreeperformance 8617.0 train gcn performance 776627.0 val min_degreeperformance 9081.0 val gcn performance 779467.0
+epochs 210 loss actor-3373218398208.0 train min_degreeperformance 8617.0 train gcn performance 777519.0 val min_degreeperformance 9081.0 val gcn performance 779033.0
+epochs 211 loss actor-3596321030144.0 train min_degreeperformance 8617.0 train gcn performance 776554.0 val min_degreeperformance 9081.0 val gcn performance 779146.0
+epochs 212 loss actor-75863312.0 train min_degreeperformance 8617.0 train gcn performance 778719.0 val min_degreeperformance 9081.0 val gcn performance 779076.0
