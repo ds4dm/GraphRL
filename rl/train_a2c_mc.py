@@ -101,7 +101,8 @@ class TrainModel_MC:
                 val_mind = []
                 train_mind = []
 
-                av_loss_train = 0  # loss per epochs
+                av_loss_train = 0  # loss per epoch
+                n_graphs_train = 0
                 av_loss_critic_train = 0
                 for X in self.train_loader:
                     for x in X:
@@ -258,6 +259,7 @@ class TrainModel_MC:
                             del self.model.values[:]
 
                     av_loss_train += total_loss_train_1graph
+                    n_graphs_train += 1
                     if use_critic:
                         av_loss_critic_train += total_loss_critic_train_1graph
 
@@ -353,6 +355,7 @@ class TrainModel_MC:
 
             else:
                 av_loss_train = 0  # loss per epochs
+                n_graphs_train = 0
                 av_loss_critic_train = 0
                 # ratio_gcn2rand = []
                 n_graphs_proceed = 0
@@ -522,6 +525,7 @@ class TrainModel_MC:
 
 
                     av_loss_train += total_loss_train_1graph
+                    n_graphs_train += 1
                     if use_critic:
                         av_loss_critic_train += total_loss_critic_train_1graph
 
@@ -606,6 +610,8 @@ class TrainModel_MC:
             _train_ave_gcn = np.sum(train_gcn_greedy) / len(train_gcn_greedy)
             _critic_value_ave = np.sum(critic_value) / len(critic_value)
 
+            _av_loss_train = av_loss_train/n_graphs_train
+
             if epoch == 0:
                 val_mind = np.array(val_mind).reshape(-1)
                 train_mind = np.array(train_mind).reshape(-1)
@@ -616,7 +622,7 @@ class TrainModel_MC:
 
             if use_critic:
                 print('epochs {}'.format(epoch),
-                      'loss actor {}'.format(av_loss_train),
+                      'loss actor {}'.format(_av_loss_train),
                       'loss critic {}'.format(av_loss_critic_train),
                       'train ' + self.heuristic + 'performance {}'.format(_train_ave_mind),
                       'train gcn performance {}'.format(-_train_ave_gcn),
@@ -626,7 +632,7 @@ class TrainModel_MC:
                       )
             else:
                 print('epochs {}'.format(epoch),
-                      'loss actor{}'.format(av_loss_train),
+                      'loss actor{}'.format(_av_loss_train),
                       'train '+ self.heuristic + 'performance {}'.format(_train_ave_mind),
                       'train gcn performance {}'.format(-_train_ave_gcn),
                       'val ' + self.heuristic + 'performance {}'.format(_val_ave_mind),
