@@ -604,10 +604,10 @@ class GCN_Sparse_Policy_Baseline1(nn.Module):
         super(GCN_Sparse_Policy_Baseline1, self).__init__()
 
         self.gc1 = MessagePassing_GNN_Layer_Sparse_Memory(nin, nhidden) # first graph conv layer
-        # self.gc2 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
-        # self.gc3 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)
-        self.gc2 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)
-        self.gc3 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nout) # second graph conv layer
+        self.gc2 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc3 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)
+        self.gc4 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)
+        self.gc5 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nout) # second graph conv layer
         self.dropout = dropout
 
 
@@ -617,13 +617,13 @@ class GCN_Sparse_Policy_Baseline1(nn.Module):
         features = self.gc1(features, adj_matrix)
         features = F.relu(features)
 
-        # features = self.gc2(features, adj_matrix)
-        # features = F.relu(features)
-        #
-        # features = self.gc3(features, adj_matrix)
-        # features = F.relu(features)
+        features = self.gc2(features, adj_matrix)
+        features = F.relu(features)
 
-        features_hidden = self.gc2(features, adj_matrix)
+        features = self.gc3(features, adj_matrix)
+        features = F.relu(features)
+
+        features_hidden = self.gc4(features, adj_matrix)
         features_out = F.relu(features_hidden)
 
         #
@@ -635,7 +635,7 @@ class GCN_Sparse_Policy_Baseline1(nn.Module):
 
 
         # output layer with softmax
-        features_out = self.gc3(features_out, adj_matrix)
+        features_out = self.gc5(features_out, adj_matrix)
         probs = F.log_softmax(features_out.t())
         probs = probs.t()
 
