@@ -9,7 +9,7 @@ from utils.utils import open_dataset, varname
 from rl.model_a2c import Model_A2C_Sparse
 from rl.train_a2c_td import TrainModel_TD
 from rl.train_a2c_mc import TrainModel_MC
-from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GCN_Sparse_Memory_Policy_SelectNode_10, GAN_Memory_5, GAN_Memory_10, GCN_Sparse_Policy, MLP_Value, GCN_Sparse_Policy_Baseline1
+from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GCN_Sparse_Memory_Policy_SelectNode_10, GAN_Memory_5, GAN_Memory_10, GCN_Sparse_Policy, MLP_Value, GCN_Sparse_Policy_SelectNode_RL, GCN_Sparse_Policy_Baseline1
 from gcn.models_gcn import GCN_Value, GCN_Sparse_Value
 from supervised.train_supervised_learning import Train_SupervisedLearning
 
@@ -39,9 +39,9 @@ parser.add_argument('--dinput', type=int, default=1, help='Dimension of input fe
 parser.add_argument('--doutput', type=int, default=1, help='Dimension of output features')
 parser.add_argument('--dropout', type=float, default=0.1, help='Dropout Rate')
 parser.add_argument('--alpha', type=float, default=0.2, help='Aplha')
-parser.add_argument('--nnode', type=int, default=300, help='Number of node per graph')
-parser.add_argument('--ngraph', type=int, default=20, help='Number of graph per dataset')
-parser.add_argument('--p', type=int, default=0.01, help='probiblity of edges')
+parser.add_argument('--nnode', type=int, default=100, help='Number of node per graph')
+parser.add_argument('--ngraph', type=int, default=5, help='Number of graph per dataset')
+parser.add_argument('--p', type=int, default=0.15, help='probiblity of edges')
 parser.add_argument('--nnode_test', type=int, default=10, help='Number of node per graph for test')
 parser.add_argument('--ngraph_test', type=int, default=1, help='Number of graph for test dataset')
 parser.add_argument('--use_critic', type=bool, default=False, help='Enable critic')
@@ -140,7 +140,7 @@ heuristic = 'min_degree' # 'min_degree' 'one_step_greedy'
 # dataset_name = dataset.__name__
 # dataset_name = dataset.__name__[0:11]
 
-dataset = UFSMDataset_Demo
+dataset = UFSMDataset_Demo # ErgDataset # UFSMDataset_Demo
 dataset_name = dataset.__name__
 
 
@@ -179,8 +179,14 @@ for i in range(len(lr)):
 
     # actor = GCN_Sparse_Policy(nin=args.dinput, nhidden_gcn=args.dhidden, nout_gcn=args.doutput, nhidden_policy=args.dhidden, dropout=args.dropout)
 
-    actor = GCN_Sparse_Policy_Baseline1(nin=args.dinput, nhidden=args.dhidden, nout=args.doutput,
-                              dropout=args.dropout)
+    # actor = GCN_Sparse_Policy_Baseline1(nin=args.dinput, nhidden=args.dhidden, nout=args.doutput,
+    #                           dropout=args.dropout)
+
+    actor = GCN_Sparse_Policy_SelectNode_RL(nin=args.dinput,
+                                         nhidden=args.dhidden,
+                                         nout=args.doutput,
+                                         dropout=args.dropout,
+                                         )  # alpha=args.alpha
 
     if args.use_critic:
         critic = MLP_Value(nout_gcn=args.doutput, nhidden_value=args.dhidden
@@ -210,13 +216,18 @@ for i in range(len(lr)):
 
     if dataset_name == 'UFSMDataset_Demo':
         test_dataset = dataset(start=24, end=26)
-        train_dataset = dataset(start=20, end=21)
+        train_dataset = dataset(start=18, end=19)
         # val_dataset = dataset(args.nnode_test, args.ngraph_test, args.p)
         val_dataset = dataset(start=19, end=20)
     elif dataset_name == 'ErgDataset':
-        train_dataset = dataset(args.nnode, args.ngraph, args.p)
-        val_dataset = dataset(args.nnode, args.ngraph, args.p)
-        test_dataset = dataset(args.nnode_test, args.ngraph_test, args.p)
+        train_dataset = dataset(n_nodes_lowerb=args.nnode, n_nodes_upperb=args.nnode+1, p_lowerb=args.p, p_upperb=args.p+0.01, n_graphs=args.ngraph) # n_nodes_lowerb, n_nodes_upperb, p_lowerb, p_upperb, n_graphs
+        val_dataset = dataset(n_nodes_lowerb=args.nnode, n_nodes_upperb=args.nnode+1, p_lowerb=args.p, p_upperb=args.p+0.01,
+                                n_graphs=args.ngraph)  # n_nodes_lowerb, n_nodes_upperb, p_lowerb, p_upperb, n_graphs
+        test_dataset = dataset(n_nodes_lowerb=args.nnode, n_nodes_upperb=args.nnode+1, p_lowerb=args.p, p_upperb=args.p+0.01,
+                              n_graphs=args.ngraph)  # n_nodes_lowerb, n_nodes_upperb, p_lowerb, p_upperb, n_graphs
+
+        # val_dataset = dataset(args.nnode, args.ngraph, args.p)
+        # test_dataset = dataset(args.nnode_test, args.ngraph_test, args.p)
     else:
         with open('./data/UFSM/ss_small/ss_small.pkl', "rb") as f:
             train_dataset = pkl.load(f)
