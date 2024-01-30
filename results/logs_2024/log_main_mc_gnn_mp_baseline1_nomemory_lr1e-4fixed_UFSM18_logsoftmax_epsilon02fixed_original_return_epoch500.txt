@@ -512,3 +512,16 @@ epochs 485 loss actor-158427758592.0 train min_degreeperformance 8491.0 train gc
 epochs 486 loss actor-460975308800.0 train min_degreeperformance 8491.0 train gcn performance 778634.0 val min_degreeperformance 8486.0 val gcn performance 779124.0
 epochs 487 loss actor-132402511872.0 train min_degreeperformance 8491.0 train gcn performance 778992.0 val min_degreeperformance 8486.0 val gcn performance 779050.0
 epochs 488 loss actor-119280861184.0 train min_degreeperformance 8491.0 train gcn performance 779202.0 val min_degreeperformance 8486.0 val gcn performance 778995.0
+epochs 489 loss actor-32928539082752.0 train min_degreeperformance 8491.0 train gcn performance 777441.0 val min_degreeperformance 8486.0 val gcn performance 778905.0
+epochs 490 loss actor-59203708256256.0 train min_degreeperformance 8491.0 train gcn performance 777520.0 val min_degreeperformance 8486.0 val gcn performance 779056.0
+epochs 491 loss actor-29819605614592.0 train min_degreeperformance 8491.0 train gcn performance 777650.0 val min_degreeperformance 8486.0 val gcn performance 779256.0
+epochs 492 loss actor-793191972864.0 train min_degreeperformance 8491.0 train gcn performance 778784.0 val min_degreeperformance 8486.0 val gcn performance 778904.0
+epochs 493 loss actor-57872905928704.0 train min_degreeperformance 8491.0 train gcn performance 777784.0 val min_degreeperformance 8486.0 val gcn performance 778868.0
+epochs 494 loss actor-86167445831680.0 train min_degreeperformance 8491.0 train gcn performance 776775.0 val min_degreeperformance 8486.0 val gcn performance 778840.0
+epochs 495 loss actor-78966991880192.0 train min_degreeperformance 8491.0 train gcn performance 776715.0 val min_degreeperformance 8486.0 val gcn performance 779072.0
+epochs 496 loss actor-45096003174400.0 train min_degreeperformance 8491.0 train gcn performance 777600.0 val min_degreeperformance 8486.0 val gcn performance 779106.0
+epochs 497 loss actor-84409378144256.0 train min_degreeperformance 8491.0 train gcn performance 775834.0 val min_degreeperformance 8486.0 val gcn performance 779308.0
+epochs 498 loss actor-114163871383552.0 train min_degreeperformance 8491.0 train gcn performance 776669.0 val min_degreeperformance 8486.0 val gcn performance 779116.0
+epochs 499 loss actor-45686657646592.0 train min_degreeperformance 8491.0 train gcn performance 777803.0 val min_degreeperformance 8486.0 val gcn performance 779167.0
+Training finished
+Training time: 78059.1033
