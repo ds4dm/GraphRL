@@ -181,14 +181,16 @@ for i in range(len(lr)):
 
     # actor = GCN_Sparse_Policy(nin=args.dinput, nhidden_gcn=args.dhidden, nout_gcn=args.doutput, nhidden_policy=args.dhidden, dropout=args.dropout)
 
-    # actor = GCN_Sparse_Policy_Baseline1(nin=args.dinput, nhidden=args.dhidden, nout=args.doutput,
-    #                           dropout=args.dropout)
+    # ## MessagePassing GNN: baseline1
+    actor = GCN_Sparse_Policy_Baseline1(nin=args.dinput, nhidden=args.dhidden, nout=args.doutput,
+                              dropout=args.dropout)
 
-    actor = GCN_Sparse_Policy_SelectNode_RL(nin=args.dinput,
-                                         nhidden=args.dhidden,
-                                         nout=args.doutput,
-                                         dropout=args.dropout,
-                                         )  # alpha=args.alpha
+    # ## old supervised model
+    # actor = GCN_Sparse_Policy_SelectNode_RL(nin=args.dinput,
+    #                                      nhidden=args.dhidden,
+    #                                      nout=args.doutput,
+    #                                      dropout=args.dropout,
+    #                                      )  # alpha=args.alpha
 
     if args.use_critic:
         critic = MLP_Value(nout_gcn=args.doutput, nhidden_value=args.dhidden
