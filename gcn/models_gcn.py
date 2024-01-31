@@ -138,6 +138,63 @@ class GCN_Sparse_Policy_SelectNode_RL(nn.Module):
 
         return features, features_hidden
 
+class GCN_Sparse_Policy_SelectNode_10layers_RL(nn.Module):
+    """
+    GCN model for node selection policy
+    """
+    def __init__(self, nin, nhidden, nout, dropout):
+        super(GCN_Sparse_Policy_SelectNode_10layers_RL, self).__init__()
+
+        self.gc1 = GraphConvolutionLayer_Sparse(nin, nhidden) # first graph conv layer
+        self.gc2 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc3 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc4 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc5 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc6 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc7 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc8 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc9 = GraphConvolutionLayer_Sparse(nhidden, nhidden)  # first graph conv layer
+        self.gc10 = GraphConvolutionLayer_Sparse(nhidden, nout) # second graph conv layer
+        self.dropout = dropout
+
+
+    def forward(self, features, adj_matrix):
+        # first layer with relu
+        # features = F.dropout(features, self.dropout, training=self.training)
+        features = self.gc1(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc2(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc3(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc4(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc5(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc6(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc7(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc8(features, adj_matrix)
+        features = F.relu(features)
+
+        features_hidden = self.gc9(features, adj_matrix)
+        features = F.relu(features_hidden)
+
+        # second layer with softmax
+        features = self.gc10(features, adj_matrix)
+        features = F.log_softmax(features.t())
+        features = features.t()
+
+        return features, features_hidden
+
 class GCN_Sparse_Policy_5(nn.Module):
     """
     GCN model for node selection policy

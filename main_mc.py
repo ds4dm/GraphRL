@@ -9,7 +9,7 @@ from utils.utils import open_dataset, varname
 from rl.model_a2c import Model_A2C_Sparse
 from rl.train_a2c_td import TrainModel_TD
 from rl.train_a2c_mc import TrainModel_MC
-from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GCN_Sparse_Memory_Policy_SelectNode_10, GAN_Memory_5, GAN_Memory_10, GCN_Sparse_Policy, MLP_Value, GCN_Sparse_Policy_SelectNode_RL, GCN_Sparse_Policy_Baseline1
+from gcn.models_gcn import GCN_Policy_SelectNode, GCN_Sparse_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode, GCN_Sparse_Memory_Policy_SelectNode_5, GAN, GAN_5, GNN_GAN, GCN_Sparse_Policy_5, GCN_Sparse_Memory_Policy_SelectNode_10, GAN_Memory_5, GAN_Memory_10, GCN_Sparse_Policy, MLP_Value, GCN_Sparse_Policy_SelectNode_RL, GCN_Sparse_Policy_Baseline1, GCN_Sparse_Policy_SelectNode_10layers_RL
 from gcn.models_gcn import GCN_Value, GCN_Sparse_Value
 from supervised.train_supervised_learning import Train_SupervisedLearning
 
@@ -187,11 +187,16 @@ for i in range(len(lr)):
     #                           dropout=args.dropout)
 
     ## RL2024: old supervised model
-    actor = GCN_Sparse_Policy_SelectNode_RL(nin=args.dinput,
-                                         nhidden=args.dhidden,
-                                         nout=args.doutput,
-                                         dropout=args.dropout,
-                                         )  # alpha=args.alpha
+    # actor = GCN_Sparse_Policy_SelectNode_RL(nin=args.dinput,
+    #                                      nhidden=args.dhidden,
+    #                                      nout=args.doutput,
+    #                                      dropout=args.dropout,
+    #                                      )  # alpha=args.alpha
+    actor = GCN_Sparse_Policy_SelectNode_10layers_RL(nin=args.dinput,
+                                            nhidden=args.dhidden,
+                                            nout=args.doutput,
+                                            dropout=args.dropout,
+                                            )  # alpha=args.alpha
 
     if args.use_critic:
         critic = MLP_Value(nout_gcn=args.doutput, nhidden_value=args.dhidden
