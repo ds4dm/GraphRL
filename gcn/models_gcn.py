@@ -737,6 +737,65 @@ class GCN_Sparse_Policy_Baseline1(nn.Module):
         return probs, features_hidden
 
 
+class GCN_Sparse_Policy_Baseline1_10layers(nn.Module):
+    """
+    GCN model for node selection policy for A2C
+    """
+    def __init__(self, nin, nhidden, nout, dropout):
+        super(GCN_Sparse_Policy_Baseline1_10layers, self).__init__()
+
+        self.gc1 = MessagePassing_GNN_Layer_Sparse_Memory(nin, nhidden) # first graph conv layer
+        self.gc2 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc3 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)
+        self.gc4 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)
+        self.gc5 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc6 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)
+        self.gc7 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)
+        self.gc8 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)  # first graph conv layer
+        self.gc9 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nhidden)
+
+        self.gc10 = MessagePassing_GNN_Layer_Sparse_Memory(nhidden, nout) # second graph conv layer
+        self.dropout = dropout
+
+
+    def forward(self, features, adj_matrix):
+        # first layer with relu
+        # features = F.dropout(features, self.dropout, training=self.training)
+        features = self.gc1(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc2(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc3(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc4(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc5(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc6(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc7(features, adj_matrix)
+        features = F.relu(features)
+
+        features = self.gc8(features, adj_matrix)
+        features = F.relu(features)
+
+        features_hidden = self.gc9(features, adj_matrix)
+        features_out = F.relu(features_hidden)
+
+        # output layer with softmax
+        features_out = self.gc10(features_out, adj_matrix)
+        probs = F.log_softmax(features_out.t())
+        probs = probs.t()
+
+        return probs, features_hidden
+
+
 
 
 
