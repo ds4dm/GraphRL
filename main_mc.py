@@ -141,8 +141,10 @@ heuristic = 'min_degree' # 'min_degree' 'one_step_greedy'
 # dataset_name = dataset.__name__[0:11]
 
 dataset = UFSMDataset_Demo # ErgDataset # UFSMDataset_Demo
-dataset_name = dataset.__name__
+# dataset_name = dataset.__name__
 
+dataset_name = 'UFSM_ss_small'
+print('training dataset: ss_small')
 
 # train RL-model
 
