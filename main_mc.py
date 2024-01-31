@@ -141,9 +141,10 @@ heuristic = 'min_degree' # 'min_degree' 'one_step_greedy'
 # dataset_name = dataset.__name__[0:11]
 
 dataset = UFSMDataset_Demo # ErgDataset # UFSMDataset_Demo
-# dataset_name = dataset.__name__
+dataset_name = dataset.__name__
 
-dataset_name = 'UFSM_ss_small'
+# dataset_name = 'UFSM_ss_small'
+
 print('training dataset: ss_small')
 
 # train RL-model
@@ -181,16 +182,16 @@ for i in range(len(lr)):
 
     # actor = GCN_Sparse_Policy(nin=args.dinput, nhidden_gcn=args.dhidden, nout_gcn=args.doutput, nhidden_policy=args.dhidden, dropout=args.dropout)
 
-    # ## MessagePassing GNN: baseline1
-    actor = GCN_Sparse_Policy_Baseline1(nin=args.dinput, nhidden=args.dhidden, nout=args.doutput,
-                              dropout=args.dropout)
+    # # ## RL2024: MessagePassing GNN: baseline1
+    # actor = GCN_Sparse_Policy_Baseline1(nin=args.dinput, nhidden=args.dhidden, nout=args.doutput,
+    #                           dropout=args.dropout)
 
-    # ## old supervised model
-    # actor = GCN_Sparse_Policy_SelectNode_RL(nin=args.dinput,
-    #                                      nhidden=args.dhidden,
-    #                                      nout=args.doutput,
-    #                                      dropout=args.dropout,
-    #                                      )  # alpha=args.alpha
+    ## RL2024: old supervised model
+    actor = GCN_Sparse_Policy_SelectNode_RL(nin=args.dinput,
+                                         nhidden=args.dhidden,
+                                         nout=args.doutput,
+                                         dropout=args.dropout,
+                                         )  # alpha=args.alpha
 
     if args.use_critic:
         critic = MLP_Value(nout_gcn=args.doutput, nhidden_value=args.dhidden
